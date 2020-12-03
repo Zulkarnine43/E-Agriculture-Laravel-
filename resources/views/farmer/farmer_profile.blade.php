@@ -1,12 +1,16 @@
 @extends('farmer.headerFooter')
 @section('body')
 
+<!-- <div class="my-5">
+    <h2>Edit profile</h2>
+</div> -->
+
     <div class="row my-5">
         @foreach($crops as $crop)
-    <div class="col-lg-3 col-md-6 ">
+    <div class="col-lg-3 col-md-6">
         <div class="card ">
 
-            <a href="#"><img class="card-img-top " width="400" height="200" src="{{asset($crop->crop_image)}}" alt=""></a>
+            <a href="#"><img class="card-img-top " width="300" height="200" src="{{asset($crop->crop_image)}}" alt=""></a>
             <div class="card-body">
                 <h4 class="card-title">
                     <a href="#">{{$crop->crop_name}}</a>

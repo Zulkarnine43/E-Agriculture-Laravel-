@@ -58,6 +58,7 @@
                     <div class="dropdown-menu bg-dark nav-item" aria-labelledby="dropdownMenuLink">
                         {{--<form class="form-inline" action="" method="post" enctype="multipart/form-data">--}}
                         <a class="nav-link" href="{{route('f_profile',['f_username'=>Session()->get('f_username')])}}">profile</a>
+                        <a class="nav-link" href="{{route('f_settings')}}">setting</a>
                         <a class="nav-link" href="{{route('logout',['name'=>'f_username'])}}">logout</a>
                     </div>
                 </li>

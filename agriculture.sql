@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2020 at 07:42 PM
+-- Generation Time: Dec 03, 2020 at 06:22 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -72,7 +72,8 @@ CREATE TABLE `bid_messages` (
 --
 
 INSERT INTO `bid_messages` (`id`, `crop_id`, `crop_name`, `f_username`, `cust_username`, `name`, `bid_price`, `message`, `created_at`, `updated_at`) VALUES
-(4, '1', 'rice', 'zulkarnine', 'zulkarnine', 'Zulkar Nine', '5800', 'null', '2020-11-24 00:29:36', '2020-11-24 00:29:36');
+(4, '1', 'rice', 'zulkarnine', 'zulkarnine', 'Zulkar Nine', '5800', 'null', '2020-11-24 00:29:36', '2020-11-24 00:29:36'),
+(7, '1', 'rice', 'zulkarnine', 'zulkarnine', 'tarikul islam', '5200', 'null', '2020-12-03 00:20:04', '2020-12-03 00:20:04');
 
 -- --------------------------------------------------------
 
@@ -128,10 +129,11 @@ CREATE TABLE `crop_imports` (
 --
 
 INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_type`, `crop_quantity`, `crop_location`, `bid_rate`, `crop_description`, `long_description`, `last_date_bidding`, `crop_image`, `crop_image2`, `views`, `condition`, `Action`, `created_at`, `updated_at`) VALUES
-(1, 'zulkarnine', 'rice', 'Food', '10 tress', 'araihazar,dhaka,bangladesh', '5000', 'made by bangladesh', 'for consumers', '2020-11-30', 'public/crop_images/vagitables.jpg', 'public/crop_images/vagitables.jpg', '64', 'New', 'Active', '2020-11-23 22:46:14', '2020-11-29 11:15:43'),
-(2, 'zulkarnine', 'Lichu', 'Fruits', '23', 'araihazar,dhaka,bangladesh', '2345', 'made by bangladesh', 'For consumer', '2020-12-10', 'public/crop_images/1copy.PNG', 'public/crop_images/1copy.PNG', '7', 'New', 'Active', '2020-11-26 04:15:21', '2020-11-27 22:38:57'),
+(1, 'zulkarnine', 'rice', 'Food', '10 tress', 'araihazar,dhaka,bangladesh', '5000', 'made by bangladesh', 'for consumers', '2020-11-30', 'public/crop_images/vagitables.jpg', 'public/crop_images/vagitables.jpg', '73', 'old', 'Active', '2020-11-23 22:46:14', '2020-12-03 00:33:03'),
+(2, 'zulkarnine', 'Lichu', 'Fruits', '23', 'araihazar,dhaka,bangladesh', '2345', 'made by bangladesh', 'For consumer', '2020-12-10', 'public/crop_images/1copy.PNG', 'public/crop_images/1copy.PNG', '8', 'New', 'Active', '2020-11-26 04:15:21', '2020-12-03 00:18:08'),
 (3, 'zulkarnine', 'abc', 'vegetables', '10 bighas', 'khulna', '2442', 'made by bangladesh', 'for consumers', '2020-12-09', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '0', 'New', 'deleted', '2020-11-26 22:31:13', '2020-11-26 23:01:09'),
-(4, 'zulkarnine', 'Lichu', 'vegetables', '10 tress', 'araihazar,dhaka,bangladesh', '3450', 'made by bangladesh', 'for consumers', '2020-11-30', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '0', 'New', 'Deactive', '2020-11-26 22:33:32', '2020-11-26 22:33:47');
+(4, 'zulkarnine', 'Lichu', 'vegetables', '10 tress', 'araihazar,dhaka,bangladesh', '3450', 'made by bangladesh', 'for consumers', '2020-11-30', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', 'old', 'Deactive', '2020-11-26 22:33:32', '2020-12-02 06:52:16'),
+(5, 'zulkarnine', 'sorisa', 'plantation', '1 bighas', 'rajshahi', '5000', 'made by bangladesh', 'for consumers', '2020-12-10', 'public/crop_images/images (36).jpg', 'public/crop_images/images (36).jpg', '12', 'New', 'Active', '2020-12-01 01:02:55', '2020-12-02 06:51:06');
 
 -- --------------------------------------------------------
 
@@ -161,7 +163,7 @@ CREATE TABLE `farmer_registers` (
 --
 
 INSERT INTO `farmer_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `division`, `zip_code`, `password`, `password_confirm`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
-(14, 'farmer', 'zulkarnine', 'zns601@gmail.com', '01660144436', 'Dhaka', '1205', '$2y$10$7blyY3.gGn9oU2ItS1jEq.e2SL9DvySpfS33Zz4emmN9cnHAJD1.O', '$2y$10$/LlZ28IprJlieC9IrLbEV.87wfYlm1YYagA3.Y9PtdheEwBPWrc7u', 'null', 'active', 'verified', '2020-11-26 09:01:10', '2020-11-26 13:11:47');
+(14, 'farmer', 'zulkarnine', 'zns601@gmail.com', '01989419776', 'Dhaka', '1210', '$2y$10$7blyY3.gGn9oU2ItS1jEq.e2SL9DvySpfS33Zz4emmN9cnHAJD1.O', '$2y$10$/LlZ28IprJlieC9IrLbEV.87wfYlm1YYagA3.Y9PtdheEwBPWrc7u', 'null', 'active', 'verified', '2020-11-26 09:01:10', '2020-12-03 11:19:46');
 
 -- --------------------------------------------------------
 
@@ -214,7 +216,7 @@ CREATE TABLE `news_infos` (
 --
 
 INSERT INTO `news_infos` (`id`, `username`, `news_name`, `news_description`, `long_description`, `news_image`, `created_at`, `updated_at`) VALUES
-(1, 'zulkarnine', 'our_services', 'our_services', 'hello', 'public/news_images/assignment-3.PNG', '2020-11-26 23:54:23', '2020-11-26 23:54:23');
+(2, 'zulkarnine', 'our_services', 'Bangladesh', 'hello heck', 'public/news_images/assignment-3.PNG', '2020-12-01 03:01:37', '2020-12-01 03:01:37');
 
 -- --------------------------------------------------------
 
@@ -271,7 +273,8 @@ CREATE TABLE `user_registers` (
 --
 
 INSERT INTO `user_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `division`, `zip_code`, `password`, `password_confirm`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
-(4, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', 'Dhaka', '1205', '$2y$10$CpXkbFkXLuX4ZHwiNe/PXO5FJ9svBYn/XfDSIhgdUZthbN6y1ATQ2', '$2y$10$Qb26dtwph0Q0J8LxzSLk/OJYJ5K5xKmrwqvNyLhagMgNExwdrqrDm', 'null', 'active', 'verified', '2020-11-26 09:16:41', '2020-11-26 09:16:59');
+(4, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', 'Dhaka', '1205', '$2y$10$CpXkbFkXLuX4ZHwiNe/PXO5FJ9svBYn/XfDSIhgdUZthbN6y1ATQ2', '$2y$10$Qb26dtwph0Q0J8LxzSLk/OJYJ5K5xKmrwqvNyLhagMgNExwdrqrDm', 'null', 'active', 'verified', '2020-11-26 09:16:41', '2020-11-26 09:16:59'),
+(5, 'customer', 'zulkarnine32', 'zulkarnine43@gmail.com', '01869084620', 'Dhaka', '1205', '$2y$10$7jw7CfhO7Z47tctMovh.W.EWRdtsV5LtA9ocl0wckdi9qpR3fraC6', '$2y$10$FNX6QrqJth5RmEFPoaRLdOIIBVwic7XA7Lpu4w9YjZezN93zP9Xui', 'null', 'active', 'verified', '2020-12-03 00:22:39', '2020-12-03 00:25:44');
 
 --
 -- Indexes for dumped tables
@@ -345,7 +348,7 @@ ALTER TABLE `admin_registers`
 -- AUTO_INCREMENT for table `bid_messages`
 --
 ALTER TABLE `bid_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `contact_messages`
@@ -357,7 +360,7 @@ ALTER TABLE `contact_messages`
 -- AUTO_INCREMENT for table `crop_imports`
 --
 ALTER TABLE `crop_imports`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `farmer_registers`
@@ -375,7 +378,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `news_infos`
 --
 ALTER TABLE `news_infos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pay_confirm_messages`
@@ -387,7 +390,7 @@ ALTER TABLE `pay_confirm_messages`
 -- AUTO_INCREMENT for table `user_registers`
 --
 ALTER TABLE `user_registers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -56,6 +56,29 @@ class farmerController extends Controller
         return view('farmer.farmer_profile',compact('crops'));
     }
 
+
+        public function f_settings(){
+        $user=farmer_register::where('username',Session::get('f_username'))->first();
+        return view('farmer.f_settings',compact('user'));
+         }
+
+
+         public function registerUpdate(Request $request){
+             $this->validate($request,[
+         
+                'mobile'=>['regex: /^((01|8801)[3456789])(\d{8})$/'],
+                'division'=>'not_in:0',
+                'zip_code'=>'max:5|string',
+            ]);
+
+            $regis=farmer_register::where('id',$request->id)->first();
+            $regis->mobile = $request->mobile;
+            $regis->division = $request->division;
+            $regis->zip_code = $request->zip_code;
+            $regis->save();
+            return redirect('/farmer/')->with('msg','Changes Successfully');
+        }
+      
     // public function upload_profile(Request $request){
 
     //     $Image = $request->file('profile_image');

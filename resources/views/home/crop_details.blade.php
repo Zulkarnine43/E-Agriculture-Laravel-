@@ -24,7 +24,7 @@
                             <img id="zoom_01" height="150" width="300" src='{{url($crop->crop_image)}}' data-zoom-image="{{url($crop->crop_image)}}" alt="First slide"/>
                         </div> 
                         <div class="carousel-item">-->
-                            <img id="zoom_02"  height="300" width="600"  src='{{url($crop->crop_image2)}}' data-zoom-image="{{url($crop->crop_image2)}}" alt="Second slide"/>
+                            <img id="zoom_02"  height="300" width="600"  src="{{url($crop->crop_image2)}}" data-zoom-image="{{url($crop->crop_image2)}}" alt="Second slide"/>
     <!--                     </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -215,16 +215,10 @@
 
     <!---- Slider script start----------->
     <script>
-        // $('#zoom_01').elevateZoom({
-        //     zoomType: "inner",
-        //     cursor: "crosshair",
-        //     zoomWindowFadeIn: 500,
-        //     zoomWindowFadeOut: 750
-        // });
-        // $("#zoom_01").elevateZoom();
-        //  $("#zoom_02").elevateZoom();
-
-        $("#zoom_01").elevateZoom({scrollZoom : true});
+      
+         // $("#zoom_02").elevateZoom();
+        // $("#zoom_01").elevateZoom({scrollZoom : true});
+        // $("#zoom_02").elevateZoom({scrollZoom : true});
         $("#zoom_02").elevateZoom({scrollZoom : true});
 
     </script>

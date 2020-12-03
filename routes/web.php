@@ -357,6 +357,16 @@ Route::get('/logout/{name}',[
     'as' =>'logout'
 ]);
 
+Route::get('/farmer/',[
+    'uses' =>'farmerController@f_settings',
+    'as' =>'f_settings'
+]);
+
+Route::post('/farmer/registerUpdate',[
+    'uses' =>'farmerController@registerUpdate',
+    'as' =>'registerUpdate'
+]);
+
 Route::get('/download/invoice/{id}',[
     'uses' =>'invoiceController@download_invoice',
     'as' =>'download_invoice'
