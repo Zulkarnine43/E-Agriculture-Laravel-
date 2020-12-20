@@ -1,5 +1,9 @@
 @extends('home.headerFooter')
 
+@section('title')
+Crop details
+@endsection
+
 @section('body')
 
 

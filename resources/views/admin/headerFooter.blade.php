@@ -108,7 +108,7 @@
                     </li>
 
                      <li class="nav-item active">
-                        <a class="nav-link" href="{{route('manage_Comments')}}">Manage messages<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('manage_Comments')}}">User Comments<span class="sr-only">(current)</span></a>
                        </li>
 
                     <li class="nav-item dropdown">
@@ -117,6 +117,7 @@
                         </a>
                         <div class="dropdown-menu nav-item bg-dark" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item text-light" href="{{route('a_profile')}}">profile</a>
+                            <a class="dropdown-item text-light" href="{{route('a_settings')}}">setting</a>
                             <a class="dropdown-item text-light" href="{{route('logout',['name'=>'a_username'])}}">logout</a>
                         </div>
                     </li>

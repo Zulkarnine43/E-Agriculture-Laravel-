@@ -1,4 +1,4 @@
-    @extends('farmer.headerFooter')
+    @extends('admin.headerFooter')
     @section('body')
 
     <div class="container my-5">
@@ -7,8 +7,7 @@
             <div class="other-section">
                 <ul class="nav nav-pills">
                     <li class="nav-item"><a data-toggle="pill" class="nav-link active" href="#edu">Profile Details</a></li>
-                    <li class="nav-item"><a data-toggle="pill" class="nav-link" href="#skill">Update profile</a></li>
-                    <li class="nav-item"><a data-toggle="pill" class="nav-link" href="#hobby">verification</a></li>
+                    <li class="nav-item"><a data-toggle="pill" class="nav-link" href="#skill">Edit Details</a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -36,12 +35,6 @@
                                             <th>division:</th>
                                             <td>{{$user->division}}</td>
                                         </tr>
-
-                                           <tr>
-                                            <th>zip_code:</th>
-                                            <td>{{$user->zip_code}}</td>
-                                        </tr>
-
 
                                     </table>
                            </div>
@@ -97,14 +90,6 @@
                                     </select>
                                 </div>
 
-                                <div class="control-group">
-
-                                    <label>Zip code</label>
-                                    <div>
-                                        <input type="number" id="zip" name="zip_code" placeholder="xxxx" class="form-control" value="{{$user->zip_code}}" required>
-                                        <span class="text-danger">{{$errors->has('zip_code') ? $errors->first('zip_code'): ' '}}</span>
-                                    </div>
-                                </div>
           
                                 <div class="control-group mt-2">
                                     <!-- Button -->
@@ -116,38 +101,6 @@
                         </div>
                     </div>
 
-
-                <div id="hobby" class="tab-pane fade">
-                        
-                      <div class="col-lg-6 mx-auto">
-                          <form class="form-group" action="" method="POST">
-                                @csrf
-                                <div>
-                                    <h1 class="text-center">Please verify with NID card</h1>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="font-weight-bolder">NID forward side IMG</label><br>
-                                    <input type="file" name="nid_image" accept="image/*" required>
-                                    <span>{{$errors->has('nid_image') ? $errors->first('nid_image'): ' '}}</span>
-                                </div>
-
-                               <div class="form-group">
-                                    <label class="font-weight-bolder">NID backward side IMG</label><br>
-                                    <input type="file" name="nid_image2" accept="image/*" required>
-                                    <span>{{$errors->has('nid_image2') ? $errors->first('nid_image2'): ' '}}</span>
-                                </div>
-                                <div class="control-group mt-2">
-                                    <!-- Button -->
-                                    <div>
-                                        <button class="btn btn-block btn-success">Verify</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-
-                    </div>
                 </div>
             </div>
             <!-- toggleable dynamic tab ends here -->

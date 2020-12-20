@@ -1,5 +1,9 @@
 @extends('home.headerFooter')
 
+@section('title')
+Login form
+@endsection
+
 @section('body')
 
     <section class="my-5">
@@ -15,7 +19,7 @@
                 <div class="form-group">
                     <label class="">Login As</label>
                     <select class="form-control" name="register_as" required>
-                        <option value=""><-------Login As------------></option>
+                        <option value=""><-------Role As------------></option>
                         <option value="farmer">Farmer</option>
                         <option value="customer">customer</option>
                     </select>

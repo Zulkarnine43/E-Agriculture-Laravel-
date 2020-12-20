@@ -1,5 +1,9 @@
 @extends('home.headerFooter')
 
+@section('title')
+services
+@endsection
+
 @section('body')
 
 
@@ -27,21 +31,10 @@
                         <a href="#" class="stretched-link"></a>
                     </div>
                 </div>
-            </div>
-           
-
+            </div>        
         </div>
-
-        <div class="row">
-            <div class="text-center justify-content-center">
-
-
-
-            </div>
-        </div>
-
-
     </section>
+
     <section id="faq" class="bg-light py-5 text-black">
         <div class="container">
             <h2 class="text-center">Frequently Asked Questions</h2>

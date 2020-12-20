@@ -1,5 +1,9 @@
 @extends('home.headerFooter')
 
+@section('title')
+ Contact
+@endsection
+
 @section('body')
 
     <header id="page-header"class="mt-2" style="background-image: url('{{ url('public/final_eagri/img/a.jpg')}}');">

@@ -19,8 +19,7 @@
             </div>
             <div class="card-footer">
                 <div class="">
-                    <a class="btn btn-success" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}">Details</a>
-                    <a class="btn btn-success" href="{{route('crop_Unapproved',['id'=>$crop->id])}}">UnApproved</a>
+                    <a class="btn btn-success btn-block" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}">Details</a>
                 </div>
             </div>
         </div>

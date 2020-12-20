@@ -42,7 +42,6 @@ class farm_CropController extends Controller
         $addProducts->crop_location = $request->crop_location;
         $addProducts->bid_rate = $request->bid_rate;
         $addProducts->crop_description = $request->crop_description;
-        $addProducts->long_description = $request->long_description;
         $addProducts->last_date_bidding = $request->last_date_bidding;
         $addProducts->crop_image = $imageUrl;
         $addProducts->crop_image2 = $imageUrl2;
@@ -96,7 +95,6 @@ class farm_CropController extends Controller
         $addProducts->crop_location = $request->crop_location;
         $addProducts->bid_rate = $request->bid_rate;
         $addProducts->crop_description = $request->crop_description;
-        $addProducts->long_description = $request->long_description;
         $addProducts->last_date_bidding = $request->last_date_bidding;
         if($request->crop_image!=null) {
             $addProducts->crop_image = $imageUrl;

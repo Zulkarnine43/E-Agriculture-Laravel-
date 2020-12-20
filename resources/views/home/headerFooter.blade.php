@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Homepage</title>
+    <title>@yield('title')</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{url('public/final_eagri/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -115,10 +115,16 @@
                                     <path fill-rule="evenodd" d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM3.5 3a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
                                 </svg>message
                             </a>
+                             <a class="nav-link" href="{{route('c_settings')}}">setting</a>
                             <a class="nav-link" href="{{route('logout',['name'=>'c_username'])}}">logout</a>
                         </div>
                     </li>
-                    
+                    @else
+                            <li>
+                                <a>
+                                <i class="fa fa-user" style="font-size: 20px;"></i>
+                               </a>
+                            </li>
                     @endif
 
               </ul>

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class crop_import extends Model
 {
     //
-    protected $fillable=['username','crop_name','crop_type','crop_quantity','crop_location','bid_rate','crop_description','long_description','last_date_bidding',
+    protected $fillable=['username','crop_name','crop_type','crop_quantity','crop_location','bid_rate','crop_description','last_date_bidding',
         'crop_image','crop_image2','views','condition','Action'];
 }

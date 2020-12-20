@@ -1,5 +1,9 @@
 @extends('home.headerFooter')
 
+@section('title')
+Bid form
+@endsection
+
 @section('body')
 
 

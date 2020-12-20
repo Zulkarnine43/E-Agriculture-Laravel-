@@ -8,6 +8,7 @@ use App\crop_import;
 use App\farmer_register;
 use App\news_info;
 use App\user_register;
+use App\Bid_message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -65,7 +66,7 @@ class adminController extends Controller
 
         public function deleted_crops(){
         $crops=crop_import::where('Action',"deleted")->get();
-        return view('admin.verified_crops',compact('crops'));
+        return view('admin.deleted_crops',compact('crops'));
     }
 
     public function add_news(){
@@ -167,10 +168,44 @@ class adminController extends Controller
         }
     }
 
-    public function user_profile($id){
-    return $user=farmer_register::find($id);
-     Session::put('f_loginn',$user->username);
-     $crops=crop_import::where('username',$user->username)->get();
-    return view ('admin.user_profile',compact('crops'));
+
+   public function c_action($id){
+        $cust=user_register::find($id);
+
+        if($cust!=null) {
+            if ($cust->action == "active") {
+                $cust->action = "disable";
+                $cust->save();
+            } else {
+                $cust->action = "active";
+                $cust->save();
+            }
+            return redirect('/customers');
+        }
     }
+
+
+
+
+   public function farmer_profile($id){
+         $user=farmer_register::find($id);
+         Session::put('f_login',$user->username);
+         $crops=crop_import::where('username',$user->username)->get();
+         return view ('admin.farmer_profile',compact('crops'));
+    }
+
+
+
+    public function user_profile($id){
+         $user=user_register::find($id);
+         Session::put('c_login',$user->username);
+        $crops=Bid_message::where('cust_username',$user->username)->distinct()->get(['crop_id']);
+         return view ('admin.user_profile',compact('crops'));
+    }
+
+        public function a_settings(){
+        $user=admin_register::where('username',Session::get('a_username'))->first();
+        return view('admin.a_settings',compact('user'));
+         }
+
 }

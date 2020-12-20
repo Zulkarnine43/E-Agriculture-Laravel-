@@ -1,6 +1,10 @@
 @extends('home.headerFooter')
 @section('body')
 
+@section('title')
+customer profile
+@endsection
+
     <div class="row">
 
 @foreach($bids_crop as $crop)
@@ -20,7 +24,7 @@
             </div>
             <div class="card-footer">
                 <div class="">
-                    <a class="btn btn-success" target="_blank" href="{{route('crop_details',['id'=>$crop['id']])}}" class="card-link">Details</a>
+                    <a class="btn btn-success btn-block" target="_blank" href="{{route('crop_details',['id'=>$crop['id']])}}" class="card-link">Details</a>
                 </div>
             </div>
 

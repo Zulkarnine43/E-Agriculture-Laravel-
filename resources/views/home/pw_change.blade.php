@@ -1,5 +1,10 @@
 @extends('home.headerFooter')
 
+
+@section('title')
+password changes form
+@endsection
+
 @section('body')
 
     <section class="my-3">

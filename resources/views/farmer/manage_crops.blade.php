@@ -14,7 +14,7 @@
                             <th>crop_quantity</th>
                             <th>bid_rate</th>
                             <th>crop_description</th>
-                            <th>long_description</th>
+                        
                             <th>Images</th>
                             <th>Action</th>
                         </tr>
@@ -28,7 +28,7 @@
                                 <td>{{$crop->crop_quantity}}</td>
                                 <td>{{$crop->bid_rate}}</td>
                                 <td>{{$crop->crop_description}}</td>
-                                <td>{{$crop->long_description}}</td>
+                          
                                 <td> <img src="{{url($crop->crop_image)}}"width="200" height="150"></td>
                                 <td>
                                     <a href="{{route('edit_crop',['id'=>$crop->id])}}" class="btn-success">Edit</a>

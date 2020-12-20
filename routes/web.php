@@ -12,54 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Start Admin page routing
 
-// Route::get('/admin/login',[
-//     'uses' =>'adminController@a_login',
-//     'as' =>'a_login'
-// ]);
-
-// Route::get('/admin/signup',[
-//     'uses' =>'adminController@admin_signup',
-//     'as' =>'admin_signup'
-// ]);
-
-// Route::post('admin/signup/save',[
-//     'uses' =>'adminLoginController@admin_registerSave',
-//     'as' =>'admin_registerSave'
-// ]);
-
-// Route::get('/account_verify/{username}',[
-//     'uses' =>'adminLoginController@admin_account_verify',
-//     'as' =>'admin_account_verify'
-// ]);
-
-// Route::post('admin/login/check',[
-//     'uses' =>'adminLoginController@admin_login_check',
-//     'as' =>'admin_login_check'
-// ]);
-
-
-// Route::post('/admin_pw_change_link',[
-//     'uses' =>'adminLoginController@admin_pw_change_link',
-//     'as' =>'admin_pw_change_link'
-// ]);
-
-// Route::get('/admin_pw_change/{email}',[
-//     'uses' =>'adminLoginController@admin_pw_change',
-//     'as' =>'admin_pw_change'
-// ]);
-
-
-// Route::post('/admin_pass_change_save/{email}',[
-//     'uses' =>'adminLoginController@admin_pass_change_save',
-//     'as' =>'admin_pass_change_save'
-// ]);
-
-// Route::get('/admin/home',[
-//     'uses' =>'adminController@a_home',
-//     'as' =>'a_home'
-// ]);
-
+// Start Admin RegisterLoginCheckController Routing
 Route::get('/admin/login',[
     'uses' =>'adminController@a_login',
     'as' =>'a_login'
@@ -69,6 +24,7 @@ Route::get('/admin/signup',[
     'uses' =>'adminController@admin_signup',
     'as' =>'admin_signup'
 ]);
+
 
 Route::post('admin/signup/save',[
     'uses' =>'adminLoginController@admin_registerSave',
@@ -101,9 +57,9 @@ Route::post('/admin_pass_change_save/{email}',[
     'uses' =>'adminLoginController@admin_pass_change_save',
     'as' =>'admin_pass_change_save'
 ]);
+// End Admin RegisterLoginCheckController Routing
 
-
-
+// Start Admin home Routing
 Route::get('/admin/home',[
     'uses' =>'adminController@a_home',
     'as' =>'a_home'
@@ -191,20 +147,36 @@ Route::get('/admin/profile',[
     'as' =>'a_profile'
 ]);
 
+Route::get('/admin/settings',[
+    'uses' =>'adminController@a_settings',
+    'as' =>'a_settings'
+]);
+
 Route::get('/farmer/{id}',[
     'uses' =>'adminController@f_action',
     'as' =>'f_action'
+]);
+
+Route::get('/customer/{id}',[
+    'uses' =>'adminController@c_action',
+    'as' =>'c_action'
+]);
+
+
+Route::get('farmer/details/{id}',[
+'uses'=>'adminController@farmer_profile',
+'as'=>'farmer_profile'
 ]);
 
 Route::get('user/details/{id}',[
 'uses'=>'adminController@user_profile',
 'as'=>'user_profile'
 ]);
+// End Admin home Routing
+// End Admin page routing
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
+// Start home page routing
 Route::get('/',[
 'uses'=>'homeController@index',
 'as'=>'home'
@@ -216,6 +188,8 @@ Route::get('/signup',[
     'uses' =>'homeController@signup',
     'as' =>'signup'
 ]);
+
+// Start RegisterLoginCheckController Routing
 
 Route::post('signup/save',[
     'uses' =>'RegisterLoginCheckController@registerSave',
@@ -253,6 +227,8 @@ Route::post('/pass_change_save/{uses_as}/{email}',[
     'uses' =>'RegisterLoginCheckController@pass_change_save',
     'as' =>'pass_change_save'
 ]);
+
+// End RegisterLoginCheckController Routing
 
 Route::get('/customer/profile/{c_username}',[
     'uses' =>'homeController@cust_profile',
@@ -299,6 +275,16 @@ Route::get('/search',[
     'as' =>'search'
 ]);
 
+
+Route::get('/customer',[
+    'uses' =>'homeController@c_settings',
+    'as' =>'c_settings'
+]);
+
+// End home page routing
+
+
+// Start Farmer page routing
 Route::get('/farmer/home/page',[
     'uses' =>'farmerController@f_home',
     'as' =>'f_home'
@@ -309,11 +295,18 @@ Route::get('/crop/import',[
     'as' =>'crop_import'
 ]);
 
-
+// Start Farmer Crop add update routing
 Route::post('/crop/add/save',[
     'uses'=>'farm_CropController@add_product_db',
     'as'=>'add_product_db'
 ]);
+
+Route::post('/crop/update/save',[
+    'uses'=>'farm_CropController@update_product_db',
+    'as'=>'update_product_db'
+]);
+
+// End Farmer Crop add update routing
 
 
 Route::get('/crop/manage',[
@@ -332,10 +325,6 @@ Route::get('/crop/delete/{id}',[
     'as' =>'delete_crop'
 ]);
 
-Route::post('/crop/update/save',[
-    'uses'=>'farm_CropController@update_product_db',
-    'as'=>'update_product_db'
-]);
 
 Route::get('/user/manage',[
     'uses' =>'farmerController@user_manage',
@@ -367,9 +356,16 @@ Route::post('/farmer/registerUpdate',[
     'as' =>'registerUpdate'
 ]);
 
-Route::get('/download/invoice/{id}',[
+// End farmer page routing
+
+
+// Start Invoice routing
+
+
+
+Route::get('/download/invoices/{id}',[
     'uses' =>'invoiceController@download_invoice',
-    'as' =>'download_invoice'
+    'as' =>'farm_download_invoice'
 ]);
 
 Route::get('/download/invoice/{id}',[
@@ -377,6 +373,10 @@ Route::get('/download/invoice/{id}',[
     'as' =>'cust_download_invoice'
 ]);
 
+// End Invoice routing
+
+
+// Start Bid Modal routing
 Route::get('/bid/model/{id}',[
     'uses' =>'BidController@Bid_model',
     'as' =>'Bid_model'
@@ -396,3 +396,5 @@ Route::post('/pay/confirm/message',[
     'uses' =>'BidController@pay_confirm_message',
     'as' =>'pay_confirm_message'
 ]);
+
+// End Bid modal routing

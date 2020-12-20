@@ -60,16 +60,11 @@
                 <span>{{$errors->has('bid_rate') ? $errors->first('bid_rate'): ' '}}</span>
             </div>
 
+ 
             <div class="form-group">
                 <label class="font-weight-bolder">Crop Description</label>
-                <input type="text" name="crop_description" class="form-control" placeholder="Short Discreption" required/>
+                <textarea id="editor" class="form-control" name="crop_description" placeholder="crop description" required></textarea>
                 <span>{{$errors->has('crop_description') ? $errors->first('crop_description'): ' '}}</span>
-            </div>
-
-            <div class="form-group">
-                <label class="font-weight-bolder">Long Description</label>
-                <textarea id="editor" class="form-control" name="long_description"></textarea>
-                <span>{{$errors->has('long_description') ? $errors->first('long_description'): ' '}}</span>
             </div>
 
             <div class="form-group">

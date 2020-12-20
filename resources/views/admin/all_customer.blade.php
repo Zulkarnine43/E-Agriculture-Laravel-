@@ -28,12 +28,13 @@
                         <td>{{$user->zip_code}}</td>
                         <td>{{$user->action}}</td>
                         <td>
-                            <a href="{{route('user_profile',['id'=>$user->id])}}" class="btn-success">profile</a>
-                            @if($user->action=="active")
-                                <a href="" class="btn-success">disable</a>
-                            @else
-                                <a href="" class="btn-success">active</a>
-                            @endif
+                            <a href="{{route('user_profile',['id'=>$user->id])}}" class="btn btn-success">profile</a>
+                           @if($user->action=="active")
+                            <a href="{{route('c_action',['id'=>$user->id])}}" class="btn btn-success">disable</a>
+                                @else
+                                <a href="{{route('c_action',['id'=>$user->id])}}" class="btn btn-success">
+                                    <span class="glyphicon glyphicon-ok">active</span></a>
+                                @endif
                         </td>
                     </tr>
                 @endforeach

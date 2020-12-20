@@ -4,7 +4,7 @@
 @section('body')
 
     <div>
-        <h1 class="text-center text-primary">Update here</h1>
+        <h1 class="text-center text-primary mt-5">Update here</h1>
     </div>
     <div class="col-lg-6 jumbotron mx-auto">
 
@@ -51,16 +51,11 @@
                 <span>{{$errors->has('bid_rate') ? $errors->first('bid_rate'): ' '}}</span>
             </div>
 
+       
             <div class="form-group">
                 <label class="font-weight-bolder">Crop Description</label>
-                <input type="text" name="crop_description" class="form-control" value="{{$crop->crop_description}}" required/>
+                <textarea id="editor" class="form-control" name="crop_description"" required>{{$crop->crop_description}}</textarea>
                 <span>{{$errors->has('crop_description') ? $errors->first('crop_description'): ' '}}</span>
-            </div>
-
-            <div class="form-group">
-                <label class="font-weight-bolder">Long Description</label>
-                <textarea id="editor" class="form-control" name="long_description">{{$crop->long_description}}</textarea>
-                <span>{{$errors->has('long_description') ? $errors->first('long_description'): ' '}}</span>
             </div>
 
             <div class="form-group">

@@ -27,7 +27,7 @@
                     <td>{{$message->created_at}}</td>
                     <td>
                         <a target="_blank" href="{{route('crop_details',['id'=>$message->crop_id])}}" class="btn-success">details</a>
-                        <a target="_blank" href="{{route('download_invoice',['id'=>$message->id])}}" class="btn-success">download_invoice</a>
+                        <a target="_blank" href="{{route('farm_download_invoice',['id'=>$message->id])}}" class="btn-success">download_invoice</a>
                     </td>
                 </tr>
                     @endforeach
@@ -36,4 +36,4 @@
     </div>
 
 
-@endsection()
+@endsection

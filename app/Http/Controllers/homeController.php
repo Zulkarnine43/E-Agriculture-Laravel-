@@ -55,6 +55,7 @@ class homeController extends Controller
     public function about(){
         return view('home.about_us');
     }
+    
      public function contact(){
         return view('home.contact');
     }
@@ -93,14 +94,21 @@ class homeController extends Controller
     public function search(Request $request){
         $search_tx1= $request->search;
 
-        $search=crop_import::orderBy('id','desc')
-            ->where('crop_name','Like','%'.$search_tx1.'%')
-            ->orwhere('crop_type','Like','%'.$search_tx1.'%')
-            ->orwhere('crop_location','Like','%'.$search_tx1.'%')
-            ->orwhere('bid_rate','Like','%'.$search_tx1.'%')
+        $search=crop_import::orderBy('id','desc')      
+            // ->where('crop_name','Like','%'.$search_tx1.'%')
+            // ->orwhere('crop_type','Like','%'.$search_tx1.'%')
+           //  ->orwhere('crop_location','Like','%'.$search_tx1.'%')
+            // ->orwhere('bid_rate','Like','%'.$search_tx1.'%')
+
+            ->where('crop_name','Like',"%$search_tx1%")
+            ->orwhere('crop_type','Like',"%$search_tx1%")
             ->get();
             return view('home.search', ['s' => $search]);
     }
 
+        public function c_settings(){
+        $user=user_register::where('username',Session::get('c_username'))->first();
+        return view('home.c_settings',compact('user'));
+         }
 
 }

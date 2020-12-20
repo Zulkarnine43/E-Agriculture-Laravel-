@@ -1,4 +1,4 @@
-    @extends('farmer.headerFooter')
+    @extends('home.headerFooter')
     @section('body')
 
     <div class="container my-5">
@@ -6,9 +6,9 @@
             <!-- toggleable dynamic tab starts here -->
             <div class="other-section">
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a data-toggle="pill" class="nav-link active" href="#edu">Profile Details</a></li>
-                    <li class="nav-item"><a data-toggle="pill" class="nav-link" href="#skill">Update profile</a></li>
-                    <li class="nav-item"><a data-toggle="pill" class="nav-link" href="#hobby">verification</a></li>
+                    <li class="nav-item"><a data-toggle="pill" class="nav-link p-2 active" href="#edu">Profile Details</a></li>
+                    <li class="nav-item"><a data-toggle="pill" class="nav-link p-2" href="#skill">Update profile</a></li>
+                    <li class="nav-item"><a data-toggle="pill" class="nav-link p-2" href="#hobby">verification</a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -49,7 +49,7 @@
 
                     <div id="skill" class="tab-pane fade">
                         <div class="col-lg-6 mx-auto">
-                          <form class="form-group" action="{{route('registerUpdate')}}" method="POST">
+                          <form class="form-group" action="" method="POST">
                                 @csrf
                                 <div>
                                     <h1 class="text-center">Edit Here</h1>
@@ -118,6 +118,7 @@
 
 
                 <div id="hobby" class="tab-pane fade">
+                
                         
                       <div class="col-lg-6 mx-auto">
                           <form class="form-group" action="" method="POST">

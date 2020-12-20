@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </form>
-            <button class="btn btn-outline-success" data-toggle="modal" data-target="#ForgotPasswordModal">Forgot Password</button>
+           <button class="btn btn-outline-success" data-toggle="modal" data-target="#ForgotPasswordModal">Forgot Password</button>
             <a href="{{route('admin_signup')}}" class="btn btn-outline-success">signup</a>
         </div>
     </section>
@@ -58,12 +58,12 @@
                         <input type="email" name="email" value="" class="form-control" placeholder="Enter your email" required>
                         <span class="text-danger">{{$errors->has('email') ? $errors->first('email'): ' '}}</span>
                     </div>
-                    <input type="submit" value="Send" class="btn btn-success">
+                    <input type="submit" value="Send" class="btn btn-success btn-block">
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-<script src="{{asset('final_eagri/vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('final_eagri/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{url('public/final_eagri/vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{url('public/final_eagri/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

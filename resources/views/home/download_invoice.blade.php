@@ -1,5 +1,4 @@
 
-
  <link href="{{url('public/final_eagri/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
 <div class="row flex-sm-row my-5">

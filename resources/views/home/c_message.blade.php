@@ -1,4 +1,9 @@
 @extends('home.headerFooter')
+
+@section('title')
+customer messages
+@endsection
+
 @section('body')
 <h1 class="text-success">{{Session::get('msg')}}</h1>
     <div class="row flex-sm-row mt-5">

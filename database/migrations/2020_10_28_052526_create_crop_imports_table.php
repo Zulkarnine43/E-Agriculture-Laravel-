@@ -22,7 +22,7 @@ class CreateCropImportsTable extends Migration
             $table->string('crop_location');
             $table->string('bid_rate');
             $table->string('crop_description');
-            $table->string('long_description')->nullable();
+           // $table->string('long_description')->nullable();
             $table->date('last_date_bidding');
             $table->string('crop_image');
             $table->string('crop_image2');

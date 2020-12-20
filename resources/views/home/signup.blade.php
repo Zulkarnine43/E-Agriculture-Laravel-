@@ -1,5 +1,9 @@
 @extends('home.headerFooter')
 
+@section('title')
+signup form
+@endsection
+
 @section('body')
 
 <h1 class="text-success mt-5">{{Session::get('reg_success')}}</h1>
@@ -14,7 +18,7 @@
             <div class="form-group">
                 <label>Register as</label>
                 <select class="form-control" name="register_as" required>
-                    <option value=""><-------Register As------------></option>
+                    <option value=""><-------Role As------------></option>
                     <option value="farmer">Farmer</option>
                     <option value="customer">customer</option>
                 </select>

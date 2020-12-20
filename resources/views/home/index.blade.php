@@ -1,5 +1,10 @@
  @extends('home.headerFooter')
 
+
+@section('title')
+Home
+@endsection
+
 @section('body')
 
 
