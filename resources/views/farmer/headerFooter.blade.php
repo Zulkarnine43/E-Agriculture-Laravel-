@@ -13,14 +13,13 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{url('public/final_eagri/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{url('public/final_eagri/vendor/bootstrap/css/font-awesome.css')}}" rel="stylesheet">
+    <link type="text/css" href="{{url('public/final_eagri/vendor/font-awesome/css/all.min.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{{url('public/final_eagri/css/farmer-style.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body style="font-size: 18px; font-family: 'Fredericka the Great', cursive;">
 <div class="fixed-top">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-3">
@@ -57,7 +56,7 @@
                     </a>
                     <div class="dropdown-menu bg-dark nav-item" aria-labelledby="dropdownMenuLink">
                         {{--<form class="form-inline" action="" method="post" enctype="multipart/form-data">--}}
-                        <a class="nav-link" href="{{route('f_profile',['f_username'=>Session()->get('f_username')])}}">profile</a>
+                        <a class="nav-link" href="{{route('fa_profile',['f_username'=>Session()->get('f_username')])}}">profile</a>
                         <a class="nav-link" href="{{route('f_settings')}}">setting</a>
                         <a class="nav-link" href="{{route('logout',['name'=>'f_username'])}}">logout</a>
                     </div>
@@ -103,10 +102,10 @@
     <div class="row nav text-light mx-auto">
         <div class="col-lg-3">
             <h2 class="text-center">Our website</h2>
-            <h5 class=" text-left text-justify" style="font-size: 20px" >At e_agriculture,
+            <p class=" text-justify" style="font-size: 18px; font-family: 'Fredericka the Great', cursive;" >At e_agriculture,
                 Innovation and simplicity makes us happy: our goal is to remove any technical or financial
                 barriers that can prevent crops sell and buy. We're excited to
-                help you on your journey!?</h5>
+                help you on your journey!?</p>
         </div>
 
         <div class="col-lg-3">
@@ -133,12 +132,13 @@
 
         <div class="col-lg-3 text-center">
             <h2 class="">Social Links</h2>
-            <li class="nav-item" style="font-size: 22px">
-                <a class="fa fa-facebook" href=""></a>
-                <a class="fa fa-instagram ml-2" href=""></a>
-                <a class="fa fa-youtube ml-2" href=""></a>
-                <a class="fa fa-github ml-2" href=""></a>
-            </li>
+               <li class="nav-item" >
+                    <a href=""><i class="fab fa-2x fa-facebook" style="color: blue;"></i></a>
+                    <a href=""><i class="fab fa-2x fa-instagram ml-2" style="color:#E38EC4
+                        ;"></i></a>
+                    <a href=""><i class="fab fa-2x fa-youtube ml-2" style="color: #ff6b6b;"></i></a>
+                    <a href=""><i class="fab fa-2x fa-github ml-2" style="color: white;"></i></a>
+                </li>
 
         </div>
     </div>

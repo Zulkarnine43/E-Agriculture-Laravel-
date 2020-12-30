@@ -19,7 +19,7 @@
             </div>
             <div class="card-footer">
                 <div class="">
-                    <a class="btn btn-success btn-block" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}">Details</a>
+                   <a class="btn btn-success" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}"><i class="fas fa-info-circle"></i></a>
                 </div>
             </div>
         </div>

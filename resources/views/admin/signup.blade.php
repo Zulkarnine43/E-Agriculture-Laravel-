@@ -22,7 +22,7 @@
                 <label>E-mail</label>
                 <div>
                     <input type="text" id="email" name="email" placeholder="xyz@gmail.com" class="form-control" required>
-                    <span class="text-danger">{{$errors->has('email') ? $errors->first('email'): ' '}}</span>C
+                    <span class="text-danger">{{$errors->has('email') ? $errors->first('email'): ' '}}</span>
                 </div>
             </div>
 
@@ -35,6 +35,14 @@
                     <span class="text-danger">{{$errors->has('mobile') ? $errors->first('mobile'): ' '}}</span>
                 </div>
             </div>
+
+               <div class="form-group">
+
+                <label>Date of Birth</label>
+                <div>
+                   <input type="date" class="form-control" id="dob" name="dob" placeholder="" required>
+                </div>
+               </div>
 
             <div class="form-group">
                 <label>Division</label>
@@ -51,8 +59,32 @@
             </div>
 
 
+                <div class="form-group">
+                <!-- address-->
+                    <label>Address</label>
+                    <div>
+                       <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required>
+                    </div>
+               </div>
 
-            <div class="control-group">
+
+                <div class=" form-group">
+                 <!-- Gender-->
+                  <label>Gender</label>
+                  
+                  <div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gender" id="gender1" value="male" checked>Male
+                    </div>
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gender" id="gender2" value="female">Female
+                    </div>
+                  </div>
+
+                </div>
+
+            <div class="form-group">
                 <!-- Password-->
                 <label>Password</label>
                 <div>
@@ -61,7 +93,7 @@
                 </div>
             </div>
 
-            <div class="control-group">
+            <div class="form-group">
                 <!-- Password -->
                 <label>Password (Confirm)</label>
                 <div>
@@ -70,7 +102,7 @@
                 </div>
             </div>
 
-            <div class="control-group mt-2">
+            <div class="form-group mt-2">
                 <!-- Button -->
                 <div>
                     <button class="btn btn-block btn-success">SignUp</button>

@@ -15,7 +15,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="">
-                            <a class="btn btn-success" target="_blank" href="" class="card-link">Details</a>
+                            <a class="btn btn-success btn-block" target="_blank" href="" class="card-link">Details</a>
                         </div>
                     </div>
 

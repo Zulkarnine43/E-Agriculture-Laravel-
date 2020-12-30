@@ -15,17 +15,19 @@ class CreateUserRegistersTable extends Migration
     {
         Schema::create('user_registers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('register_as');
-            $table->string('username');
-            $table->string('email');
-            $table->string('mobile');
-            $table->string('division');
-            $table->string('zip_code');
-            $table->string('password');
-            $table->string('password_confirm');
-            $table->string('profile_pic');
-            $table->string('action');
-            $table->string('condition');
+            $table->string('register_as',25);
+            $table->string('username',20);
+            $table->string('email',40);
+            $table->string('mobile',12);
+            $table->date('dob',30);
+            $table->string('division',25);
+            $table->string('address',50);
+            $table->string('zip_code',15);
+            $table->string('gender',10);
+            $table->string('password',255);
+            $table->string('profile_pic',50);
+            $table->string('action',15);
+            $table->string('condition',15);
             $table->timestamps();
         });
     }

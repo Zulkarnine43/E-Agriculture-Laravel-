@@ -16,34 +16,37 @@ Login form
                     <h1 class=" text-center">Login Here</h1>
                 </div>
 
-                <div class="form-group">
-                    <label class="">Login As</label>
-                    <select class="form-control" name="register_as" required>
+                  <div class="form-group row">
+                 <!-- Login Type-->
+                  <label class="col-sm-2">Login Type</label>
+                    <div class="col-sm-10">
+                       <select class="form-control" name="register_as" required>
                         <option value=""><-------Role As------------></option>
                         <option value="farmer">Farmer</option>
                         <option value="customer">customer</option>
-                    </select>
+                        </select>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <!-- E-mail -->
-                    <label>E-mail</label>
-                    <div>
-                        <input type="text" id="email" name="email" placeholder="your email" class="form-control" required>
-                        {{--<span class="text-danger">{{$errors->has('email') ? $errors->first('email'): ' '}}</span>--}}
+                 <div class="form-group row">
+                   <!-- E-mail-->
+                    <label class="col-sm-2">E-mail</label>
+
+                    <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" name="email" required>
+                     <span class="text-danger">{{$errors->has('email') ? $errors->first('email'): ' '}}</span>
                     </div>
                 </div>
 
 
-
-                <div class="control-group">
-                    <!-- Password-->
-                    <label>Password</label>
-                    <div>
-                        <input type="password" id="password" name="password" placeholder="your password" class="form-control" required>
-                        {{--<span class="text-danger">{{$errors->has('password') ? $errors->first('password'): ' '}}</span>--}}
+                  <div class="form-group row">
+                <!-- Password-->
+                        <label class="col-sm-2">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" id="password" name="password" placeholder="Xyz123" class="form-control" required>
+                            <span class="text-danger">{{$errors->has('password') ? $errors->first('password'): ' '}}</span>
+                        </div>
                     </div>
-                </div>
 
                 <div class="control-group mt-2">
                     <!-- Button -->

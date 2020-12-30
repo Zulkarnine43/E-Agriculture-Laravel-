@@ -31,12 +31,14 @@ class homeController extends Controller
         }
 
 
-        $crops= crop_import::where('Action',"Active")->orderBy('created_at', 'desc')->get();
+        $crops= crop_import::where('Action',"Published")->orderBy('created_at', 'desc')->get();
         return view('home.index',compact('crops'));
     }
 
        public function Categories($crop_type){
-        $crops=crop_import::where('crop_type',$crop_type)->get();
+        $crops=crop_import::where('crop_type',$crop_type)
+        ->where('Action',"Published")
+        ->get();
         return view('home.categories',compact('crops'));
     }
 
@@ -54,6 +56,10 @@ class homeController extends Controller
     }
     public function about(){
         return view('home.about_us');
+    }
+
+        public function gallery(){
+        return view('home.gallery');
     }
     
      public function contact(){
@@ -99,9 +105,9 @@ class homeController extends Controller
             // ->orwhere('crop_type','Like','%'.$search_tx1.'%')
            //  ->orwhere('crop_location','Like','%'.$search_tx1.'%')
             // ->orwhere('bid_rate','Like','%'.$search_tx1.'%')
-
             ->where('crop_name','Like',"%$search_tx1%")
             ->orwhere('crop_type','Like',"%$search_tx1%")
+           // ->orwhere('crop_name','Like',"%%")
             ->get();
             return view('home.search', ['s' => $search]);
     }
@@ -110,5 +116,38 @@ class homeController extends Controller
         $user=user_register::where('username',Session::get('c_username'))->first();
         return view('home.c_settings',compact('user'));
          }
+
+         public function customerRegisterUpdate(Request $request){
+             $this->validate($request,[
+         
+                'mobile'=>['regex: /^((01|8801)[3456789])(\d{8})$/'],
+            ]);
+
+
+                if ($request->profile_image!=null) {
+                $profileImage = $request->file('profile_image');
+                if ($profileImage) {
+                    $imageName = time().'.'.$profileImage->getClientOriginalName();
+                    $directory = 'public/profile_images/';
+                    $imageUrl = $directory . $imageName;
+                    $profileImage->move($directory, $imageName);
+
+                }
+            }
+            
+            $regis=user_register::where('id',$request->id)->first();
+            $regis->mobile = $request->mobile;
+            $regis->dob = $request->dob;
+            $regis->division = $request->division;
+            $regis->address = $request->address;
+            $regis->zip_code = $request->zip_code;
+            $regis->gender = $request->gender;
+            if ($request->profile_image!=null) {
+                $regis->profile_pic = $imageUrl;
+            }
+            
+            $regis->save();
+            return redirect('/customer')->with('msg','update Successfully');
+        }
 
 }

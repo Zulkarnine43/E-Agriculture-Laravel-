@@ -54,6 +54,44 @@ class BidController extends Controller
 
     }
 
+
+     public function bid_msg_saved(Request $request)
+    {
+        $this->validate($request,[
+        ]);
+        if($request->message==null){
+            $request->message="null";
+        }
+
+        $regis = new Bid_message();
+        $regis->crop_id = $request->crop_id;
+        $regis->crop_name = $request->crop_name;
+        $regis->f_username = $request->f_username;
+        $regis->cust_username = $request->cust_username;
+        $regis->name = $request->name;
+        $regis->bid_price = $request->bid_price;
+        $regis->message = $request->message;
+        $regis->save();
+
+        $farm=farmer_register::where('username',$request->f_username)->first();
+
+        $data=$regis->toArray();
+
+         $data2=$farm->toArray();
+
+        // Mail::send('farmer.Bid_notification',['val'=>$data],function($message) use ($data2){
+        //     $message->to($data2['email']);
+        //     $message->subject('Bid_notification');
+        // });
+
+        // return redirect('/crop_details/',['id',$request->crop_id])->with('msg','your bid send successfully');
+         return redirect()->route('crop_details',['id'=>$request->crop_id])->with('msg','your bid send successfully');;
+
+
+
+    }
+    
+
     public function pay_confirm_message(Request $request)
     {
         $this->validate($request,[

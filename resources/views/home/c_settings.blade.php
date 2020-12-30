@@ -6,13 +6,13 @@
             <!-- toggleable dynamic tab starts here -->
             <div class="other-section">
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a data-toggle="pill" class="nav-link p-2 active" href="#edu">Profile Details</a></li>
-                    <li class="nav-item"><a data-toggle="pill" class="nav-link p-2" href="#skill">Update profile</a></li>
-                    <li class="nav-item"><a data-toggle="pill" class="nav-link p-2" href="#hobby">verification</a></li>
+                    <li class="nav-item"><a data-toggle="pill" class="nav-link p-2 active" href="#profile">Profile Details</a></li>
+                    <li class="nav-item"><a data-toggle="pill" class="nav-link p-2" href="#updateprofile">Update profile</a></li>
+                    <li class="nav-item"><a data-toggle="pill" class="nav-link p-2" href="#verification">verification</a></li>
                 </ul>
 
                 <div class="tab-content">
-                    <div id="edu" class="tab-pane active">
+                    <div id="profile" class="tab-pane active">
                          <div class="col-md-12 col-sm-12 ">
                                     <h3 class="text-center ">Profile Details Info</h3>
                                     <h5 class="text-center text-success">{{Session::get('msg')}}</h5>
@@ -25,7 +25,7 @@
                                           <tr>
                                             <th>Email:</th>
                                             <td>{{$user->email}}</td>
-                                        </tr>
+                                         </tr>
 
                                           <tr>
                                             <th>Mobile:</th>
@@ -33,13 +33,38 @@
                                         </tr>
 
                                           <tr>
-                                            <th>division:</th>
+                                            <th>Date of Birth:</th>
+                                            <td>{{$user->dob}}</td>
+                                        </tr>
+
+                                         <tr>
+                                            <th>Division:</th>
                                             <td>{{$user->division}}</td>
                                         </tr>
 
+                                          <tr>
+                                            <th>Address:</th>
+                                            <td>{{$user->address}}</td>
+                                         </tr>
+
                                            <tr>
-                                            <th>zip_code:</th>
+                                            <th>Address:</th>
                                             <td>{{$user->zip_code}}</td>
+                                         </tr>
+
+                                          <tr>
+                                            <th>Gender:</th>
+                                            <td>{{$user->gender}}</td>
+                                        </tr>
+
+                                          <tr>
+                                            <th>profile_pic:</th>
+                                            <td><img src="{{url($user->profile_pic)}}" height="200" width="200" alt="null"></td>
+                                        </tr>
+
+                                          <tr>
+                                            <th>created_at:</th>
+                                            <td>{{$user->created_at}}</td>
                                         </tr>
 
 
@@ -47,9 +72,9 @@
                            </div>
                     </div>
 
-                    <div id="skill" class="tab-pane fade">
+                    <div id="updateprofile" class="tab-pane fade">
                         <div class="col-lg-6 mx-auto">
-                          <form class="form-group" action="" method="POST">
+                          <form class="form-group" action="{{route('customerRegisterUpdate')}}" method="POST" enctype="multipart/form-data" >
                                 @csrf
                                 <div>
                                     <h1 class="text-center">Edit Here</h1>
@@ -83,6 +108,14 @@
                                     </div>
                                 </div>
 
+                                 <div class="form-group">
+
+                                    <label>Date of Birth</label>
+                                    <div>
+                                       <input type="date" class="form-control" id="dob" name="dob"  value="{{$user->dob}}" required>
+                                    </div>
+                               </div>
+
                                 <div class="form-group">
                                     <label>Division</label>
                                     <select class="form-control" name="division" required>
@@ -97,14 +130,47 @@
                                     </select>
                                 </div>
 
-                                <div class="control-group">
 
-                                    <label>Zip code</label>
-                                    <div>
-                                        <input type="number" id="zip" name="zip_code" placeholder="xxxx" class="form-control" value="{{$user->zip_code}}" required>
-                                        <span class="text-danger">{{$errors->has('zip_code') ? $errors->first('zip_code'): ' '}}</span>
-                                    </div>
-                                </div>
+                        <div class="form-group">
+                        <!-- address-->
+                            <label>Address</label>
+                            <div>
+                               <input type="text" class="form-control" id="address" name="address" value="{{$user->address}}" required>
+                            </div>
+                       </div>
+
+                          <div class="form-group ">
+                         <!-- Zip code-->
+                            <label>Zip code</label>
+                            <div>
+                                <input type="number" class="form-control" id="zip_code" name="zip_code" value="{{$user->zip_code}}"  required>
+                                <span class="text-danger">{{$errors->has('zip_code') ? $errors->first('zip_code'): ' '}}</span>
+                            </div>
+                        </div>
+
+
+                        <div class=" form-group">
+                         <!-- Gender-->
+                          <label>Gender</label>
+                          
+                          <div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="gender" id="gender1" value="male" checked>Male
+                            </div>
+
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="gender" id="gender2" value="female">Female
+                            </div>
+                          </div>
+
+                        </div>
+
+                       <div class="form-group">
+                            <label class="font-weight-bolder">Profile image-</label><br>
+                            <input type="file" name="profile_image" accept="image/*">
+                            <span>{{$errors->has('profile_image') ? $errors->first('profile_image'): ' '}}</span>
+                       </div>
+
           
                                 <div class="control-group mt-2">
                                     <!-- Button -->
@@ -117,7 +183,7 @@
                     </div>
 
 
-                <div id="hobby" class="tab-pane fade">
+                <div id="verification" class="tab-pane fade">
                 
                         
                       <div class="col-lg-6 mx-auto">

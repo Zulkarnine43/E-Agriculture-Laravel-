@@ -6,12 +6,12 @@
             <!-- toggleable dynamic tab starts here -->
             <div class="other-section">
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a data-toggle="pill" class="nav-link active" href="#edu">Profile Details</a></li>
-                    <li class="nav-item"><a data-toggle="pill" class="nav-link" href="#skill">Edit Details</a></li>
+                    <li class="nav-item"><a data-toggle="pill" class="p-3 nav-link active" href="#profile">Profile Details</a></li>
+                    <li class="nav-item"><a data-toggle="pill" class="p-3 nav-link" href="#updateprofile">Update Profile</a></li>
                 </ul>
 
                 <div class="tab-content">
-                    <div id="edu" class="tab-pane active">
+                    <div id="profile" class="tab-pane active">
                          <div class="col-md-12 col-sm-12 ">
                                     <h3 class="text-center ">Profile Details Info</h3>
                                     <h5 class="text-center text-success">{{Session::get('msg')}}</h5>
@@ -24,7 +24,7 @@
                                           <tr>
                                             <th>Email:</th>
                                             <td>{{$user->email}}</td>
-                                        </tr>
+                                         </tr>
 
                                           <tr>
                                             <th>Mobile:</th>
@@ -32,17 +32,43 @@
                                         </tr>
 
                                           <tr>
-                                            <th>division:</th>
+                                            <th>Date of Birth:</th>
+                                            <td>{{$user->dob}}</td>
+                                        </tr>
+
+                                         <tr>
+                                            <th>Division:</th>
                                             <td>{{$user->division}}</td>
                                         </tr>
+
+                                          <tr>
+                                            <th>Address:</th>
+                                            <td>{{$user->address}}</td>
+                                         </tr>
+
+                                          <tr>
+                                            <th>Gender:</th>
+                                            <td>{{$user->gender}}</td>
+                                        </tr>
+
+                                          <tr>
+                                            <th>profile_pic:</th>
+                                            <td><img src="{{url($user->profile_pic)}}" height="200" width="200"></td>
+                                        </tr>
+
+                                          <tr>
+                                            <th>created_at:</th>
+                                            <td>{{$user->created_at}}</td>
+                                        </tr>
+
 
                                     </table>
                            </div>
                     </div>
 
-                    <div id="skill" class="tab-pane fade">
-                        <div class="col-lg-6 mx-auto">
-                          <form class="form-group" action="{{route('registerUpdate')}}" method="POST">
+                    <div id="updateprofile" class="tab-pane fade">
+                        <div class="col-lg-7 mx-auto">
+                          <form class="form-group" action="{{route('adminregisterUpdate')}}" method="POST" enctype="multipart/form-data" >
                                 @csrf
                                 <div>
                                     <h1 class="text-center">Edit Here</h1>
@@ -76,6 +102,14 @@
                                     </div>
                                 </div>
 
+                                 <div class="form-group">
+
+                                    <label>Date of Birth</label>
+                                    <div>
+                                       <input type="date" class="form-control" id="dob" name="dob"  value="{{$user->dob}}" required>
+                                    </div>
+                               </div>
+
                                 <div class="form-group">
                                     <label>Division</label>
                                     <select class="form-control" name="division" required>
@@ -89,6 +123,38 @@
                                         <option value="Rangpur">Rangpur</option>
                                     </select>
                                 </div>
+
+
+                        <div class="form-group">
+                        <!-- address-->
+                            <label>Address</label>
+                            <div>
+                               <input type="text" class="form-control" id="address" name="address" value="{{$user->address}}" required>
+                            </div>
+                       </div>
+
+
+                        <div class=" form-group">
+                         <!-- Gender-->
+                          <label>Gender</label>
+                          
+                          <div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="gender" id="gender1" value="male" checked>Male
+                            </div>
+
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="gender" id="gender2" value="female">Female
+                            </div>
+                          </div>
+
+                        </div>
+
+                       <div class="form-group">
+                            <label class="font-weight-bolder">Profile image-</label><br>
+                            <input type="file" name="profile_image" accept="image/*">
+                            <span>{{$errors->has('profile_image') ? $errors->first('profile_image'): ' '}}</span>
+                       </div>
 
           
                                 <div class="control-group mt-2">

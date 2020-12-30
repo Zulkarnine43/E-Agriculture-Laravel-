@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,6 +56,12 @@ Route::post('/admin_pass_change_save/{email}',[
     'uses' =>'adminLoginController@admin_pass_change_save',
     'as' =>'admin_pass_change_save'
 ]);
+
+
+Route::post('/admin/registerUpdate',[
+    'uses' =>'adminLoginController@adminregisterUpdate',
+    'as' =>'adminregisterUpdate'
+]);
 // End Admin RegisterLoginCheckController Routing
 
 // Start Admin home Routing
@@ -74,25 +79,25 @@ Route::get('/customers',[
     'as' =>'all_customer'
 ]);
 
-Route::get('/Active/crop',[
-    'uses' =>'adminController@verified_crops',
-    'as' =>'verified_crops'
+Route::get('/published/crop',[
+    'uses' =>'adminController@published_crops',
+    'as' =>'published_crops'
 ]);
 
 Route::get('/crop/approved/{id}',[
-    'uses' =>'adminController@crop_approved',
-    'as' =>'crop_approved'
+    'uses' =>'adminController@crop_published_save',
+    'as' =>'crop_published_save'
 ]);
 
 
-Route::get('/Deactive/crop',[
-    'uses' =>'adminController@Unverified_crops',
-    'as' =>'Unverified_crops'
+Route::get('/unpublished/crop',[
+    'uses' =>'adminController@unpublished_crops',
+    'as' =>'unpublished_crops'
 ]);
 
 Route::get('/crop/Unapproved/{id}',[
-    'uses' =>'adminController@crop_Unapproved',
-    'as' =>'crop_Unapproved'
+    'uses' =>'adminController@crop_unpublished_save',
+    'as' =>'crop_unpublished_save'
 ]);
 
 Route::get('/deleted/crop',[
@@ -163,14 +168,19 @@ Route::get('/customer/{id}',[
 ]);
 
 
-Route::get('farmer/details/{id}',[
+Route::get('farmer/profile/{id}',[
 'uses'=>'adminController@farmer_profile',
 'as'=>'farmer_profile'
 ]);
 
-Route::get('user/details/{id}',[
+Route::get('user/profile/{id}',[
 'uses'=>'adminController@user_profile',
 'as'=>'user_profile'
+]);
+
+Route::get('user/details/{id}',[
+'uses'=>'adminController@user_details',
+'as'=>'user_details'
 ]);
 // End Admin home Routing
 // End Admin page routing
@@ -255,6 +265,11 @@ Route::get('/about',[
     'as' =>'about'
 ]);
 
+Route::get('/gallery',[
+    'uses' =>'homeController@gallery',
+    'as' =>'gallery'
+]);
+
 Route::get('/cust/message',[
     'uses' =>'homeController@c_message',
     'as' =>'c_message'
@@ -281,6 +296,11 @@ Route::get('/customer',[
     'as' =>'c_settings'
 ]);
 
+Route::post('/customer/registerUpdate',[
+    'uses' =>'homeController@customerRegisterUpdate',
+    'as' =>'customerRegisterUpdate'
+]);
+
 // End home page routing
 
 
@@ -304,6 +324,11 @@ Route::post('/crop/add/save',[
 Route::post('/crop/update/save',[
     'uses'=>'farm_CropController@update_product_db',
     'as'=>'update_product_db'
+]);
+
+Route::get('/crop/condition/{id}',[
+    'uses' =>'farm_CropController@condition_crop',
+    'as' =>'condition_crop'
 ]);
 
 // End Farmer Crop add update routing
@@ -337,8 +362,8 @@ Route::get('/farmer/bid/messages',[
 ]);
 
 Route::get('/farmer/profile/{f_username}',[
-    'uses' =>'farmerController@profile',
-    'as' =>'f_profile'
+    'uses' =>'farmerController@fa_profile',
+    'as' =>'fa_profile'
 ]);
 
 Route::get('/logout/{name}',[
@@ -352,8 +377,8 @@ Route::get('/farmer/',[
 ]);
 
 Route::post('/farmer/registerUpdate',[
-    'uses' =>'farmerController@registerUpdate',
-    'as' =>'registerUpdate'
+    'uses' =>'farmerController@farmerRegisterUpdate',
+    'as' =>'farmerRegisterUpdate'
 ]);
 
 // End farmer page routing
@@ -385,6 +410,11 @@ Route::get('/bid/model/{id}',[
 Route::post('/Bid/message',[
     'uses' =>'BidController@bid_msg_save',
     'as' =>'bid_msg_save'
+]);
+
+Route::post('/Bid/message/save',[
+    'uses' =>'BidController@bid_msg_saved',
+    'as' =>'bid_msg_saved'
 ]);
 
 Route::get('/bid/delete/{id}/{crop_id}',[

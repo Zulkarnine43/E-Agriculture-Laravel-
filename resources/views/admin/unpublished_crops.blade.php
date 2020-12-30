@@ -1,3 +1,7 @@
+
+
+
+
 @extends('admin.headerFooter')
 
 @section('body')
@@ -18,9 +22,10 @@
                         <p class="card-text lead">{{$crop->crop_description}}</p>
                     </div>
                     <div class="card-footer">
-                        <div class="">
-                            <a class="btn btn-success" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}">Details</a>
-                            <a class="btn btn-success" href="{{route('crop_approved',['id'=>$crop->id])}}">Approved</a>
+                        <div class="text-center">
+                            <a class="btn btn-success" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}"><i class="fas fa-info-circle"></i></a>
+
+                            <a class="btn btn-danger" href="{{route('crop_published_save',['id'=>$crop->id])}}"><i class="fas fa-arrow-circle-up"></i></a>
                         </div>
                     </div>
                 </div>

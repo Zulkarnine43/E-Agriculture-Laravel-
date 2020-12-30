@@ -11,16 +11,15 @@
     <title>@yield('title')</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{url('public/final_eagri/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{url('public/final_eagri/vendor/bootstrap/css/font-awesome.css')}}" rel="stylesheet">
+      <link type="text/css" href="{{url('public/final_eagri/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+       <link type="text/css" href="{{url('public/final_eagri/vendor/font-awesome/css/all.min.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{{url('public/final_eagri/css/home-style.css')}}" rel="stylesheet">
      <link href="{{url('public/final_eagri/css/card.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body style="font-size: 18px; font-family: 'Fredericka the Great', cursive;">
 
 
 <div class="fixed-top">
@@ -41,7 +40,7 @@
                     @csrf
                     <input  class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search" style="width: 500px">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                        <i class="fa fa-search" style="font-size:28px;color:green"></i>
+                        <i class="fas fa-search" style="font-size:28px;color:green"></i>
                     </button>
                 </form>
             </div>
@@ -101,6 +100,10 @@
                         <a class="nav-link" href="{{route('contact')}}">Contact</a>
                     </li>
 
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{route('gallery')}}">Photo Gallery</a>
+                    </li>
+
                     
                          @if (session()->has('c_username'))
 
@@ -140,18 +143,23 @@
 
             <h1 class="my-sm-5">Categories</h1>
             <div class="list-group text-lg-center">
-                <a href="{{route('Categories',['crop_type'=>"Fruits"])}}" class="list-group-item btn btn-outline-primary">Fruits</a>
-                <a href="{{route('Categories',['crop_type'=>"vegetables"])}}" class="list-group-item btn btn-outline-primary">Vagetables</a>
-                <a href="{{route('Categories',['crop_type'=>"food"])}}" class="list-group-item btn btn-outline-primary">Food Crops</a>
-                <a href="{{route('Categories',['crop_type'=>"cash"])}}" class="list-group-item btn btn-outline-primary">Cash Crops</a>
-                <a href="{{route('Categories',['crop_type'=>"plantation"])}}" class="list-group-item btn btn-outline-primary">Plantation Crops</a>
-             <!--    <a href="{{route('Categories',['crop_type'=>"food"])}}" class="list-group-item btn btn-outline-primary">Horticulture crops</a>
-                 <a href="{{route('Categories',['crop_type'=>"food"])}}" class="list-group-item btn btn-outline-primary">Horticulture crops</a>
-                  <a href="{{route('Categories',['crop_type'=>"food"])}}" class="list-group-item btn btn-outline-primary">Horticulture crops</a>-->
-                   <a href="{{route('Categories',['crop_type'=>"rabi"])}}" class="list-group-item btn btn-outline-primary">Rabi crops</a> 
-                <a href="{{route('Categories',['crop_type'=>"kharif"])}}" class="list-group-item btn btn-outline-primary">Kharif Crops</a>
-                <a href="{{route('Categories',['crop_type'=>"zaid"])}}" class="list-group-item btn btn-outline-primary">Zaid Crops</a>
-                <a href="{{route('Categories',['crop_type'=>"others"])}}" class="list-group-item btn btn-outline-primary">Others Crops</a>
+            <a href="{{route('Categories',['crop_type'=>"Fruits"])}}" class="list-group-item btn btn-outline-primary">Fruits</a>
+
+            <a href="{{route('Categories',['crop_type'=>"vegetables"])}}" class="list-group-item btn btn-outline-primary">Vagetables</a>
+
+            <a href="{{route('Categories',['crop_type'=>"food"])}}" class="list-group-item btn btn-outline-primary">Food Crops</a>
+
+            <a href="{{route('Categories',['crop_type'=>"cash"])}}" class="list-group-item btn btn-outline-primary">Cash Crops</a>
+
+            <a href="{{route('Categories',['crop_type'=>"plantation"])}}" class="list-group-item btn btn-outline-primary">Plantation Crops</a>
+
+            <a href="{{route('Categories',['crop_type'=>"rabi"])}}" class="list-group-item btn btn-outline-primary">Rabi crops</a> 
+
+            <a href="{{route('Categories',['crop_type'=>"kharif"])}}" class="list-group-item btn btn-outline-primary">Kharif Crops</a>
+
+            <a href="{{route('Categories',['crop_type'=>"zaid"])}}" class="list-group-item btn btn-outline-primary">Zaid Crops</a>
+            
+            <a href="{{route('Categories',['crop_type'=>"others"])}}" class="list-group-item btn btn-outline-primary">Others Crops</a>
             </div>
             <!-- Google trnaslate-->
              <!-- <div id="google_translate_element"></div> -->
@@ -163,9 +171,9 @@
             <h3 class="text-success">{{Session::get('bid_success')}}</h3>
 
 
-        @yield('body')
 
-        </div>
+        @yield('body')
+ </div>
     </div>
     <!-- /.row -->
 
@@ -174,10 +182,10 @@
         <div class="row nav text-light mx-auto">
             <div class="col-lg-3">
                 <h2 class="text-center">Our website</h2>
-                <h5 class=" text-left text-justify" style="font-size: 20px" >At e_agriculture,
-                    Innovation and simplicity makes us happy: our goal is to remove any technical or financial
-                    barriers that can prevent crops sell and buy. We're excited to
-                    help you on your journey!?</h5>
+              <p class=" text-justify" style="font-size: 18px; font-family: 'Fredericka the Great', cursive;" >At e_agriculture,
+                Innovation and simplicity makes us happy: our goal is to remove any technical or financial
+                barriers that can prevent crops sell and buy. We're excited to
+                help you on your journey!?</p>
             </div>
 
             <div class="col-lg-3">
@@ -204,11 +212,12 @@
 
             <div class="col-lg-3 text-center">
                 <h2 class="">Social Links</h2>
-                <li class="nav-item" style="font-size: 22px">
-                    <a class="fa fa-facebook" href=""></a>
-                    <a class="fa fa-instagram ml-2" href=""></a>
-                    <a class="fa fa-youtube ml-2" href=""></a>
-                    <a class="fa fa-github ml-2" href=""></a>
+                    <li class="nav-item" >
+                    <a href=""><i class="fab fa-2x fa-facebook" style="color: blue;"></i></a>
+                    <a href=""><i class="fab fa-2x fa-instagram ml-2" style="color:#E38EC4
+                        ;"></i></a>
+                    <a href=""><i class="fab fa-2x fa-youtube ml-2" style="color: #ff6b6b;"></i></a>
+                    <a href=""><i class="fab fa-2x fa-github ml-2" style="color: white;"></i></a>
                 </li>
 
             </div>
@@ -262,7 +271,7 @@
 <script src="{{url('public/final_eagri/vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{url('public/final_eagri/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- product zoom view -->
-<script src="{{url('public/final_eagri/vendor/bootstrap/js/jquery.elevatezoom.js')}}"></script>
+<!-- <script src="{{url('public/final_eagri/vendor/elevateZoom/jquery.elevatezoom.js')}}"></script> -->
 
 </body>
 </html>

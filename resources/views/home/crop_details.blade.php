@@ -8,8 +8,8 @@ Crop details
 
 
 
-    <script src="{{url('public/final_eagri/vendor/bootstrap/js/jquery-1.8.3.min.js')}}"></script>
-    <script src="{{url('public/final_eagri/vendor/bootstrap/js/jquery.elevatezoom.js')}}"></script>
+  <script src="{{url('public/final_eagri/vendor/bootstrap/js/jquery-1.8.3.min.js')}}"></script>
+  <script src="{{url('public/final_eagri/vendor/elevateZoom/jquery.elevatezoom.js')}}"></script>
 
 
 
@@ -17,7 +17,7 @@ Crop details
     <div class="row mt-5">                                                
         <!----Image Slider start----------->
         <div class="col-lg-6">
-     <!--        <div>
+             <div>
                 <div id="carouselExampleIndicators" class="carousel slide my-2" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -27,9 +27,9 @@ Crop details
                         <div class="carousel-item active">
                             <img id="zoom_01" height="150" width="300" src='{{url($crop->crop_image)}}' data-zoom-image="{{url($crop->crop_image)}}" alt="First slide"/>
                         </div> 
-                        <div class="carousel-item">-->
+                        <div class="carousel-item">
                             <img id="zoom_02"  height="300" width="600"  src="{{url($crop->crop_image2)}}" data-zoom-image="{{url($crop->crop_image2)}}" alt="Second slide"/>
-    <!--                     </div>
+                        </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -40,14 +40,14 @@ Crop details
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-            </div> -->
+            </div>
         </div>
 
         <!----Image Details start----------->
         <div class="col-lg-6">
             <div>
-                <div class=" font-weight-bold float-center">
-                           <h3>Crop-Name:-- {{$crop->crop_name}}</h3>
+                <div class=" font-weight-bold float-center display-5">
+                           <h3>Crop-Name:-- <span class="text-primary">{{$crop->crop_name}}</span></h3>
                             <p>Crop-type:--{{$crop->crop_type}}</p>
                             <p>Quantity:--{{$crop->crop_quantity}}</p>
                             <p>Location:--{{$crop->crop_location}}</p>
@@ -56,11 +56,11 @@ Crop details
                             <p>Views:--{{$crop->views}}</p>
                             <p>Condition:--{{$crop->condition}}</p>
                             <p>Description:--{{$crop->crop_description}}</p>
-                            <span>Farmer:---{{$crop->username}}</span>
+                            <span>Farmer:---<a href="">{{$crop->username}}</a></span>
                 </div>
                 <div class="card-footer">
                     @if(Session::get('c_username'))
-                     <!--    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#BidModal">Bid here</button> -->
+                     <button class="btn btn-success btn-block" data-toggle="modal" data-target="#BidModal">Bid here</button>
 
                      <a class="btn btn-success btn-block" href="{{route('Bid_model',['id'=>$crop->id])}}">Bid here</a>
                     @else
@@ -80,11 +80,11 @@ Crop details
         <div class="modal-dialog">
             <div class="modal-content bg-light">
                 <div class="modal-header">
-                    <h3>Bid</h3>
+                    <h3 class="text-center">Bid Here</h3>
                     <button class="close text-dark" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{route('bid_msg_save')}}" method="post">
+                    <form action="{{route('bid_msg_saved')}}" method="post">
                         @csrf
                         <input type="hidden" name="crop_id" value="{{$crop->id}}" class="form-control">
                         <input type="hidden" name="crop_name" value="{{$crop->crop_name}}" class="form-control">
@@ -92,11 +92,19 @@ Crop details
                         <input type="hidden" name="cust_username" value="{{Session::get('c_username')}}" class="form-control">
 
                         <div class="font-weight-bolder text-center display-5">
-                            Bid Rate::---<span class="ml-4">{{$crop->bid_rate}}</span>
+                            Bid Rate::---<span class="ml-4">{{$crop->bid_rate}}TK</span>
                         </div>
 
+                    @php( $price =App\Bid_message::where('crop_id', $crop->id)->max('bid_price'))
+                          
+                        
                         <div class="font-weight-bolder text-center display-5">
-                            Best Bidder::---<span class="ml-4">Tk-4500</span>
+                            Best Bidder::---
+                               @if($price==null)
+                               <span>Not any bid</span>
+                               @endif  
+
+                            <span class="ml-4">{{$price}}TK</span>
                         </div>
 
                         <div class="form-group">
@@ -107,7 +115,7 @@ Crop details
 
                         <div class="form-group">
                             <label>Bid price</label>
-                            <input type="number" name="bid_price" value="" class="form-control" placeholder="Enter Bid price" min="1" required>
+                            <input type="number" name="bid_price" value="" class="form-control" placeholder="Enter Bid price" min="{{$crop->bid_rate}}" required>
                         </div>
 
                         <div class="form-group">
@@ -115,12 +123,13 @@ Crop details
                             <input type="text" name="message" value="" class="form-control" placeholder="Enter message">
                         </div>
 
-                        <input  type="submit"  value="Bid" class="btn btn-success ml-auto">
+                        <input  type="submit"  value="Bid" class="btn btn-success btn-block">
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
 
 
 
@@ -144,11 +153,12 @@ Crop details
                   <h1><small class="pull-right"></small> Bids </h1>
               </div>
 
-              <h1 class="text-success">{{Session::get('msg')}}</h1>
+              <!-- <h1 class="text-success">{{Session::get('msg')}}</h1> -->
               @foreach($bids_msg as $bid)
               <div class="comments-list">
 
-                  <p><small class="pull-right">{{$bid->created_at}}</small> </p>
+                  <p><small class="float-right">{{$bid->created_at}}</small> </p>
+                  <span class="clearfix"></span>
                   <div class="media">
                       <div class="media-body">
                           <h4 class="media-heading user_name">USER:---{{$bid->cust_username}}</h4>
@@ -221,29 +231,9 @@ Crop details
     <script>
       
          // $("#zoom_02").elevateZoom();
-        // $("#zoom_01").elevateZoom({scrollZoom : true});
-        // $("#zoom_02").elevateZoom({scrollZoom : true});
+        $("#zoom_01").elevateZoom({scrollZoom : true});
         $("#zoom_02").elevateZoom({scrollZoom : true});
+        // $("#zoom_02").elevateZoom({scrollZoom : true});
 
     </script>
 @endsection
-
-        {{--<!DOCTYPE html>--}}
-{{--<html>--}}
-{{--<head>--}}
-    {{--<meta charset='utf-8'/>--}}
-    {{--<title>jQuery elevateZoom Demo</title>--}}
-    {{--<script src="{{asset('final_eagri/vendor/bootstrap/js/jquery-1.8.3.min.js')}}"></script>--}}
-    {{--<script src="{{asset('final_eagri/vendor/bootstrap/js/jquery.elevatezoom.js')}}"></script>--}}
-{{--</head>--}}
-{{--<body>--}}
-{{--<h1>Basic Zoom Example</h1>--}}
-{{--<img id="zoom_01" class="img-fluid" src='{{ asset('final_eagri/img/a.jpg')}}' data-zoom-image="{{ asset('final_eagri/img/a.jpg')}}"/>--}}
-
-{{--<br />--}}
-{{--see more examples online <a href="http://www.elevateweb.co.uk/image-zoom/examples">http://www.elevateweb.co.uk/image-zoom/examples</a>--}}
-{{--<script>--}}
-    {{--$("#zoom_01").elevateZoom();--}}
-{{--</script>--}}
-{{--</body>--}}
-{{--</html>--}}

@@ -12,8 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{url('public/final_eagri/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{url('public/final_eagri/vendor/bootstrap/css/font-awesome.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" href="{{url('public/final_eagri/vendor/font-awesome/css/all.min.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="" rel="stylesheet">
@@ -21,12 +20,12 @@
 
 </head>
 
-<body>
+<body style="font-size: 18px; font-family: 'Fredericka the Great', cursive;">
 
 <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="bg-light border-right text-center mt-5" id="sidebar-wrapper">
+ <!--    <div class="bg-light border-right text-center mt-5" id="sidebar-wrapper">
         <h3 class="sidebar-heading">E-Agriculture</h3>
         <div class="list-group list-group-flush">
             <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
@@ -34,7 +33,7 @@
             <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-            <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Status</a> -->
 
            <!--  <div class="dropdown">
                 <a class=" dropdown-toggle list-group-item list-group-item-action bg-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -54,9 +53,9 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="">Manage Comments</a>
                 </div>
-            </div> -->
+            </div> 
         </div>
-    </div>
+    </div>-->
     <!-- /#sidebar-wrapper -->
     <!-- Page Content -->
     <div id="page-content-wrapper">
@@ -90,9 +89,9 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
                            <a class="dropdown-item text-light" target="_blank" href="{{route('home')}}">Collection_crops</a>
-                            <a class="dropdown-item text-light" href="{{route('verified_crops')}}">Approved crops</a>
+                            <a class="dropdown-item text-light" href="{{route('published_crops')}}">Published crops</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-light" href="{{route('Unverified_crops')}}">UnApproved crops</a>
+                            <a class="dropdown-item text-light" href="{{route('unpublished_crops')}}">Unpublished crops</a>
                              <a class="dropdown-item text-light" href="{{route('deleted_crops')}}">Deleted crops</a>
                         </div>
                     </li>
@@ -153,7 +152,7 @@
 <div class="clearfix"></div>
 
 <!-- Footer -->
-<footer class="py-5 bg-dark">
+<!-- <footer class="py-5 bg-dark">
 
     <div class="row nav text-light mx-auto">
         <div class="col-lg-3">
@@ -201,7 +200,16 @@
     <p class="m-0 text-center text-white">Copyright &copy; E_agriculture 2020</p>
 
 </footer>
+ -->
 
+ <footer class="bg-dark text-center text-light fixed-bottom">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="" href="">E-agriculture.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 
 <!-- Bootstrap core JavaScript -->
 <script src="{{url('public/final_eagri/vendor/jquery/jquery.min.js')}}"></script>

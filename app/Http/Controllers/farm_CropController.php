@@ -9,7 +9,7 @@ class farm_CropController extends Controller
 {
     //
 
-    public function add_product_db(Request $request){
+      public function add_product_db(Request $request){
 
         $this->validate($request,[
             'crop_name'=>'string'
@@ -20,12 +20,20 @@ class farm_CropController extends Controller
         $addProducts = new crop_import();
         $productImage = $request->file('crop_image');
         if ($productImage) {
-            $imageName = $productImage->getClientOriginalName();
+
+            $currentTimeinSeconds = time();  
+  
+            // converts the time in seconds to current date  
+            $currentDate = date('Y-m-d', $currentTimeinSeconds); 
+
+            $imageName =  $currentDate.'.'.$productImage->getClientOriginalName();
             $directory = 'public/crop_images/';
             $imageUrl = $directory.$imageName;
+            
             $productImage->move($directory, $imageName);
 
         }
+        
         $productImage2 = $request->file('crop_image2');
         if ($productImage2) {
             $imageName = $productImage2->getClientOriginalName();
@@ -46,6 +54,7 @@ class farm_CropController extends Controller
         $addProducts->crop_image = $imageUrl;
         $addProducts->crop_image2 = $imageUrl2;
         $addProducts->views =0;
+        $addProducts->status =1;
         $addProducts->condition ="New";
         $addProducts->Action ="Deactive";
         $addProducts->save();
@@ -109,5 +118,26 @@ class farm_CropController extends Controller
 
         return redirect('/crop/manage')->with('msg', 'update Products Info Successfully');
 
+    }
+
+
+
+        public function condition_crop($id){
+
+            $crop=crop_import::find($id);
+
+            if( $crop->status=="1"){
+            $crop->status="0";
+            $crop->save();
+            return redirect('/crop/manage')->with('msg','Crop Deactive successfully');
+            }
+
+
+            else{
+            $crop->status="1";
+            $crop->save();
+            return redirect('/crop/manage')->with('msg','Crop active successfully');
+            }
+           
     }
 }

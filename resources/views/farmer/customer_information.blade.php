@@ -26,7 +26,7 @@
                     <td>{{$user->division}}</td>
                     <td>{{$user->zip_code}}</td>
                     <td>
-                        <a href="" class="btn-success">profile</a>
+                        <a href="" class="btn btn-success"><i class="fas fa-user-alt"></a>
                     </td>
                 </tr>
                     @endforeach

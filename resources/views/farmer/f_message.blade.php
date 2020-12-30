@@ -25,9 +25,9 @@
                     <td>{{$message->bid_price}}</td>
                     <td>{{$message->message}}</td>
                     <td>{{$message->created_at}}</td>
-                    <td>
-                        <a target="_blank" href="{{route('crop_details',['id'=>$message->crop_id])}}" class="btn-success">details</a>
-                        <a target="_blank" href="{{route('farm_download_invoice',['id'=>$message->id])}}" class="btn-success">download_invoice</a>
+                        <td>
+                        <a target="_blank" href="{{route('crop_details',['id'=>$message->crop_id])}}" class="btn btn-success"><i class="fas fa-info-circle"></i></a>
+                        <a target="_blank" href="{{route('farm_download_invoice',['id'=>$message->id])}}" class="btn btn-success"><i class="fas fa-cloud-download-alt"></i></a>
                     </td>
                 </tr>
                     @endforeach

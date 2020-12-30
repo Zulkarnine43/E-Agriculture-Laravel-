@@ -36,7 +36,7 @@
                 </div>
             </form>
            <button class="btn btn-outline-success" data-toggle="modal" data-target="#ForgotPasswordModal">Forgot Password</button>
-            <a href="{{route('admin_signup')}}" class="btn btn-outline-success">signup</a>
+          <!--   <a href="{{route('admin_signup')}}" class="btn btn-outline-success">signup</a> -->
         </div>
     </section>
 

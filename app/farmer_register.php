@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class farmer_register extends Model
 {
     //
-    protected $fillable=['register_as','username','email','mobile','division','zip_code','password','password_confirm','profile_pic','action','condition'];
+      protected $fillable=['register_as','username','email','mobile','dob','division','address','zip_code','gender','password','profile_pic','action','condition'];
 }

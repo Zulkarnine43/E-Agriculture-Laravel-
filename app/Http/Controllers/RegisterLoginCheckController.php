@@ -14,17 +14,14 @@ class RegisterLoginCheckController extends Controller
 {
     //
 
-    public function registerSave(Request $request){
+  public function registerSave(Request $request){
 
         if($request->register_as=="farmer") {
 
             $this->validate($request,[
-                'register_as'=>'not_in:0',
                 'username'=>'alpha_num|min:3|unique:farmer_registers,username',
                 'email'=>'email|unique:farmer_registers,email',
-                // 'mobile'=>['regex: /(^(\+8801|8801|01|008801))[1|3-9]{1}(\d){8}$/'],
                 'mobile'=>['regex: /^((01|8801)[3456789])(\d{8})$/'],
-                'division'=>'not_in:0',
                 'zip_code'=>'max:5|string',
                 'password'=>[
                     'string',
@@ -41,10 +38,13 @@ class RegisterLoginCheckController extends Controller
             $regis->username = $request->username;
             $regis->email = $request->email;
             $regis->mobile = $request->mobile;
+            $regis->dob = $request->dob;
             $regis->division = $request->division;
+            $regis->address = $request->address;
             $regis->zip_code = $request->zip_code;
+            $regis->gender = $request->gender;
             $regis->password = Hash::make( $request->password);
-            $regis->password_confirm = Hash::make($request->password_confirm);
+            // $regis->password_confirm = Hash::make($request->password_confirm);
             $regis->profile_pic ="null";
             $regis->action ="active";
             $regis->condition ="unverified";
@@ -59,12 +59,10 @@ class RegisterLoginCheckController extends Controller
             return redirect('/signup')->with('reg_success','Registration successfully,we send mail please verify');
         }else{
 
-            $this->validate($request,[
-                'register_as'=>'not_in:0',
+             $this->validate($request,[
                 'username'=>'alpha_num|min:3|unique:user_registers,username',
                 'email'=>'email|unique:user_registers,email',
-                'mobile'=>'numeric|digits:11',
-                'division'=>'not_in:0',
+                'mobile'=>['regex: /^((01|8801)[3456789])(\d{8})$/'],
                 'zip_code'=>'max:5|string',
                 'password'=>[
                     'string',
@@ -81,16 +79,19 @@ class RegisterLoginCheckController extends Controller
             $regis->username = $request->username;
             $regis->email = $request->email;
             $regis->mobile = $request->mobile;
+            $regis->dob = $request->dob;
             $regis->division = $request->division;
+            $regis->address = $request->address;
             $regis->zip_code = $request->zip_code;
+            $regis->gender = $request->gender;
             $regis->password = Hash::make( $request->password);
-            $regis->password_confirm = Hash::make($request->password_confirm);
+            // $regis->password_confirm = Hash::make($request->password_confirm);
             $regis->profile_pic ="null";
             $regis->action ="active";
             $regis->condition ="unverified";
             $regis->save();
 
-      $data=$regis->toArray();
+        $data=$regis->toArray();
         Mail::send('verification_mail',['val'=>$data],function($message) use ($data){
             $message->to($data['email']);
             $message->subject('verification_mail');
@@ -205,13 +206,11 @@ class RegisterLoginCheckController extends Controller
         if($uses_as=="farmer") {
             $farm=farmer_register::where('email',$email)->first();
             $farm->password = Hash::make( $request->password);
-            $farm->password_confirm = Hash::make($request->password_confirm);
             $farm->save();
             return redirect('/login')->with('reg_success','password change successfully ,Now Login');
         }else{
             $user=user_register::where('email',$email)->first();
             $user->password = Hash::make( $request->password);
-            $user->password_confirm = Hash::make($request->password_confirm);
             $user->save();
             return redirect('/login')->with('reg_success','password change successfully ,Now Login');
         }

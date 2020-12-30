@@ -16,25 +16,26 @@ class adminLoginController extends Controller
         $this->validate($request, [
             'username' => 'alpha_num|min:3|unique:admin_registers,username',
             'email' => 'email|unique:admin_registers,email',
-            'mobile' => 'numeric|digits:11',
-            'division' => 'not_in:0',
-            'password' => [
-                'string',
-                'min:5',             // must be at least 5 characters in length
-                'regex:/[a-z]/',      // must contain at least one lowercase letter
-                'regex:/[A-Z]/',      // must contain at least one uppercase letter
-                'regex:/[0-9]/',      // must contain at least one digit
-            ],
-            'password_confirm' => 'same:password'
-        ]);
+                'mobile'=>['regex: /^((01|8801)[3456789])(\d{8})$/'],
+                'password'=>[
+                    'string',
+                    'min:5',             // must be at least 5 characters in length
+                    'regex:/[a-z]/',      // must contain at least one lowercase letter
+                    'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                    'regex:/[0-9]/',      // must contain at least one digit
+                ],
+                'password_confirm'=>'same:password'
+            ]);
 
         $regis = new admin_register();
         $regis->username = $request->username;
         $regis->email = $request->email;
         $regis->mobile = $request->mobile;
+        $regis->dob = $request->dob;
         $regis->division = $request->division;
+        $regis->address = $request->address;
+        $regis->gender = $request->gender;
         $regis->password = Hash::make( $request->password);
-        $regis->password_confirm = Hash::make($request->password_confirm);
         $regis->profile_pic = "null";
         $regis->condition = "unverified";
         $regis->save();
@@ -118,9 +119,42 @@ class adminLoginController extends Controller
         ]);
             $pw_change = admin_register::where('email', $email)->first();
             $pw_change->password = Hash::make( $request->password);
-            $pw_change->password_confirm = Hash::make($request->password_confirm);
             $pw_change->save();
             return redirect('/admin/login')->with('msg', 'password change successfully ,Now Login');
     }
+
+           public function adminregisterUpdate(Request $request){
+             $this->validate($request,[
+         
+                'mobile'=>['regex: /^((01|8801)[3456789])(\d{8})$/'],
+            ]);
+
+
+                if ($request->profile_image!=null) {
+                $profileImage = $request->file('profile_image');
+                if ($profileImage) {
+                    $imageName = time().'.'.$profileImage->getClientOriginalName();
+                    $directory = 'public/profile_images/';
+                    $imageUrl = $directory . $imageName;
+                    $profileImage->move($directory, $imageName);
+
+                }
+            }
+            
+
+
+            $regis=admin_register::where('id',$request->id)->first();
+            $regis->mobile = $request->mobile;
+            $regis->dob = $request->dob;
+            $regis->division = $request->division;
+            $regis->address = $request->address;
+            $regis->gender = $request->gender;
+            if ($request->profile_image!=null) {
+                $regis->profile_pic = $imageUrl;
+            }
+            
+            $regis->save();
+            return redirect('/admin/settings')->with('msg','update Successfully');
+        }
 }
 

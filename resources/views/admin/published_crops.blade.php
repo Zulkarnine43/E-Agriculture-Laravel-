@@ -18,9 +18,10 @@
                 <p class="card-text lead">{{$crop->crop_description}}</p>
             </div>
             <div class="card-footer">
-                <div class="">
-                    <a class="btn btn-success" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}">Details</a>
-                    <a class="btn btn-success" href="{{route('crop_Unapproved',['id'=>$crop->id])}}">UnApproved</a>
+                <div class="text-center">
+                    <a class="btn btn-success" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}"><i class="fas fa-info-circle"></i></a>
+
+                    <a class="btn btn-success" href="{{route('crop_unpublished_save',['id'=>$crop->id])}}"><i class="fas fa-arrow-circle-down"></i></a>
                 </div>
             </div>
         </div>

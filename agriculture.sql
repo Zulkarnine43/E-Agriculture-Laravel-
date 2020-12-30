@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2020 at 06:22 PM
+-- Generation Time: Dec 30, 2020 at 06:59 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -29,14 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin_registers` (
   `id` int(10) UNSIGNED NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `division` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dob` date NOT NULL,
+  `division` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password_confirm` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `profile_pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `condition` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `profile_pic` varchar(70) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `condition` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -45,8 +47,8 @@ CREATE TABLE `admin_registers` (
 -- Dumping data for table `admin_registers`
 --
 
-INSERT INTO `admin_registers` (`id`, `username`, `email`, `mobile`, `division`, `password`, `password_confirm`, `profile_pic`, `condition`, `created_at`, `updated_at`) VALUES
-(2, 'zulkarnine', 'zns601@gmail.com', '01660144436', 'Dhaka', '$2y$10$tQATpk.XaTvWvbj/eQP0F.ge4Fh9keEwg2FnLXJ3QZ9gS438Bfd2e', '$2y$10$S45Ukzs18hnxaoqrG/A7w.rGtyXM1f8rcC1zgf8Nljik06M/Pj35q', 'null', 'verified', '2020-11-26 09:24:20', '2020-11-26 09:24:39');
+INSERT INTO `admin_registers` (`id`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `gender`, `password`, `profile_pic`, `condition`, `created_at`, `updated_at`) VALUES
+(1, 'zulkarnine', 'zns601@gmail.com', '01660144436', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', 'male', '$2y$10$yQcf6ngoEj0ZcLV7H0iaqeooqYjTJR0ofJ.K6S93R47iQV6LlC1s6', 'null', 'verified', '2020-12-29 10:38:02', '2020-12-29 10:38:02');
 
 -- --------------------------------------------------------
 
@@ -73,7 +75,8 @@ CREATE TABLE `bid_messages` (
 
 INSERT INTO `bid_messages` (`id`, `crop_id`, `crop_name`, `f_username`, `cust_username`, `name`, `bid_price`, `message`, `created_at`, `updated_at`) VALUES
 (4, '1', 'rice', 'zulkarnine', 'zulkarnine', 'Zulkar Nine', '5800', 'null', '2020-11-24 00:29:36', '2020-11-24 00:29:36'),
-(7, '1', 'rice', 'zulkarnine', 'zulkarnine', 'tarikul islam', '5200', 'null', '2020-12-03 00:20:04', '2020-12-03 00:20:04');
+(7, '1', 'rice', 'zulkarnine', 'zulkarnine', 'tarikul islam', '5200', 'null', '2020-12-03 00:20:04', '2020-12-03 00:20:04'),
+(8, '5', 'sorisa', 'zulkarnine', 'zulkarnine', 'Zulkar Nine', '5000', 'null', '2020-12-29 12:03:03', '2020-12-29 12:03:03');
 
 -- --------------------------------------------------------
 
@@ -96,7 +99,8 @@ CREATE TABLE `contact_messages` (
 --
 
 INSERT INTO `contact_messages` (`id`, `name`, `email`, `phone`, `message`, `created_at`, `updated_at`) VALUES
-(1, 'Zulkar Nine', 'zns601@gmail.com', '01989419776', 'hello i,m facing a problem', '2020-11-26 12:20:38', '2020-11-26 12:20:38');
+(1, 'Zulkar Nine', 'zns601@gmail.com', '01989419776', 'hello i,m facing a problem', '2020-11-26 12:20:38', '2020-11-26 12:20:38'),
+(2, 'Faruqe', 'faruqe@gmail.com', '01869084620', 'Hello, how are you all ?', '2020-12-29 09:42:42', '2020-12-29 09:42:42');
 
 -- --------------------------------------------------------
 
@@ -106,20 +110,20 @@ INSERT INTO `contact_messages` (`id`, `name`, `email`, `phone`, `message`, `crea
 
 CREATE TABLE `crop_imports` (
   `id` int(10) UNSIGNED NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `crop_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `crop_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `crop_quantity` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `crop_location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `bid_rate` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crop_name` varchar(35) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crop_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crop_quantity` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crop_location` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bid_rate` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `crop_description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `long_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_date_bidding` date NOT NULL,
-  `crop_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `crop_image2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `views` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `condition` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Action` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crop_image` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crop_image2` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `views` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `condition` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Action` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -128,12 +132,15 @@ CREATE TABLE `crop_imports` (
 -- Dumping data for table `crop_imports`
 --
 
-INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_type`, `crop_quantity`, `crop_location`, `bid_rate`, `crop_description`, `long_description`, `last_date_bidding`, `crop_image`, `crop_image2`, `views`, `condition`, `Action`, `created_at`, `updated_at`) VALUES
-(1, 'zulkarnine', 'rice', 'Food', '10 tress', 'araihazar,dhaka,bangladesh', '5000', 'made by bangladesh', 'for consumers', '2020-11-30', 'public/crop_images/vagitables.jpg', 'public/crop_images/vagitables.jpg', '73', 'old', 'Active', '2020-11-23 22:46:14', '2020-12-03 00:33:03'),
-(2, 'zulkarnine', 'Lichu', 'Fruits', '23', 'araihazar,dhaka,bangladesh', '2345', 'made by bangladesh', 'For consumer', '2020-12-10', 'public/crop_images/1copy.PNG', 'public/crop_images/1copy.PNG', '8', 'New', 'Active', '2020-11-26 04:15:21', '2020-12-03 00:18:08'),
-(3, 'zulkarnine', 'abc', 'vegetables', '10 bighas', 'khulna', '2442', 'made by bangladesh', 'for consumers', '2020-12-09', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '0', 'New', 'deleted', '2020-11-26 22:31:13', '2020-11-26 23:01:09'),
-(4, 'zulkarnine', 'Lichu', 'vegetables', '10 tress', 'araihazar,dhaka,bangladesh', '3450', 'made by bangladesh', 'for consumers', '2020-11-30', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', 'old', 'Deactive', '2020-11-26 22:33:32', '2020-12-02 06:52:16'),
-(5, 'zulkarnine', 'sorisa', 'plantation', '1 bighas', 'rajshahi', '5000', 'made by bangladesh', 'for consumers', '2020-12-10', 'public/crop_images/images (36).jpg', 'public/crop_images/images (36).jpg', '12', 'New', 'Active', '2020-12-01 01:02:55', '2020-12-02 06:51:06');
+INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_type`, `crop_quantity`, `crop_location`, `bid_rate`, `crop_description`, `last_date_bidding`, `crop_image`, `crop_image2`, `views`, `status`, `condition`, `Action`, `created_at`, `updated_at`) VALUES
+(1, 'zulkarnine', 'rice', 'Food', '10 tress', 'araihazar,dhaka,bangladesh', '5000', 'made by bangladesh', '2020-11-30', 'public/crop_images/vagitables.jpg', 'public/crop_images/vagitables.jpg', '76', '1', 'old', 'Published', '2020-11-23 22:46:14', '2020-12-29 11:05:44'),
+(2, 'zulkarnine', 'Lichu', 'Fruits', '23', 'araihazar,dhaka,bangladesh', '2345', 'hello', '2020-12-10', 'public/crop_images/1copy.PNG', 'public/crop_images/1copy.PNG', '0', '0', 'old', 'Published', '2020-11-26 04:15:21', '2020-12-29 11:37:14'),
+(3, 'zulkarnine', 'abc', 'vegetables', '10 bighas', 'khulna', '2442', 'made by bangladesh', '2020-12-09', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', '1', 'old', 'Unpublished', '2020-11-26 22:31:13', '2020-12-10 23:51:41'),
+(4, 'zulkarnine', 'Lichu', 'vegetables', '10 tress', 'araihazar,dhaka,bangladesh', '3450', 'made by bangladesh', '2020-11-30', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '2', '1', 'old', 'Published', '2020-11-26 22:33:32', '2020-12-29 11:37:17'),
+(5, 'zulkarnine', 'sorisa', 'plantation', '1 bighas', 'rajshahi', '5000', 'made by bangladesh', '2020-12-10', 'public/crop_images/images (36).jpg', 'public/crop_images/images (36).jpg', '44', '1', 'old', 'Published', '2020-12-01 01:02:55', '2020-12-29 12:22:41'),
+(6, 'zulkarnine', 'komola', 'Fruits', '10 tress', 'rajshahi', '40000', 'hello', '2020-12-15', 'public/crop_images/komola.jpg', 'public/crop_images/komola.jpg', '3', '0', 'old', 'Unpublished', '2020-12-10 23:35:51', '2020-12-29 09:15:09'),
+(7, 'zulkarnine', 'Lichu', 'Fruits', '10 tress', 'araihazar1450,dhaka,bangladesh', '4000', 'from bangladesh', '2020-12-30', 'public/crop_images/1608534024.download.jpg', 'public/crop_images/download.jpg', '2', '1', 'old', 'Unpublished', '2020-12-21 01:00:24', '2020-12-29 22:30:14'),
+(8, 'zulkarnine', 'komola', 'food', '10 tress', 'rajshahi', '5000', 'this from rajshahi', '2020-12-30', 'public/crop_images/2020-12-21.komola.jpg', 'public/crop_images/komola.jpg', '0', '0', 'old', 'Unpublished', '2020-12-21 01:09:25', '2020-12-29 22:30:14');
 
 -- --------------------------------------------------------
 
@@ -143,17 +150,19 @@ INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_type`, `crop_qu
 
 CREATE TABLE `farmer_registers` (
   `id` int(10) UNSIGNED NOT NULL,
-  `register_as` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `division` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `zip_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `register_as` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dob` date NOT NULL,
+  `division` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zip_code` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password_confirm` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `profile_pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `action` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `condition` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `profile_pic` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `action` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `condition` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -162,8 +171,8 @@ CREATE TABLE `farmer_registers` (
 -- Dumping data for table `farmer_registers`
 --
 
-INSERT INTO `farmer_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `division`, `zip_code`, `password`, `password_confirm`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
-(14, 'farmer', 'zulkarnine', 'zns601@gmail.com', '01989419776', 'Dhaka', '1210', '$2y$10$7blyY3.gGn9oU2ItS1jEq.e2SL9DvySpfS33Zz4emmN9cnHAJD1.O', '$2y$10$/LlZ28IprJlieC9IrLbEV.87wfYlm1YYagA3.Y9PtdheEwBPWrc7u', 'null', 'active', 'verified', '2020-11-26 09:01:10', '2020-12-03 11:19:46');
+INSERT INTO `farmer_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `zip_code`, `gender`, `password`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
+(1, 'farmer', 'zulkarnine', 'zns601@gmail.com', '01989419776', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$vOsk1uL0pfgmX6jJQOvKm.1Og85NpzCUhsTDULPej7CYmpULZAtPK', 'null', 'active', 'verified', '2020-12-29 08:33:12', '2020-12-29 08:33:12');
 
 -- --------------------------------------------------------
 
@@ -182,17 +191,14 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2020_10_26_124324_create_farmer_registers_table', 1),
-(5, '2020_10_26_125741_create_user_registers_table', 1),
-(6, '2020_10_28_140943_create_admin_registers_table', 2),
 (7, '2020_10_28_052526_create_crop_imports_table', 3),
 (8, '2020_10_28_093532_create_bid_messages_table', 4),
 (9, '2020_10_29_091039_create_pay_confirm_messages_table', 5),
 (10, '2020_10_28_125609_create_contact_messages_table', 6),
-(11, '2020_10_28_160503_create_news_infos_table', 7);
+(11, '2020_10_28_160503_create_news_infos_table', 7),
+(15, '2020_10_26_124324_create_farmer_registers_table', 8),
+(16, '2020_10_26_125741_create_user_registers_table', 8),
+(18, '2020_10_28_140943_create_admin_registers_table', 9);
 
 -- --------------------------------------------------------
 
@@ -253,17 +259,19 @@ INSERT INTO `pay_confirm_messages` (`id`, `crop_id`, `f_username`, `crop_name`, 
 
 CREATE TABLE `user_registers` (
   `id` int(10) UNSIGNED NOT NULL,
-  `register_as` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `division` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `zip_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `register_as` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dob` date NOT NULL,
+  `division` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zip_code` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password_confirm` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `profile_pic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `action` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `condition` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `profile_pic` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `action` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `condition` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -272,9 +280,8 @@ CREATE TABLE `user_registers` (
 -- Dumping data for table `user_registers`
 --
 
-INSERT INTO `user_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `division`, `zip_code`, `password`, `password_confirm`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
-(4, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', 'Dhaka', '1205', '$2y$10$CpXkbFkXLuX4ZHwiNe/PXO5FJ9svBYn/XfDSIhgdUZthbN6y1ATQ2', '$2y$10$Qb26dtwph0Q0J8LxzSLk/OJYJ5K5xKmrwqvNyLhagMgNExwdrqrDm', 'null', 'active', 'verified', '2020-11-26 09:16:41', '2020-11-26 09:16:59'),
-(5, 'customer', 'zulkarnine32', 'zulkarnine43@gmail.com', '01869084620', 'Dhaka', '1205', '$2y$10$7jw7CfhO7Z47tctMovh.W.EWRdtsV5LtA9ocl0wckdi9qpR3fraC6', '$2y$10$FNX6QrqJth5RmEFPoaRLdOIIBVwic7XA7Lpu4w9YjZezN93zP9Xui', 'null', 'active', 'verified', '2020-12-03 00:22:39', '2020-12-03 00:25:44');
+INSERT INTO `user_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `zip_code`, `gender`, `password`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
+(1, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$szL3ySjeYWF3Sb.Yg6x9W.zoSY5fvmnPuOZ7qG1e8pwXaoJ2PbfZO', 'null', 'active', 'verified', '2020-12-29 08:35:19', '2020-12-29 11:08:39');
 
 --
 -- Indexes for dumped tables
@@ -342,37 +349,37 @@ ALTER TABLE `user_registers`
 -- AUTO_INCREMENT for table `admin_registers`
 --
 ALTER TABLE `admin_registers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `bid_messages`
 --
 ALTER TABLE `bid_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `contact_messages`
 --
 ALTER TABLE `contact_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `crop_imports`
 --
 ALTER TABLE `crop_imports`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `farmer_registers`
 --
 ALTER TABLE `farmer_registers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `news_infos`
@@ -390,7 +397,7 @@ ALTER TABLE `pay_confirm_messages`
 -- AUTO_INCREMENT for table `user_registers`
 --
 ALTER TABLE `user_registers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

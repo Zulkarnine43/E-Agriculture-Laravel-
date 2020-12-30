@@ -18,7 +18,7 @@ services
         </div>
     </section>
     <!-- About Section -->
-    <section id="services" class="py-3">
+<!--     <section id="services" class="py-3">
 
         <div class="row text-center my-4">
   
@@ -33,7 +33,60 @@ services
                 </div>
             </div>        
         </div>
-    </section>
+    </section> -->
+
+      <!-- Blog Section -->
+  <section id="blog" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card-columns">
+
+            <div class="card">
+              <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="card-img-top img-fluid" alt="">
+              <div class="card-body">
+                <h4 class="card-title">Blog Post One</h4>
+                <small class="text-muted">Zulkar Nine</small>
+                <hr>
+                <p class="card-text lead">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non eveniet recusandae minus nesciunt commodi hic consequatur quo officiis quos.
+                </p>
+                <a href="#" class="btn btn-dark btn-block">Read More</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="card-img-top img-fluid" alt="">
+              <div class="card-body">
+                <h4 class="card-title">Blog Post Two</h4>
+                <small class="text-muted">Zulkar Nine</small>
+                <hr>
+                <p class="card-text lead">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non eveniet recusandae minus nesciunt commodi hic consequatur quo officiis quos.
+                </p>
+                <a href="#" class="btn btn-dark btn-block">Read More</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="card-img-top img-fluid" alt="">
+              <div class="card-body">
+                <h4 class="card-title">Blog Post Three
+                </h4>
+                <small class="text-muted">Written By Zulkar Nine</small>
+                <hr>
+                <p class="card-text lead">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non eveniet recusandae minus nesciunt commodi hic consequatur quo officiis quos.
+                </p>
+                <a href="#" class="btn btn-dark btn-block">Read More</a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
     <section id="faq" class="bg-light py-5 text-black">
         <div class="container">

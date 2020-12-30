@@ -15,20 +15,20 @@ class CreateCropImportsTable extends Migration
     {
         Schema::create('crop_imports', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username');
-            $table->string('crop_name');
-            $table->string('crop_type');
-            $table->string('crop_quantity');
-            $table->string('crop_location');
-            $table->string('bid_rate');
-            $table->string('crop_description');
-           // $table->string('long_description')->nullable();
+            $table->string('username',20);
+            $table->string('crop_name',35);
+            $table->string('crop_type',20);
+            $table->string('crop_quantity',25);
+            $table->string('crop_location',50);
+            $table->string('bid_rate',10);
+            $table->string('crop_description',255);
             $table->date('last_date_bidding');
-            $table->string('crop_image');
-            $table->string('crop_image2');
-            $table->string('views');
-            $table->string('condition');
-            $table->string('Action');
+            $table->string('crop_image',150);
+            $table->string('crop_image2',150);
+            $table->string('views',10);
+            $table->string('status',15);
+            $table->string('condition',15);
+            $table->string('Action',15);
             $table->timestamps();
         });
     }

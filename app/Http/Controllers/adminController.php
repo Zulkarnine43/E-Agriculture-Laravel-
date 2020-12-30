@@ -40,28 +40,28 @@ class adminController extends Controller
         return view('admin.all_customer',compact('users'));
     }
 
-    public function verified_crops(){
-        $crops=crop_import::where('Action',"Active")->get();
-        return view('admin.verified_crops',compact('crops'));
+    public function published_crops(){
+        $crops=crop_import::where('Action',"Published")->get();
+        return view('admin.published_crops',compact('crops'));
     }
-    public function Unverified_crops(){
-    $crops=crop_import::where('Action',"Deactive")->get();
-    return view('admin.Unverified_crops',compact('crops'));
+    public function unpublished_crops(){
+    $crops=crop_import::where('Action',"Unpublished")->get();
+    return view('admin.unpublished_crops',compact('crops'));
 }
 
  
-     public function crop_approved($id){
+     public function crop_published_save($id){
         $crop=crop_import::find($id);
-        $crop->Action="Active";
+        $crop->Action="Published";
         $crop->save();
-       return redirect('/Deactive/crop')->with('msg','crop Active successfully');
+       return redirect('/unpublished/crop')->with('msg','Crop Published Successfully');
     }
 
-       public function crop_Unapproved($id){
+       public function crop_unpublished_save($id){
         $crop=crop_import::find($id);
-        $crop->Action="Deactive";
+        $crop->Action="Unpublished";
         $crop->save();
-       return redirect('/Active/crop')->with('msg','crop Deactive successfully');
+       return redirect('/published/crop')->with('msg','Crop Unpublished Successfully');
     }
 
         public function deleted_crops(){
@@ -207,5 +207,10 @@ class adminController extends Controller
         $user=admin_register::where('username',Session::get('a_username'))->first();
         return view('admin.a_settings',compact('user'));
          }
+
+     public function user_details($id){
+     $user=farmer_register::find($id);
+     return view ('admin.user_details',compact('user'));
+    }
 
 }

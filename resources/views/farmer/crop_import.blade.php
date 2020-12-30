@@ -87,7 +87,7 @@
 
             <div class="form-group">
                 <div class="">
-                    <input class="btn-success" type="submit" name="btn" value="Save product Info">
+                    <input class="btn btn-success btn-block" type="submit" name="btn" value="Save product Info">
                 </div>
             </div>
         </form>

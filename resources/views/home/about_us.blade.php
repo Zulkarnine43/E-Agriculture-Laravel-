@@ -26,7 +26,7 @@ about us
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, veniam. Ipsum ipsam facilis earum, corporis dicta cum, rerum non suscipit.</p>
             </div>
             <div class="col-md-6 text-center">
-                <img src="{{ asset('final_eagri/img/a.jpg')}}" class="img-fluid rounded-circle" alt="">
+                <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="img-fluid rounded-circle" alt="">
             </div>
         </div>
     </div>
@@ -129,7 +129,7 @@ about us
 </section>
 
 <!-- feedback starts  -->
-<section id="feedback">
+<section id="feedback" class="py-5 bg-light">
     <div class="row">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -140,7 +140,19 @@ about us
             <div class="carousel-inner">
                 <div class="carousel-item">
                     <p>2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi assumenda odit error. Sint, id harum sequi voluptate officia eligendi ea?</p>
-                    <img src="{{ asset('final_eagri/img/a.jpg')}}" class="img-fluid rounded-circle" alt="">
+                    <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="img-fluid rounded-circle" alt="">
+                    <h6>Zulkar Nine</h6>
+                </div>
+
+                   <div class="carousel-item">
+                    <p>2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi assumenda odit error. Sint, id harum sequi voluptate officia eligendi ea?</p>
+                    <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="img-fluid rounded-circle" alt="">
+                    <h6>Zulkar Nine</h6>
+                </div>
+
+                   <div class="carousel-item">
+                    <p>2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi assumenda odit error. Sint, id harum sequi voluptate officia eligendi ea?</p>
+                    <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="img-fluid rounded-circle" alt="">
                     <h6>Zulkar Nine</h6>
                 </div>
             </div>

@@ -15,14 +15,16 @@ class CreateAdminRegistersTable extends Migration
     {
         Schema::create('admin_registers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username');
-            $table->string('email');
-            $table->string('mobile');
-            $table->string('division');
-            $table->string('password');
-            $table->string('password_confirm');
-            $table->string('profile_pic');
-            $table->string('condition');
+            $table->string('username',20);
+            $table->string('email',40);
+            $table->string('mobile',12);
+            $table->date('dob',30);
+            $table->string('division',25);
+            $table->string('address',50);
+            $table->string('gender',10);
+            $table->string('password',255);
+            $table->string('profile_pic',70);
+            $table->string('condition',15);
             $table->timestamps();
         });
     }

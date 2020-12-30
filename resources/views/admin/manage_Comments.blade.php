@@ -27,9 +27,6 @@
                        
                        <td>
                         <div class="action">
-                            <button type="button" class="btn btn-success btn-xs" title="Approved">
-                                <span class="glyphicon glyphicon-ok">EDIT</span>
-                            </button>
                             <a type="" class="btn btn-danger btn-xs" href="{{route('comment_delete',['id'=>$news->id])}}">
                                 <span class="glyphicon glyphicon-trash">DELETE</span>
                             </a>

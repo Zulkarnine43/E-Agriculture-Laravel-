@@ -7,13 +7,13 @@ Search details
 
 @section('body')
     @if($s->isEmpty())
-        Not Found
+       <h4> There was no search results</h4>
     @endif
 
         <section id="menu-section" class="my-5">
         <div class="row">
             @foreach($s as $crop)
-            <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
                     <div class="card-body">
                         <img class="card-img-top" src="{{url($crop->crop_image)}}" alt="food1" height="200" width="400">

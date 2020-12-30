@@ -27,8 +27,8 @@
                     <td class="text-justify">{{$news->long_description}}</td>
                     <td><img height="150" width="150" src="{{url($news->news_image)}}"></td>
                     <td>
-                        <a href="{{route('edit_news',['id'=>$news->id])}}" class="btn-outline-success">Edit</a>
-                        <a href="{{route('delete_news',['id'=>$news->id])}}" class="btn-outline-success ">Delete</a>
+                    <a href="{{route('edit_news',['id'=>$news->id])}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                    <a href="{{route('delete_news',['id'=>$news->id])}}" class=" btn btn-success "><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
                     @endforeach
