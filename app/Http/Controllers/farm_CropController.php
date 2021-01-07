@@ -56,7 +56,7 @@ class farm_CropController extends Controller
         $addProducts->views =0;
         $addProducts->status =1;
         $addProducts->condition ="New";
-        $addProducts->Action ="Deactive";
+        $addProducts->Action ="Unpublished";
         $addProducts->save();
 
         return redirect('/crop/import')->with('msg', 'Save Products Info Successfully');
@@ -113,7 +113,7 @@ class farm_CropController extends Controller
         }
         $addProducts->views =0;
         $addProducts->condition ="New";
-        $addProducts->Action ="Deactive";
+        $addProducts->Action ="Unpublished";
         $addProducts->save();
 
         return redirect('/crop/manage')->with('msg', 'update Products Info Successfully');

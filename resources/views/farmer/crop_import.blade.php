@@ -29,15 +29,10 @@
                 <label class="font-weight-bolder">Crop Type</label>
                 <select class="form-control" name="crop_type" required>
                     <option>---Select a Name</option>
-                    <option value="Fruits">Fruits</option>
-                    <option value="vegetables">vegetables</option>
-                    <option value="food">Food Crops</option>
-                     <option value="cash">cash Crops</option>
-                      <option value="plantation">plantation Crops</option>
-                       <option value="rabi">Rabi Crops</option>
-                        <option value="kharif">kharif Crops</option>
-                         <option value="zaid">Zaid Crops</option>
-                    <option value="others">Others crops</option>
+                       @php($categories=App\categories_info::all()->where('categories_status',1))
+                                @foreach($categories as $categorie)
+                    <option value="{{$categorie->id}}">{{$categorie->categories_name}}</option>
+                          @endforeach
                 </select>
                 <span>{{$errors->has('crop_type') ? $errors->first('crop_type'): ' '}}</span>
             </div>

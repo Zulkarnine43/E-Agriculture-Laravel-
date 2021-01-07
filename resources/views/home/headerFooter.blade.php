@@ -66,27 +66,27 @@
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ravi Crops</a>
                         <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
-                            <a class="nav-link" href="">about us</a>
-                            <a class="nav-link" href="#">Another action</a>
-                            <a class="nav-link" href="#">Something else</a>
+                            <a class="nav-link" href="">Fruits</a>
+                            <a class="nav-link" href="#">Vegetables</a>
+                            <a class="nav-link" href="#">Food</a>
                         </div>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Kharif Crops</a>
                         <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
-                            <a class="nav-link" href="">about us</a>
-                            <a class="nav-link" href="#">Another action</a>
-                            <a class="nav-link" href="#">Something else</a>
-                        </div>
+                             <a class="nav-link" href="">Fruits</a>
+                            <a class="nav-link" href="#">Vegetables</a>
+                            <a class="nav-link" href="#">Food</a>                       
+                             </div>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Zaid Crops</a>
                         <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
-                            <a class="nav-link" href="">about us</a>
-                            <a class="nav-link" href="#">Another action</a>
-                            <a class="nav-link" href="#">Something else</a>
+                              <a class="nav-link" href="">Fruits</a>
+                            <a class="nav-link" href="#">Vegetables</a>
+                            <a class="nav-link" href="#">Food</a>
                         </div>
                     </li>
 
@@ -114,9 +114,7 @@
                         <div class="dropdown-menu bg-dark nav-item" aria-labelledby="dropdownMenuLink">
                              <a class="nav-link" href="{{route('cust_profile',['c_username'=>Session()->get('c_username')])}}">profile</a>
                             <a class="nav-link" href="{{route('c_message')}}">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-right-text-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM3.5 3a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
-                                </svg>message
+                                <i class="fas fa-comment"></i>message
                             </a>
                              <a class="nav-link" href="{{route('c_settings')}}">setting</a>
                             <a class="nav-link" href="{{route('logout',['name'=>'c_username'])}}">logout</a>
@@ -142,24 +140,12 @@
         <div class="bg-light col-lg-2 my-5">
 
             <h1 class="my-sm-5">Categories</h1>
+
             <div class="list-group text-lg-center">
-            <a href="{{route('Categories',['crop_type'=>"Fruits"])}}" class="list-group-item btn btn-outline-primary">Fruits</a>
-
-            <a href="{{route('Categories',['crop_type'=>"vegetables"])}}" class="list-group-item btn btn-outline-primary">Vagetables</a>
-
-            <a href="{{route('Categories',['crop_type'=>"food"])}}" class="list-group-item btn btn-outline-primary">Food Crops</a>
-
-            <a href="{{route('Categories',['crop_type'=>"cash"])}}" class="list-group-item btn btn-outline-primary">Cash Crops</a>
-
-            <a href="{{route('Categories',['crop_type'=>"plantation"])}}" class="list-group-item btn btn-outline-primary">Plantation Crops</a>
-
-            <a href="{{route('Categories',['crop_type'=>"rabi"])}}" class="list-group-item btn btn-outline-primary">Rabi crops</a> 
-
-            <a href="{{route('Categories',['crop_type'=>"kharif"])}}" class="list-group-item btn btn-outline-primary">Kharif Crops</a>
-
-            <a href="{{route('Categories',['crop_type'=>"zaid"])}}" class="list-group-item btn btn-outline-primary">Zaid Crops</a>
-            
-            <a href="{{route('Categories',['crop_type'=>"others"])}}" class="list-group-item btn btn-outline-primary">Others Crops</a>
+                   @php($categories=App\categories_info::all()->where('categories_status',1))
+                                @foreach($categories as $categorie)
+                <a href="{{route('Categories',['crop_type'=>$categorie->id])}}" class="list-group-item btn btn-outline-primary">{{$categorie->categories_name}}</a>
+                  @endforeach
             </div>
             <!-- Google trnaslate-->
              <!-- <div id="google_translate_element"></div> -->

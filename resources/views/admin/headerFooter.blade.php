@@ -98,6 +98,16 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Categories
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
+                           <a class="dropdown-item text-light" href="{{route('add_categories')}}">Add Categories</a>
+                            <a class="dropdown-item text-light" href="{{route('manage_categories')}}">Manage Categories</a>
+                        </div>
+                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             News
                         </a>
                         <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
@@ -107,7 +117,7 @@
                     </li>
 
                      <li class="nav-item active">
-                        <a class="nav-link" href="{{route('manage_Comments')}}">User Comments<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('manage_Comments')}}">User Queries<span class="sr-only">(current)</span></a>
                        </li>
 
                     <li class="nav-item dropdown">

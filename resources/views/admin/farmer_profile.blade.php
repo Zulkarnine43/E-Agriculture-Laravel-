@@ -32,7 +32,7 @@
             transform: scale(1.1);
         }
     </style>
-    <h1 class="text-success">{{Session::get('f_login')}}</h1>
+    <h1 class="text-success">{{Session::get('fa_login')}}</h1>
 
     <section id="menu-section" class="my-5">
        <div class="row">         

@@ -6,12 +6,12 @@ about us
 @endsection
 
 @section('body')
-<section id="page-header"class="mt-1" style="background-image: url('{{ url('public/final_eagri/img/a.jpg')}}');">
+<section id="page-header"class="mt-2" style="background-image: url('{{ url('public/final_eagri/img/a.jpg')}}'); height:200px;">
     <div class="container">
         <div class="row">
             <div class="col-md-6 m-auto text-center text-light">
                 <h1>About Us</h1>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, saepe.</p>
+                <p class="lead">Who We Are And What We Do</p>
             </div>
         </div>
     </div>
@@ -21,12 +21,12 @@ about us
     <div class="container">
         <div class="row">
             <div class="col-md-6 align-self-center text-justify">
-                <h2>What We Do</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ex quaerat magnam obcaecati repellendus voluptatum quisquam architecto iure, aliquam labore.</p>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, veniam. Ipsum ipsam facilis earum, corporis dicta cum, rerum non suscipit.</p>
+                <h2>Mission</h2><p class="lead">To provide technology and services to farmers, customer help them expand their business and provide them with a wider market, And to improve the present farming processes and to provide knowledge about recent agriculture issues.</p>
+                <h2>Vision</h2><p class="lead">To provide a helping hand to the farmers and customer improving their lives through the medium
+                of technology, thereby improving the agriculture sector in the Bangladesh Economy .</p>
             </div>
             <div class="col-md-6 text-center">
-                <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="img-fluid rounded-circle" alt="">
+                <img src="{{ url('public/final_eagri/img/crop.jpg')}}" class="img-fluid " alt="">
             </div>
         </div>
     </div>
@@ -41,7 +41,7 @@ about us
                     <div class="card-body">
                         <i class="fa fa-envelope mb-3"></i>
                         <h3>Lorem Ipsum</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quasi magni placeat.</p>
+                        <p class="lead">E-Agriculture is a model farmer management website appllication.</p>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@ about us
                     <div class="card-body">
                         <i class="fa fa-car mb-3"></i>
                         <h3>Lorem Ipsum</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quasi magni placeat.</p>
+                        <p class="lead">E-Agriculture provides a concept of virtual agriculture trade to its users.</p>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@ about us
                     <div class="card-body">
                         <i class="fa fa-play mb-3"></i>
                         <h3>Lorem Ipsum</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quasi magni placeat.</p>
+                        <p class="lead">It helps the wholesalers or customers in buying produce from larger number of farmers.</p>
                     </div>
                 </div>
             </div>
@@ -95,78 +95,7 @@ about us
         </div>
     </div>
 </section>
-<!-- Testimonial -->
-<section id="testimonial" class="py-5 bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2 class="text-center">Testimonial</h2>
-                <div class="row px-5">
-                    <div class="col">
-                        <div class="slider my-3">
-                            <div>
-                                <blockquote class="blockquote">
-                                    <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis maiores, eius amet dolor reprehenderit iste!</p>
-                                    <footer class="blockquote-footer">
-                                         <a href="">Coders Foundation</a>
-                                    </footer>
-                                </blockquote>
-                            </div>
-                            <div>
-                                <blockquote class="blockquote">
-                                    <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis maiores, eius amet dolor reprehenderit iste!</p>
-                                    <footer class="blockquote-footer">
-                                         <a href="">Coders Foundation</a>
-                                    </footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- feedback starts  -->
-<section id="feedback" class="py-5 bg-light">
-    <div class="row">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item">
-                    <p>2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi assumenda odit error. Sint, id harum sequi voluptate officia eligendi ea?</p>
-                    <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="img-fluid rounded-circle" alt="">
-                    <h6>Zulkar Nine</h6>
-                </div>
 
-                   <div class="carousel-item">
-                    <p>2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi assumenda odit error. Sint, id harum sequi voluptate officia eligendi ea?</p>
-                    <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="img-fluid rounded-circle" alt="">
-                    <h6>Zulkar Nine</h6>
-                </div>
-
-                   <div class="carousel-item">
-                    <p>2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi assumenda odit error. Sint, id harum sequi voluptate officia eligendi ea?</p>
-                    <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="img-fluid rounded-circle" alt="">
-                    <h6>Zulkar Nine</h6>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</section>
-<!-- feedback ends -->
 
 @endsection

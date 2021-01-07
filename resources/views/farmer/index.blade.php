@@ -54,7 +54,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <img class="card-img-top" src="{{url('public/final_eagri/img/komola.jpg')}}" alt="food1" height="200" width="450">
+                        <img class="card-img-top" src="{{url('public/final_eagri/img/4.jpg')}}" alt="food1" height="200" width="450">
                         <div class="item-desc">
                             <h3 class="item-name">komola</h3>
                             <p>Araihazar,Narayangonj</p>

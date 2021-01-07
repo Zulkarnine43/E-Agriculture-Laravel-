@@ -31,13 +31,14 @@ class homeController extends Controller
         }
 
 
-        $crops= crop_import::where('Action',"Published")->orderBy('created_at', 'desc')->get();
+        $crops= crop_import::where('Action',"Published")->where('status',1)->orderBy('created_at', 'desc')->get();
         return view('home.index',compact('crops'));
     }
 
        public function Categories($crop_type){
         $crops=crop_import::where('crop_type',$crop_type)
         ->where('Action',"Published")
+        ->where('status',1)
         ->get();
         return view('home.categories',compact('crops'));
     }
@@ -91,7 +92,7 @@ class homeController extends Controller
         return view('home.customer_profile',compact('bids_crop'));
          }
 
-             public function c_message(){
+        public function c_message(){
         $pay_confirms=pay_confirm_message::where('cust_username',Session::get('c_username'))->get();
 //        return $pay_confirms=crop_import::where('id',$pay_confirms->crop_id)->first();
         return view('home.c_message',compact('pay_confirms'));

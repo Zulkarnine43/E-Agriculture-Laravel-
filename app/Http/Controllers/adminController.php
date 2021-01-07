@@ -9,6 +9,7 @@ use App\farmer_register;
 use App\news_info;
 use App\user_register;
 use App\Bid_message;
+use App\categories_info;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -68,6 +69,50 @@ class adminController extends Controller
         $crops=crop_import::where('Action',"deleted")->get();
         return view('admin.deleted_crops',compact('crops'));
     }
+
+
+    public function add_categories(){
+        return view('admin.add_categories');
+    }
+
+
+   public function save_categories_db(Request $request){
+
+        $categories = new categories_info();
+        $categories->a_username = $request->a_username;
+        $categories->categories_name = $request->categories_name;
+        $categories->categories_description = $request->categories_description;
+        $categories->categories_status = 1;
+        $categories->save();
+        return redirect('/admin/home')->with('msg','categories added successfully');
+    }
+
+     public function manage_categories(){
+        $categories=categories_info::all();
+        return view('admin.manage_categories',compact('categories'));
+    }
+
+      public function categories_status($id){
+        $categories=categories_info::find($id);
+
+       if($categories->categories_status==1){
+        $categories->categories_status=0;
+        $categories->save();
+        return redirect('/manage/categories')->with('msg','categorie deactive successfully');
+       }else{
+         $categories->categories_status=1;
+         $categories->save();
+        return redirect('/manage/categories')->with('msg','categorie active successfully');
+       }
+    }
+
+      public function categories_delete($id){
+        $categories=categories_info::find($id);
+        $categories->delete();
+        return redirect('/manage/categories')->with('msg','categorie deleted successfully');
+       }
+
+
 
     public function add_news(){
         return view('admin.add_news');
@@ -189,7 +234,7 @@ class adminController extends Controller
 
    public function farmer_profile($id){
          $user=farmer_register::find($id);
-         Session::put('f_login',$user->username);
+         Session::put('fa_login',$user->username);
          $crops=crop_import::where('username',$user->username)->get();
          return view ('admin.farmer_profile',compact('crops'));
     }

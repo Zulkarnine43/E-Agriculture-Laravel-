@@ -2,16 +2,16 @@
 
 
 @section('title')
-about us
+Photo Gallery
 @endsection
 
 @section('body')
-<section id="page-header"class="mt-1" style="background-image: url('{{ url('public/final_eagri/img/a.jpg')}}');">
+<section id="page-header"class="mt-2" style="background-image: url('{{ url('public/final_eagri/img/a.jpg')}}'); height:200px;">
     <div class="container">
         <div class="row">
             <div class="col-md-6 m-auto text-center text-light">
                 <h1>Photo Gallery</h1>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, saepe.</p>
+                <p class="lead">Some of Agriculture Images</p>
             </div>
         </div>
     </div>

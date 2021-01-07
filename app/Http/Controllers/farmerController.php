@@ -23,7 +23,7 @@ class farmerController extends Controller
 
 
     public function crop_manage(){
-        $crops=crop_import::where('Action',"Active")->orWhere('Action',"Deactive")->get();
+        $crops=crop_import::where('Action',"Published")->orWhere('Action',"Unpublished")->get();
         return view('farmer.manage_crops',compact('crops'));
     }
 

@@ -6,12 +6,12 @@
 
 @section('body')
 
-    <header id="page-header"class="mt-2" style="background-image: url('{{ url('public/final_eagri/img/a.jpg')}}');">
+    <header id="page-header"class="mt-2" style="background-image: url('{{ url('public/final_eagri/img/a.jpg')}}'); height:200px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 m-auto text-center text-light">
                     <h1>Contact Us</h1>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, saepe.</p>
+                    <p class="lead">Our Company Contact Info</p>
                 </div>
             </div>
         </div>
@@ -58,14 +58,14 @@
                     <div class="card">
                         <div class="card-body">
                             <h4>Get In Touch</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, consequuntur.</p>
+                            <p></p>
                             <h4>Address</h4>
                             <p>House #100, Uttara, Dhaka</p>
                             <h4>Email</h4>
-                            <p>test@gmail.com</p>
+                            <p>eagriculture@gmail.com</p>
                             <h4>Phone</h4>
-                            <p class="mb-2">+434 3434 3433</p>
-                            <p>+433 4343 6567</p>
+                            <p class="mb-2">+8801989419776</p>
+                            <p>+8801869084620</p>
                         </div>
                     </div>
                 </div>

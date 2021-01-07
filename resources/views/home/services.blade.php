@@ -7,86 +7,89 @@ services
 @section('body')
 
 
-    <section id="service-header" class="mt-1" style="background-image: url('{{ url('public/final_eagri/img/a.jpg')}}');">
+    <section id="service-header" class="mt-2" style="background-image: url('{{ url('public/final_eagri/img/a.jpg')}}'); height:200px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 m-auto text-center text-light">
                     <h1>Services</h1>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, saepe.</p>
+                    <p class="lead">What this website serve for</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- About Section -->
-<!--     <section id="services" class="py-3">
 
-        <div class="row text-center my-4">
-  
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card mb-5 m-lg-0">
-                    <img class="card-img-top" height="300" width="200" src="{{ url('public/final_eagri/img/a.jpg')}}">
-                    <div class="card-body text-center">
-                        <h3 class="card-title font-weight-bloder"></h3>
-                        <p class="lead"></p>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                </div>
-            </div>        
-        </div>
-    </section> -->
 
       <!-- Blog Section -->
   <section id="blog" class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <div class="card-columns">
 
+        <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card">
-              <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="card-img-top img-fluid" alt="">
+              <img src="{{ url('public/final_eagri/img/home.png')}}" class="card-img-top img-fluid" alt="">
               <div class="card-body">
-                <h4 class="card-title">Blog Post One</h4>
-                <small class="text-muted">Zulkar Nine</small>
-                <hr>
-                <p class="card-text lead">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non eveniet recusandae minus nesciunt commodi hic consequatur quo officiis quos.
-                </p>
-                <a href="#" class="btn btn-dark btn-block">Read More</a>
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="card-img-top img-fluid" alt="">
-              <div class="card-body">
-                <h4 class="card-title">Blog Post Two</h4>
-                <small class="text-muted">Zulkar Nine</small>
-                <hr>
-                <p class="card-text lead">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non eveniet recusandae minus nesciunt commodi hic consequatur quo officiis quos.
-                </p>
-                <a href="#" class="btn btn-dark btn-block">Read More</a>
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="card-img-top img-fluid" alt="">
-              <div class="card-body">
-                <h4 class="card-title">Blog Post Three
+                <h4 class="card-title">Farmer
                 </h4>
-                <small class="text-muted">Written By Zulkar Nine</small>
                 <hr>
                 <p class="card-text lead">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non eveniet recusandae minus nesciunt commodi hic consequatur quo officiis quos.
+                  Farmers are sell Agriculture products by taking picture of the crops and add details.
                 </p>
-                <a href="#" class="btn btn-dark btn-block">Read More</a>
+                <a href="#" class="btn btn-dark btn-block">Login here</a>
               </div>
             </div>
-            
-          </div>
         </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+              <img src="{{ url('public/final_eagri/img/service.jpg')}}" class="card-img-top img-fluid" alt="">
+              <div class="card-body">
+                <h4 class="card-title">Customer
+                </h4>
+                <hr>
+                <p class="card-text lead">
+                  Customers can buy Agriculture products with a bidding system which is to be called e_bidding.  
+                </p>
+                <a href="#" class="btn btn-dark btn-block">Login here</a>
+              </div>
+            </div>
+        </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+              <img src="{{ url('public/final_eagri/img/admin.jpg')}}" class="card-img-top img-fluid" alt="">
+              <div class="card-body">
+                <h4 class="card-title">Administrator
+                </h4>
+                <hr>
+                <p class="card-text lead">
+                   Admin permission to Published crop and check all farmer, buyer information.
+                </p>
+                <a href="#" class="btn btn-dark btn-block">Login here</a>
+              </div>
+            </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 align-self-center text-justify">
+               <p class="lead">➢ Farmers can choose their customers who quote more i.e. they can choose whom to sell their crops on the basis of the price the customers are ready to pay. </p>
+              <p class="lead">  ➢ Buyers purchase crops anytime at home by bid.</p>
+              <p class="lead">  ➢ The Online Bidding Application helps the farmers meet the customers online. </p>
+              <p class="lead">  ➢ The winner of the bid and the seller of that crop get an email as notification about the confirmation of the crop. </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="img-fluid " alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <section id="faq" class="bg-light py-5 text-black">
         <div class="container">
