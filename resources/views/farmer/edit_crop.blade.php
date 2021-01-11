@@ -35,7 +35,7 @@
 
             <div class="form-group">
                 <label class="font-weight-bolder">Crop Quantity</label>
-                <input type="number" name="crop_quantity" class="form-control" min="1" value="{{$crop->crop_quantity}}" required/>
+                <input type="text" name="crop_quantity" class="form-control"  value="{{$crop->crop_quantity}}" required/>
                 <span>{{$errors->has('crop_quantity') ? $errors->first('crop_quantity'): ' '}}</span>
             </div>
 

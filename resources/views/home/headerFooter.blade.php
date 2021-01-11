@@ -211,7 +211,7 @@
 
     <p class="m-0 text-center text-white">Copyright &copy; E-agriculture 2020</p>
     <!-- Message -->
-    <button class="fixed-bottom btn btn-success float-right " data-toggle="modal" data-target="#messageModal">Message us</button>
+    <button class="fixed-bottom btn btn-success float-right " data-toggle="modal" data-target="#messageModal">Feedback here</button>
 
 
     <!-- Message Modal -->
@@ -219,7 +219,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Message us</h5>
+                    <h5 class="modal-title">Feedback us</h5>
                     <button class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <form action="{{route('contact_message')}}" method="post">

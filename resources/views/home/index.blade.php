@@ -73,7 +73,7 @@ Home
                        <a class="btn btn-success" href="{{route('Bid_model',['id'=>$crop->id])}}">Bid here</a>
 
                         @else
-                       <a class="btn btn-success" href="{{route('login')}}">Bid here</a>
+                       <a class="btn btn-success" target="_blank" href="{{route('login')}}">Bid here</a>
 
                          @endif
                     </div>

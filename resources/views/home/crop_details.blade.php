@@ -48,23 +48,23 @@ Crop details
             <div>
                 <div class=" font-weight-bold float-center display-5">
                            <h3>Crop-Name:-- <span class="text-primary">{{$crop->crop_name}}</span></h3>
-                            <p>Crop-type:--{{$crop->crop_type}}</p>
+                            <!-- <p>Crop-type:--{{$crop->crop_type}}</p> -->
                             <p>Quantity:--{{$crop->crop_quantity}}</p>
                             <p>Location:--{{$crop->crop_location}}</p>
                             <p>Bid Rate:--{{$crop->bid_rate}}TK</p>
                             <p>Finished Date:--{{$crop->last_date_bidding}}</p>
-                            <p>Views:--{{$crop->views}}</p>
                             <p>Condition:--{{$crop->condition}}</p>
                             <p>Description:--{{$crop->crop_description}}</p>
+                            <small>created_at:--{{$crop->created_at}}</small><br>
                             <span>Farmer:---<a href="">{{$crop->username}}</a></span>
                 </div>
                 <div class="card-footer">
                     @if(Session::get('c_username'))
                      <button class="btn btn-success btn-block" data-toggle="modal" data-target="#BidModal">Bid here</button>
 
-                     <a class="btn btn-success btn-block" href="{{route('Bid_model',['id'=>$crop->id])}}">Bid here</a>
+                     <!-- <a class="btn btn-success btn-block" href="{{route('Bid_model',['id'=>$crop->id])}}">Bid here</a> -->
                     @else
-                        <a class="btn btn-success btn-block" href="{{route('login')}}">Bid here</a>
+                        <a class="btn btn-success btn-block" target="_blank" href="{{route('login')}}">Bid here</a>
                     @endif
                 </div>
             </div>
@@ -219,7 +219,7 @@ Crop details
                             <input type="text" name="message" value="" class="form-control" placeholder="Enter message">
                         </div>
 
-                        <input  type="submit"  value="Reply Confirm" class="btn btn-success">
+                        <input  type="submit"  value="Reply Confirm" class="btn btn-success btn-block">
                     </form>
                 </div>
             </div>

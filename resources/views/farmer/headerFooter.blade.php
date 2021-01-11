@@ -45,7 +45,7 @@
                     <a class="nav-link" href="{{route('user_manage')}}">Customer_Information</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('farm_bid_messages')}}">Messages</a>
+                    <a class="nav-link" href="{{route('farm_bid_messages')}}">Bid_messages</a>
                 </li>
                
                  @if (session()->has('f_username'))

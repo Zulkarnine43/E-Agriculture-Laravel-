@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2020 at 06:59 PM
+-- Generation Time: Jan 11, 2021 at 06:30 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -76,7 +76,35 @@ CREATE TABLE `bid_messages` (
 INSERT INTO `bid_messages` (`id`, `crop_id`, `crop_name`, `f_username`, `cust_username`, `name`, `bid_price`, `message`, `created_at`, `updated_at`) VALUES
 (4, '1', 'rice', 'zulkarnine', 'zulkarnine', 'Zulkar Nine', '5800', 'null', '2020-11-24 00:29:36', '2020-11-24 00:29:36'),
 (7, '1', 'rice', 'zulkarnine', 'zulkarnine', 'tarikul islam', '5200', 'null', '2020-12-03 00:20:04', '2020-12-03 00:20:04'),
-(8, '5', 'sorisa', 'zulkarnine', 'zulkarnine', 'Zulkar Nine', '5000', 'null', '2020-12-29 12:03:03', '2020-12-29 12:03:03');
+(8, '5', 'sorisa', 'zulkarnine', 'zulkarnine', 'Zulkar Nine', '5000', 'null', '2020-12-29 12:03:03', '2020-12-29 12:03:03'),
+(9, '5', 'sorisa', 'zulkarnine', 'zulkarnine', 'Zulkar Nine', '5100', 'null', '2021-01-10 23:07:44', '2021-01-10 23:07:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories_infos`
+--
+
+CREATE TABLE `categories_infos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `a_username` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `categories_name` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `categories_description` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `categories_status` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories_infos`
+--
+
+INSERT INTO `categories_infos` (`id`, `a_username`, `categories_name`, `categories_description`, `categories_status`, `created_at`, `updated_at`) VALUES
+(1, 'zulkarnine', 'fruits', 'that,s for fruits', '1', '2021-01-04 10:00:49', '2021-01-04 10:21:26'),
+(2, 'zulkarnine', 'vegetables', 'that,s for vegetables', '1', '2021-01-04 10:40:00', '2021-01-04 10:40:00'),
+(3, 'zulkarnine', 'food', 'that,s for food', '1', '2021-01-04 10:40:23', '2021-01-04 10:40:23'),
+(4, 'zulkarnine', 'cash', 'that,s for cash', '1', '2021-01-04 10:40:53', '2021-01-04 10:40:53'),
+(5, 'zulkarnine', 'plantation', 'thats for plantation', '1', '2021-01-04 10:41:11', '2021-01-04 10:41:11');
 
 -- --------------------------------------------------------
 
@@ -99,8 +127,7 @@ CREATE TABLE `contact_messages` (
 --
 
 INSERT INTO `contact_messages` (`id`, `name`, `email`, `phone`, `message`, `created_at`, `updated_at`) VALUES
-(1, 'Zulkar Nine', 'zns601@gmail.com', '01989419776', 'hello i,m facing a problem', '2020-11-26 12:20:38', '2020-11-26 12:20:38'),
-(2, 'Faruqe', 'faruqe@gmail.com', '01869084620', 'Hello, how are you all ?', '2020-12-29 09:42:42', '2020-12-29 09:42:42');
+(1, 'Zulkar Nine', 'zns601@gmail.com', '01989419776', 'hello i,m facing a problem', '2020-11-26 12:20:38', '2020-11-26 12:20:38');
 
 -- --------------------------------------------------------
 
@@ -120,7 +147,6 @@ CREATE TABLE `crop_imports` (
   `last_date_bidding` date NOT NULL,
   `crop_image` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `crop_image2` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `views` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `condition` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Action` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -132,15 +158,15 @@ CREATE TABLE `crop_imports` (
 -- Dumping data for table `crop_imports`
 --
 
-INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_type`, `crop_quantity`, `crop_location`, `bid_rate`, `crop_description`, `last_date_bidding`, `crop_image`, `crop_image2`, `views`, `status`, `condition`, `Action`, `created_at`, `updated_at`) VALUES
-(1, 'zulkarnine', 'rice', 'Food', '10 tress', 'araihazar,dhaka,bangladesh', '5000', 'made by bangladesh', '2020-11-30', 'public/crop_images/vagitables.jpg', 'public/crop_images/vagitables.jpg', '76', '1', 'old', 'Published', '2020-11-23 22:46:14', '2020-12-29 11:05:44'),
-(2, 'zulkarnine', 'Lichu', 'Fruits', '23', 'araihazar,dhaka,bangladesh', '2345', 'hello', '2020-12-10', 'public/crop_images/1copy.PNG', 'public/crop_images/1copy.PNG', '0', '0', 'old', 'Published', '2020-11-26 04:15:21', '2020-12-29 11:37:14'),
-(3, 'zulkarnine', 'abc', 'vegetables', '10 bighas', 'khulna', '2442', 'made by bangladesh', '2020-12-09', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', '1', 'old', 'Unpublished', '2020-11-26 22:31:13', '2020-12-10 23:51:41'),
-(4, 'zulkarnine', 'Lichu', 'vegetables', '10 tress', 'araihazar,dhaka,bangladesh', '3450', 'made by bangladesh', '2020-11-30', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '2', '1', 'old', 'Published', '2020-11-26 22:33:32', '2020-12-29 11:37:17'),
-(5, 'zulkarnine', 'sorisa', 'plantation', '1 bighas', 'rajshahi', '5000', 'made by bangladesh', '2020-12-10', 'public/crop_images/images (36).jpg', 'public/crop_images/images (36).jpg', '44', '1', 'old', 'Published', '2020-12-01 01:02:55', '2020-12-29 12:22:41'),
-(6, 'zulkarnine', 'komola', 'Fruits', '10 tress', 'rajshahi', '40000', 'hello', '2020-12-15', 'public/crop_images/komola.jpg', 'public/crop_images/komola.jpg', '3', '0', 'old', 'Unpublished', '2020-12-10 23:35:51', '2020-12-29 09:15:09'),
-(7, 'zulkarnine', 'Lichu', 'Fruits', '10 tress', 'araihazar1450,dhaka,bangladesh', '4000', 'from bangladesh', '2020-12-30', 'public/crop_images/1608534024.download.jpg', 'public/crop_images/download.jpg', '2', '1', 'old', 'Unpublished', '2020-12-21 01:00:24', '2020-12-29 22:30:14'),
-(8, 'zulkarnine', 'komola', 'food', '10 tress', 'rajshahi', '5000', 'this from rajshahi', '2020-12-30', 'public/crop_images/2020-12-21.komola.jpg', 'public/crop_images/komola.jpg', '0', '0', 'old', 'Unpublished', '2020-12-21 01:09:25', '2020-12-29 22:30:14');
+INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_type`, `crop_quantity`, `crop_location`, `bid_rate`, `crop_description`, `last_date_bidding`, `crop_image`, `crop_image2`, `status`, `condition`, `Action`, `created_at`, `updated_at`) VALUES
+(1, 'zulkarnine', 'rice', '3', '10 tress', 'araihazar,dhaka,bangladesh', '5000', 'made by bangladesh', '2020-11-30', 'public/crop_images/vagitables.jpg', 'public/crop_images/vagitables.jpg', '1', 'old', 'Published', '2020-11-23 22:46:14', '2021-01-09 11:02:54'),
+(2, 'zulkarnine', 'Lichu', '1', '23', 'araihazar,dhaka,bangladesh', '2345', 'hello', '2020-12-10', 'public/crop_images/1copy.PNG', 'public/crop_images/1copy.PNG', '0', 'old', 'Unpublished', '2020-11-26 04:15:21', '2021-01-07 00:26:11'),
+(3, 'zulkarnine', 'abc', '2', '10 bighas', 'khulna', '2442', 'made by bangladesh', '2020-12-09', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', 'old', 'deleted', '2020-11-26 22:31:13', '2021-01-06 09:12:50'),
+(4, 'zulkarnine', 'Lichu', '2', '10 tress', 'araihazar,dhaka,bangladesh', '3450', 'made by bangladesh', '2020-11-30', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', 'old', 'deleted', '2020-11-26 22:33:32', '2021-01-08 00:29:18'),
+(5, 'zulkarnine', 'sorisa', '5', '1 bighas', 'rajshahi', '5000', 'made by bangladesh', '2020-12-10', 'public/crop_images/images (36).jpg', 'public/crop_images/images (36).jpg', '1', 'old', 'Published', '2020-12-01 01:02:55', '2020-12-29 12:22:41'),
+(6, 'zulkarnine', 'komola', '1', '10 tress', 'rajshahi', '40000', 'hello', '2020-12-15', 'public/crop_images/komola.jpg', 'public/crop_images/komola.jpg', '0', 'old', 'Published', '2020-12-10 23:35:51', '2021-01-06 08:30:32'),
+(7, 'zulkarnine', 'Lichu', '1', '10 tress', 'araihazar1450,dhaka,bangladesh', '4000', 'from bangladesh', '2020-12-30', 'public/crop_images/1608534024.download.jpg', 'public/crop_images/download.jpg', '1', 'old', 'Published', '2020-12-21 01:00:24', '2021-01-07 00:26:55'),
+(8, 'zulkarnine', 'komola', '3', '10 tress', 'rajshahi', '5000', 'this from rajshahi', '2020-12-30', 'public/crop_images/2020-12-21.komola.jpg', 'public/crop_images/komola.jpg', '0', 'old', 'Unpublished', '2020-12-21 01:09:25', '2020-12-29 22:30:14');
 
 -- --------------------------------------------------------
 
@@ -172,7 +198,7 @@ CREATE TABLE `farmer_registers` (
 --
 
 INSERT INTO `farmer_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `zip_code`, `gender`, `password`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
-(1, 'farmer', 'zulkarnine', 'zns601@gmail.com', '01989419776', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$vOsk1uL0pfgmX6jJQOvKm.1Og85NpzCUhsTDULPej7CYmpULZAtPK', 'null', 'active', 'verified', '2020-12-29 08:33:12', '2020-12-29 08:33:12');
+(1, 'farmer', 'zulkarnine', 'zns601@gmail.com', '01989419776', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$vOsk1uL0pfgmX6jJQOvKm.1Og85NpzCUhsTDULPej7CYmpULZAtPK', 'null', 'active', 'verified', '2020-12-29 08:33:12', '2020-12-30 23:02:55');
 
 -- --------------------------------------------------------
 
@@ -198,7 +224,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2020_10_28_160503_create_news_infos_table', 7),
 (15, '2020_10_26_124324_create_farmer_registers_table', 8),
 (16, '2020_10_26_125741_create_user_registers_table', 8),
-(18, '2020_10_28_140943_create_admin_registers_table', 9);
+(18, '2020_10_28_140943_create_admin_registers_table', 9),
+(19, '2021_01_04_154438_create_categories_infos_table', 10);
 
 -- --------------------------------------------------------
 
@@ -281,7 +308,7 @@ CREATE TABLE `user_registers` (
 --
 
 INSERT INTO `user_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `zip_code`, `gender`, `password`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
-(1, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$szL3ySjeYWF3Sb.Yg6x9W.zoSY5fvmnPuOZ7qG1e8pwXaoJ2PbfZO', 'null', 'active', 'verified', '2020-12-29 08:35:19', '2020-12-29 11:08:39');
+(1, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$szL3ySjeYWF3Sb.Yg6x9W.zoSY5fvmnPuOZ7qG1e8pwXaoJ2PbfZO', 'null', 'active', 'verified', '2020-12-29 08:35:19', '2021-01-07 00:31:12');
 
 --
 -- Indexes for dumped tables
@@ -297,6 +324,12 @@ ALTER TABLE `admin_registers`
 -- Indexes for table `bid_messages`
 --
 ALTER TABLE `bid_messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `categories_infos`
+--
+ALTER TABLE `categories_infos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -355,7 +388,13 @@ ALTER TABLE `admin_registers`
 -- AUTO_INCREMENT for table `bid_messages`
 --
 ALTER TABLE `bid_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `categories_infos`
+--
+ALTER TABLE `categories_infos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `contact_messages`
@@ -379,7 +418,7 @@ ALTER TABLE `farmer_registers`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `news_infos`

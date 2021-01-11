@@ -81,8 +81,6 @@ class homeController extends Controller
 
         public function crop_details($id){
          $crop=crop_import::find($id);
-         $crop->views= $crop->views+1;
-         $crop->save();
          $bids_msg=Bid_message::where('crop_id',$id)->get();
         return view('home.crop_details',['crop'=>$crop,'bids_msg'=>$bids_msg]);
     }

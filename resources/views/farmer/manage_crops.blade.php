@@ -14,8 +14,9 @@
                             <th>crop_quantity</th>
                             <th>bid_rate</th>
                             <th>crop_description</th>
-                        
-                            <th>Images</th>
+                            <th>last_date_bidding</th>
+                            <th>Image1</th>
+                            <th>Image2</th>
                             <th>Action</th>
                         </tr>
 
@@ -28,8 +29,10 @@
                                 <td>{{$crop->crop_quantity}}</td>
                                 <td>{{$crop->bid_rate}}</td>
                                 <td>{{$crop->crop_description}}</td>
+                                <td>{{$crop->last_date_bidding}}</td>
                           
                                 <td> <img src="{{url($crop->crop_image)}}"width="200" height="150"></td>
+                                <td> <img src="{{url($crop->crop_image2)}}"width="200" height="150"></td>
                                  <td>
                                     @if($crop->status==0)
                                     <a href="{{route('condition_crop',['id'=>$crop->id])}}" class="btn btn-danger "><i class="fas fa-arrow-circle-up"></i></a>
@@ -38,7 +41,7 @@
                                      @endif
 
                                     <a href="{{route('edit_crop',['id'=>$crop->id])}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
-                                    <a href="{{route('delete_crop',['id'=>$crop->id])}}" class="btn btn-danger "><i class="fas fa-trash-alt"></i></a>
+                                    <a href="{{route('delete_crop',['id'=>$crop->id])}}" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger "><i class="fas fa-trash-alt"></i></a>
                                 </td>
                  
                             </tr>

@@ -25,7 +25,7 @@ class CreateCropImportsTable extends Migration
             $table->date('last_date_bidding');
             $table->string('crop_image',150);
             $table->string('crop_image2',150);
-            $table->string('views',10);
+            //$table->string('views',10);
             $table->string('status',15);
             $table->string('condition',15);
             $table->string('Action',15);

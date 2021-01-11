@@ -91,7 +91,7 @@ Route::get('/customer/{id}',[
     'as' =>'c_action'
 ]);
 
-Route::get('farmer/profile/{id}',[
+Route::get('farmerr/profile/{id}',[
 'uses'=>'adminController@farmer_profile',
 'as'=>'farmer_profile'
 ]);
