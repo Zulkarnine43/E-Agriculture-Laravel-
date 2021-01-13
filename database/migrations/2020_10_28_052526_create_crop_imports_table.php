@@ -17,6 +17,7 @@ class CreateCropImportsTable extends Migration
             $table->increments('id');
             $table->string('username',20);
             $table->string('crop_name',35);
+            $table->string('crop_session',10);
             $table->string('crop_type',20);
             $table->string('crop_quantity',25);
             $table->string('crop_location',50);

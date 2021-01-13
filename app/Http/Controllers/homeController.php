@@ -43,6 +43,29 @@ class homeController extends Controller
         return view('home.categories',compact('crops'));
     }
 
+     public function Session_Categories($crop_type, $crop_session){
+
+    if($crop_session=="1"){
+        $crops=crop_import::where('crop_type',$crop_type)->where('crop_session',$crop_session)
+        ->where('Action',"Published")
+        ->where('status',1)
+        ->get();
+    }elseif ($crop_session=="2"){
+          $crops=crop_import::where('crop_type',$crop_type)->where('crop_session',$crop_session)
+        ->where('Action',"Published")
+        ->where('status',1)
+        ->get();
+    }
+    else{
+           $crops=crop_import::where('crop_type',$crop_type)->where('crop_session',$crop_session)
+        ->where('Action',"Published")
+        ->where('status',1)
+        ->get();
+    }
+        return view('home.categories',compact('crops'));
+    }
+
+
         public function signup(){
         return view('home.signup');
     }

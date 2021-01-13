@@ -24,27 +24,27 @@ class farm_CropController extends Controller
             $currentTimeinSeconds = time();  
   
             // converts the time in seconds to current date  
-            $currentDate = date('Y-m-d', $currentTimeinSeconds); 
+           // $currentDate = date('Y-m-d', $currentTimeinSeconds); 
 
-            $imageName =  $currentDate.'.'.$productImage->getClientOriginalName();
+            $imageName =  $currentTimeinSeconds.'.'.$productImage->getClientOriginalName();
             $directory = 'public/crop_images/';
             $imageUrl = $directory.$imageName;
             
             $productImage->move($directory, $imageName);
-
         }
         
         $productImage2 = $request->file('crop_image2');
         if ($productImage2) {
-            $imageName = $productImage2->getClientOriginalName();
+            $currentTimeinSeconds = time(); 
+            $imageName = $currentTimeinSeconds.'.'.$productImage2->getClientOriginalName();
             $directory = 'public/crop_images/';
             $imageUrl2 = $directory.$imageName;
             $productImage2->move($directory, $imageName);
-
         }
 
         $addProducts->username = $request->username;
         $addProducts->crop_name = $request->crop_name;
+        $addProducts->crop_session = $request->crop_session;
         $addProducts->crop_type = $request->crop_type;
         $addProducts->crop_quantity = $request->crop_quantity;
         $addProducts->crop_location = $request->crop_location;
@@ -60,7 +60,6 @@ class farm_CropController extends Controller
         $addProducts->save();
 
         return redirect('/crop/import')->with('msg', 'Save Products Info Successfully');
-
     }
 
 
@@ -79,7 +78,8 @@ class farm_CropController extends Controller
         if($request->crop_image!=null) {
             $productImage = $request->file('crop_image');
             if ($productImage) {
-                $imageName = $productImage->getClientOriginalName();
+                $currentTimeinSeconds = time(); 
+                $imageName = $currentTimeinSeconds.'.'.$productImage->getClientOriginalName();
                 $directory = 'public/crop_images/';
                 $imageUrl = $directory . $imageName;
                 $productImage->move($directory, $imageName);
@@ -89,7 +89,8 @@ class farm_CropController extends Controller
         if($request->crop_image2!=null) {
             $productImage2 = $request->file('crop_image2');
             if ($productImage2) {
-                $imageName = $productImage2->getClientOriginalName();
+                $currentTimeinSeconds = time(); 
+                $imageName = $currentTimeinSeconds.'.'.$productImage2->getClientOriginalName();
                 $directory = 'public/crop_images/';
                 $imageUrl2 = $directory . $imageName;
                 $productImage2->move($directory, $imageName);
@@ -99,6 +100,7 @@ class farm_CropController extends Controller
 
         $addProducts->username = $request->username;
         $addProducts->crop_name = $request->crop_name;
+        $addProducts->crop_session = $request->crop_session;
         $addProducts->crop_type = $request->crop_type;
         $addProducts->crop_quantity = $request->crop_quantity;
         $addProducts->crop_location = $request->crop_location;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2021 at 06:30 AM
+-- Generation Time: Jan 13, 2021 at 07:30 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -139,6 +139,7 @@ CREATE TABLE `crop_imports` (
   `id` int(10) UNSIGNED NOT NULL,
   `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `crop_name` varchar(35) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crop_session` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `crop_type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `crop_quantity` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
   `crop_location` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -158,15 +159,16 @@ CREATE TABLE `crop_imports` (
 -- Dumping data for table `crop_imports`
 --
 
-INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_type`, `crop_quantity`, `crop_location`, `bid_rate`, `crop_description`, `last_date_bidding`, `crop_image`, `crop_image2`, `status`, `condition`, `Action`, `created_at`, `updated_at`) VALUES
-(1, 'zulkarnine', 'rice', '3', '10 tress', 'araihazar,dhaka,bangladesh', '5000', 'made by bangladesh', '2020-11-30', 'public/crop_images/vagitables.jpg', 'public/crop_images/vagitables.jpg', '1', 'old', 'Published', '2020-11-23 22:46:14', '2021-01-09 11:02:54'),
-(2, 'zulkarnine', 'Lichu', '1', '23', 'araihazar,dhaka,bangladesh', '2345', 'hello', '2020-12-10', 'public/crop_images/1copy.PNG', 'public/crop_images/1copy.PNG', '0', 'old', 'Unpublished', '2020-11-26 04:15:21', '2021-01-07 00:26:11'),
-(3, 'zulkarnine', 'abc', '2', '10 bighas', 'khulna', '2442', 'made by bangladesh', '2020-12-09', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', 'old', 'deleted', '2020-11-26 22:31:13', '2021-01-06 09:12:50'),
-(4, 'zulkarnine', 'Lichu', '2', '10 tress', 'araihazar,dhaka,bangladesh', '3450', 'made by bangladesh', '2020-11-30', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', 'old', 'deleted', '2020-11-26 22:33:32', '2021-01-08 00:29:18'),
-(5, 'zulkarnine', 'sorisa', '5', '1 bighas', 'rajshahi', '5000', 'made by bangladesh', '2020-12-10', 'public/crop_images/images (36).jpg', 'public/crop_images/images (36).jpg', '1', 'old', 'Published', '2020-12-01 01:02:55', '2020-12-29 12:22:41'),
-(6, 'zulkarnine', 'komola', '1', '10 tress', 'rajshahi', '40000', 'hello', '2020-12-15', 'public/crop_images/komola.jpg', 'public/crop_images/komola.jpg', '0', 'old', 'Published', '2020-12-10 23:35:51', '2021-01-06 08:30:32'),
-(7, 'zulkarnine', 'Lichu', '1', '10 tress', 'araihazar1450,dhaka,bangladesh', '4000', 'from bangladesh', '2020-12-30', 'public/crop_images/1608534024.download.jpg', 'public/crop_images/download.jpg', '1', 'old', 'Published', '2020-12-21 01:00:24', '2021-01-07 00:26:55'),
-(8, 'zulkarnine', 'komola', '3', '10 tress', 'rajshahi', '5000', 'this from rajshahi', '2020-12-30', 'public/crop_images/2020-12-21.komola.jpg', 'public/crop_images/komola.jpg', '0', 'old', 'Unpublished', '2020-12-21 01:09:25', '2020-12-29 22:30:14');
+INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_session`, `crop_type`, `crop_quantity`, `crop_location`, `bid_rate`, `crop_description`, `last_date_bidding`, `crop_image`, `crop_image2`, `status`, `condition`, `Action`, `created_at`, `updated_at`) VALUES
+(1, 'zulkarnine', 'rice', '1', '3', '10 tress', 'araihazar,dhaka,bangladesh', '5000', 'made by bangladesh', '2020-11-30', 'public/crop_images/vagitables.jpg', 'public/crop_images/vagitables.jpg', '1', 'old', 'Published', '2020-11-23 22:46:14', '2021-01-09 11:02:54'),
+(2, 'zulkarnine', 'Lichu', '2', '1', '23', 'araihazar,dhaka,bangladesh', '2345', 'hello', '2020-12-10', 'public/crop_images/1copy.PNG', 'public/crop_images/1copy.PNG', '0', 'old', 'deleted', '2020-11-26 04:15:21', '2021-01-13 00:03:14'),
+(3, 'zulkarnine', 'abc', '3', '2', '10 bighas', 'khulna', '2442', 'made by bangladesh', '2020-12-09', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', 'old', 'deleted', '2020-11-26 22:31:13', '2021-01-06 09:12:50'),
+(4, 'zulkarnine', 'Lichu', '2', '2', '10 tress', 'araihazar,dhaka,bangladesh', '3450', 'made by bangladesh', '2020-11-30', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', 'old', 'deleted', '2020-11-26 22:33:32', '2021-01-08 00:29:18'),
+(5, 'zulkarnine', 'sorisa', '3', '5', '1 bighas', 'rajshahi', '5000', 'made by bangladesh', '2020-12-10', 'public/crop_images/images (36).jpg', 'public/crop_images/images (36).jpg', '1', 'old', 'Published', '2020-12-01 01:02:55', '2020-12-29 12:22:41'),
+(6, 'zulkarnine', 'komola', '2', '2', '10 tress', 'rajshahi', '40000', 'from bangladesh', '2020-12-25', 'public/crop_images/komola.jpg', 'public/crop_images/komola.jpg', '0', 'old', 'Unpublished', '2020-12-10 23:35:51', '2021-01-13 00:12:10'),
+(7, 'zulkarnine', 'Lichu', '1', '1', '10 tress', 'araihazar1450,dhaka,bangladesh', '4000', 'from bangladesh', '2020-12-30', 'public/crop_images/1608534024.download.jpg', 'public/crop_images/download.jpg', '1', 'old', 'Published', '2020-12-21 01:00:24', '2021-01-07 00:26:55'),
+(8, 'zulkarnine', 'komola', '2', '3', '10 tress', 'rajshahi', '5000', 'this from rajshahi', '2020-12-30', 'public/crop_images/2020-12-21.komola.jpg', 'public/crop_images/komola.jpg', '0', 'old', 'Unpublished', '2020-12-21 01:09:25', '2020-12-29 22:30:14'),
+(9, 'zulkarnine', 'xyz', '2', '2', '10 tress', 'khulna', '6000', 'from Bangladesh', '2021-01-30', 'public/crop_images/2021-01-13.vagetables.jpg', 'public/crop_images/service6.png', '1', 'New', 'Unpublished', '2021-01-12 23:39:34', '2021-01-12 23:39:34');
 
 -- --------------------------------------------------------
 
@@ -406,7 +408,7 @@ ALTER TABLE `contact_messages`
 -- AUTO_INCREMENT for table `crop_imports`
 --
 ALTER TABLE `crop_imports`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `farmer_registers`

@@ -300,6 +300,11 @@ Route::get('/categories/{crop_type}',[
     'as' =>'Categories'
 ]);
 
+Route::get('/sessions/categories/{crop_type}/{crop_session}',[
+    'uses' =>'homeController@Session_Categories',
+    'as' =>'Session_Categories'
+]);
+
 Route::get('/crop_details/{id}',[
     'uses' =>'homeController@crop_details',
     'as' =>'crop_details'

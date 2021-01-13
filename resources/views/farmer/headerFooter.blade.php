@@ -41,11 +41,13 @@
                         <a class="nav-link" href="{{route('crop_manage')}}">Manage crop</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('user_manage')}}">Customer_Information</a>
-                </li>
+            
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('farm_bid_messages')}}">Bid_messages</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="">Orders crops</a>
                 </li>
                
                  @if (session()->has('f_username'))
@@ -97,55 +99,60 @@
 {{--</div>--}}
 
 <!-- Footer -->
-<footer class="py-5 bg-dark">
+  <footer class="py-5 bg-dark">
 
-    <div class="row nav text-light mx-auto">
-        <div class="col-lg-3">
-            <h2 class="text-center">Our website</h2>
-            <p class=" text-justify" style="font-size: 18px; font-family: 'Fredericka the Great', cursive;" >At e_agriculture,
+        <div class="row nav text-light mx-auto">
+            <div class="col-lg-3">
+                <h2 class="text-center">Our website</h2>
+              <p class=" text-justify">At e_agriculture,
                 Innovation and simplicity makes us happy: our goal is to remove any technical or financial
                 barriers that can prevent crops sell and buy. We're excited to
                 help you on your journey!?</p>
+            </div>
+
+              <div class="col-lg-3 text-center">
+                <h2 class="text-center">Quick Links</h2>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="">News</a></li>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="{{route('gallery')}}">Photo Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#messageModal">feedback Us</a></li>
+
+               <h2 class="">Social Links</h2>
+                <li class="nav-item" >
+                <a href=""><i class="fab fa-2x fa-facebook" style="color: blue;"></i></a>
+                <a href=""><i class="fab fa-2x fa-instagram ml-2" style="color:#E38EC4
+                    ;"></i></a>
+                <a href=""><i class="fab fa-2x fa-youtube ml-2" style="color: #ff6b6b;"></i></a>
+                <a href=""><i class="fab fa-2x fa-github ml-2" style="color: white;"></i></a>
+               </li>   
+            </div>
+
+
+
+            <div class="col-lg-3 text-center">
+                <h2 class="text-center">Our Survices</h2>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="{{route('home')}}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="{{route('about')}}">About</a></li>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="{{route('services')}}">Services</a></li>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="{{route('contact')}}">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="">Live Support</a></li>
+            </div>
+
+
+
+                <div class="col-lg-3 text-center">
+                <h4>Get In Touch</h4>
+                <h4>Address</h4>
+                <p>House #100, Uttara, Dhaka</p>
+                <h4>Email</h4>
+                <p>eagriculture@gmail.com</p>
+                <h4>Phone</h4>
+                <p class="mb-2">+8801989419776</p>
+            </div>
         </div>
 
-        <div class="col-lg-3">
-            <h2 class="text-center">Quick Menu</h2>
-            <li class="nav-item"><a class="nav-link text-center" href="">Home</a></li>
-            <li class="nav-item"><a class="nav-link text-center" href="">About</a></li>
-            <li class="nav-item"><a class="nav-link text-center" href="">Services</a></li>
-            <li class="nav-item"><a class="nav-link text-center" href="">Contact Us</a></li>
-            <li class="nav-item"><a class="nav-link text-center" href="">Message Us</a></li>
-        </div>
-
-
-
-        <div class="col-lg-3 text-left">
-            <h2 class="text-center">News</h2>
-            <li class="nav-item"><a class="nav-link text-center" href="">kharif crop</a></li>
-            <li class="nav-item"><a class="nav-link text-center" href="">rabi crop</a></li>
-            <li class="nav-item"><a class="nav-link text-center" href="">zerind crop</a></li>
-            <li class="nav-item"><a class="nav-link text-center" href="">Guest Post</a></li>
-            <li class="nav-item"><a class="nav-link text-center" href="">Live Support</a></li>
-        </div>
-
-
-
-        <div class="col-lg-3 text-center">
-            <h2 class="">Social Links</h2>
-               <li class="nav-item" >
-                    <a href=""><i class="fab fa-2x fa-facebook" style="color: blue;"></i></a>
-                    <a href=""><i class="fab fa-2x fa-instagram ml-2" style="color:#E38EC4
-                        ;"></i></a>
-                    <a href=""><i class="fab fa-2x fa-youtube ml-2" style="color: #ff6b6b;"></i></a>
-                    <a href=""><i class="fab fa-2x fa-github ml-2" style="color: white;"></i></a>
-                </li>
-
-        </div>
-    </div>
-
-    <p class="m-0 text-center text-white">Copyright &copy; E_agriculture 2020</p>
+    <p class="m-0 text-center text-white">Copyright &copy; E-agriculture 2020</p>
     <!-- Message -->
-    <button class="fixed-bottom btn btn-success float-right " data-toggle="modal" data-target="#messageModal">Message us</button>
+    <button class="fixed-bottom btn btn-success float-right " data-toggle="modal" data-target="#messageModal">Feedback here</button>
 
 
     <!-- Message Modal -->
@@ -153,11 +160,11 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Message us</h5>
+                    <h5 class="modal-title">Feedback us</h5>
                     <button class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <form action="" method="post">
-                    <div class="modal-body">
+                <form action="{{route('contact_message')}}" method="post">
+                <div class="modal-body">
                         @csrf
                         <div class="form-group">
                             <label>Name</label>
@@ -176,22 +183,18 @@
                             <label>Message</label>
                             <textarea cols="30" rows="5" name="message" placeholder="Message" class="form-control" required></textarea>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button class="btn btn-warning">Send</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button class="btn btn-warning">Send</button>
+                </div>
                 </form>
             </div>
         </div>
     </div>
 </footer>
 
-
 <!-- Bootstrap core JavaScript -->
 <script src="{{url('public/final_eagri/vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{url('public/final_eagri/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-</body>
-
 </html>

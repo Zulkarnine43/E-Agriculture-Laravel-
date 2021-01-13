@@ -52,7 +52,7 @@ class farmerController extends Controller
 
 
    public function fa_profile($f_username){
-        $crops=crop_import::where('username',$f_username)->get();
+        $crops=crop_import::where('username',$f_username)->where('Action','!=',"deleted")->get();
         return view('farmer.farmer_profile',compact('crops'));
     }
 

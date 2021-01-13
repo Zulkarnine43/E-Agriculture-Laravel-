@@ -63,30 +63,33 @@
                         </a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ravi Crops</a>
+          <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Summer Crops</a>
                         <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
-                            <a class="nav-link" href="">Fruits</a>
-                            <a class="nav-link" href="#">Vegetables</a>
-                            <a class="nav-link" href="#">Food</a>
+                              @php($categories=App\categories_info::all())
+                                @foreach($categories as $categorie)
+                                     <a class="nav-link" href="{{route('Session_Categories',['crop_type'=>$categorie->id,'crop_session'=>1])}}">{{$categorie->categories_name}}</a>
+                                @endforeach
                         </div>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Kharif Crops</a>
+                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Winter Crops</a>
                         <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
-                             <a class="nav-link" href="">Fruits</a>
-                            <a class="nav-link" href="#">Vegetables</a>
-                            <a class="nav-link" href="#">Food</a>                       
-                             </div>
+                          @php($categories=App\categories_info::all())
+                                @foreach($categories as $categorie)
+                                     <a class="nav-link" href="{{route('Session_Categories',['crop_type'=>$categorie->id,'crop_session'=>2])}}">{{$categorie->categories_name}}</a>
+                                @endforeach
+                        </div>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Zaid Crops</a>
+                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Spring Crops</a>
                         <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
-                              <a class="nav-link" href="">Fruits</a>
-                            <a class="nav-link" href="#">Vegetables</a>
-                            <a class="nav-link" href="#">Food</a>
+                           @php($categories=App\categories_info::all())
+                                @foreach($categories as $categorie)
+                                     <a class="nav-link" href="{{route('Session_Categories',['crop_type'=>$categorie->id,'crop_session'=>3])}}">{{$categorie->categories_name}}</a>
+                                @endforeach
                         </div>
                     </li>
 
@@ -174,37 +177,46 @@
                 help you on your journey!?</p>
             </div>
 
-            <div class="col-lg-3">
-                <h2 class="text-center">Quick Menu</h2>
-                <li class="nav-item"><a class="nav-link text-center" href="">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="">About</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="">Services</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="">Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="">Message Us</a></li>
+              <div class="col-lg-3">
+                <h2 class="text-center">Quick Links</h2>
+                <li class="nav-item"><a class="nav-link text-center" href="">News</a></li>
+                <li class="nav-item"><a class="nav-link text-center" href="{{route('gallery')}}">Photo Gallery</a></li>
+                <li class="nav-item"><a class="nav-link text-center" href="">Summer Crops</a></li>
+                <li class="nav-item"><a class="nav-link text-center" href="">Winter crops </a></li>
+                 <li class="nav-item"><a class="nav-link text-center" href="">Spring crops </a></li>
+                <li class="nav-item"><a class="nav-link text-center" data-toggle="modal" data-target="#messageModal">feedback Us</a></li>
             </div>
 
 
 
             <div class="col-lg-3 text-left">
-                <h2 class="text-center">News</h2>
-                <li class="nav-item"><a class="nav-link text-center" href="">kharif crop</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="">rabi crop</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="">zerind crop</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="">Guest Post</a></li>
+                <h2 class="text-center">Our Survices</h2>
+                <li class="nav-item"><a class="nav-link text-center" href="{{route('home')}}">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-center" href="{{route('about')}}">About</a></li>
+                <li class="nav-item"><a class="nav-link text-center" href="{{route('services')}}">Services</a></li>
+                <li class="nav-item"><a class="nav-link text-center" href="{{route('contact')}}">Contact</a></li>
                 <li class="nav-item"><a class="nav-link text-center" href="">Live Support</a></li>
             </div>
 
 
 
-            <div class="col-lg-3 text-center">
+                <div class="col-lg-3 text-center">
+                <h4>Get In Touch</h4>
+                <h4>Address</h4>
+                <p>House #100, Uttara, Dhaka</p>
+                <h4>Email</h4>
+                <p>eagriculture@gmail.com</p>
+                <h4>Phone</h4>
+                <p class="mb-2">+8801989419776</p>
+
                 <h2 class="">Social Links</h2>
-                    <li class="nav-item" >
-                    <a href=""><i class="fab fa-2x fa-facebook" style="color: blue;"></i></a>
-                    <a href=""><i class="fab fa-2x fa-instagram ml-2" style="color:#E38EC4
-                        ;"></i></a>
-                    <a href=""><i class="fab fa-2x fa-youtube ml-2" style="color: #ff6b6b;"></i></a>
-                    <a href=""><i class="fab fa-2x fa-github ml-2" style="color: white;"></i></a>
-                </li>
+                <li class="nav-item" >
+                <a href=""><i class="fab fa-2x fa-facebook" style="color: blue;"></i></a>
+                <a href=""><i class="fab fa-2x fa-instagram ml-2" style="color:#E38EC4
+                    ;"></i></a>
+                <a href=""><i class="fab fa-2x fa-youtube ml-2" style="color: #ff6b6b;"></i></a>
+                <a href=""><i class="fab fa-2x fa-github ml-2" style="color: white;"></i></a>
+               </li>             
 
             </div>
         </div>

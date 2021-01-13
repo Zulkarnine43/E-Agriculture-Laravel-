@@ -22,13 +22,23 @@
             </div>
 
             <div class="form-group">
+                <label class="font-weight-bolder">Crop Sesssion</label>
+                <select class="form-control" name="crop_session" required>
+                 <option value="">---Select a session</option>
+                    <option value="1">Summer</option>
+                     <option value="2">Winter</option>
+                      <option value="3">Spring</option>
+                </select>
+            </div>
+
+             <div class="form-group">
                 <label class="font-weight-bolder">Crop Type</label>
                 <select class="form-control" name="crop_type" required>
-                    <option value="">---Select a Name</option>
-                    <option value="Fruits">Fruits</option>
-                    <option value="vegetables">vegetables</option>
-                    <option value="Food">Food Crops</option>
-                    <option value="Others">Others crops</option>
+                    <option>---Select crop type</option>
+                       @php($categories=App\categories_info::all()->where('categories_status',1))
+                                @foreach($categories as $categorie)
+                    <option value="{{$categorie->id}}">{{$categorie->categories_name}}</option>
+                          @endforeach
                 </select>
                 <span>{{$errors->has('crop_type') ? $errors->first('crop_type'): ' '}}</span>
             </div>

@@ -194,7 +194,8 @@ class adminController extends Controller
     }
 
     public function a_profile(){
-        $newses=news_info::where('username',Session::get('a_username'))->get();
+        $newses=news_info::where('username',Session::get('a_username'))
+        ->get();
         return view('admin.a_profile',compact('newses'));
     }
 

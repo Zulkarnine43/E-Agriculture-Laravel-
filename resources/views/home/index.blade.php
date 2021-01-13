@@ -12,7 +12,7 @@ Home
         <button type="button" class="close" data-dismiss="alert">
             <span>&times;</span>
         </button>
-        <strong> Login for Import crop or bidding </strong>Details<a class="alert-link ml-1" href="{{route('services')}}">Check it out</a>
+        <strong> Login as farmer for sell crop or buyer for bid & buy </strong>Details<a class="alert-link ml-1" href="{{route('services')}}">Check it out</a>
     </div>
 
           <h3 class="text-success">{{Session::get('c_login')}}</h3>

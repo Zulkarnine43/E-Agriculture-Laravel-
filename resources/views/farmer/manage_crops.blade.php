@@ -10,6 +10,7 @@
                         <tr class="t1">
                             <th>Sl No</th>
                             <th>Crop_name </th>
+                            <!-- <th>Crop_Session </th> -->
                             <th>crop_type </th>
                             <th>crop_quantity</th>
                             <th>bid_rate</th>
@@ -25,6 +26,7 @@
                             <tr>
                                 <td>{{$i++}}</td>
                                 <td>{{$crop->crop_name}}</td>
+                                <!-- <td>{{$crop->crop_session}}</td> -->
                                 <td>{{$crop->crop_type}}</td>
                                 <td>{{$crop->crop_quantity}}</td>
                                 <td>{{$crop->bid_rate}}</td>
