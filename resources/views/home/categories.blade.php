@@ -20,9 +20,11 @@ Crop Categories
                             <p>Bid Rate:--TK{{$crop->bid_rate}}</p>
                             <p>Date Finished:--{{$crop->last_date_bidding}}</p>
                             <a class="btn btn-success" target="" href="{{route('crop_details',['id'=>$crop->id])}}" class="card-link">Details</a>
-                               @if(Session::get('c_username'))
+                        @if(Session::get('c_username'))
                            <a class="btn btn-success" href="{{route('Bid_model',['id'=>$crop->id])}}">Bid here</a>
-                            @else
+
+                           <a class="btn btn-success" href="" data-toggle="tooltip" data-placement="bottom" title="add wishlist"> <i class="far fa-heart"></i> </a>
+                        @else
                                 <a class="btn btn-success" target="_blank" href="{{route('login')}}">Bid here</a>
                                    @endif
                         </div>

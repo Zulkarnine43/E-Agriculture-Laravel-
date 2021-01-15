@@ -92,7 +92,7 @@ Login form
                             <input type="email" name="email" value="" class="form-control" placeholder="Enter your email" required>
                             <span class="text-danger">{{$errors->has('email') ? $errors->first('email'): ' '}}</span>
                         </div>
-                        <input type="submit" value="Send" class="btn btn-outline-success">
+                        <input type="submit" value="Send" class="btn btn-success btn-block">
                     </form>
                 </div>
             </div>

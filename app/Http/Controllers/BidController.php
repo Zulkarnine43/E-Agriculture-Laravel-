@@ -83,12 +83,7 @@ class BidController extends Controller
         //     $message->to($data2['email']);
         //     $message->subject('Bid_notification');
         // });
-
-        // return redirect('/crop_details/',['id',$request->crop_id])->with('msg','your bid send successfully');
          return redirect()->route('crop_details',['id'=>$request->crop_id])->with('msg','your bid send successfully');;
-
-
-
     }
     
 
@@ -108,30 +103,11 @@ class BidController extends Controller
         $regis->account_pay = $request->account_pay;
         $regis->confirm_price = $request->confirm_price;
         $regis->message = $request->message;
-       // $regis->send_account = $request->send_account;
-       // $regis->message = $request->message;
         $regis->save();
         return redirect('/')->with('msg','your confirm message send successfully');
 
     }
 
-
-
-//     public function pay_info(Request $request)
-//     {
-//         $this->validate($request,[
-//         ]);
-
-//         $regis = new pay_info();
-//         $regis->crop_id = $request->crop_id;
-//         $regis->f_username = $request->f_username;
-//         $regis->c_username = $request->c_username;
-//         $regis->send_account = $request->send_account;
-//         $regis->transition_id = $request->transition_id;
-//         $regis->save();
-//         return redirect('/cust/message')->with('msg','your pay details send successfully');
-
-//     }
 
         public function bid_delete($id ,$crop_id){
 

@@ -46,8 +46,8 @@
                             <p>{{$crop->crop_location}}</p>
                             <p>{{$crop->bid_rate}}</p>
                             <p>{{$crop->crop_description}}</p>
-                            <a class="btn btn-success" target="" href="{{route('crop_details',['id'=>$crop->id])}}" class="card-link">Details</a>
-                            <a class="btn btn-success" target="_blank" href="" class="card-link">Bid here</a>
+                            <a class="btn btn-success btn-block" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}" class="card-link">Details</a>
+                            <!-- <a class="btn btn-success" target="_blank" href="" class="card-link">Bid here</a> -->
                         </div>
 
                     </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2021 at 07:30 AM
+-- Generation Time: Jan 15, 2021 at 11:34 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -100,9 +100,9 @@ CREATE TABLE `categories_infos` (
 --
 
 INSERT INTO `categories_infos` (`id`, `a_username`, `categories_name`, `categories_description`, `categories_status`, `created_at`, `updated_at`) VALUES
-(1, 'zulkarnine', 'fruits', 'that,s for fruits', '1', '2021-01-04 10:00:49', '2021-01-04 10:21:26'),
+(1, 'zulkarnine', 'fruits', 'that,s for fruits', '1', '2021-01-04 10:00:49', '2021-01-13 06:32:30'),
 (2, 'zulkarnine', 'vegetables', 'that,s for vegetables', '1', '2021-01-04 10:40:00', '2021-01-04 10:40:00'),
-(3, 'zulkarnine', 'food', 'that,s for food', '1', '2021-01-04 10:40:23', '2021-01-04 10:40:23'),
+(3, 'zulkarnine', 'food', 'that,s for food', '1', '2021-01-04 10:40:23', '2021-01-15 04:02:51'),
 (4, 'zulkarnine', 'cash', 'that,s for cash', '1', '2021-01-04 10:40:53', '2021-01-04 10:40:53'),
 (5, 'zulkarnine', 'plantation', 'thats for plantation', '1', '2021-01-04 10:41:11', '2021-01-04 10:41:11');
 
@@ -163,7 +163,6 @@ INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_session`, `crop
 (1, 'zulkarnine', 'rice', '1', '3', '10 tress', 'araihazar,dhaka,bangladesh', '5000', 'made by bangladesh', '2020-11-30', 'public/crop_images/vagitables.jpg', 'public/crop_images/vagitables.jpg', '1', 'old', 'Published', '2020-11-23 22:46:14', '2021-01-09 11:02:54'),
 (2, 'zulkarnine', 'Lichu', '2', '1', '23', 'araihazar,dhaka,bangladesh', '2345', 'hello', '2020-12-10', 'public/crop_images/1copy.PNG', 'public/crop_images/1copy.PNG', '0', 'old', 'deleted', '2020-11-26 04:15:21', '2021-01-13 00:03:14'),
 (3, 'zulkarnine', 'abc', '3', '2', '10 bighas', 'khulna', '2442', 'made by bangladesh', '2020-12-09', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', 'old', 'deleted', '2020-11-26 22:31:13', '2021-01-06 09:12:50'),
-(4, 'zulkarnine', 'Lichu', '2', '2', '10 tress', 'araihazar,dhaka,bangladesh', '3450', 'made by bangladesh', '2020-11-30', 'public/crop_images/assignment-1.PNG', 'public/crop_images/assignment-1.PNG', '1', 'old', 'deleted', '2020-11-26 22:33:32', '2021-01-08 00:29:18'),
 (5, 'zulkarnine', 'sorisa', '3', '5', '1 bighas', 'rajshahi', '5000', 'made by bangladesh', '2020-12-10', 'public/crop_images/images (36).jpg', 'public/crop_images/images (36).jpg', '1', 'old', 'Published', '2020-12-01 01:02:55', '2020-12-29 12:22:41'),
 (6, 'zulkarnine', 'komola', '2', '2', '10 tress', 'rajshahi', '40000', 'from bangladesh', '2020-12-25', 'public/crop_images/komola.jpg', 'public/crop_images/komola.jpg', '0', 'old', 'Unpublished', '2020-12-10 23:35:51', '2021-01-13 00:12:10'),
 (7, 'zulkarnine', 'Lichu', '1', '1', '10 tress', 'araihazar1450,dhaka,bangladesh', '4000', 'from bangladesh', '2020-12-30', 'public/crop_images/1608534024.download.jpg', 'public/crop_images/download.jpg', '1', 'old', 'Published', '2020-12-21 01:00:24', '2021-01-07 00:26:55'),
@@ -200,7 +199,7 @@ CREATE TABLE `farmer_registers` (
 --
 
 INSERT INTO `farmer_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `zip_code`, `gender`, `password`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
-(1, 'farmer', 'zulkarnine', 'zns601@gmail.com', '01989419776', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$vOsk1uL0pfgmX6jJQOvKm.1Og85NpzCUhsTDULPej7CYmpULZAtPK', 'null', 'active', 'verified', '2020-12-29 08:33:12', '2020-12-30 23:02:55');
+(1, 'farmer', 'zulkarnine', 'zns601@gmail.com', '01989419776', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$5EnTljBZoUBfb8.0zziQxev5RUYtA2pDfUtkvERTs3PPmd4WZoICG', 'null', 'active', 'verified', '2020-12-29 08:33:12', '2021-01-15 02:51:20');
 
 -- --------------------------------------------------------
 
@@ -221,13 +220,13 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2020_10_28_052526_create_crop_imports_table', 3),
 (8, '2020_10_28_093532_create_bid_messages_table', 4),
-(9, '2020_10_29_091039_create_pay_confirm_messages_table', 5),
 (10, '2020_10_28_125609_create_contact_messages_table', 6),
 (11, '2020_10_28_160503_create_news_infos_table', 7),
 (15, '2020_10_26_124324_create_farmer_registers_table', 8),
 (16, '2020_10_26_125741_create_user_registers_table', 8),
 (18, '2020_10_28_140943_create_admin_registers_table', 9),
-(19, '2021_01_04_154438_create_categories_infos_table', 10);
+(19, '2021_01_04_154438_create_categories_infos_table', 10),
+(20, '2020_10_29_091039_create_pay_confirm_messages_table', 11);
 
 -- --------------------------------------------------------
 
@@ -272,14 +271,6 @@ CREATE TABLE `pay_confirm_messages` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `pay_confirm_messages`
---
-
-INSERT INTO `pay_confirm_messages` (`id`, `crop_id`, `f_username`, `crop_name`, `cust_username`, `account_pay`, `confirm_price`, `message`, `created_at`, `updated_at`) VALUES
-(1, '1', 'zulkarnine', 'rice', 'zulkarnine', '01989419776', '1000', 'please pay 1000 tk for confirm', '2020-11-26 11:59:19', '2020-11-26 11:59:19'),
-(2, '1', 'zulkarnine', 'rice', 'zulkarnine', '01989419776', '1000', 'null', '2020-11-26 12:04:18', '2020-11-26 12:04:18');
-
 -- --------------------------------------------------------
 
 --
@@ -310,7 +301,7 @@ CREATE TABLE `user_registers` (
 --
 
 INSERT INTO `user_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `zip_code`, `gender`, `password`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
-(1, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$szL3ySjeYWF3Sb.Yg6x9W.zoSY5fvmnPuOZ7qG1e8pwXaoJ2PbfZO', 'null', 'active', 'verified', '2020-12-29 08:35:19', '2021-01-07 00:31:12');
+(1, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$szL3ySjeYWF3Sb.Yg6x9W.zoSY5fvmnPuOZ7qG1e8pwXaoJ2PbfZO', 'null', 'active', 'verified', '2020-12-29 08:35:19', '2021-01-15 02:51:34');
 
 --
 -- Indexes for dumped tables
@@ -420,7 +411,7 @@ ALTER TABLE `farmer_registers`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `news_infos`
@@ -432,7 +423,7 @@ ALTER TABLE `news_infos`
 -- AUTO_INCREMENT for table `pay_confirm_messages`
 --
 ALTER TABLE `pay_confirm_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user_registers`

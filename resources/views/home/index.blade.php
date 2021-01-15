@@ -15,7 +15,7 @@ Home
         <strong> Login as farmer for sell crop or buyer for bid & buy </strong>Details<a class="alert-link ml-1" href="{{route('services')}}">Check it out</a>
     </div>
 
-          <h3 class="text-success">{{Session::get('c_login')}}</h3>
+          <!-- <h3 class="text-success">{{Session::get('c_login')}}</h3> -->
           <h1 class="text-success">{{Session::get('msg')}}</h1>
           <h1 class="text-success">{{Session::get('l_msg')}}</h1>
 
@@ -71,11 +71,12 @@ Home
 
                        @if(Session::get('c_username'))
                        <a class="btn btn-success" href="{{route('Bid_model',['id'=>$crop->id])}}">Bid here</a>
-
+                       <a class="btn btn-success" href="" data-toggle="tooltip" data-placement="bottom" title="add wishlist"> <i class="far fa-heart"></i> </a>
                         @else
                        <a class="btn btn-success" target="_blank" href="{{route('login')}}">Bid here</a>
 
                          @endif
+
                     </div>
 
                 </div>

@@ -70,6 +70,11 @@ class adminController extends Controller
         return view('admin.deleted_crops',compact('crops'));
     }
 
+     public function crop_delete($id){
+        $crop=crop_import::find($id);
+        $crop->delete();
+        return redirect('/deleted/crop')->with('msg','Crop Delete Successfully');
+    }
 
     public function add_categories(){
         return view('admin.add_categories');

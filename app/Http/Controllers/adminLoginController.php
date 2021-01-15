@@ -71,7 +71,7 @@ class adminLoginController extends Controller
         if ($result->condition == "verified") {
            if (Hash::check($request->password, $result->password)) {
                 Session::put('a_username', $result['username']);
-                return redirect('/admin/home')->with('f_login', 'Login successfully');
+                return redirect('/admin/home')->with('a_login', 'Login successfully');
             } else {
                 return redirect('/admin/login')->with('login_error', 'password not match');
             }
@@ -141,8 +141,6 @@ class adminLoginController extends Controller
                 }
             }
             
-
-
             $regis=admin_register::where('id',$request->id)->first();
             $regis->mobile = $request->mobile;
             $regis->dob = $request->dob;

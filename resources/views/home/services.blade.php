@@ -20,7 +20,7 @@ services
 
 
       <!-- Blog Section -->
-  <section id="blog" class="py-5">
+  <section class="py-5">
     <div class="container">
       <div class="row">
 

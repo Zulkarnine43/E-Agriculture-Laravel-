@@ -18,8 +18,10 @@
                 <p class="card-text lead">{{$crop->crop_description}}</p>
             </div>
             <div class="card-footer">
-                <div class="">
-                   <a class="btn btn-success" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}"><i class="fas fa-info-circle"></i></a>
+                <div class="text-center">
+                   <a class="btn btn-success" href="{{route('crop_details',['id'=>$crop->id])}}"><i class="fas fa-info-circle"></i></a>
+                   
+                   <a class="btn btn-danger" onclick="return confirm('Are you sure want to delete?');" href="{{route('crop_delete',['id'=>$crop->id])}}"><i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
         </div>

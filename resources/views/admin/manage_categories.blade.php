@@ -25,14 +25,14 @@
                     <td>{{$categorie->categories_status}}</td>
                     <td>
                         @if($categorie->categories_status==1)
-                        <a href="{{route('categories_status',['id'=>$categorie->id])}}" class="btn btn-success">active</a>
+                        <a href="{{route('categories_status',['id'=>$categorie->id])}}" class="btn btn-success"><i class="fas fa-arrow-circle-down"></i></a>
                         @else
-                        <a href="{{route('categories_status',['id'=>$categorie->id])}}" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-ok">disable</span></a>
+                        <a href="{{route('categories_status',['id'=>$categorie->id])}}" class="btn btn-danger"><i class="fas fa-arrow-circle-up"></i></a>
                         @endif
 
-                        <a href="" class="btn btn-success"><i class="fas fa-edit"></i></a>
-                        <a href="{{route('categories_delete',['id'=>$categorie->id])}}" class="btn btn-success "><i class="fas fa-trash-alt"></i></a>
+                        <!-- <a href="" class="btn btn-success"><i class="fas fa-edit"></i></a> -->
+
+                        <a href="{{route('categories_delete',['id'=>$categorie->id])}}" class="btn btn-danger "><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
                     @endforeach

@@ -32,7 +32,9 @@ customer messages
                     <td>{{$confirms->message}}</td>
                     <td>
                         <a target="_blank" href="{{route('crop_details',['id'=>$confirms->crop_id])}}" class="btn btn-success">details</a>
-                        <a target="_blank" href="{{route('cust_download_invoice',['id'=>$confirms->id])}}" class="btn btn-success">download_invoice</a>
+                        
+                         <a target="_blank" href="" class="btn btn-success">download_invoice</a>
+
                         <button class="btn btn-success " data-toggle="modal" data-target="#payModal">Pay-info</button>
                     </td>
                 </tr>
@@ -52,9 +54,15 @@ customer messages
                 <div class="modal-body">
                     <form action="" method="post">
                       @csrf
+
+                         @if($pay_confirms->isEmpty())
+                           <h4> There was no search value</h4>
+                        @else
+
                      <input type="hidden" name="crop_id" value="{{$confirms->crop_id}}">
                      <input type="hidden" name="f_username" value="{{$confirms->f_username}}">
                      <input type="hidden" name="c_username" value="{{Session::get('c_username')}}">
+                     @endif
                         <div class="form-group">
                             <label>Pay account</label>
                             <input type="tel" name="send_account" value="" class="form-control" placeholder="Enter account no" required>

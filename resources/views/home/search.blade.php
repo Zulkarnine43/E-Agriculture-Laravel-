@@ -23,13 +23,15 @@ Search details
                             <p>{{$crop->crop_location}}</p>
                             <p>Quantity:--{{$crop->crop_quantity}}</p>
                             <p>Bid Rate:--{{$crop->bid_rate}}TK</p>
-                           <!--  <p>Views:--{{$crop->views}}</p> -->
+
                             <a class="btn btn-success" target="" href="{{route('crop_details',['id'=>$crop->id])}}" class="card-link">Details</a>
-                               @if(Session::get('c_username'))
+
+                        @if(Session::get('c_username'))
                            <a class="btn btn-success" href="{{route('Bid_model',['id'=>$crop->id])}}">Bid here</a>
-                            @else
+                        @else
                                 <a class="btn btn-success" href="{{route('login')}}">Bid here</a>
-                                   @endif
+                         @endif
+                         
                         </div>
 
                     </div>

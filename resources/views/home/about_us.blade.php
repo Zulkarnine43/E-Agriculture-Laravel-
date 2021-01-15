@@ -6,7 +6,7 @@ about us
 @endsection
 
 @section('body')
-<section id="page-header"class="mt-2" style="background-image: url('{{ url('public/final_eagri/img/a.jpg')}}'); height:200px;">
+<section id="page-header"class="mt-2" style="background-image: url('{{ url('public/final_eagri/img/33.jpg')}}'); height:200px;">
     <div class="container">
         <div class="row">
             <div class="col-md-6 m-auto text-center text-light">

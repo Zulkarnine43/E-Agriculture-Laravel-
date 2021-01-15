@@ -40,10 +40,10 @@ class farmerController extends Controller
     }
 
 
-    public function user_manage(){
-         $users=user_register::all();
-        return view('farmer.customer_information',compact('users'));
-    }
+    // public function user_manage(){
+    //      $users=user_register::all();
+    //     return view('farmer.customer_information',compact('users'));
+    // }
 
        public function farm_bid_messages(){
         $messages=Bid_message::where('f_username',Session::get('f_username'))->orderBy('created_at','desc')->get();
@@ -130,7 +130,7 @@ class farmerController extends Controller
     }else{
             Session::forget('a_username');
              if(!Session::has('a_username')){
-            return redirect('/')->with('l_msg','logout successfully');
+            return redirect('/admin/login')->with('l_msg','logout successfully');
     }
 }
 

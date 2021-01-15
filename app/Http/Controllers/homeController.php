@@ -115,7 +115,6 @@ class homeController extends Controller
 
         public function c_message(){
         $pay_confirms=pay_confirm_message::where('cust_username',Session::get('c_username'))->get();
-//        return $pay_confirms=crop_import::where('id',$pay_confirms->crop_id)->first();
         return view('home.c_message',compact('pay_confirms'));
     }
 

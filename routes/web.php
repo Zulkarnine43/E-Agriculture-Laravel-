@@ -113,7 +113,7 @@ Route::get('/published/crop',[
     'as' =>'published_crops'
 ]);
 
-Route::get('/crop/Unapproved/{id}',[
+Route::get('/crop/unpublished/{id}',[
     'uses' =>'adminController@crop_unpublished_save',
     'as' =>'crop_unpublished_save'
 ]);
@@ -124,7 +124,7 @@ Route::get('/unpublished/crop',[
     'as' =>'unpublished_crops'
 ]);
 
-Route::get('/crop/approved/{id}',[
+Route::get('/crop/published/{id}',[
     'uses' =>'adminController@crop_published_save',
     'as' =>'crop_published_save'
 ]);
@@ -135,6 +135,10 @@ Route::get('/deleted/crop',[
     'as' =>'deleted_crops'
 ]);
 
+Route::get('/crop/deleted/{id}',[
+    'uses' =>'adminController@crop_delete',
+    'as' =>'crop_delete'
+]);
 
 Route::get('/add/Categories',[
     'uses' =>'adminController@add_categories',
@@ -395,10 +399,10 @@ Route::get('/crop/delete/{id}',[
 
 
 
-Route::get('/user/manage',[
-    'uses' =>'farmerController@user_manage',
-    'as' =>'user_manage'
-]);
+// Route::get('/user/manage',[
+//     'uses' =>'farmerController@user_manage',
+//     'as' =>'user_manage'
+// ]);
 
 Route::get('/farmer/bid/messages',[
     'uses' =>'farmerController@farm_bid_messages',
@@ -430,23 +434,6 @@ Route::get('/logout/{name}',[
 
 
 // End farmer page routing
-
-
-// Start Invoice routing
-
-
-
-Route::get('/download/invoices/{id}',[
-    'uses' =>'invoiceController@download_invoice',
-    'as' =>'farm_download_invoice'
-]);
-
-Route::get('/download/invoice/{id}',[
-    'uses' =>'invoiceController@cust_download_invoice',
-    'as' =>'cust_download_invoice'
-]);
-
-// End Invoice routing
 
 
 // Start Bid Modal routing

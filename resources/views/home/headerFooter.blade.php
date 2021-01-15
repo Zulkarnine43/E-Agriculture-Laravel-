@@ -46,7 +46,10 @@
             </div>
 
                <div class="mr-4 ml-auto">
-                    <a href="{{route('login')}}" class="nav-item btn btn-outline-success">Login</a>
+                     @if(Session::get('c_username'))
+                      <a class="nav-item btn btn-outline-success" href=""><i class="far fa-heart"></i></a>
+                     @endif
+                   <a href="{{route('login')}}" class="nav-item btn btn-outline-success">Login</a>
                    <a href="{{route('signup')}}" class="nav-item btn btn-success ml-2">Signup</a>
                </div>
         </div>
