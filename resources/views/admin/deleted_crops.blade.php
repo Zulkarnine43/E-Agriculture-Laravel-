@@ -10,12 +10,12 @@
         <div class="card">
             <a href="#"><img class="card-img-top"  height="200" width="400" src="{{url($crop->crop_image)}}" alt=""></a>
             <div class="card-body">
-                <h4 class="card-title">
+                <h4 class="card-title text-center">
                     <a href="#">{{$crop->crop_name}}</a>
                 </h4>
+                 <p>Quantity:--{{$crop->crop_quantity}}</p>
                 <h5>Bid Rate:{{$crop->bid_rate}}</h5>
-                <span>views:{{$crop->views}}</span>
-                <p class="card-text lead">{{$crop->crop_description}}</p>
+                <h5>Date Finished:--{{$crop->last_date_bidding}}</h5>
             </div>
             <div class="card-footer">
                 <div class="text-center">

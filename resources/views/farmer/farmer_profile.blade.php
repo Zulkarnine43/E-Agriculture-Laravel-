@@ -43,7 +43,7 @@
                             <p>Quantity:--{{$crop->crop_quantity}}</p>
                             <p>Bid Rate:--{{$crop->bid_rate}}TK</p>
                            <!--  <p>Views:--{{$crop->views}}</p> -->
-                            <a class="btn btn-success btn-block stretched-link" target="" href="{{route('crop_details',['id'=>$crop->id])}}" class="card-link">Details</a>
+                            <a class="btn btn-success btn-block stretched-link" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}" class="card-link">Details</a>
                         </div>
 
                     </div>

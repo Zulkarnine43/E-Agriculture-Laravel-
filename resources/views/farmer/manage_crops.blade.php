@@ -43,6 +43,7 @@
                                      @endif
 
                                     <a href="{{route('edit_crop',['id'=>$crop->id])}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                                    
                                     <a href="{{route('delete_crop',['id'=>$crop->id])}}" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger "><i class="fas fa-trash-alt"></i></a>
                                 </td>
                  
