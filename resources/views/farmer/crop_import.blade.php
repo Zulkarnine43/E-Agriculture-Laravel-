@@ -44,50 +44,49 @@
                     <option value="{{$categorie->id}}">{{$categorie->categories_name}}</option>
                           @endforeach
                 </select>
-                <span>{{$errors->has('crop_type') ? $errors->first('crop_type'): ' '}}</span>
             </div>
 
             <div class="form-group">
                 <label class="font-weight-bolder">Crop Quantity</label>
-                <input type="text" name="crop_quantity" class="form-control"  placeholder="Ex.20 bighas,100tree..Etc" required/>
-                <span>{{$errors->has('crop_quantity') ? $errors->first('crop_quantity'): ' '}}</span>
+                <input type="text" name="crop_quantity" class="form-control"  placeholder="Ex. 10 kg,1 bighas,10tree, ..Etc" required/>
+                <!-- <span>{{$errors->has('crop_quantity') ? $errors->first('crop_quantity'): ' '}}</span> -->
             </div>
 
             <div class="form-group">
                 <label class="font-weight-bolder">Crop Location</label>
-                <input type="text" name="crop_location" class="form-control" min="1" placeholder="93/A,kolabagan,Dhaka" required/>
-                <span>{{$errors->has('crop_location') ? $errors->first('crop_location'): ' '}}</span>
+                <input type="text" name="crop_location" class="form-control"  placeholder="93/A,kolabagan,Dhaka" required/>
+                <!-- <span>{{$errors->has('crop_location') ? $errors->first('crop_location'): ' '}}</span> -->
             </div>
 
             <div class="form-group">
-                <label class="font-weight-bolder"> bidding Rate</label>
+                <label class="font-weight-bolder"> Bidding Rate</label>
                 <input type="number" name="bid_rate" class="form-control" placeholder="Ex.Minimum 10000tk For bidding" min="1" required/>
-                <span>{{$errors->has('bid_rate') ? $errors->first('bid_rate'): ' '}}</span>
+                <!-- <span>{{$errors->has('bid_rate') ? $errors->first('bid_rate'): ' '}}</span> -->
             </div>
 
  
             <div class="form-group">
                 <label class="font-weight-bolder">Crop Description</label>
-                <textarea id="editor" class="form-control" name="crop_description" placeholder="crop description" required></textarea>
-                <span>{{$errors->has('crop_description') ? $errors->first('crop_description'): ' '}}</span>
+                <textarea  class="form-control" name="crop_description" placeholder="crop description" required></textarea>
+                <!-- <span>{{$errors->has('crop_description') ? $errors->first('crop_description'): ' '}}</span> -->
             </div>
 
             <div class="form-group">
-                <label class="font-weight-bolder"> Date of Bidding</label>
+                <label class="font-weight-bolder"> Finished Date of Bidding</label>
                 <input type="date" name="last_date_bidding" class="form-control" placeholder="" required/>
-                <span>{{$errors->has('last_date_bidding') ? $errors->first('last_date_bidding'): ' '}}</span>
+                <!-- <span>{{$errors->has('last_date_bidding') ? $errors->first('last_date_bidding'): ' '}}</span> -->
             </div>
 
             <div class="form-group">
                 <label class="font-weight-bolder">Add Crop image-</label><br>
                 <input type="file" name="crop_image" accept="image/*" required>
-                <span>{{$errors->has('crop_image') ? $errors->first('crop_image'): ' '}}</span>
+                <!-- <span>{{$errors->has('crop_image') ? $errors->first('crop_image'): ' '}}</span> -->
             </div>
 
            <div class="form-group">
                 <label class="font-weight-bolder">Another Crop image-</label><br>
                 <input type="file" name="crop_image2" accept="image/*" required>
-                <span>{{$errors->has('crop_image2') ? $errors->first('crop_image2'): ' '}}</span>
+                <!-- <span>{{$errors->has('crop_image2') ? $errors->first('crop_image2'): ' '}}</span> -->
             </div>
 
             <div class="form-group">

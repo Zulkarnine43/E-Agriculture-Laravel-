@@ -15,7 +15,8 @@ customer messages
                     <th>Sl No</th>
                     <th>Crop name</th>
                     <th>Farmer Name</th>
-                    <th>Account pay </th>
+                    <th>Account type </th>
+                    <th>Account id </th>
                     <th>confirm price </th>
                     <th>message</th>
                     <th>Action</th>
@@ -27,7 +28,8 @@ customer messages
                     <td>{{$i++}}</td>
                     <td>{{$confirms->crop_name}}</td>
                     <td>{{$confirms->f_username}}</td>
-                    <td>{{$confirms->account_pay}}</td>
+                    <td>{{$confirms->account_type}}</td>
+                    <td>{{$confirms->account_id}}</td>
                     <td>{{$confirms->confirm_price}}</td>
                     <td>{{$confirms->message}}</td>
                     <td>
@@ -43,7 +45,7 @@ customer messages
         </div>
     </div>
 
-
+        
     <div class="modal" id="payModal">
         <div class="modal-dialog">
             <div class="modal-content bg-light">
@@ -55,10 +57,10 @@ customer messages
                     <form action="" method="post">
                       @csrf
 
-                         @if($pay_confirms->isEmpty())
-                           <h4> There was no search value</h4>
-                        @else
-
+                     @if($pay_confirms->isEmpty())
+                       <h4> There was no search value</h4>
+                    @else
+                    <p class="lead"> Please pay {{$confirms->confirm_price}}TK To {{$confirms->account_type}} Account {{$confirms->account_id}} for confirmation. Now Send pay account & Transition ID </p>
                      <input type="hidden" name="crop_id" value="{{$confirms->crop_id}}">
                      <input type="hidden" name="f_username" value="{{$confirms->f_username}}">
                      <input type="hidden" name="c_username" value="{{Session::get('c_username')}}">

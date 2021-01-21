@@ -14,12 +14,14 @@ class CreateCategoriesInfosTable extends Migration
     public function up()
     {
         Schema::create('categories_infos', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('a_username',15);
             $table->string('categories_name',15);
             $table->string('categories_description',150);
             $table->string('categories_status',10);
             $table->timestamps();
+
+            $table->foreign('a_username')->references('username')->on('admin_registers')->onDelete('cascade');
         });
     }
 

@@ -14,9 +14,9 @@ class CreateAdminRegistersTable extends Migration
     public function up()
     {
         Schema::create('admin_registers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('username',20);
-            $table->string('email',40);
+            $table->increment('id');
+            $table->string('username',20)->unique();
+            $table->string('email',40)->unique();
             $table->string('mobile',12);
             $table->date('dob',30);
             $table->string('division',25);

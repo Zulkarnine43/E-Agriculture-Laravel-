@@ -53,7 +53,6 @@ class farm_CropController extends Controller
         $addProducts->last_date_bidding = $request->last_date_bidding;
         $addProducts->crop_image = $imageUrl;
         $addProducts->crop_image2 = $imageUrl2;
-        //$addProducts->views =0;
         $addProducts->status =1;
         $addProducts->condition ="New";
         $addProducts->Action ="Unpublished";
@@ -113,7 +112,6 @@ class farm_CropController extends Controller
         if($request->crop_image2!=null) {
             $addProducts->crop_image2 = $imageUrl2;
         }
-       // $addProducts->views =0;
         $addProducts->condition ="New";
         $addProducts->Action ="Unpublished";
         $addProducts->save();

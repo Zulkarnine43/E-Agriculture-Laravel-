@@ -23,7 +23,7 @@ Login form
                        <select class="form-control" name="register_as" required>
                         <option value=""><-------Role As------------></option>
                         <option value="farmer">Farmer</option>
-                        <option value="customer">customer</option>
+                        <option value="customer">Buyer</option>
                         </select>
                     </div>
                 </div>
@@ -33,7 +33,7 @@ Login form
                     <label class="col-sm-2">E-mail</label>
 
                     <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" name="email" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="example@gmail.com" required>
                      <span class="text-danger">{{$errors->has('email') ? $errors->first('email'): ' '}}</span>
                     </div>
                 </div>
@@ -79,11 +79,11 @@ Login form
                         @csrf
 
                         <div class="form-group">
-                            <label class="">Uses As</label>
+                            <label class="">Role As</label>
                             <select class="form-control" name="register_as" required>
-                                <option value=""><-------Uses As------------></option>
+                                <option value=""><-------Role As------------></option>
                                 <option value="farmer">Farmer</option>
-                                <option value="customer">Customer</option>
+                                <option value="customer">Buyer</option>
                             </select>
                         </div>
 

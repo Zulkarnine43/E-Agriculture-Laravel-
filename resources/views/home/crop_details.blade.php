@@ -8,8 +8,8 @@ Crop details
 
 
 
-  <script src="{{url('public/final_eagri/vendor/bootstrap/js/jquery-1.8.3.min.js')}}"></script>
-  <script src="{{url('public/final_eagri/vendor/elevateZoom/jquery.elevatezoom.js')}}"></script>
+ <!--  <script src="{{url('public/final_eagri/vendor/bootstrap/js/jquery-1.8.3.min.js')}}"></script>
+  <script src="{{url('public/final_eagri/vendor/elevateZoom/jquery.elevatezoom.js')}}"></script> -->
 
 
 
@@ -25,10 +25,10 @@ Crop details
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img id="zoom_01" height="150" width="300" src='{{url($crop->crop_image)}}' data-zoom-image="{{url($crop->crop_image)}}" alt="First slide"/>
+                            <img  height="150" width="300" src='{{url($crop->crop_image)}}'  alt="First slide"/>
                         </div> 
                         <div class="carousel-item">
-                            <img id="zoom_02"  height="300" width="600"  src="{{url($crop->crop_image2)}}" data-zoom-image="{{url($crop->crop_image2)}}" alt="Second slide"/>
+                            <img  height="300" width="600"  src="{{url($crop->crop_image2)}}" alt="Second slide"/>
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -100,11 +100,12 @@ Crop details
                         
                         <div class="font-weight-bolder text-center display-5">
                             Best Bidder::---
-                               @if($price==null)
+                            @if($price==null)
                                <span>Not any bid</span>
-                               @endif  
-
+                            @else 
                             <span class="ml-4">{{$price}}TK</span>
+                            @endif
+
                         </div>
 
                         <div class="form-group">
@@ -131,21 +132,6 @@ Crop details
     </div>
 
 
-
-
-
-
-
-    <!----comment section start----------->
-      <style>
-          .user_name{
-              font-size:14px;
-              font-weight: bold;
-          }
-          .comments-list .media{
-              border-bottom: 1px dotted #ccc;
-          }
-      </style>
 
       <div class="row justify-content-center">
           <div class="col-md-8">
@@ -204,9 +190,21 @@ Crop details
                         @if(isset($bid->cust_username))
                         <input type="hidden" name="cust_username" value="{{$bid->cust_username}}" class="form-control">
                         @endif
+
+                       <div class="form-group">
+                        <label class="font-weight-bolder">Account Type</label>
+                        <select class="form-control" name="account_type" required>
+                             <option value="">---Select a type</option>
+                             <option value="bkash">bkash</option>
+                             <option value="rocket">rocket</option>
+                              <option value="nagad">nagad</option>
+                        </select>
+                       </div>
+
                         <div class="form-group">
-                            <label>Pay-Account</label>
-                            <input type="text" name="account_pay" value="" class="form-control" placeholder="Bkash,Paypal" required>
+                            <label>Account-Id</label>
+                            <input type="tel" name="account_id" value="" class="form-control" placeholder="account" required>
+                            <span class="text-danger">{{$errors->has('account_id') ? $errors->first('account_id'): ' '}}
                         </div>
 
                         <div class="form-group">
@@ -227,13 +225,5 @@ Crop details
     </div>
 
 
-    <!---- Slider script start----------->
-    <script>
-      
-         // $("#zoom_02").elevateZoom();
-        $("#zoom_01").elevateZoom({scrollZoom : true});
-        $("#zoom_02").elevateZoom({scrollZoom : true});
-        // $("#zoom_02").elevateZoom({scrollZoom : true});
 
-    </script>
 @endsection

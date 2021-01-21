@@ -24,7 +24,7 @@ signup form
                        <select class="form-control" name="register_as" required>
                         <option value=""><-------Role As------------></option>
                         <option value="farmer">Farmer</option>
-                        <option value="customer">customer</option>
+                        <option value="customer">Buyer</option>
                         </select>
                     </div>
                 </div>
@@ -73,7 +73,7 @@ signup form
                 <label class="col-sm-2">Division</label>
                  <div class="col-sm-10">
                 <select class="form-control" name="division" required>
-                    <option value=""><-------Select Your District------------></option>
+                    <option value=""><-------Select Your Division------------></option>
                     <option value="Dhaka">Dhaka</option>
                     <option value="Rajshahi">Rajshahi</option>
                     <option value="Khulna">Khulna</option>

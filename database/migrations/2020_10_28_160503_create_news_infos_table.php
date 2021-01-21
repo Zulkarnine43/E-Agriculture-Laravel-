@@ -21,6 +21,8 @@ class CreateNewsInfosTable extends Migration
             $table->string('long_description');
             $table->string('news_image');
             $table->timestamps();
+
+            $table->foreign('username')->references('username')->on('admin_registers')->onDelete('cascade');
         });
     }
 

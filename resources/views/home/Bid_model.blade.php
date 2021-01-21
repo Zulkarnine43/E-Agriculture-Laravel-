@@ -28,15 +28,21 @@ Bid form
                         <input type="hidden" name="cust_username" value="{{Session::get('c_username')}}" class="form-control">
 
 
-
+                           
                         <div class="bid">
                             Bid Rate::<span class="ml-4 ">{{$crop->bid_rate}}</span>
                         </div>
 				
-
+                         @if($owners==null)
+                               <div class="bid">
+                                   Best Bidder::<span>Not any bid</span>
+                               </div>
+                         @else 
                         <div class="bid">
-                            Best Bidder::<span class="ml-4 bid">{{$owners}}</span>
+                            Best Bidder::<span class="ml-4">{{$owners}}</span>
                         </div>
+                         @endif
+
 
                         <div class="form-group">
                             <label>Name</label>

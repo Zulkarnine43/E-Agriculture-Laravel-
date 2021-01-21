@@ -15,7 +15,7 @@ class CreateBidMessagesTable extends Migration
     {
         Schema::create('bid_messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('crop_id');
+            $table->integer('crop_id')->unsigned();
             $table->string('crop_name');
             $table->string('f_username');
             $table->string('cust_username');
@@ -23,6 +23,10 @@ class CreateBidMessagesTable extends Migration
             $table->string('bid_price');
             $table->string('message');
             $table->timestamps();
+
+            $table->foreign('crop_id')->references('id')->on('crop_imports')->onDelete('cascade');
+            $table->foreign('f_username')->references('username')->on('crop_imports')->onDelete('cascade');
+            $table->foreign('cust_username')->references('username')->on('user_registers')->onDelete('cascade');
         });
     }
 

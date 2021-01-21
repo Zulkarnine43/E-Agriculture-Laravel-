@@ -16,8 +16,8 @@ class CreateFarmerRegistersTable extends Migration
         Schema::create('farmer_registers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('register_as',25);
-            $table->string('username',20);
-            $table->string('email',40);
+            $table->string('username',20)->unique();
+            $table->string('email',40)->unique();
             $table->string('mobile',12);
             $table->date('dob',30);
             $table->string('division',25);

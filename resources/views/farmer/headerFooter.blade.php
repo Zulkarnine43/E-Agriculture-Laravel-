@@ -108,15 +108,8 @@
                 Innovation and simplicity makes us happy: our goal is to remove any technical or financial
                 barriers that can prevent crops sell and buy. We're excited to
                 help you on your journey!?</p>
-            </div>
 
-              <div class="col-lg-3 text-center">
-                <h2 class="text-center">Quick Links</h2>
-                <li class="nav-item"><a class="nav-link" target="_blank" href="">News</a></li>
-                <li class="nav-item"><a class="nav-link" target="_blank" href="{{route('gallery')}}">Photo Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#messageModal">feedback Us</a></li>
-
-               <h2 class="">Social Links</h2>
+                <h2 class="">Social Links</h2>
                 <li class="nav-item" >
                 <a href=""><i class="fab fa-2x fa-facebook" style="color: blue;"></i></a>
                 <a href=""><i class="fab fa-2x fa-instagram ml-2" style="color:#E38EC4
@@ -124,6 +117,16 @@
                 <a href=""><i class="fab fa-2x fa-youtube ml-2" style="color: #ff6b6b;"></i></a>
                 <a href=""><i class="fab fa-2x fa-github ml-2" style="color: white;"></i></a>
                </li>   
+            </div>
+
+              <div class="col-lg-3 text-center">
+                <h2 class="text-center">Quick Links</h2>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="">News</a></li>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="{{route('gallery')}}">Photo Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" target="_blank" href="">Live Support</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#messageModal">feedback Us</a></li>
+
+                
             </div>
 
 
@@ -134,7 +137,7 @@
                 <li class="nav-item"><a class="nav-link" target="_blank" href="{{route('about')}}">About</a></li>
                 <li class="nav-item"><a class="nav-link" target="_blank" href="{{route('services')}}">Services</a></li>
                 <li class="nav-item"><a class="nav-link" target="_blank" href="{{route('contact')}}">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" target="_blank" href="">Live Support</a></li>
+               
             </div>
 
 

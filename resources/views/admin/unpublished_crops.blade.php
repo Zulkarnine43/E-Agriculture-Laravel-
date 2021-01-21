@@ -5,9 +5,9 @@
 
 
 <h5 class="text-success text-center">{{Session::get('msg')}}</h5>
-        <div class="row">
+        <div class="row my-4">
             @foreach($crops as $crop)
-            <div class="col-lg-3 col-md-6 my-4">
+            <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card">
                     <a href="#"><img class="card-img-top"  height="200" width="400" src="{{url($crop->crop_image)}}" alt=""></a>
                     <div class="card-body">

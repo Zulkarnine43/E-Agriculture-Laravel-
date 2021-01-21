@@ -119,9 +119,12 @@
                         </a>
                         <div class="dropdown-menu bg-dark nav-item" aria-labelledby="dropdownMenuLink">
                              <a class="nav-link" href="{{route('cust_profile',['c_username'=>Session()->get('c_username')])}}">profile</a>
+                             
                             <a class="nav-link" href="{{route('c_message')}}">
-                                <i class="fas fa-comment"></i>message
+                                <i class="fas fa-comment"></i>messages
                             </a>
+                             <a class="nav-link" href="">orders</a>
+
                              <a class="nav-link" href="{{route('c_settings')}}">setting</a>
                             <a class="nav-link" href="{{route('logout',['name'=>'c_username'])}}">logout</a>
                         </div>

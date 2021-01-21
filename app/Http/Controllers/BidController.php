@@ -90,21 +90,23 @@ class BidController extends Controller
     public function pay_confirm_message(Request $request)
     {
         $this->validate($request,[
+            'account_id'=>['regex: /^((01|8801)[3456789])(\d{8})$/'],
         ]);
         if($request->message==null){
             $request->message="null";
         }
 
-        $regis = new pay_confirm_message();
-        $regis->crop_id = $request->crop_id;
-        $regis->f_username = $request->f_username;
-        $regis->crop_name = $request->crop_name;
-        $regis->cust_username = $request->cust_username;
-        $regis->account_pay = $request->account_pay;
-        $regis->confirm_price = $request->confirm_price;
-        $regis->message = $request->message;
-        $regis->save();
-        return redirect('/')->with('msg','your confirm message send successfully');
+        $pay_info = new pay_confirm_message();
+        $pay_info->crop_id = $request->crop_id;
+        $pay_info->f_username = $request->f_username;
+        $pay_info->crop_name = $request->crop_name;
+        $pay_info->cust_username = $request->cust_username;
+        $pay_info->account_type = $request->account_type;
+        $pay_info->account_id = $request->account_id;
+        $pay_info->confirm_price = $request->confirm_price;
+        $pay_info->message = $request->message;
+        $pay_info->save();
+        return redirect('/farmer/bid/messages')->with('msg','your confirm message send successfully');
 
     }
 

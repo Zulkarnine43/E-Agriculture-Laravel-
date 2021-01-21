@@ -41,7 +41,7 @@ about us
                     <div class="card-body">
                         <i class="fa fa-envelope mb-3"></i>
                         <h3>Lorem Ipsum</h3>
-                        <p class="lead">E-Agriculture is a model farmer management website appllication.</p>
+                        <p class="lead">The main objectives of the proposed web based online auction type of crops.</p>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@ about us
                     <div class="card-body">
                         <i class="fa fa-car mb-3"></i>
                         <h3>Lorem Ipsum</h3>
-                        <p class="lead">E-Agriculture provides a concept of virtual agriculture trade to its users.</p>
+                        <p class="lead">To allow farmers in freedom to set the price </p>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@ about us
                     <div class="card-body">
                         <i class="fa fa-play mb-3"></i>
                         <h3>Lorem Ipsum</h3>
-                        <p class="lead">It helps the wholesalers or customers in buying produce from larger number of farmers.</p>
+                        <p class="lead">To eliminate the involvement of intermediate persons in market.</p>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@ about us
                     <div class="card-body">
                         <i class="fa fa-tree mb-3"></i>
                         <h3>Lorem Ipsum</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quasi magni placeat.</p>
+                        <p class="lead">It helps the wholesalers or customers in buying produce from larger number of farmers.</p>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@ about us
                     <div class="card-body">
                         <i class="fa fa-cart-plus mb-3"></i>
                         <h3>Lorem Ipsum</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quasi magni placeat.</p>
+                        <p class="lead">To make agriculture as a profitable zone.</p>
                     </div>
                 </div>
             </div>
@@ -88,13 +88,14 @@ about us
                     <div class="card-body">
                         <i class="fa fa-youtube mb-3"></i>
                         <h3>Lorem Ipsum</h3>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quasi magni placeat.</p>
+                        <p class="lead">E-Agriculture is improving agriculture developing opportunites of agri-business and agriculture technologies. </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 
 

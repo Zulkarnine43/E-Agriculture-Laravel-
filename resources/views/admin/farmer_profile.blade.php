@@ -43,11 +43,13 @@
                         <img class="card-img-top" src="{{url($crop->crop_image)}}" alt="food1" height="200" width="350">
                         <div class="item-desc">
                             <h3 class="item-name">{{$crop->crop_name}}</h3>
-                            <p>{{$crop->crop_location}}</p>
-                            <p>{{$crop->bid_rate}}</p>
-                            <p>{{$crop->crop_description}}</p>
+
+                            <span>{{$crop->condition}}</span>
+                            <p>Quantity:--{{$crop->crop_quantity}}</p>
+                            <p>Bid Rate:--{{$crop->bid_rate}}TK</p>
+                            <p>Date Finished:--{{$crop->last_date_bidding}}</p>
+
                             <a class="btn btn-success btn-block" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}" class="card-link">Details</a>
-                            <!-- <a class="btn btn-success" target="_blank" href="" class="card-link">Bid here</a> -->
                         </div>
 
                     </div>
