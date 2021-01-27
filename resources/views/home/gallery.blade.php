@@ -61,7 +61,7 @@ Photo Gallery
         <div class="col-md-4 mb-sm-2">
           <div>
             <a href="{{ url('public/final_eagri/img/a.jpg')}}">
-              <img src="{{ url('public/final_eagri/img/a.jpg')}}" class="img-fluid" alt="">
+              <img src="{{ url('public/final_eagri/img/s.jpg')}}" class="img-fluid" alt="">
             </a>
           </div>
         </div>

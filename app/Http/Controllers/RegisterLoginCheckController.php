@@ -108,12 +108,19 @@ class RegisterLoginCheckController extends Controller
         if ($request->register_as == "farmer") {
 
             if($result = farmer_register::where('email', $request->email)->first()){
-           if($result->condition=="verified") {
+
+              if($result->condition=="verified") {
           
-            if (Hash::check($request->password, $result->password)) {
+               if (Hash::check($request->password, $result->password)) {
+
+                if($result->action=="active"){
                     Session::put('f_username', $result['username']);
-//                    return Session::get('f_username');
                     return redirect('/farmer/home/page')->with('f_login', 'Login successfully');
+                    
+                }else {
+                    return redirect('/login')->with('login_error', 'your account are disabled plesae contact with admin');
+                    }
+
                 } else {
                     return redirect('/login')->with('login_error', 'username or password not match');
                 }

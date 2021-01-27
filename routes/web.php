@@ -197,16 +197,6 @@ Route::get('/delete/news/{id}',[
 ]);
 
 
-Route::get('/manage/comments',[
-    'uses' =>'adminController@manage_Comments',
-    'as' =>'manage_Comments'
-]);
-
-Route::get('/delete/comments/{id}',[
-    'uses' =>'adminController@comment_delete',
-    'as' =>'comment_delete'
-]);
-
 Route::get('/admin/profile',[
     'uses' =>'adminController@a_profile',
     'as' =>'a_profile'
@@ -226,7 +216,6 @@ Route::get('/admin/settings',[
 Route::get('/',[
 'uses'=>'homeController@index',
 'as'=>'home'
-
 ]);
 
 
@@ -336,17 +325,10 @@ Route::post('/customer/registerUpdate',[
 ]);
 
 
-Route::post('/contact/message',[
-    'uses' =>'homeController@contact_message',
-    'as' =>'contact_message'
-]);
-
 Route::get('/search',[
     'uses' =>'homeController@search',
     'as' =>'search'
 ]);
-
-
 
 
 // End home page routing
@@ -356,7 +338,7 @@ Route::get('/search',[
 Route::get('/farmer/home/page',[
     'uses' =>'farmerController@f_home',
     'as' =>'f_home'
-])->middleware('f_check');
+]);
 
 Route::get('/crop/import',[
     'uses' =>'farmerController@crop_import',

@@ -31,7 +31,7 @@
                     <option value="">---Select a session</option>
                     <option value="1">Summer</option>
                      <option value="2">Winter</option>
-                      <option value="3">Spring</option>
+                      <option value="3">Monsoon</option>
                 </select>
             </div>
 
@@ -48,7 +48,7 @@
 
             <div class="form-group">
                 <label class="font-weight-bolder">Crop Quantity</label>
-                <input type="text" name="crop_quantity" class="form-control"  placeholder="Ex. 10 kg,1 bighas,10tree, ..Etc" required/>
+                <input type="text" name="crop_quantity" class="form-control"  placeholder="Ex.Pics, kg,bighas,tree ..Etc" required/>
                 <!-- <span>{{$errors->has('crop_quantity') ? $errors->first('crop_quantity'): ' '}}</span> -->
             </div>
 
@@ -60,14 +60,14 @@
 
             <div class="form-group">
                 <label class="font-weight-bolder"> Bidding Rate</label>
-                <input type="number" name="bid_rate" class="form-control" placeholder="Ex.Minimum 10000tk For bidding" min="1" required/>
+                <input type="number" name="bid_rate" class="form-control" placeholder="Ex.Minimum amount(TK) bidding start" min="1" required/>
                 <!-- <span>{{$errors->has('bid_rate') ? $errors->first('bid_rate'): ' '}}</span> -->
             </div>
 
  
             <div class="form-group">
                 <label class="font-weight-bolder">Crop Description</label>
-                <textarea  class="form-control" name="crop_description" placeholder="crop description" required></textarea>
+                <textarea  class="form-control" name="crop_description" placeholder="crop description here" required></textarea>
                 <!-- <span>{{$errors->has('crop_description') ? $errors->first('crop_description'): ' '}}</span> -->
             </div>
 

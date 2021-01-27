@@ -28,7 +28,8 @@
     <div>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
-            <button class="btn btn-primary" id="menu-toggle"> DashboardMenu</button>
+        
+          <a class="btn btn-outline-success ml-4" target="_blank" href="{{route('home')}}">E-Agriculture</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -83,9 +84,6 @@
                         </div>
                     </li>
 
-                     <li class="nav-item active">
-                        <a class="nav-link" href="{{route('manage_Comments')}}">User Queries<span class="sr-only">(current)</span></a>
-                       </li>
 
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">

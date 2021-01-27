@@ -139,6 +139,9 @@ Crop details
                   <h1><small class="pull-right"></small> Bids </h1>
               </div>
 
+              @if($bids_msg->isEmpty())
+                 Not Found Any Bid
+              @endif   
               <!-- <h1 class="text-success">{{Session::get('msg')}}</h1> -->
               @foreach($bids_msg as $bid)
               <div class="comments-list">
@@ -152,17 +155,13 @@ Crop details
                           <p> 
                                   
                                    @if($bid->cust_username==Session::get('c_username') )
-
-
                                    <a href="{{route('bid_delete',['id'=>$bid->id,'crop_id'=>$bid->crop_id])}}">delete</a>
-
                                   @endif
 
 
                                   @if($crop->username==Session::get('f_username'))
                                   -<a data-toggle="modal" href="#ReplyModal">Reply_confirm</a>
-                                  @endif
-                               
+                                  @endif          
                           </p>
                       </div>
                   </div>

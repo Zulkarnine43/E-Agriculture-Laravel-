@@ -18,6 +18,7 @@ class farm_CropController extends Controller
 
 
         $addProducts = new crop_import();
+        
         $productImage = $request->file('crop_image');
         if ($productImage) {
 

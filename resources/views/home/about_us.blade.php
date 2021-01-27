@@ -6,7 +6,7 @@ about us
 @endsection
 
 @section('body')
-<section id="page-header"class="mt-2" style="background-image: url('{{ url('public/final_eagri/img/33.jpg')}}'); height:200px;">
+<section id="page-header"class="mt-2" style="background-image: url('{{ url('public/final_eagri/img/a.jpg')}}'); height:200px;">
     <div class="container">
         <div class="row">
             <div class="col-md-6 m-auto text-center text-light">
@@ -17,7 +17,7 @@ about us
     </div>
 </section>
 <!-- About Section -->
-<section id="about" class="py-5">
+<section class="py-5">
     <div class="container">
         <div class="row">
             <div class="col-md-6 align-self-center text-justify">
@@ -32,6 +32,22 @@ about us
     </div>
 </section>
 
+<section class="py-2">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 text-center">
+                <img src="{{ url('public/final_eagri/img/service.jpg')}}" class="img-fluid " alt="">
+            </div>
+
+            <div class="col-md-6 align-self-center text-justify">
+                <h2>About E-Agriculture</h2>
+                <p class="lead">Web server of Farmer product can give farmer greater profitability for their product and selling product easily. For this service farmer registered on this site and post their products. Buyer Can registered and buy necessary product by bid from website. In the website number of product posted in different categories and manufacture that can buy and sell anyone who are registered on this site. </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Icon Boxes -->
 <section id="icon-boxes" class="py-5 text-center text-light">
     <div class="container">
@@ -40,60 +56,32 @@ about us
                 <div class="card bg-success">
                     <div class="card-body">
                         <i class="fa fa-envelope mb-3"></i>
-                        <h3>Lorem Ipsum</h3>
-                        <p class="lead">The main objectives of the proposed web based online auction type of crops.</p>
+                        <h3>website</h3>
+                        <p class="lead text-justify">The main objectives of the website online auction system to eliminate the involvement of intermediate persons in market</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card bg-primary">
                     <div class="card-body">
-                        <i class="fa fa-car mb-3"></i>
-                        <h3>Lorem Ipsum</h3>
-                        <p class="lead">To allow farmers in freedom to set the price </p>
+                        <i class="fa fa-envelope mb-3"></i>
+                        <h3>Farmer</h3>
+                        <p class="lead text-justify">To allow farmers in freedom to set the price that make agriculture as a profitable zone </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card bg-danger">
                     <div class="card-body">
-                        <i class="fa fa-play mb-3"></i>
-                        <h3>Lorem Ipsum</h3>
-                        <p class="lead">To eliminate the involvement of intermediate persons in market.</p>
+                        <i class="fa fa-envelope mb-3"></i>
+                        <h3>Buyer</h3>
+                        <p class="lead text-justify">It helps the wholesalers or buyers in buying produce from larger number of farmers.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row pt-4">
-            <div class="col-md-4">
-                <div class="card bg-light text-dark">
-                    <div class="card-body">
-                        <i class="fa fa-tree mb-3"></i>
-                        <h3>Lorem Ipsum</h3>
-                        <p class="lead">It helps the wholesalers or customers in buying produce from larger number of farmers.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card bg-dark">
-                    <div class="card-body">
-                        <i class="fa fa-cart-plus mb-3"></i>
-                        <h3>Lorem Ipsum</h3>
-                        <p class="lead">To make agriculture as a profitable zone.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 text-dark">
-                <div class="card bg-warning">
-                    <div class="card-body">
-                        <i class="fa fa-youtube mb-3"></i>
-                        <h3>Lorem Ipsum</h3>
-                        <p class="lead">E-Agriculture is improving agriculture developing opportunites of agri-business and agriculture technologies. </p>
-                    </div>
-                </div>
-            </div>
+   
         </div>
-    </div>
 </section>
 
 

@@ -19,7 +19,7 @@ Home
           <h1 class="text-success">{{Session::get('msg')}}</h1>
           <h1 class="text-success">{{Session::get('l_msg')}}</h1>
 
-    <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide my-3" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -55,6 +55,9 @@ Home
    <section id="menu-section" class="my-5">
     <div class="row">
         @foreach($crops as $crop)
+
+        @php( $farmer=App\farmer_register::where('username',$crop->username)->first())
+        @if($farmer->action=="active")
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-body">
@@ -82,6 +85,7 @@ Home
                 </div>
             </div>
         </div>
+        @endif
         @endforeach
     </div>
 </section>

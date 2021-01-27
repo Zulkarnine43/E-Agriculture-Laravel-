@@ -23,16 +23,19 @@
 <div class="fixed-top">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-3">
-        <a class="navbar-brand ml-4" href="#">E-Agriculture</a>
+
+        <a class="navbar-brand ml-4" href="#"><img src="{{ url('public/final_eagri/img/agri.png')}}"></a>
+
+        <!-- <a class="btn btn-outline-success ml-4" target="_blank" href="{{route('home')}}">E-Agriculture</a> -->
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('f_home')}}">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
+                    <a class="nav-link" href="{{route('f_home')}}">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">Crops</a>
@@ -102,8 +105,8 @@
   <footer class="py-5 bg-dark">
 
         <div class="row nav text-light mx-auto">
-            <div class="col-lg-3">
-                <h2 class="text-center">Our website</h2>
+            <div class="col-lg-3 text-center">
+                <h2>Our website</h2>
               <p class=" text-justify">At e_agriculture,
                 Innovation and simplicity makes us happy: our goal is to remove any technical or financial
                 barriers that can prevent crops sell and buy. We're excited to
@@ -120,14 +123,12 @@
             </div>
 
               <div class="col-lg-3 text-center">
-                <h2 class="text-center">Quick Links</h2>
+                <h2 class="">Quick Links</h2>
                 <li class="nav-item"><a class="nav-link" target="_blank" href="">News</a></li>
                 <li class="nav-item"><a class="nav-link" target="_blank" href="{{route('gallery')}}">Photo Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" target="_blank" href="">Live Support</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#messageModal">feedback Us</a></li>
-
-                
-            </div>
+               </div>
 
 
 
@@ -166,7 +167,7 @@
                     <h5 class="modal-title">Feedback us</h5>
                     <button class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <form action="{{route('contact_message')}}" method="post">
+                <form action="" method="post">
                 <div class="modal-body">
                         @csrf
                         <div class="form-group">

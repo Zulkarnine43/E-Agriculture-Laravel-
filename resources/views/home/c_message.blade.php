@@ -31,13 +31,16 @@ customer messages
                     <td>{{$confirms->account_type}}</td>
                     <td>{{$confirms->account_id}}</td>
                     <td>{{$confirms->confirm_price}}</td>
-                    <td>{{$confirms->message}}</td>
+
+                    @if($confirms->message=="null")
+                    <td>empty</td>
+                    @endif
                     <td>
                         <a target="_blank" href="{{route('crop_details',['id'=>$confirms->crop_id])}}" class="btn btn-success">details</a>
                         
                          <a target="_blank" href="" class="btn btn-success">download_invoice</a>
 
-                        <button class="btn btn-success " data-toggle="modal" data-target="#payModal">Pay-info</button>
+                        <button class="btn btn-success " data-toggle="modal" data-target="">Payment</button>
                     </td>
                 </tr>
                     @endforeach

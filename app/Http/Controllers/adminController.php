@@ -187,16 +187,6 @@ class adminController extends Controller
         return redirect('/manage/news')->with('msg','news delete successfully');
     }
 
-    public function manage_Comments(){
-        $newses=contact_message::all();
-        return view('admin.manage_Comments',compact('newses'));
-    }
-
-    public function comment_delete($id){
-        $news=contact_message::find($id);
-        $news->delete();
-        return redirect('/manage/comments')->with('msg','comment delete successfully');
-    }
 
     public function a_profile(){
         $newses=news_info::where('username',Session::get('a_username'))

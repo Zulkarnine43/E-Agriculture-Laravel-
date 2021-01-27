@@ -27,7 +27,8 @@
     <!--Top Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-light py-2">
 
-        <a class="text-dark navbar-brand ml-4" href="#">E-Agriculture</a>
+        <!-- <a class="text-dark navbar-brand ml-4" href="#">E-Agriculture</a> -->
+        <a class="btn btn-outline-success ml-4" href="{{route('home')}}">E-Agriculture</a>
 
         <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="navbar-toggler-icon "></span>
@@ -67,7 +68,7 @@
                     </li>
 
           <li class="nav-item dropdown">
-                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Summer Crops</a>
+                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Summer Products</a>
                         <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
                               @php($categories=App\categories_info::all())
                                 @foreach($categories as $categorie)
@@ -77,7 +78,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Winter Crops</a>
+                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Winter Products</a>
                         <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
                           @php($categories=App\categories_info::all())
                                 @foreach($categories as $categorie)
@@ -87,7 +88,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Spring Crops</a>
+                        <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Monsoon Products</a>
                         <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
                            @php($categories=App\categories_info::all())
                                 @foreach($categories as $categorie)
@@ -164,9 +165,6 @@
 
         <div class="col-lg-10 mt-lg-3">
             <h3 class="text-success">{{Session::get('bid_success')}}</h3>
-
-
-
         @yield('body')
  </div>
     </div>
@@ -174,38 +172,45 @@
 
     <footer class="py-5 bg-dark">
 
-        <div class="row nav text-light mx-auto">
+        <div class="row nav text-light text-center">
             <div class="col-lg-3">
-                <h2 class="text-center">Our website</h2>
-              <p class=" text-justify" style="font-size: 18px; font-family: 'Fredericka the Great', cursive;" >At e_agriculture,
+                <h2>Our website</h2>
+              <p class=" text-justify ml-4">At e_agriculture,
                 Innovation and simplicity makes us happy: our goal is to remove any technical or financial
                 barriers that can prevent crops sell and buy. We're excited to
                 help you on your journey!?</p>
+
+              <h2 class="">Social Links</h2>
+              <li class="nav-item" >
+                <a href=""><i class="fab fa-2x fa-facebook" style="color: blue;"></i></a>
+                <a href=""><i class="fab fa-2x fa-instagram ml-2" style="color:#E38EC4
+                    ;"></i></a>
+                <a href=""><i class="fab fa-2x fa-youtube ml-2" style="color: #ff6b6b;"></i></a>
+                <a href=""><i class="fab fa-2x fa-github ml-2" style="color: white;"></i></a>
+               </li>       
+
             </div>
 
-              <div class="col-lg-3">
+              <div class="col-lg-3 text-center">
                 <h2 class="text-center">Quick Links</h2>
-                <li class="nav-item"><a class="nav-link text-center" href="">News</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="{{route('gallery')}}">Photo Gallery</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="">Summer Crops</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="">Winter crops </a></li>
-                 <li class="nav-item"><a class="nav-link text-center" href="">Spring crops </a></li>
-                <li class="nav-item"><a class="nav-link text-center" data-toggle="modal" data-target="#messageModal">feedback Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('gallery')}}">Photo Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Summer Crops</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Winter crops </a></li>
+                 <li class="nav-item"><a class="nav-link" href="">Spring crops </a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#messageModal">feedback Us</a></li>
             </div>
 
 
 
-            <div class="col-lg-3 text-left">
+            <div class="col-lg-3 text-center">
                 <h2 class="text-center">Our Survices</h2>
-                <li class="nav-item"><a class="nav-link text-center" href="{{route('home')}}">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="{{route('about')}}">About</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="{{route('services')}}">Services</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="{{route('contact')}}">Contact</a></li>
-                <li class="nav-item"><a class="nav-link text-center" href="">Live Support</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('home')}}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('about')}}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('services')}}">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="">Live Support</a></li>
             </div>
-
-
-
                 <div class="col-lg-3 text-center">
                 <h4>Get In Touch</h4>
                 <h4>Address</h4>
@@ -213,16 +218,7 @@
                 <h4>Email</h4>
                 <p>eagriculture@gmail.com</p>
                 <h4>Phone</h4>
-                <p class="mb-2">+8801989419776</p>
-
-                <h2 class="">Social Links</h2>
-                <li class="nav-item" >
-                <a href=""><i class="fab fa-2x fa-facebook" style="color: blue;"></i></a>
-                <a href=""><i class="fab fa-2x fa-instagram ml-2" style="color:#E38EC4
-                    ;"></i></a>
-                <a href=""><i class="fab fa-2x fa-youtube ml-2" style="color: #ff6b6b;"></i></a>
-                <a href=""><i class="fab fa-2x fa-github ml-2" style="color: white;"></i></a>
-               </li>             
+                <p class="mb-2">+8801989419776</p>      
 
             </div>
         </div>
@@ -240,7 +236,7 @@
                     <h5 class="modal-title">Feedback us</h5>
                     <button class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <form action="{{route('contact_message')}}" method="post">
+                <form action="" method="post">
                 <div class="modal-body">
                         @csrf
                         <div class="form-group">

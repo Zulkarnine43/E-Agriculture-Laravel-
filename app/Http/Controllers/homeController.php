@@ -90,17 +90,7 @@ class homeController extends Controller
         return view('home.contact');
     }
 
-    public function contact_message(Request $request){
 
-        $regis = new contact_message();
-        $regis->name = $request->name;
-        $regis->email = $request->email;
-        $regis->phone = $request->phone;
-        $regis->message = $request->message;
-        $regis->save();
-        return redirect('/')->with('msg','your message send successfully');
-
-    }
 
         public function crop_details($id){
          $crop=crop_import::find($id);
