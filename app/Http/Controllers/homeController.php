@@ -116,8 +116,8 @@ class homeController extends Controller
             // ->orwhere('crop_type','Like','%'.$search_tx1.'%')
            //  ->orwhere('crop_location','Like','%'.$search_tx1.'%')
             // ->orwhere('bid_rate','Like','%'.$search_tx1.'%')
-            ->where('crop_name','Like',"%$search_tx1%")
-            ->orwhere('crop_type','Like',"%$search_tx1%")
+            ->where('crop_name','Like',"%$search_tx1%")->where('Action',"Published")->where('status',1)
+            ->orwhere('crop_type','Like',"%$search_tx1%")->where('Action',"Published")->where('status',1)
            // ->orwhere('crop_name','Like',"%%")
             ->get();
             return view('home.search', ['s' => $search]);

@@ -122,7 +122,7 @@ class RegisterLoginCheckController extends Controller
                     }
 
                 } else {
-                    return redirect('/login')->with('login_error', 'username or password not match');
+                    return redirect('/login')->with('login_error', 'email or password not match');
                 }
          }
            else{
@@ -139,13 +139,19 @@ class RegisterLoginCheckController extends Controller
 
           if($result = user_register::where('email', $request->email)->first()){
 
-          if($result->condition=="verified") {
+            if($result->condition=="verified") {
 
                if (Hash::check($request->password, $result->password)) {
+
+                if($result->action=="active"){
                    Session::put('c_username', $result['username']);
                    return redirect('/')->with('c_login', 'Login successfully');
+                   
+                   } else {
+                    return redirect('/login')->with('login_error', 'your account are disabled plesae contact with admin');
+                    }
                } else {
-                   return redirect('/login')->with('login_error', 'username or password not match');
+                   return redirect('/login')->with('login_error', 'email or password not match');
                }
           }else{
               return redirect('/login')->with('login_error', 'please verify your email');

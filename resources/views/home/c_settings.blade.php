@@ -73,7 +73,7 @@
                     </div>
 
                     <div id="updateprofile" class="tab-pane fade">
-                        <div class="col-lg-6 mx-auto">
+                        <div class="col-lg-7 mx-auto">
                           <form class="form-group" action="{{route('customerRegisterUpdate')}}" method="POST" enctype="multipart/form-data" >
                                 @csrf
                                 <div>

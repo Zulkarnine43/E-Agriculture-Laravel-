@@ -6,7 +6,15 @@ Login form
 
 @section('body')
 
-    <section class="my-5">
+
+    <div class="alert alert-success alert-dismissable text-center mt-3">
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        <strong> Login as farmer for sell crop or buyer for bid & buy </strong>Details<a class="alert-link ml-1" href="{{route('services')}}">Check it out</a>
+    </div>
+
+    <section class="my-3">
         <div class="col-lg-6 mx-auto  jumbotron">
             <form class="form-group" action="{{route('login_check')}}" method="POST">
                 @csrf
@@ -33,7 +41,7 @@ Login form
                     <label class="col-sm-2">E-mail</label>
 
                     <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="example@gmail.com" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>
                      <span class="text-danger">{{$errors->has('email') ? $errors->first('email'): ' '}}</span>
                     </div>
                 </div>
@@ -43,7 +51,7 @@ Login form
                 <!-- Password-->
                         <label class="col-sm-2">Password</label>
                         <div class="col-sm-10">
-                            <input type="password" id="password" name="password" placeholder="Xyz123" class="form-control" required>
+                            <input type="password" id="password" name="password" placeholder="Enter your Password" class="form-control" required>
                             <span class="text-danger">{{$errors->has('password') ? $errors->first('password'): ' '}}</span>
                         </div>
                     </div>

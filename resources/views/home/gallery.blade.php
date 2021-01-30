@@ -26,7 +26,7 @@ Photo Gallery
 </style>
 
  <!-- Photo Gallery -->
-  <section id="gallery" class="py-5 text-center" uk-lightbox>
+  <section id="gallery" class="py-3 text-center">
       <div class="row py-0 py-sm-3">
         <div class="col-md-4 mb-sm-2">
           <div>

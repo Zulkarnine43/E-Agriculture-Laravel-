@@ -8,18 +8,10 @@ Home
 @section('body')
 
 
- <div class="alert alert-success alert-dismissable text-center mt-3">
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        <strong> Login as farmer for sell crop or buyer for bid & buy </strong>Details<a class="alert-link ml-1" href="{{route('services')}}">Check it out</a>
-    </div>
-
-          <!-- <h3 class="text-success">{{Session::get('c_login')}}</h3> -->
           <h1 class="text-success">{{Session::get('msg')}}</h1>
           <h1 class="text-success">{{Session::get('l_msg')}}</h1>
 
-    <div id="carouselExampleIndicators" class="carousel slide my-3" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide my-2" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -49,16 +41,63 @@ Home
     </div>
 
 
+           
 <!--  /* menu-section starts here  */-->
-    <h3 class="text-success">{{Session::get('f_login')}}</h3>
+   
 
-   <section id="menu-section" class="my-5">
+      <section class="py-1 text-center text-dark">        
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-2">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <i class="fas fa-3x fa-user-circle mb-3"></i>
+                                <h3>Register your account</h3>
+                                <p class="lead text-justify">To create an account, farmers and buyers need to register their contact details.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-2">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                               <i class="fas fa-3x fa-lock-open mb-3"></i>
+                                <h3>Log in to your account</h3>
+                                <p class="lead text-justify">Farmers and buyers need to login to their account to sell and buy the product. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-2">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <i class="fas fa-3x fa-list-ul mb-3"></i>
+                                <h3>Sell ​​products</h3>
+                                <p class="lead text-justify">Now farmers can sell their agricultural products online anywhere, anytime.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-lg-3 col-md-6 mb-2">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                               <i class="fas fa-3x fa-shopping-cart mb-3"></i>
+                                <h3>Buy ​​products</h3>
+                                <p class="lead text-justify">Now buyers can buy agricultural products online anywhere, anytime by bidding</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>       
+                 
+            </section>
+
+
+
+
+   <section class="my-4">
     <div class="row">
         @foreach($crops as $crop)
 
         @php( $farmer=App\farmer_register::where('username',$crop->username)->first())
         @if($farmer->action=="active")
-        <div class="col-lg-4 col-md-6 col-sm-12">
+
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
             <div class="card">
                 <div class="card-body">
                     <img class="card-img-top" src="{{url($crop->crop_image)}}" alt="food1" height="200" width="400">
@@ -89,5 +128,8 @@ Home
         @endforeach
     </div>
 </section>
+
+
+    
 
     @endsection

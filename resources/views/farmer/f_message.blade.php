@@ -25,75 +25,78 @@
                     <td>{{$message->bid_price}}</td>
                     <td>{{$message->message}}</td>
                     <td>{{$message->created_at}}</td>
-                        <td>
-                        <a target="_blank" href="{{route('crop_details',['id'=>$message->crop_id])}}" class="btn btn-success"><i class="fas fa-info-circle"></i></a>
-                         <a target="_blank" href="" class="btn btn-success"><i class="fas fa-cloud-download-alt"></i></a> 
-                         <a data-toggle="modal" href="#ReplyModal" class="btn btn-success"><i class="fas fa-reply-all"></i>confirm</a>
-                    </td>
-                    
-                     </tr>
+                   <td>
+                        <a target="_blank" href="{{route('crop_details',['id'=>$message->crop_id])}}" class="btn btn-success mb-sm-2"><i class="fas fa-info-circle"></i></a>
 
-                    <!----Reply Modal start----------->
+                         <a target="_blank" href="" class="btn btn-success mb-sm-2"><i class="fas fa-cloud-download-alt"></i></a> 
 
-                    <div class="modal" id="ReplyModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content bg-light">
-                                <div class="modal-header">
-                                    <h3>Confirm Reply</h3>
-                                    <button class="close text-dark" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="{{route('pay_confirm_message')}}" method="post">
-                                     @csrf
-
-                                     
-                                        <input type="hidden" name="crop_id" value="{{$message->crop_id}}" class="form-control">
-                                        <input type="hidden" name="f_username" value="{{$message->f_username}}" class="form-control">
-                                        <input type="hidden" name="crop_name" value="{{$message->crop_name}}" class="form-control">
-                                        @if(isset($message->cust_username))
-                                        <input type="hidden" name="cust_username" value="{{$message->cust_username}}" class="form-control">
-                                        @endif
-
-                                       <div class="form-group">
-                                        <label class="font-weight-bolder">Account Type</label>
-                                        <select class="form-control" name="account_type" required>
-                                             <option value="">---Select a type</option>
-                                             <option value="bkash">bkash</option>
-                                             <option value="rocket">rocket</option>
-                                              <option value="nagad">nagad</option>
-                                        </select>
-                                       </div>
-
-                                        <div class="form-group">
-                                            <label>Account-Id</label>
-                                            <input type="tel" name="account_id" value="" class="form-control" placeholder="account Ex:0194*******" required>
-                                            <span class="text-danger">{{$errors->has('account_id') ? $errors->first('account_id'): ' '}}
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Confirm price</label>
-                                            <input type="number" name="confirm_price" value="" class="form-control" placeholder="Enter confirrm price" min="1" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Message(optional)</label>
-                                            <input type="text" name="message" value="" class="form-control" placeholder="Enter message">
-                                        </div>
-
-                                        <input  type="submit"  value="Reply Confirm" class="btn btn-success btn-block">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-               
-                @endforeach
+                       <!--   <a data-toggle="modal" href="#ReplyModal" class="btn btn-success mb-sm-2"><i class="fas fa-reply-all"></i>confirm</a>
+                          </td> -->
+                        </tr>
+             @endforeach   
             </table>
         </div>
     </div>
 
+   
 
 
+@endsection        
 
-@endsection
+                          <!----Reply Modal start----------->
+
+                      <!--  <div class="modal" id="ReplyModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content bg-light">
+                                    <div class="modal-header">
+                                        <h3>Confirm Reply</h3>
+                                        <button class="close text-dark" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{route('pay_confirm_message')}}" method="post">
+                                         @csrf
+                                         
+                                          @foreach($messages as $message)
+                                        <input type="hidden" name="crop_id" value="{{$message->crop_id}}">
+                                        <input type="hidden" name="f_username" value="{{Session::get('f_username')}}">
+                                        <input type="hidden" name="crop_name" value="{{$message->crop_name}}">
+                                           @if(isset($message->cust_username)) 
+                                       <input type="hidden" name="cust_username" value="{{$message->cust_username}}" class="form-control">
+                                             @endif 
+                                           @endforeach
+                                          
+                                           <div class="form-group">
+                                            <label class="font-weight-bolder">Account Type</label>
+                                            <select class="form-control" name="account_type" required>
+                                                 <option value="">---Select a type</option>
+                                                 <option value="bkash">bkash</option>
+                                                 <option value="rocket">rocket</option>
+                                                  <option value="nagad">nagad</option>
+                                            </select>
+                                           </div>
+
+                                            <div class="form-group">
+                                                <label>Account-Id</label>
+                                                <input type="tel" name="account_id" value="" class="form-control" placeholder="account Ex:0194*******" required>
+                                                <span class="text-danger">{{$errors->has('account_id') ? $errors->first('account_id'): ' '}}
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Confirm price</label>
+                                                <input type="number" name="confirm_price" value="" class="form-control" placeholder="Enter confirrm price" min="1" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Message(optional)</label>
+                                                <input type="text" name="message" value="" class="form-control" placeholder="Enter message">
+                                            </div>
+
+                                            <input  type="submit"  value="Reply Confirm" class="btn btn-success btn-block">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                   
+                        

@@ -2,7 +2,6 @@
     @section('body')
 
     <div class="container my-5">
-        <main>
             <!-- toggleable dynamic tab starts here -->
             <div class="other-section">
                 <ul class="nav nav-pills">
@@ -66,8 +65,8 @@
                            </div>
                     </div>
 
-                    <div id="updateprofile" class="tab-pane fade">
-                        <div class="col-lg-7 mx-auto">
+                    <div id="updateprofile" class="tab-pane">
+                        <div class="col-lg-8 mx-auto">
                           <form class="form-group" action="{{route('adminregisterUpdate')}}" method="POST" enctype="multipart/form-data" >
                                 @csrf
                                 <div>
@@ -155,22 +154,20 @@
                             <input type="file" name="profile_image" accept="image/*">
                             <span>{{$errors->has('profile_image') ? $errors->first('profile_image'): ' '}}</span>
                        </div>
-
           
-                                <div class="control-group mt-2">
-                                    <!-- Button -->
-                                    <div>
-                                        <button class="btn btn-block btn-success">Update</button>
-                                    </div>
-                                </div>
-                            </form>
+                        <div class="form-group mt-2">
+                            <!-- Button -->
+                            <div>
+                                <button class="btn btn-block btn-success">Update</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+                </div>
+            </div>
 
                 </div>
             </div>
             <!-- toggleable dynamic tab ends here -->
-        </main>
     </div>
 
 @endsection

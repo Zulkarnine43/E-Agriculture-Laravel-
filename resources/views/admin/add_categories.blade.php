@@ -12,13 +12,13 @@
 
             <div class="form-group">
                 <label class="font-weight-bolder"> Categories Name:</label>
-                <input type="text" name="categories_name" class="form-control" placeholder=" " required/>
+                <input type="text" name="categories_name" class="form-control" placeholder="Enter categories_name" required/>
             </div>
 
 
             <div class="form-group">
                 <label class="font-weight-bolder">Categories Description</label>
-                <textarea rows="5" cols="5" class="form-control" name="categories_description" required></textarea>
+                <textarea rows="5" cols="5" class="form-control" name="categories_description" placeholder="enter categories_description" required></textarea>
             </div>
 
 

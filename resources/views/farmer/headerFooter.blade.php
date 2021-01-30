@@ -81,8 +81,6 @@
     </nav>
 </div>
 
-<!-- Page Content -->
-{{--<div class="container">--}}
 
 <div class="row justify-content-sm-center mx-3 my-5 content">
 
@@ -96,10 +94,7 @@
 
 
 </div>
-<!-- /.row -->
-{{--<div  class="mr-auto">--}}
-{{--<span>top</span>--}}
-{{--</div>--}}
+
 
 <!-- Footer -->
   <footer class="py-5 bg-dark">
@@ -115,10 +110,10 @@
                 <h2 class="">Social Links</h2>
                 <li class="nav-item" >
                 <a href=""><i class="fab fa-2x fa-facebook" style="color: blue;"></i></a>
-                <a href=""><i class="fab fa-2x fa-instagram ml-2" style="color:#E38EC4
+                <a href=""><i class="fab fa-2x fa-instagram ml-5" style="color:#E38EC4
                     ;"></i></a>
-                <a href=""><i class="fab fa-2x fa-youtube ml-2" style="color: #ff6b6b;"></i></a>
-                <a href=""><i class="fab fa-2x fa-github ml-2" style="color: white;"></i></a>
+                <a href=""><i class="fab fa-2x fa-youtube ml-5" style="color: #ff6b6b;"></i></a>
+                <a href=""><i class="fab fa-2x fa-github ml-5" style="color: white;"></i></a>
                </li>   
             </div>
 

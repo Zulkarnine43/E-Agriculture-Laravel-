@@ -30,7 +30,7 @@
                         <a href="{{route('categories_status',['id'=>$categorie->id])}}" class="btn btn-danger"><i class="fas fa-arrow-circle-up"></i></a>
                         @endif
 
-                        <!-- <a href="" class="btn btn-success"><i class="fas fa-edit"></i></a> -->
+                        <a href="" class="btn btn-success"><i class="fas fa-edit"></i></a>
 
                         <a href="{{route('categories_delete',['id'=>$categorie->id])}}" class="btn btn-danger "><i class="fas fa-trash-alt"></i></a>
                     </td>

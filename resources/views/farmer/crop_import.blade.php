@@ -6,15 +6,21 @@
 @endsection
 
 @section('body')
-       
-    <div>
-        <h1 class="text-center text-primary my-5">Import here</h1>
-         <h5 class="text-center text-success">{{Session::get('msg')}}</h5>
-    </div>
-    <div class="col-lg-6 jumbotron mx-auto">
 
+       
+   <section class="my-5">
+
+    <h5 class="text-center text-success">{{Session::get('msg')}}</h5>
+    
+    <div class="col-lg-7 jumbotron mx-auto mt-5">
+          
         <form method="POST" action="{{route('add_product_db')}}" enctype="multipart/form-data">
             @csrf
+
+             <div>
+                <h1 class="text-center">Import Here</h1>
+            </div>
+
             <div class="form-group">
                 <input type="hidden" name="username" class="form-control" value="{{Session::get('f_username')}}"/>
             </div>
@@ -95,8 +101,9 @@
                 </div>
             </div>
         </form>
-
     </div>
+
+   </section>
 
 
 @endsection

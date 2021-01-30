@@ -16,7 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{url('public/final_eagri/css/home-style.css')}}" rel="stylesheet">
-     <link href="{{url('public/final_eagri/css/card.css')}}" rel="stylesheet">
+    <link href="{{url('public/final_eagri/css/card.css')}}" rel="stylesheet">
 </head>
 
 <body style="font-size: 18px; font-family: 'Fredericka the Great', cursive;">
@@ -28,7 +28,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-light py-2">
 
         <!-- <a class="text-dark navbar-brand ml-4" href="#">E-Agriculture</a> -->
-        <a class="btn btn-outline-success ml-4" href="{{route('home')}}">E-Agriculture</a>
+        <!-- <a class="btn btn-outline-success ml-4" href="{{route('home')}}">E-Agriculture</a> -->
+    <a class="navbar-brand ml-4" href="{{route('home')}}"><img src="{{ url('public/final_eagri/img/agri.png')}}"></a>
 
         <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="navbar-toggler-icon "></span>
@@ -70,7 +71,7 @@
           <li class="nav-item dropdown">
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Summer Products</a>
                         <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
-                              @php($categories=App\categories_info::all())
+                              @php($categories=App\categories_info::all()->where('categories_status',1))
                                 @foreach($categories as $categorie)
                                      <a class="nav-link" href="{{route('Session_Categories',['crop_type'=>$categorie->id,'crop_session'=>1])}}">{{$categorie->categories_name}}</a>
                                 @endforeach
@@ -80,7 +81,7 @@
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Winter Products</a>
                         <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
-                          @php($categories=App\categories_info::all())
+                          @php($categories=App\categories_info::all()->where('categories_status',1))
                                 @foreach($categories as $categorie)
                                      <a class="nav-link" href="{{route('Session_Categories',['crop_type'=>$categorie->id,'crop_session'=>2])}}">{{$categorie->categories_name}}</a>
                                 @endforeach
@@ -116,13 +117,13 @@
 
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
-                            <i class="fa fa-user" style="font-size: 20px;">{{Session()->get('c_username')}}</i>
+                            <i class="fa fa-1x fa-user">{{Session()->get('c_username')}}</i>
                         </a>
                         <div class="dropdown-menu bg-dark nav-item" aria-labelledby="dropdownMenuLink">
                              <a class="nav-link" href="{{route('cust_profile',['c_username'=>Session()->get('c_username')])}}">profile</a>
                              
                             <a class="nav-link" href="{{route('c_message')}}">
-                                <i class="fas fa-comment"></i>messages
+                                <i class="fas fa-comment"></i>confirm-buy
                             </a>
                              <a class="nav-link" href="">orders</a>
 
@@ -131,9 +132,9 @@
                         </div>
                     </li>
                     @else
-                            <li>
-                                <a>
-                                <i class="fa fa-user" style="font-size: 20px;"></i>
+                            <li >
+                                <a class="">
+                                <i class="fa fa-2x fa-user mt-2"></i>
                                </a>
                             </li>
                     @endif
@@ -157,16 +158,15 @@
                 <a href="{{route('Categories',['crop_type'=>$categorie->id])}}" class="list-group-item btn btn-outline-primary">{{$categorie->categories_name}}</a>
                   @endforeach
             </div>
-            <!-- Google trnaslate-->
-             <!-- <div id="google_translate_element"></div> -->
+      
         </div>
         <!-- /.col-lg-3 -->
 
 
-        <div class="col-lg-10 mt-lg-3">
+        <div class="col-lg-10 mt-lg-2">
             <h3 class="text-success">{{Session::get('bid_success')}}</h3>
         @yield('body')
- </div>
+        </div>
     </div>
     <!-- /.row -->
 
@@ -183,10 +183,10 @@
               <h2 class="">Social Links</h2>
               <li class="nav-item" >
                 <a href=""><i class="fab fa-2x fa-facebook" style="color: blue;"></i></a>
-                <a href=""><i class="fab fa-2x fa-instagram ml-2" style="color:#E38EC4
+                <a href=""><i class="fab fa-2x fa-instagram ml-5" style="color:#E38EC4
                     ;"></i></a>
-                <a href=""><i class="fab fa-2x fa-youtube ml-2" style="color: #ff6b6b;"></i></a>
-                <a href=""><i class="fab fa-2x fa-github ml-2" style="color: white;"></i></a>
+                <a href=""><i class="fab fa-2x fa-youtube ml-5" style="color: #ff6b6b;"></i></a>
+                <a href=""><i class="fab fa-2x fa-github ml-5" style="color: white;"></i></a>
                </li>       
 
             </div>
@@ -197,7 +197,7 @@
                 <li class="nav-item"><a class="nav-link" href="{{route('gallery')}}">Photo Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="">Summer Crops</a></li>
                 <li class="nav-item"><a class="nav-link" href="">Winter crops </a></li>
-                 <li class="nav-item"><a class="nav-link" href="">Spring crops </a></li>
+                 <li class="nav-item"><a class="nav-link" href="">Monsoon crops </a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#messageModal">feedback Us</a></li>
             </div>
 

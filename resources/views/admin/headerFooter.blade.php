@@ -29,7 +29,8 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
         
-          <a class="btn btn-outline-success ml-4" target="_blank" href="{{route('home')}}">E-Agriculture</a>
+          <!-- <a class="btn btn-outline-success ml-4" target="_blank" href="{{route('home')}}">E-Agriculture</a> -->
+          <a class="navbar-brand ml-4" href="#"><img src="{{ url('public/final_eagri/img/agri.png')}}"></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
