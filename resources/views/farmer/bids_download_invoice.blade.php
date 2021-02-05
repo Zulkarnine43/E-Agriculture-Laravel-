@@ -36,6 +36,12 @@
                             <td>{{$user->division}}</td>
                         </tr>
 
+                           <tr>
+                            <th>Customer Address:</th>
+                            <td>{{$user->address}}</td>
+                          </tr>
+
+
                           <tr>
                             <th>Customer Zip_code:</th>
                             <td>{{$user->zip_code}}</td>

@@ -36,11 +36,13 @@ customer messages
                     <td>empty</td>
                     @endif
                     <td>
-                        <a target="_blank" href="{{route('crop_details',['id'=>$confirms->crop_id])}}" class="btn btn-success">details</a>
+                        <a target="_blank" href="{{route('crop_details',['id'=>$confirms->crop_id])}}" class="btn btn-success"><i class="fas fa-info-circle"></i></a>
                         
-                         <a target="_blank" href="" class="btn btn-success">download_invoice</a>
+                         <a target="_blank" href="{{route('pay_confirm_download_invoice',['id'=>$confirms->id])}}" class="btn btn-success"><i class="fas fa-cloud-download-alt"></i></a>
 
-                        <button class="btn btn-success " data-toggle="modal" data-target="">Payment</button>
+                        <a href="{{route('example2',['id'=>$confirms->id,'crop_id'=>$confirms->crop_id,])}}" class="btn btn-success"><i class="fab fa-amazon-pay"></i></a>
+
+                        <button class="btn btn-success " data-toggle="modal" data-target=""><i class="fab fa-amazon-pay"></i></button>
                     </td>
                 </tr>
                     @endforeach

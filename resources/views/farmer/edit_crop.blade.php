@@ -27,7 +27,7 @@
                  <option value="">---Select a session</option>
                     <option value="1">Summer</option>
                      <option value="2">Winter</option>
-                      <option value="3">Spring</option>
+                      <option value="3">Monsoon</option>
                 </select>
             </div>
 
@@ -88,7 +88,7 @@
 
             <div class="form-group">
                 <div class="">
-                    <input class="btn-success" type="submit" name="btn" value="Update product Info">
+                    <input class="btn btn-success btn-block" type="submit" name="btn" value="Update product Info">
                 </div>
             </div>
         </form>

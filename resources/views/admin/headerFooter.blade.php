@@ -88,12 +88,14 @@
 
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown">
-                            <i class="fa fa-user" style="font-size: 28px;">{{Session::get('a_username')}}</i>
+                            <i class="fa fa-1x fa-user">{{Session::get('a_username')}}</i>
                         </a>
                         <div class="dropdown-menu nav-item bg-dark" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item text-light" href="{{route('a_profile')}}">profile</a>
-                            <a class="dropdown-item text-light" href="{{route('a_settings')}}">setting</a>
-                            <a class="dropdown-item text-light" href="{{route('logout',['name'=>'a_username'])}}">logout</a>
+                            <a class="dropdown-item text-light" href="{{route('a_profile')}}"> <i class="fa fa-1x fa-user"></i>profile</a>
+
+                            <a class="dropdown-item text-light" href="{{route('a_settings')}}"><i class="fas fa-user-cog"></i>setting</a>
+
+                            <a class="dropdown-item text-light" href="{{route('logout',['name'=>'a_username'])}}"onclick="return confirm('Are you sure you want to logout?');"><i class="fas fa-sign-out-alt"></i>logout</a>
                         </div>
                     </li>
 

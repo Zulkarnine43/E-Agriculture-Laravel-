@@ -31,15 +31,15 @@
 
                 
 
-                        <a href="{{route('user_profile',['id'=>$user->id])}}" class="btn btn-success">profile</a>
-                        <a href="" class="btn btn-success">details</a>
+                        <a href="{{route('user_profile',['id'=>$user->id])}}" class="btn btn-success"><i class="fa fa-1x fa-user"></i></a>
+                        <a href="" class="btn btn-success"><i class="fas fa-info-circle"></i></a>
 
-                           @if($user->action=="active")
-                        <a href="{{route('c_action',['id'=>$user->id])}}" class="btn btn-danger">disable</a>
-                                @else
-                        <a href="{{route('c_action',['id'=>$user->id])}}" class="btn btn-success">
-                                  active </a>
-                                @endif
+                    @if($user->action=="active")
+                        <a href="{{route('c_action',['id'=>$user->id])}}" onclick="return confirm('Are you sure you want to deactive?');" class="btn btn-success"><i class="fas fa-arrow-circle-down"></i></a>
+                    @else
+                        <a href="{{route('c_action',['id'=>$user->id])}}" onclick="return confirm('Are you sure you want to active?');" class="btn btn-danger">
+                               <i class="fas fa-arrow-circle-up"></i> </a>
+                    @endif
                         </td>
                     </tr>
                 @endforeach

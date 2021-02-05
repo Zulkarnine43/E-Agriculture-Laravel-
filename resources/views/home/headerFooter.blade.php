@@ -49,7 +49,7 @@
 
                <div class="mr-4 ml-auto">
                      @if(Session::get('c_username'))
-                      <a class="nav-item btn btn-outline-success" href=""><i class="far fa-heart"></i></a>
+                      <a class="nav-item btn btn-outline-success" href="{{route('wishlist',['c_username'=>Session::get('c_username')])}}"><i class="far fa-heart"></i></a>
                      @endif
                    <a href="{{route('login')}}" class="nav-item btn btn-outline-success">Login</a>
                    <a href="{{route('signup')}}" class="nav-item btn btn-success ml-2">Signup</a>
@@ -120,15 +120,17 @@
                             <i class="fa fa-1x fa-user">{{Session()->get('c_username')}}</i>
                         </a>
                         <div class="dropdown-menu bg-dark nav-item" aria-labelledby="dropdownMenuLink">
-                             <a class="nav-link" href="{{route('cust_profile',['c_username'=>Session()->get('c_username')])}}">profile</a>
+                             <a class="nav-link" 
+                             href="{{route('cust_profile',['c_username'=>Session()->get('c_username')])}}">
+                             <i class="fa fa-1x fa-user"></i>profile</a>
                              
                             <a class="nav-link" href="{{route('c_message')}}">
                                 <i class="fas fa-comment"></i>confirm-buy
                             </a>
-                             <a class="nav-link" href="">orders</a>
+                             <a class="nav-link" href=""><i class="fas fa-comment"></i>orders</a>
 
-                             <a class="nav-link" href="{{route('c_settings')}}">setting</a>
-                            <a class="nav-link" href="{{route('logout',['name'=>'c_username'])}}">logout</a>
+                             <a class="nav-link" href="{{route('c_settings')}}"><i class="fas fa-user-cog"></i>setting</a>
+                            <a class="nav-link" href="{{route('logout',['name'=>'c_username'])}}" onclick="return confirm('Are you sure you want to logout?');"><i class="fas fa-sign-out-alt"></i>logout</a>
                         </div>
                     </li>
                     @else
@@ -169,6 +171,8 @@
         </div>
     </div>
     <!-- /.row -->
+
+
 
     <footer class="py-5 bg-dark">
 
@@ -273,5 +277,19 @@
 <!-- product zoom view -->
 <!-- <script src="{{url('public/final_eagri/vendor/elevateZoom/jquery.elevatezoom.js')}}"></script> -->
 
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5fe5ddcba8a254155ab6467b/1eqcukpg0';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>

@@ -28,29 +28,28 @@ class BidController extends Controller
             $request->message="null";
         }
 
-        $regis = new Bid_message();
-        $regis->crop_id = $request->crop_id;
-        $regis->crop_name = $request->crop_name;
-        $regis->f_username = $request->f_username;
-        $regis->cust_username = $request->cust_username;
-        $regis->name = $request->name;
-        $regis->bid_price = $request->bid_price;
-        $regis->message = $request->message;
-        $regis->save();
+        $result = new Bid_message();
+        $result->crop_id = $request->crop_id;
+        $result->crop_name = $request->crop_name;
+        $result->f_username = $request->f_username;
+        $result->cust_username = $request->cust_username;
+        $result->name = $request->name;
+        $result->bid_price = $request->bid_price;
+        $result->message = $request->message;
+        $result->save();
 
         $farm=farmer_register::where('username',$request->f_username)->first();
 
-        $data=$regis->toArray();
+        $data=$result->toArray();
 
          $data2=$farm->toArray();
 
-        // Mail::send('farmer.Bid_notification',['val'=>$data],function($message) use ($data2){
-        //     $message->to($data2['email']);
-        //     $message->subject('Bid_notification');
-        // });
+        Mail::send('farmer.Bid_notification',['val'=>$data],function($message) use ($data2){
+            $message->to($data2['email']);
+            $message->subject('Bid_notification');
+        });
 
         return redirect('/')->with('msg','your bid send successfully');
-
 
     }
 
@@ -63,26 +62,26 @@ class BidController extends Controller
             $request->message="null";
         }
 
-        $regis = new Bid_message();
-        $regis->crop_id = $request->crop_id;
-        $regis->crop_name = $request->crop_name;
-        $regis->f_username = $request->f_username;
-        $regis->cust_username = $request->cust_username;
-        $regis->name = $request->name;
-        $regis->bid_price = $request->bid_price;
-        $regis->message = $request->message;
-        $regis->save();
+        $result = new Bid_message();
+        $result->crop_id = $request->crop_id;
+        $result->crop_name = $request->crop_name;
+        $result->f_username = $request->f_username;
+        $result->cust_username = $request->cust_username;
+        $result->name = $request->name;
+        $result->bid_price = $request->bid_price;
+        $result->message = $request->message;
+        $result->save();
 
         $farm=farmer_register::where('username',$request->f_username)->first();
 
-        $data=$regis->toArray();
+        $data=$result->toArray();
 
          $data2=$farm->toArray();
 
-        // Mail::send('farmer.Bid_notification',['val'=>$data],function($message) use ($data2){
-        //     $message->to($data2['email']);
-        //     $message->subject('Bid_notification');
-        // });
+        Mail::send('farmer.Bid_notification',['val'=>$data],function($message) use ($data2){
+            $message->to($data2['email']);
+            $message->subject('Bid_notification');
+        });
          return redirect()->route('crop_details',['id'=>$request->crop_id])->with('msg','your bid send successfully');;
     }
     
@@ -110,7 +109,6 @@ class BidController extends Controller
 
     }
 
-
         public function bid_delete($id ,$crop_id){
 
          $bid_delete=Bid_message::find($id);
@@ -119,7 +117,8 @@ class BidController extends Controller
          $crop=crop_import::where('id',$crop_id)->first();
          $bids_msg=Bid_message::where('crop_id',$crop_id)->get();
 
-        return view('home.crop_details',['crop'=>$crop,'bids_msg'=>$bids_msg])->with('msg','bid deleted successfully');
+        // return view('home.crop_details',['crop'=>$crop,'bids_msg'=>$bids_msg])->with('msg','bid deleted successfully');
+        return redirect()->back()->with('msg','bid deleted successfully');
     }
 
 }

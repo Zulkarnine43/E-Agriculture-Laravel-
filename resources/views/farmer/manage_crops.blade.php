@@ -37,12 +37,12 @@
                                 <td> <img src="{{url($crop->crop_image2)}}"width="200" height="150"></td>
                                  <td>
                                     @if($crop->status==0)
-                                    <a href="{{route('condition_crop',['id'=>$crop->id])}}" class="btn btn-danger "><i class="fas fa-arrow-circle-up"></i></a>
+                                    <a href="{{route('condition_crop',['id'=>$crop->id])}}" onclick="return confirm('Are you sure you want to active?');" class="btn btn-danger "><i class="fas fa-arrow-circle-up"></i></a>
                                     @else
-                                     <a href="{{route('condition_crop',['id'=>$crop->id])}}" class="btn btn-success "><i class="fas fa-arrow-circle-down"></i></a>
+                                     <a href="{{route('condition_crop',['id'=>$crop->id])}}" onclick="return confirm('Are you sure you want to deactive?');" class="btn btn-success "><i class="fas fa-arrow-circle-down"></i></a>
                                      @endif
 
-                                    <a href="{{route('edit_crop',['id'=>$crop->id])}}" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                                    <a href="{{route('edit_crop',['id'=>$crop->id])}}" onclick="return confirm('Are you sure you want to edit?');" class="btn btn-success"><i class="fas fa-edit"></i></a>
                                     
                                     <a href="{{route('delete_crop',['id'=>$crop->id])}}" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger "><i class="fas fa-trash-alt"></i></a>
                                 </td>

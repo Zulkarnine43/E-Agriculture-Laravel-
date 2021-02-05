@@ -330,9 +330,36 @@ Route::get('/search',[
     'as' =>'search'
 ]);
 
+Route::get('/customer/wishlist/save/{id}',[
+    'uses' =>'wishlistController@wishlist_db',
+    'as' =>'wishlist_db'
+]);
+
+
+Route::get('/customer/wishlist/{c_username}',[
+    'uses' =>'wishlistController@wishlist',
+    'as' =>'wishlist'
+]);
+
+Route::get('/wishlist/remove/{id}',[
+    'uses' =>'wishlistController@wishlist_remove',
+    'as' =>'wishlist_remove'
+]);
+
+Route::get('/bid_details/download/invoices/{id}',[
+    'uses' =>'invoiceController@bids_download_invoice',
+    'as' =>'bids_download_invoice'
+]);
+
+Route::get('/Pay_Confirm/download/invoice/{id}',[
+    'uses' =>'invoiceController@pay_confirm_download_invoice',
+    'as' =>'pay_confirm_download_invoice'
+]);
 
 // End home page routing
 
+//Start Group middleware
+Route::group(['middleware' => 'f_check'], function () {
 
 // Start Farmer page routing
 Route::get('/farmer/home/page',[
@@ -413,7 +440,8 @@ Route::get('/logout/{name}',[
 
 
 
-
+});
+//End Group middleware
 
 // End farmer page routing
 
@@ -445,3 +473,21 @@ Route::post('/pay/confirm/message',[
 ]);
 
 // End Bid modal routing
+
+
+// SSLCOMMERZ Start
+
+
+Route::get('/example2/{id}/{crop_id}',[
+    'uses' =>'SslCommerzPaymentController@exampleHostedCheckout',
+    'as' =>'example2'
+]);
+
+Route::post('/pay', 'SslCommerzPaymentController@index');
+
+Route::post('/success', 'SslCommerzPaymentController@success');
+Route::post('/fail', 'SslCommerzPaymentController@fail');
+Route::post('/cancel', 'SslCommerzPaymentController@cancel');
+
+Route::post('/ipn', 'SslCommerzPaymentController@ipn');
+//SSLCOMMERZ END

@@ -28,7 +28,7 @@
                    <td>
                         <a target="_blank" href="{{route('crop_details',['id'=>$message->crop_id])}}" class="btn btn-success mb-sm-2"><i class="fas fa-info-circle"></i></a>
 
-                         <a target="_blank" href="" class="btn btn-success mb-sm-2"><i class="fas fa-cloud-download-alt"></i></a> 
+                         <a target="_blank" href="{{route('bids_download_invoice',['id'=>$message->id])}}" class="btn btn-success mb-sm-2"><i class="fas fa-cloud-download-alt"></i></a> 
 
                        <!--   <a data-toggle="modal" href="#ReplyModal" class="btn btn-success mb-sm-2"><i class="fas fa-reply-all"></i>confirm</a>
                           </td> -->
