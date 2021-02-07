@@ -35,7 +35,26 @@ class homeController extends Controller
         return view('home.index',compact('crops'));
     }
 
-       public function Categories($crop_type){
+    public function about(){
+        return view('home.about_us');
+    }
+
+    public function services(){
+  
+        return view('home.services');
+    }
+
+       public function contact(){
+        return view('home.contact');
+    }
+
+        public function gallery(){
+        return view('home.gallery');
+    }
+    
+
+
+    public function Categories($crop_type){
         $crops=crop_import::where('crop_type',$crop_type)
         ->where('Action',"Published")
         ->where('status',1)
@@ -66,47 +85,31 @@ class homeController extends Controller
     }
 
 
-        public function signup(){
-        return view('home.signup');
-    }
 
-    public function login(){
-    return view('home.login');
-}
-
-    public function services(){
-  
-        return view('home.services');
-    }
-    public function about(){
-        return view('home.about_us');
-    }
-
-        public function gallery(){
-        return view('home.gallery');
-    }
-    
-     public function contact(){
-        return view('home.contact');
-    }
-
-
-
-        public function crop_details($id){
+    public function crop_details($id){
          $crop=crop_import::find($id);
          $bids_msg=Bid_message::where('crop_id',$id)->get();
-        return view('home.crop_details',['crop'=>$crop,'bids_msg'=>$bids_msg]);
+         return view('home.crop_details',['crop'=>$crop,'bids_msg'=>$bids_msg]);
     }
 
-        public function cust_profile($c_username){
+    public function cust_profile($c_username){
          $bids_crop=Bid_message::where('cust_username',$c_username)->distinct()->get(['crop_id']);
-        return view('home.customer_profile',compact('bids_crop'));
-         }
+         return view('home.customer_profile',compact('bids_crop'));
+     }
 
-        public function c_message(){
+    public function c_message(){
         $pay_confirms=pay_confirm_message::where('cust_username',Session::get('c_username'))->get();
         return view('home.c_message',compact('pay_confirms'));
     }
+
+
+    public function c_settings(){
+
+        $user=user_register::where('username',Session::get('c_username'))->first();
+
+        return view('home.c_settings',compact('user'));
+    }
+
 
     public function search(Request $request){
         $search_tx1= $request->search;
@@ -122,43 +125,5 @@ class homeController extends Controller
             ->get();
             return view('home.search', ['s' => $search]);
     }
-
-        public function c_settings(){
-        $user=user_register::where('username',Session::get('c_username'))->first();
-        return view('home.c_settings',compact('user'));
-         }
-
-         public function customerRegisterUpdate(Request $request){
-             $this->validate($request,[
-         
-                'mobile'=>['regex: /^((01|8801)[3456789])(\d{8})$/'],
-            ]);
-
-
-                if ($request->profile_image!=null) {
-                $profileImage = $request->file('profile_image');
-                if ($profileImage) {
-                    $imageName = time().'.'.$profileImage->getClientOriginalName();
-                    $directory = 'public/profile_images/';
-                    $imageUrl = $directory . $imageName;
-                    $profileImage->move($directory, $imageName);
-
-                }
-            }
-            
-            $regis=user_register::where('id',$request->id)->first();
-            $regis->mobile = $request->mobile;
-            $regis->dob = $request->dob;
-            $regis->division = $request->division;
-            $regis->address = $request->address;
-            $regis->zip_code = $request->zip_code;
-            $regis->gender = $request->gender;
-            if ($request->profile_image!=null) {
-                $regis->profile_pic = $imageUrl;
-            }
-            
-            $regis->save();
-            return redirect('/customer')->with('msg','update Successfully');
-        }
 
 }

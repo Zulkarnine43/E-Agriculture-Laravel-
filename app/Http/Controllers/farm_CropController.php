@@ -9,13 +9,15 @@ class farm_CropController extends Controller
 {
     //
 
+     public function crop_import(){
+        return view('farmer.crop_import');
+    }
+
       public function add_product_db(Request $request){
 
         $this->validate($request,[
             'crop_name'=>'string'
         ]);
-
-
 
         $addProducts = new crop_import();
         
@@ -63,6 +65,15 @@ class farm_CropController extends Controller
     }
 
 
+    public function crop_manage(){
+        $crops=crop_import::where('username',Session::get('f_username'))->where('Action','!=',"deleted")->get();
+        return view('farmer.manage_crops',compact('crops'));
+    }
+
+    public function edit_crop($id){
+        $crop=crop_import::find($id);
+        return view('farmer.edit_crop',compact('crop'));
+    }
 
 
     public function update_product_db(Request $request){
@@ -73,7 +84,6 @@ class farm_CropController extends Controller
 
         $id=$request->id;
         $addProducts=crop_import::find($id);
-
 
         if($request->crop_image!=null) {
             $productImage = $request->file('crop_image');
@@ -118,27 +128,33 @@ class farm_CropController extends Controller
         $addProducts->save();
 
         return redirect('/crop/manage')->with('msg', 'update Products Info Successfully');
-
     }
 
 
+    public function condition_crop($id){
 
-        public function condition_crop($id){
+        $crop=crop_import::find($id);
 
-            $crop=crop_import::find($id);
-
-            if( $crop->status=="1"){
-            $crop->status="0";
-            $crop->save();
-            return redirect('/crop/manage')->with('msg','Crop Deactive successfully');
-            }
+        if( $crop->status=="1"){
+        $crop->status="0";
+        $crop->save();
+        return redirect('/crop/manage')->with('msg','Crop Deactive successfully');
+        }
 
 
-            else{
-            $crop->status="1";
-            $crop->save();
-            return redirect('/crop/manage')->with('msg','Crop active successfully');
-            }
-           
+        else{
+        $crop->status="1";
+        $crop->save();
+        return redirect('/crop/manage')->with('msg','Crop active successfully');
+        }      
+}
+
+
+    public function delete_crop($id){
+        $crop=crop_import::find($id);
+        $crop->Action="deleted";
+        $crop->save();
+        return redirect('/crop/manage')->with('msg','delete crop successfully');
     }
+
 }

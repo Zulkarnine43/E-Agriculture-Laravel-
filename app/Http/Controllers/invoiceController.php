@@ -15,7 +15,7 @@ class invoiceController extends Controller
 {
 
 
-         public function bids_download_invoice($id){
+public function bids_download_invoice($id){
         $Bid=Bid_message::find($id);
         $username=$Bid->cust_username;
         $user=user_register::where('username',$username)->first();
@@ -23,7 +23,7 @@ class invoiceController extends Controller
         return $pdf->stream('invoice.pdf');
     }
 
-        public function pay_confirm_download_invoice($id){
+public function pay_confirm_download_invoice($id){
         $msg=pay_confirm_message::find($id);
         $Bid=Bid_message::where('crop_id',$msg->crop_id)->first();
         $username=$Bid->f_username;

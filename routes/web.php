@@ -16,24 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Start Admin RegisterLoginCheckController Routing
 
 
-Route::get('/admin/signup',[
-    'uses' =>'adminController@admin_signup',
-    'as' =>'admin_signup'
-]);
-
-
-Route::post('admin/signup/save',[
-    'uses' =>'adminLoginController@admin_registerSave',
-    'as' =>'admin_registerSave'
-]);
-
-Route::get('/account_verify/{username}',[
-    'uses' =>'adminLoginController@admin_account_verify',
-    'as' =>'admin_account_verify'
-]);
-
+//Admin Login and signup
 Route::get('/admin/login',[
-    'uses' =>'adminController@a_login',
+    'uses' =>'adminLoginController@a_login',
     'as' =>'a_login'
 ]);
 
@@ -60,6 +45,28 @@ Route::post('/admin_pass_change_save/{email}',[
 ]);
 
 
+
+
+Route::group(['middleware' => 'a_check'], function () {
+
+Route::get('/admin/signup',[
+    'uses' =>'adminLoginController@admin_signup',
+    'as' =>'admin_signup'
+]);
+
+
+Route::post('admin/signup/save',[
+    'uses' =>'adminLoginController@admin_registerSave',
+    'as' =>'admin_registerSave'
+]);
+
+Route::get('/account_verify/{username}',[
+    'uses' =>'adminLoginController@admin_account_verify',
+    'as' =>'admin_account_verify'
+]);
+
+
+
 Route::post('/admin/registerUpdate',[
     'uses' =>'adminLoginController@adminregisterUpdate',
     'as' =>'adminregisterUpdate'
@@ -67,46 +74,15 @@ Route::post('/admin/registerUpdate',[
 // End Admin RegisterLoginCheckController Routing
 
 // Start Admin home Routing
+
+ // Admin home 
 Route::get('/admin/home',[
     'uses' =>'adminController@a_home',
     'as' =>'a_home'
 ]);
-Route::get('/farmers',[
-    'uses' =>'adminController@all_farmer',
-    'as' =>'all_farmer'
-]);
-
-Route::get('/customers',[
-    'uses' =>'adminController@all_customer',
-    'as' =>'all_customer'
-]);
-
-Route::get('/farmer/{id}',[
-    'uses' =>'adminController@f_action',
-    'as' =>'f_action'
-]);
-
-Route::get('/customer/{id}',[
-    'uses' =>'adminController@c_action',
-    'as' =>'c_action'
-]);
-
-Route::get('farmerr/profile/{id}',[
-'uses'=>'adminController@farmer_profile',
-'as'=>'farmer_profile'
-]);
-
-Route::get('user/profile/{id}',[
-'uses'=>'adminController@user_profile',
-'as'=>'user_profile'
-]);
 
 
-Route::get('user/details/{id}',[
-'uses'=>'adminController@user_details',
-'as'=>'user_details'
-]);
-
+ // farmers crop details
 
 Route::get('/published/crop',[
     'uses' =>'adminController@published_crops',
@@ -139,6 +115,8 @@ Route::get('/crop/deleted/{id}',[
     'uses' =>'adminController@crop_delete',
     'as' =>'crop_delete'
 ]);
+
+// Admin details
 
 Route::get('/add/Categories',[
     'uses' =>'adminController@add_categories',
@@ -196,6 +174,7 @@ Route::get('/delete/news/{id}',[
     'as' =>'delete_news'
 ]);
 
+//Admin profile and setting
 
 Route::get('/admin/profile',[
     'uses' =>'adminController@a_profile',
@@ -207,6 +186,46 @@ Route::get('/admin/settings',[
     'as' =>'a_settings'
 ]);
 
+// Users profile details
+
+Route::get('/farmers',[
+    'uses' =>'adminController@all_farmer',
+    'as' =>'all_farmer'
+]);
+
+Route::get('/customers',[
+    'uses' =>'adminController@all_customer',
+    'as' =>'all_customer'
+]);
+
+Route::get('/farmer/{id}',[
+    'uses' =>'adminController@f_action',
+    'as' =>'f_action'
+]);
+
+Route::get('/customer/{id}',[
+    'uses' =>'adminController@c_action',
+    'as' =>'c_action'
+]);
+
+Route::get('farmerr/profile/{id}',[
+'uses'=>'adminController@farmer_profile',
+'as'=>'farmer_profile'
+]);
+
+Route::get('user/profile/{id}',[
+'uses'=>'adminController@user_profile',
+'as'=>'user_profile'
+]);
+
+
+Route::get('user/details/{id}',[
+'uses'=>'adminController@user_details',
+'as'=>'user_details'
+]);
+
+
+});
 
 // End Admin home Routing
 // End Admin page routing
@@ -218,10 +237,9 @@ Route::get('/',[
 'as'=>'home'
 ]);
 
-
-Route::get('/contact',[
-    'uses' =>'homeController@contact',
-    'as' =>'contact'
+Route::get('/about',[
+    'uses' =>'homeController@about',
+    'as' =>'about'
 ]);
 
 Route::get('/services',[
@@ -229,9 +247,9 @@ Route::get('/services',[
     'as' =>'services'
 ]);
 
-Route::get('/about',[
-    'uses' =>'homeController@about',
-    'as' =>'about'
+Route::get('/contact',[
+    'uses' =>'homeController@contact',
+    'as' =>'contact'
 ]);
 
 Route::get('/gallery',[
@@ -239,10 +257,56 @@ Route::get('/gallery',[
     'as' =>'gallery'
 ]);
 
+oute::get('/categories/{crop_type}',[
+    'uses' =>'homeController@Categories',
+    'as' =>'Categories'
+]);
+
+Route::get('/sessions/categories/{crop_type}/{crop_session}',[
+    'uses' =>'homeController@Session_Categories',
+    'as' =>'Session_Categories'
+]);
+
+Route::get('/crop_details/{id}',[
+    'uses' =>'homeController@crop_details',
+    'as' =>'crop_details'
+]);
+
+Route::get('/customer/profile/{c_username}',[
+    'uses' =>'homeController@cust_profile',
+    'as' =>'cust_profile'
+]);
+
+Route::get('/confirm/message',[
+    'uses' =>'homeController@c_message',
+    'as' =>'c_message'
+]);
+
+
+Route::get('/customer',[
+    'uses' =>'homeController@c_settings',
+    'as' =>'c_settings'
+]);
+
+Route::get('/search',[
+    'uses' =>'homeController@search',
+    'as' =>'search'
+]);
 
 
 
 // Start RegisterLoginCheckController Routing
+
+Route::get('/login',[
+    'uses' =>'RegisterLoginCheckController@login',
+    'as' =>'login'
+]);
+
+Route::post('login/check',[
+    'uses' =>'RegisterLoginCheckController@login_check',
+    'as' =>'login_check'
+]);
+
 
 Route::get('/signup',[
     'uses' =>'homeController@signup',
@@ -254,16 +318,7 @@ Route::post('signup/save',[
     'as' =>'registerSave'
 ]);
 
-Route::get('/login',[
-    'uses' =>'homeController@login',
-    'as' =>'login'
-]);
 
-
-Route::post('login/check',[
-    'uses' =>'RegisterLoginCheckController@login_check',
-    'as' =>'login_check'
-]);
 
 Route::get('/account_verify/{username}/{uses_as}',[
     'uses' =>'RegisterLoginCheckController@account_verify',
@@ -286,49 +341,21 @@ Route::post('/pass_change_save/{uses_as}/{email}',[
     'as' =>'pass_change_save'
 ]);
 
-// End RegisterLoginCheckController Routing
 
-Route::get('/categories/{crop_type}',[
-    'uses' =>'homeController@Categories',
-    'as' =>'Categories'
-]);
-
-Route::get('/sessions/categories/{crop_type}/{crop_session}',[
-    'uses' =>'homeController@Session_Categories',
-    'as' =>'Session_Categories'
-]);
-
-Route::get('/crop_details/{id}',[
-    'uses' =>'homeController@crop_details',
-    'as' =>'crop_details'
-]);
-
-Route::get('/customer/profile/{c_username}',[
-    'uses' =>'homeController@cust_profile',
-    'as' =>'cust_profile'
-]);
-
-Route::get('/pay/message',[
-    'uses' =>'homeController@c_message',
-    'as' =>'c_message'
-]);
-
-
-Route::get('/customer',[
-    'uses' =>'homeController@c_settings',
-    'as' =>'c_settings'
+Route::post('/farmer/registerUpdate',[
+    'uses' =>'RegisterLoginCheckController@farmerRegisterUpdate',
+    'as' =>'farmerRegisterUpdate'
 ]);
 
 Route::post('/customer/registerUpdate',[
-    'uses' =>'homeController@customerRegisterUpdate',
+    'uses' =>'RegisterLoginCheckController@customerRegisterUpdate',
     'as' =>'customerRegisterUpdate'
 ]);
 
+// End RegisterLoginCheckController Routing
 
-Route::get('/search',[
-    'uses' =>'homeController@search',
-    'as' =>'search'
-]);
+
+// wishLIST Added routing
 
 Route::get('/customer/wishlist/save/{id}',[
     'uses' =>'wishlistController@wishlist_db',
@@ -345,6 +372,9 @@ Route::get('/wishlist/remove/{id}',[
     'uses' =>'wishlistController@wishlist_remove',
     'as' =>'wishlist_remove'
 ]);
+
+
+// Download Invoice routing
 
 Route::get('/bid_details/download/invoices/{id}',[
     'uses' =>'invoiceController@bids_download_invoice',
@@ -367,24 +397,27 @@ Route::get('/farmer/home/page',[
     'as' =>'f_home'
 ]);
 
+
+
+// Start Farmer Crop add update routing
+
 Route::get('/crop/import',[
-    'uses' =>'farmerController@crop_import',
+    'uses' =>'farm_CropController@crop_import',
     'as' =>'crop_import'
 ]);
 
-// Start Farmer Crop add update routing
 Route::post('/crop/add/save',[
     'uses'=>'farm_CropController@add_product_db',
     'as'=>'add_product_db'
 ]);
 
 Route::get('/crop/manage',[
-    'uses' =>'farmerController@crop_manage',
+    'uses' =>'farm_CropController@crop_manage',
     'as' =>'crop_manage'
 ]);
 
 Route::get('/crop/edit/{id}',[
-    'uses' =>'farmerController@edit_crop',
+    'uses' =>'farm_CropController@edit_crop',
     'as' =>'edit_crop'
 ]);
 
@@ -399,19 +432,13 @@ Route::get('/crop/condition/{id}',[
 ]);
 
 Route::get('/crop/delete/{id}',[
-    'uses' =>'farmerController@delete_crop',
+    'uses' =>'farm_CropController@delete_crop',
     'as' =>'delete_crop'
 ]);
 
 
 // End Farmer Crop add update routing
 
-
-
-// Route::get('/user/manage',[
-//     'uses' =>'farmerController@user_manage',
-//     'as' =>'user_manage'
-// ]);
 
 Route::get('/farmer/bid/messages',[
     'uses' =>'farmerController@farm_bid_messages',
@@ -428,10 +455,7 @@ Route::get('/farmer/',[
     'as' =>'f_settings'
 ]);
 
-Route::post('/farmer/registerUpdate',[
-    'uses' =>'farmerController@farmerRegisterUpdate',
-    'as' =>'farmerRegisterUpdate'
-]);
+
 
 Route::get('/logout/{name}',[
     'uses' =>'farmerController@logout',

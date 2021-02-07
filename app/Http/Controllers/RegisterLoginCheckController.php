@@ -14,6 +14,79 @@ class RegisterLoginCheckController extends Controller
 {
     //
 
+public function login(){
+    return view('home.login');
+}
+
+    public function login_check(Request $request)
+    {
+        if ($request->register_as == "farmer") {
+
+            if($result = farmer_register::where('email', $request->email)->first()){
+
+              if($result->condition=="verified") {
+          
+               if (Hash::check($request->password, $result->password)) {
+
+                if($result->action=="active"){
+                    Session::put('f_username', $result['username']);
+                    return redirect('/farmer/home/page')->with('f_login', 'Login successfully');
+                    
+                }else {
+                    return redirect('/login')->with('login_error', 'your account are disabled plesae contact with admin');
+                    }
+
+                } else {
+                    return redirect('/login')->with('login_error', 'email or password not match');
+                }
+         }
+           else{
+               return redirect('/login')->with('login_error', 'please verify your email');
+           }
+
+        }else{
+            return redirect('/login')->with('login_error', 'please SignUp ');
+        }
+    }
+
+
+        else {
+
+          if($result = user_register::where('email', $request->email)->first()){
+
+            if($result->condition=="verified") {
+
+               if (Hash::check($request->password, $result->password)) {
+
+                if($result->action=="active"){
+                   Session::put('c_username', $result['username']);
+                   return redirect('/')->with('c_login', 'Login successfully');
+                   
+                   } else {
+                    return redirect('/login')->with('login_error', 'your account are disabled plesae contact with admin');
+                    }
+               } else {
+                   return redirect('/login')->with('login_error', 'email or password not match');
+               }
+          }else{
+              return redirect('/login')->with('login_error', 'please verify your email');
+          }
+
+      }else{
+            return redirect('/login')->with('login_error', 'please SignUp ');
+        }
+    }
+
+}
+
+
+
+  public function signup(){
+
+    return view('home.signup');
+
+}
+
   public function registerSave(Request $request){
 
         if($request->register_as=="farmer") {
@@ -102,67 +175,6 @@ class RegisterLoginCheckController extends Controller
 }
 
 
-
-    public function login_check(Request $request)
-    {
-        if ($request->register_as == "farmer") {
-
-            if($result = farmer_register::where('email', $request->email)->first()){
-
-              if($result->condition=="verified") {
-          
-               if (Hash::check($request->password, $result->password)) {
-
-                if($result->action=="active"){
-                    Session::put('f_username', $result['username']);
-                    return redirect('/farmer/home/page')->with('f_login', 'Login successfully');
-                    
-                }else {
-                    return redirect('/login')->with('login_error', 'your account are disabled plesae contact with admin');
-                    }
-
-                } else {
-                    return redirect('/login')->with('login_error', 'email or password not match');
-                }
-         }
-           else{
-               return redirect('/login')->with('login_error', 'please verify your email');
-           }
-
-        }else{
-            return redirect('/login')->with('login_error', 'please SignUp ');
-        }
-    }
-
-
-        else {
-
-          if($result = user_register::where('email', $request->email)->first()){
-
-            if($result->condition=="verified") {
-
-               if (Hash::check($request->password, $result->password)) {
-
-                if($result->action=="active"){
-                   Session::put('c_username', $result['username']);
-                   return redirect('/')->with('c_login', 'Login successfully');
-                   
-                   } else {
-                    return redirect('/login')->with('login_error', 'your account are disabled plesae contact with admin');
-                    }
-               } else {
-                   return redirect('/login')->with('login_error', 'email or password not match');
-               }
-          }else{
-              return redirect('/login')->with('login_error', 'please verify your email');
-          }
-
-      }else{
-            return redirect('/login')->with('login_error', 'please SignUp ');
-        }
-    }
-
-}
     public function account_verify($username,$uses_as){
 //        return $username;
         if($uses_as=="farmer"){
@@ -178,6 +190,7 @@ class RegisterLoginCheckController extends Controller
         }
     }
 
+
     public function pw_change_link(Request $request){
         if($request->register_as=="farmer" ) {
                   $this->validate($request, [
@@ -190,7 +203,6 @@ class RegisterLoginCheckController extends Controller
                   ]);
         }
 
-
         $data=$request->toArray();
 
         Mail::send('home.pw_change_mail',['val'=>$data],function($message) use ($data){
@@ -199,6 +211,8 @@ class RegisterLoginCheckController extends Controller
         });
         return redirect('/login')->with('reg_success','we send mail for change password');
     }
+
+
     public function pw_change($uses,$email){
         return view('home.pw_change',compact('uses','email'));
     }
@@ -229,5 +243,69 @@ class RegisterLoginCheckController extends Controller
         }
 
     }
+
+
+        public function farmerRegisterUpdate(Request $request){
+             $this->validate($request,[
+         
+                'mobile'=>['regex: /^((01|8801)[3456789])(\d{8})$/'],
+            ]);
+
+                if ($request->profile_image!=null) {
+                $profileImage = $request->file('profile_image');
+                if ($profileImage) {
+                    $imageName = time().'.'.$profileImage->getClientOriginalName();
+                    $directory = 'public/profile_images/';
+                    $imageUrl = $directory . $imageName;
+                    $profileImage->move($directory, $imageName);
+
+                }
+            }
+            
+            $regis=farmer_register::where('id',$request->id)->first();
+            $regis->mobile = $request->mobile;
+            $regis->dob = $request->dob;
+            $regis->division = $request->division;
+            $regis->address = $request->address;
+            $regis->zip_code = $request->zip_code;
+            $regis->gender = $request->gender;
+            if ($request->profile_image!=null) {
+                $regis->profile_pic = $imageUrl;
+            }
+            
+            $regis->save();
+            return redirect('/farmer')->with('msg','update Successfully');
+        }
+
+
+         public function customerRegisterUpdate(Request $request){
+             $this->validate($request,[
+         
+                'mobile'=>['regex: /^((01|8801)[3456789])(\d{8})$/'],
+            ]);
+                if ($request->profile_image!=null) {
+                    $profileImage = $request->file('profile_image');
+                if ($profileImage) {
+                    $imageName = time().'.'.$profileImage->getClientOriginalName();
+                    $directory = 'public/profile_images/';
+                    $imageUrl = $directory . $imageName;
+                    $profileImage->move($directory, $imageName);
+                }
+            }
+            
+            $regis=user_register::where('id',$request->id)->first();
+            $regis->mobile = $request->mobile;
+            $regis->dob = $request->dob;
+            $regis->division = $request->division;
+            $regis->address = $request->address;
+            $regis->zip_code = $request->zip_code;
+            $regis->gender = $request->gender;
+            if ($request->profile_image!=null) {
+                $regis->profile_pic = $imageUrl;
+            }
+            
+            $regis->save();
+            return redirect('/customer')->with('msg','update Successfully');
+        }
 
 }

@@ -11,6 +11,39 @@ class adminLoginController extends Controller
 {
     //
 
+   public function a_login(){
+        return view('admin.login');
+    }
+
+public function admin_login_check(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|exists:admin_registers,email',
+        ]);
+
+        if($result = admin_register::where('email', $request->email)->first()){
+
+        if ($result->condition == "verified") {
+           if (Hash::check($request->password, $result->password)) {
+                Session::put('a_username', $result['username']);
+                return redirect('/admin/home')->with('a_login', 'Login successfully');
+            } else {
+                return redirect('/admin/login')->with('login_error', 'password not match');
+            }
+        } else {
+            return redirect('/admin/login')->with('login_error', 'please verify your email');
+
+        }
+    }else{
+            return redirect('/login')->with('login_error', 'please SignUp ');
+        }
+    }
+
+
+    public function admin_signup(){
+        return view('admin.signup');
+    }
+
     public function admin_registerSave(Request $request)
     {
         $this->validate($request, [
@@ -49,6 +82,7 @@ class adminLoginController extends Controller
         return redirect('/admin/login')->with('msg', 'Registration successfully, please verify your account');
     }
 
+
     public function admin_account_verify($username)
     {
 
@@ -60,29 +94,7 @@ class adminLoginController extends Controller
     }
 
 
-    public function admin_login_check(Request $request)
-    {
-        $this->validate($request, [
-            'email' => 'required|exists:admin_registers,email',
-        ]);
 
-        if($result = admin_register::where('email', $request->email)->first()){
-
-        if ($result->condition == "verified") {
-           if (Hash::check($request->password, $result->password)) {
-                Session::put('a_username', $result['username']);
-                return redirect('/admin/home')->with('a_login', 'Login successfully');
-            } else {
-                return redirect('/admin/login')->with('login_error', 'password not match');
-            }
-        } else {
-            return redirect('/admin/login')->with('login_error', 'please verify your email');
-
-        }
-    }else{
-            return redirect('/login')->with('login_error', 'please SignUp ');
-        }
-    }
 
 
     public function admin_pw_change_link(Request $request)
@@ -100,9 +112,11 @@ class adminLoginController extends Controller
 
     }
 
+
     public function admin_pw_change($email){
         return view('admin.admin_pw_change',compact('email'));
     }
+
 
     public function admin_pass_change_save(Request $request,$email)
     {
@@ -120,8 +134,10 @@ class adminLoginController extends Controller
             $pw_change = admin_register::where('email', $email)->first();
             $pw_change->password = Hash::make( $request->password);
             $pw_change->save();
+          
             return redirect('/admin/login')->with('msg', 'password change successfully ,Now Login');
     }
+    
 
            public function adminregisterUpdate(Request $request){
              $this->validate($request,[

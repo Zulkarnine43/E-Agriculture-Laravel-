@@ -54,7 +54,7 @@ class BidController extends Controller
     }
 
 
-     public function bid_msg_saved(Request $request)
+public function bid_msg_saved(Request $request)
     {
         $this->validate($request,[
         ]);
@@ -84,6 +84,20 @@ class BidController extends Controller
         });
          return redirect()->route('crop_details',['id'=>$request->crop_id])->with('msg','your bid send successfully');;
     }
+
+
+    public function bid_delete($id ,$crop_id){
+
+         $bid_delete=Bid_message::find($id);
+         $bid_delete->delete();
+       
+         $crop=crop_import::where('id',$crop_id)->first();
+         $bids_msg=Bid_message::where('crop_id',$crop_id)->get();
+
+        // return view('home.crop_details',['crop'=>$crop,'bids_msg'=>$bids_msg])->with('msg','bid deleted successfully');
+        return redirect()->back()->with('msg','bid deleted successfully');
+    }
+
     
 
     public function pay_confirm_message(Request $request)
@@ -108,17 +122,4 @@ class BidController extends Controller
         return redirect('/farmer/bid/messages')->with('msg','your confirm message send successfully');
 
     }
-
-        public function bid_delete($id ,$crop_id){
-
-         $bid_delete=Bid_message::find($id);
-         $bid_delete->delete();
-       
-         $crop=crop_import::where('id',$crop_id)->first();
-         $bids_msg=Bid_message::where('crop_id',$crop_id)->get();
-
-        // return view('home.crop_details',['crop'=>$crop,'bids_msg'=>$bids_msg])->with('msg','bid deleted successfully');
-        return redirect()->back()->with('msg','bid deleted successfully');
-    }
-
 }

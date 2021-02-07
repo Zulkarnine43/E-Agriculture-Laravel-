@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Session;
 class wishlistController extends Controller
 {
     //
-    public function wishlist_db($id){
+   public function wishlist_db($id){
 	  $crop=crop_import::find($id);
 
 	  $wishlist = new wishlist();
@@ -22,17 +22,16 @@ class wishlistController extends Controller
 	  $wishlist->f_username=$crop->username;
 	  $wishlist->c_username=Session::get('c_username');
 	  $wishlist->save();
-
 	  return redirect('/')->with('msg','wishlist added successfully');
     }
 
 
-		  public function wishlist($c_username){
+	public function wishlist($c_username){
 		   $wishlists=wishlist::where('c_username',$c_username)->get();
 		   return view('home.wishlist',compact('wishlists'));
     }
 
-    	  public function wishlist_remove($id){
+    public function wishlist_remove($id){
 		   $wishlist=wishlist::find($id);
 		   $wishlist->delete();
 		   return redirect()->back()->with('msg','wishList remove successfully');

@@ -19,32 +19,19 @@ class adminController extends Controller
 {
     //
 
-    public function a_login(){
-        return view('admin.login');
-    }
-
-    public function admin_signup(){
-        return view('admin.signup');
-    }
-
-        public function a_home(){
+    // Admin home 
+    public function a_home(){
         $newses=news_info::all();
         return view('admin.index',compact('newses'));
     }
 
-    public function all_farmer(){
-        $users= farmer_register::all();
-        return view('admin.all_farmer',compact('users'));
-    }
-    public function all_customer(){
-        $users= user_register::all();
-        return view('admin.all_customer',compact('users'));
-    }
+       // farmers crop details
 
     public function published_crops(){
         $crops=crop_import::where('Action',"Published")->get();
         return view('admin.published_crops',compact('crops'));
     }
+
     public function unpublished_crops(){
     $crops=crop_import::where('Action',"Unpublished")->get();
     return view('admin.unpublished_crops',compact('crops'));
@@ -76,6 +63,9 @@ class adminController extends Controller
         return redirect('/deleted/crop')->with('msg','Crop Delete Successfully');
     }
 
+// Admin details
+    //
+
     public function add_categories(){
         return view('admin.add_categories');
     }
@@ -92,29 +82,29 @@ class adminController extends Controller
         return redirect('/admin/home')->with('msg','categories added successfully');
     }
 
-     public function manage_categories(){
+    public function manage_categories(){
         $categories=categories_info::all();
         return view('admin.manage_categories',compact('categories'));
     }
 
       public function categories_status($id){
-        $categories=categories_info::find($id);
+            $categories=categories_info::find($id);
 
-       if($categories->categories_status==1){
-        $categories->categories_status=0;
-        $categories->save();
-        return redirect('/manage/categories')->with('msg','categorie deactive successfully');
-       }else{
-         $categories->categories_status=1;
-         $categories->save();
-        return redirect('/manage/categories')->with('msg','categorie active successfully');
-       }
+           if($categories->categories_status==1){
+            $categories->categories_status=0;
+            $categories->save();
+            return redirect('/manage/categories')->with('msg','categorie deactive successfully');
+           }else{
+             $categories->categories_status=1;
+             $categories->save();
+            return redirect('/manage/categories')->with('msg','categorie active successfully');
+           }
     }
 
       public function categories_delete($id){
-        $categories=categories_info::find($id);
-        $categories->delete();
-        return redirect('/manage/categories')->with('msg','categorie deleted successfully');
+            $categories=categories_info::find($id);
+            $categories->delete();
+            return redirect('/manage/categories')->with('msg','categorie deleted successfully');
        }
 
 
@@ -122,6 +112,8 @@ class adminController extends Controller
     public function add_news(){
         return view('admin.add_news');
     }
+
+
     public function save_news_db(Request $request){
 
          $newsImage = $request->file('news_image');
@@ -142,6 +134,7 @@ class adminController extends Controller
         $news->save();
         return redirect('/admin/home')->with('msg','news published successfully');
     }
+
 
     public function manage_news(){
         $newses=news_info::all();
@@ -188,10 +181,28 @@ class adminController extends Controller
     }
 
 
+//Admin profile and setting
     public function a_profile(){
         $newses=news_info::where('username',Session::get('a_username'))
         ->get();
         return view('admin.a_profile',compact('newses'));
+    }
+
+    public function a_settings(){
+        $user=admin_register::where('username',Session::get('a_username'))->first();
+        return view('admin.a_settings',compact('user'));
+     }
+
+
+
+        // Users profile details
+    public function all_farmer(){
+        $users= farmer_register::all();
+        return view('admin.all_farmer',compact('users'));
+    }
+    public function all_customer(){
+        $users= user_register::all();
+        return view('admin.all_customer',compact('users'));
     }
 
     public function f_action($id){
@@ -240,18 +251,15 @@ class adminController extends Controller
     public function user_profile($id){
          $user=user_register::find($id);
          Session::put('c_login',$user->username);
-        $crops=Bid_message::where('cust_username',$user->username)->distinct()->get(['crop_id']);
+         $crops=Bid_message::where('cust_username',$user->username)->distinct()->get(['crop_id']);
          return view ('admin.user_profile',compact('crops'));
     }
 
-        public function a_settings(){
-        $user=admin_register::where('username',Session::get('a_username'))->first();
-        return view('admin.a_settings',compact('user'));
-         }
+
 
      public function user_details($id){
-     $user=farmer_register::find($id);
-     return view ('admin.user_details',compact('user'));
+         $user=farmer_register::find($id);
+         return view ('admin.user_details',compact('user'));
     }
 
 }

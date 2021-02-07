@@ -2,9 +2,10 @@
 
 namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Session;
+
 use Closure;
 
-class farmerloginCheck
+class adminLoginMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,12 +16,12 @@ class farmerloginCheck
      */
     public function handle($request, Closure $next)
     {
-            if(!Session::has('f_username')){
-                
-                 return redirect('/login');
-            }
-            else{
-               return $next($request);
-            }
+        if(!Session::has('a_username')){
+            
+             return redirect('/admin/login');
+        }
+        else{
+           return $next($request);
+        }
     }
 }
