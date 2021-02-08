@@ -127,7 +127,7 @@
                             <a class="nav-link" href="{{route('c_message')}}">
                                 <i class="fas fa-comment"></i>confirm-buy
                             </a>
-                             <a class="nav-link" href=""><i class="fas fa-comment"></i>orders</a>
+                             <a class="nav-link" href="{{route('cust_order_messages')}}"><i class="fas fa-comment"></i>orders</a>
 
                              <a class="nav-link" href="{{route('c_settings')}}"><i class="fas fa-user-cog"></i>setting</a>
                             <a class="nav-link" href="{{route('logout',['name'=>'c_username'])}}" onclick="return confirm('Are you sure you want to logout?');"><i class="fas fa-sign-out-alt"></i>logout</a>
@@ -197,7 +197,7 @@
 
               <div class="col-lg-3 text-center">
                 <h2 class="text-center">Quick Links</h2>
-                <li class="nav-item"><a class="nav-link" href="">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('news_info')}}">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('gallery')}}">Photo Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="">Summer Crops</a></li>
                 <li class="nav-item"><a class="nav-link" href="">Winter crops </a></li>

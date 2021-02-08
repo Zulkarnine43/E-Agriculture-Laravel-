@@ -4,7 +4,8 @@
 @section('body')
 
 
-<h5 class="text-success text-center">{{Session::get('msg')}}</h5>
+<section>
+    <h5 class="text-success text-center">{{Session::get('msg')}}</h5>
         <div class="row my-4">
             @foreach($crops as $crop)
             <div class="col-lg-3 col-md-6 mb-4">
@@ -32,5 +33,11 @@
             @endforeach
         </div>
 
+</section>
+
+
+<section class=" m-5 float-right">
+    {{$crops}}
+</section>
 
 @endsection

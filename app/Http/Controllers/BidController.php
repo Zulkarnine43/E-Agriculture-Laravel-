@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Bid_message;
 use App\crop_import;
 use App\farmer_register;

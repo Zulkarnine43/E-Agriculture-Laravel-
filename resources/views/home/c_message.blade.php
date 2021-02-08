@@ -42,7 +42,7 @@ customer messages
 
                         <a href="{{route('example2',['id'=>$confirms->id,'crop_id'=>$confirms->crop_id,])}}" class="btn btn-success"><i class="fab fa-amazon-pay"></i></a>
 
-                        <button class="btn btn-success " data-toggle="modal" data-target=""><i class="fab fa-amazon-pay"></i></button>
+                        <button class="btn btn-success " data-toggle="modal" data-target="#payModal"><i class="fab fa-amazon-pay"></i></button>
                     </td>
                 </tr>
                     @endforeach
@@ -59,7 +59,7 @@ customer messages
                     <button class="close text-dark" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post">
+                    <form action="{{route('manually_payment')}}" method="post">
                       @csrf
 
                      @if($pay_confirms->isEmpty())
@@ -71,20 +71,57 @@ customer messages
                      <input type="hidden" name="c_username" value="{{Session::get('c_username')}}">
                      @endif
                         <div class="form-group">
-                            <label>Pay account</label>
-                            <input type="tel" name="send_account" value="" class="form-control" placeholder="Enter account no" required>
+                            <label>customer_name</label>
+                            <input type="tel" name="customer_name" value="" class="form-control" placeholder="Enter customer_name" required>
                         </div>
 
 
                         <div class="form-group">
-                            <label>Transition ID</label>
-                            <input type="text" name="transition_id" value="" class="form-control" placeholder="Enter transition id" required>
+                            <label>customer_mobile</label>
+                            <input type="text" name="customer_mobile" value="" class="form-control" placeholder="Enter customer_mobile" required>
                         </div>
 
-                        {{--<div class="form-group">--}}
-                            {{--<label>Message(optional)</label>--}}
-                            {{--<input type="text" name="message" value="" class="form-control" placeholder="Enter message">--}}
-                        {{--</div>--}}
+                        <div class="form-group">
+                            <label>customer_email</label>
+                            <input type="text" name="customer_email" value="" class="form-control" placeholder="Enter customer_email" required>
+                        </div>
+
+
+                    <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                        <label>Division</label>
+                       <select class="form-control" name="division" required>
+                            <option value=""><-------Select Your Division------------></option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Rajshahi">Rajshahi</option>
+                            <option value="Khulna">Khulna</option>
+                            <option value="Chittagong">Chittagong</option>
+                            <option value="Barishal">Barishal</option>
+                            <option value="Comilla">Comilla</option>
+                            <option value="Rangpur">Rangpur</option>
+                        </select>
+                    </div>
+      
+                    <div class=" form-group col-md-6 mb-3">
+                        <label>Zip</label>
+                        <input type="text" class="form-control" name="zip" id="zip" placeholder="" required>
+                    </div>
+                </div>
+
+                        <div class="form-group">
+                            <label>address</label>
+                            <input type="text" name="address" value="" class="form-control" placeholder="Enter address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>amount</label>
+                            <input type="text" name="amount" value="" class="form-control" placeholder="Enter amount" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Transition ID</label>
+                            <input type="text" name="transaction_id" value="" class="form-control" placeholder="Enter transition id" required>
+                        </div>
 
                         <input  type="submit"  value="Send" class="btn btn-success btn-block">
                     </form>

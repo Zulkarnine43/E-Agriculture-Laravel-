@@ -1,7 +1,8 @@
     @extends('admin.headerFooter')
     @section('body')
 
-    <div class="container my-5">
+   <section>
+        <div class="container my-5">
             <!-- toggleable dynamic tab starts here -->
             <div class="other-section">
                 <ul class="nav nav-pills">
@@ -170,4 +171,5 @@
             <!-- toggleable dynamic tab ends here -->
     </div>
 
+   </section>
 @endsection

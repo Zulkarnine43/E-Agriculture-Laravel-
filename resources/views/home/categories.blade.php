@@ -7,7 +7,8 @@ Crop Categories
 @section('body')
 
 
-     <div class="row my-5">
+     <section>
+       <div class="row my-5">
             @foreach($crops as $crop)
                @php( $farmer=App\farmer_register::where('username',$crop->username)->first())
                @if($farmer->action=="active")
@@ -39,6 +40,7 @@ Crop Categories
             @endif
             @endforeach
         </div>
+     </section>
 
 
     @endsection

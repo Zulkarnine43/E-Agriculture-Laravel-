@@ -8,8 +8,8 @@ Home
 @section('body')
 
 
-          <h1 class="text-success">{{Session::get('msg')}}</h1>
-          <h1 class="text-success">{{Session::get('l_msg')}}</h1>
+      <h1 class="text-success">{{Session::get('msg')}}</h1>
+      <h1 class="text-success">{{Session::get('l_msg')}}</h1>
 
     <div id="carouselExampleIndicators" class="carousel slide my-2" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -127,6 +127,11 @@ Home
         @endif
         @endforeach
     </div>
+</section>
+
+
+<section class="float-right">
+    {{$crops}}
 </section>
 
 

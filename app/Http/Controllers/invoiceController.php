@@ -8,6 +8,7 @@ use App\pay_confirm_message;
 use App\farmer_register;
 use App\order;
 use App\pay_order;
+use App\crop_import;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -29,6 +30,13 @@ public function pay_confirm_download_invoice($id){
         $username=$Bid->f_username;
         $user=farmer_register::where('username',$username)->first();
         $pdf = PDF::loadView('home.pay_confirm_invoice',['msg'=>$msg,'Bid'=>$Bid,'user'=>$user]);
+        return $pdf->stream('invoice.pdf');
+    }
+
+ public function order_download_invoice($id){
+        $order=order::find($id);
+        $crop=crop_import::where('id',$order->crop_id)->first();
+        $pdf = PDF::loadView('order_download_invoice',['order'=>$order,'crop'=>$crop]);
         return $pdf->stream('invoice.pdf');
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2021 at 10:28 AM
+-- Generation Time: Feb 08, 2021 at 12:23 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -142,14 +142,14 @@ INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_session`, `crop
 (7, 'zulkarnine', 'Lichu', '3', 1, '10 tress', 'araihazar1450,dhaka,bangladesh', '4000', 'from bangladesh', '2020-12-30', 'public/crop_images/1610723841.9.jpg', 'public/crop_images/download.jpg', '1', 'old', 'Published', '2020-12-21 01:00:24', '2021-01-15 09:24:48'),
 (10, 'alomgir', 'grapes', '2', 1, '10 tress', 'khulna', '6000', 'for consumers', '2021-02-25', 'public/crop_images/1610715801.grapes.jpg', 'public/crop_images/1610715801.grapes2.jpg', '1', 'New', 'Published', '2021-01-15 07:03:21', '2021-01-27 03:10:45'),
 (11, 'sajedul', 'badacophy', '2', 2, '10 bighas', 'chittagong', '5000', 'for consumers', '2021-01-28', 'public/crop_images/1610716188.Cabbage.jpg', 'public/crop_images/1610716188.Cabbage2.jpg', '1', 'old', 'Published', '2021-01-15 07:09:48', '2021-02-04 10:27:20'),
-(12, 'zulkarnine', 'Rice', '3', 3, '40 kg', 'chittagong', '3000', 'for consumers', '2021-02-06', 'public/crop_images/1610721658.rice.jpg', 'public/crop_images/1610721658.rice2.jpg', '1', 'New', 'Published', '2021-01-15 08:40:58', '2021-01-15 08:41:11'),
+(12, 'zulkarnine', 'Rice', '3', 3, '40 kg', 'chittagong', '3000', 'for consumers', '2021-02-06', 'public/crop_images/1610721658.rice.jpg', 'public/crop_images/1610721658.rice2.jpg', '1', 'old', 'Published', '2021-01-15 08:40:58', '2021-02-05 21:35:25'),
 (13, 'zulkarnine', 'tea', '1', 4, '1 bighas', 'Norshingdi', '9000', 'for consumers', '2021-02-15', 'public/crop_images/1610722084.tea.jpg', 'public/crop_images/1610722084.tea2.jpg', '1', 'New', 'Published', '2021-01-15 08:48:05', '2021-01-15 08:50:19'),
 (14, 'zulkarnine', 'peaj', '2', 2, '40 kg', 'rajshahi', '6000', 'for consumers', '2021-02-16', 'public/crop_images/1610722836.Onion2.jpg', 'public/crop_images/1610722836.Onion.jpg', '1', 'New', 'Published', '2021-01-15 09:00:36', '2021-01-15 09:00:43'),
 (16, 'zulkarnine', 'butta', '1', 3, '20kg', 'rajshahi', '500', 'for consumers', '2021-02-28', 'public/crop_images/1610723529.maize.jpg', 'public/crop_images/1610723529.maize2.jpg', '1', 'New', 'Published', '2021-01-15 09:12:09', '2021-01-15 09:15:41'),
 (17, 'zulkarnine', 'soyabean', '1', 4, '1 bighas', 'raipura,dhaka', '1500', 'for consumer', '2021-01-25', 'public/crop_images/1610723734.syebean2.jpg', 'public/crop_images/1610723734.soyebean.jpg', '1', 'old', 'Published', '2021-01-15 09:15:34', '2021-01-24 21:40:44'),
 (18, 'sajedul', 'potato', '1', 2, '1 bighas', 'Norshingdi', '5500', 'that,s for consumers', '2021-03-05', 'public/crop_images/1611146178.Potato.jpg', 'public/crop_images/1611146178.Potato2.jpg', '1', 'New', 'Published', '2021-01-20 06:36:18', '2021-01-24 01:01:18'),
 (21, 'Faruqe', 'Mango', '1', 1, '5 trees', 'khulna', '1500', 'bangladesh', '2021-01-31', 'public/crop_images/1611738764.mango.jpg', 'public/crop_images/1611738764.mango2.jpg', '1', 'old', 'Published', '2021-01-27 03:12:44', '2021-02-04 10:27:20'),
-(22, 'Faruqe', 'badam', '3', 3, '30kg', 'bondor, narayangonj', '600', 'bangladesh', '2021-02-06', 'public/crop_images/1611739154.groundnat.jpg', 'public/crop_images/1611739154.goundnat2.jpg', '1', 'New', 'Published', '2021-01-27 03:19:14', '2021-01-27 03:19:33'),
+(22, 'Faruqe', 'badam', '3', 3, '30kg', 'bondor, narayangonj', '600', 'bangladesh', '2021-02-06', 'public/crop_images/1611739154.groundnat.jpg', 'public/crop_images/1611739154.goundnat2.jpg', '1', 'old', 'Published', '2021-01-27 03:19:14', '2021-02-05 21:35:25'),
 (23, 'Faruqe', 'Aakh', '3', 4, '1 bighas', 'Raipura, Norshingdi', '2500', 'for bangladesh', '2021-02-17', 'public/crop_images/1611739406.sugerkan.jpg', 'public/crop_images/1611739406.sugerkan.jpg', '1', 'New', 'Published', '2021-01-27 03:23:26', '2021-01-27 03:23:37'),
 (24, 'zulkarnine', 'peara', '1', 10, '50 pics', 'Chittagong', '500', 'bangladesh', '2021-02-05', 'public/crop_images/1611739728.4.jpg', 'public/crop_images/1611739728.4.jpg', '1', 'old', 'Published', '2021-01-27 03:28:48', '2021-02-04 19:52:52'),
 (25, 'zulkarnine', 'cotton', '1', 4, '30kg', 'Rajshahi', '3000', 'bangladesh', '2021-01-30', 'public/crop_images/1611740005.cotton.jpg', 'public/crop_images/1611740005.cotton2.jpg', '1', 'old', 'Published', '2021-01-27 03:33:25', '2021-02-04 10:27:20'),
@@ -218,7 +218,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (19, '2021_01_04_154438_create_categories_infos_table', 10),
 (20, '2020_10_29_091039_create_pay_confirm_messages_table', 11),
 (21, '2020_12_27_144947_create_wishlists_table', 12),
-(22, '2020_09_23_102859_create_orders_table', 13);
+(23, '2020_09_23_102859_create_orders_table', 13);
 
 -- --------------------------------------------------------
 
@@ -237,6 +237,13 @@ CREATE TABLE `news_infos` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `news_infos`
+--
+
+INSERT INTO `news_infos` (`id`, `username`, `news_name`, `news_description`, `long_description`, `news_image`, `created_at`, `updated_at`) VALUES
+(3, 'zulkarnine', 'krishi', 'what they do', 'online agriculture market place for Bangladesh', 'public/news_images/shopping.png', '2021-02-07 11:49:31', '2021-02-07 11:49:31');
+
 -- --------------------------------------------------------
 
 --
@@ -245,19 +252,19 @@ CREATE TABLE `news_infos` (
 
 CREATE TABLE `orders` (
   `id` int(10) UNSIGNED NOT NULL,
-  `f_username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `c_username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `crop_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `f_username` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `c_username` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crop_id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `amount` double NOT NULL,
-  `address` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `division` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `zip` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `transaction_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `currency` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `division` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zip` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `transaction_id` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `currency` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -267,7 +274,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `f_username`, `c_username`, `crop_id`, `name`, `email`, `phone`, `amount`, `address`, `division`, `zip`, `status`, `transaction_id`, `currency`, `created_at`, `updated_at`) VALUES
-(3, 'zulkarnine', 'zulkarnine', '17', 'zulkar Nine', 'zns601@gmail.com', '01989419776', 600, 'Kolabagan', 'Dhaka', '1226', 'Processing', '601d0aaa98578', 'BDT', NULL, NULL);
+(1, 'zulkarnine', 'zulkarnine', 17, 'zulkar Nine', 'zns601@gmail.com', '01989419776', 1000, 'Kolabagan', 'Dhaka', '1226', 'Processing', 'jgsadua;ISFOAsjxc', 'BDT', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -294,7 +301,8 @@ CREATE TABLE `pay_confirm_messages` (
 --
 
 INSERT INTO `pay_confirm_messages` (`id`, `crop_id`, `f_username`, `crop_name`, `cust_username`, `account_type`, `account_id`, `confirm_price`, `message`, `created_at`, `updated_at`) VALUES
-(12, 17, 'zulkarnine', 'soyabean', 'zulkarnine', 'bkash', '01989419776', '600', 'null', '2021-02-04 11:57:01', '2021-02-04 11:57:01');
+(12, 17, 'zulkarnine', 'soyabean', 'zulkarnine', 'bkash', '01989419776', '600', 'null', '2021-02-04 11:57:01', '2021-02-04 11:57:01'),
+(13, 17, 'zulkarnine', 'soyabean', 'zulkarnine', 'bkash', '01989419776', '1000', 'null', '2021-02-08 00:38:53', '2021-02-08 00:38:53');
 
 -- --------------------------------------------------------
 
@@ -339,7 +347,7 @@ INSERT INTO `user_registers` (`id`, `register_as`, `username`, `email`, `mobile`
 
 CREATE TABLE `wishlists` (
   `id` int(10) UNSIGNED NOT NULL,
-  `crop_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crop_id` int(10) UNSIGNED NOT NULL,
   `f_username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `c_username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -351,7 +359,7 @@ CREATE TABLE `wishlists` (
 --
 
 INSERT INTO `wishlists` (`id`, `crop_id`, `f_username`, `c_username`, `created_at`, `updated_at`) VALUES
-(3, '11', 'sajedul', 'zulkarnine', '2021-02-04 20:27:47', '2021-02-04 20:27:47');
+(3, 11, 'sajedul', 'zulkarnine', '2021-02-04 20:27:47', '2021-02-04 20:27:47');
 
 --
 -- Indexes for dumped tables
@@ -414,7 +422,10 @@ ALTER TABLE `news_infos`
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `orders_f_username_foreign` (`f_username`),
+  ADD KEY `orders_c_username_foreign` (`c_username`),
+  ADD KEY `orders_ibfk_1` (`crop_id`);
 
 --
 -- Indexes for table `pay_confirm_messages`
@@ -437,7 +448,10 @@ ALTER TABLE `user_registers`
 -- Indexes for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `crop_id` (`crop_id`),
+  ADD KEY `f_username` (`f_username`),
+  ADD KEY `c_username` (`c_username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -477,25 +491,25 @@ ALTER TABLE `farmer_registers`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `news_infos`
 --
 ALTER TABLE `news_infos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pay_confirm_messages`
 --
 ALTER TABLE `pay_confirm_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `user_registers`
@@ -541,12 +555,28 @@ ALTER TABLE `news_infos`
   ADD CONSTRAINT `news_infos_ibfk_1` FOREIGN KEY (`username`) REFERENCES `admin_registers` (`username`) ON DELETE CASCADE;
 
 --
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_c_username_foreign` FOREIGN KEY (`c_username`) REFERENCES `user_registers` (`username`) ON DELETE CASCADE,
+  ADD CONSTRAINT `orders_f_username_foreign` FOREIGN KEY (`f_username`) REFERENCES `crop_imports` (`username`) ON DELETE CASCADE,
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`crop_id`) REFERENCES `crop_imports` (`id`) ON DELETE CASCADE;
+
+--
 -- Constraints for table `pay_confirm_messages`
 --
 ALTER TABLE `pay_confirm_messages`
   ADD CONSTRAINT `pay_confirm_messages_ibfk_1` FOREIGN KEY (`crop_id`) REFERENCES `bid_messages` (`crop_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `pay_confirm_messages_ibfk_2` FOREIGN KEY (`cust_username`) REFERENCES `bid_messages` (`cust_username`) ON DELETE CASCADE,
   ADD CONSTRAINT `pay_confirm_messages_ibfk_3` FOREIGN KEY (`f_username`) REFERENCES `farmer_registers` (`username`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  ADD CONSTRAINT `wishlists_ibfk_1` FOREIGN KEY (`crop_id`) REFERENCES `crop_imports` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `wishlists_ibfk_2` FOREIGN KEY (`f_username`) REFERENCES `farmer_registers` (`username`) ON DELETE CASCADE,
+  ADD CONSTRAINT `wishlists_ibfk_3` FOREIGN KEY (`c_username`) REFERENCES `user_registers` (`username`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

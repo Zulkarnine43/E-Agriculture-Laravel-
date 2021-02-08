@@ -16,20 +16,24 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('f_username');
-            $table->string('c_username');
-            $table->string('crop_id');
-            $table->string('name');
-            $table->string('email');
-            $table->string('phone');
-            $table->double('amount');
-            $table->longText('address');
-            $table->longText('division');
-            $table->longText('zip');
-            $table->string('status');
-            $table->string('transaction_id');
-            $table->string('currency');
+            $table->string('f_username',15);
+            $table->string('c_username',15);
+            $table->integer('crop_id',10)->unsigned();
+            $table->string('name',25);
+            $table->string('email',30);
+            $table->string('phone',15);
+            $table->double('amount',10);
+            $table->string('address',80);
+            $table->string('division',15);
+            $table->string('zip',10);
+            $table->string('status',10);
+            $table->string('transaction_id',30);
+            $table->string('currency',10);
             $table->timestamps();
+
+             $table->foreign('crop_id')->references('id')->on('crop_imports')->onDelete('cascade');
+            $table->foreign('f_username')->references('username')->on('crop_imports')->onDelete('cascade');
+            $table->foreign('c_username')->references('username')->on('user_registers')->onDelete('cascade');
         });
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\crop_import;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class farm_CropController extends Controller
 {
@@ -66,7 +67,7 @@ class farm_CropController extends Controller
 
 
     public function crop_manage(){
-        $crops=crop_import::where('username',Session::get('f_username'))->where('Action','!=',"deleted")->get();
+        $crops=crop_import::where('username',Session::get('f_username'))->where('Action','!=',"deleted")->paginate(9);
         return view('farmer.manage_crops',compact('crops'));
     }
 

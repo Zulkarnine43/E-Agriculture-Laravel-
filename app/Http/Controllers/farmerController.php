@@ -6,6 +6,7 @@ use App\Bid_message;
 use App\crop_import;
 use App\farmer_register;
 use App\user_register;
+use App\order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -23,7 +24,6 @@ class farmerController extends Controller
        return view('farmer.f_message',compact('messages'));
     
     }
-
 
    public function fa_profile($f_username){
         $crops=crop_import::where('username',$f_username)->where('Action','!=',"deleted")->get();

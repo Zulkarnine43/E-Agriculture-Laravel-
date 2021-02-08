@@ -21,19 +21,19 @@ class adminController extends Controller
 
     // Admin home 
     public function a_home(){
-        $newses=news_info::all();
-        return view('admin.index',compact('newses'));
+      //  $newses=news_info::all();
+        return view('admin.index');
     }
 
        // farmers crop details
 
     public function published_crops(){
-        $crops=crop_import::where('Action',"Published")->get();
+        $crops=crop_import::where('Action',"Published")->paginate(11);
         return view('admin.published_crops',compact('crops'));
     }
 
     public function unpublished_crops(){
-    $crops=crop_import::where('Action',"Unpublished")->get();
+    $crops=crop_import::where('Action',"Unpublished")->paginate(11);
     return view('admin.unpublished_crops',compact('crops'));
 }
 

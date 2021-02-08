@@ -1,8 +1,9 @@
 @extends('farmer.headerFooter')
 @section('body')
 
-    <div class="row flex-sm-row my-5">
-        <div class="col-md-12 col-sm-12 ">
+        <section>
+            <div class="row flex-sm-row my-5">
+            <div class="col-md-12 col-sm-12 ">
                     <h3 class="">Manage Crops Info</h3>
                     <h5 class="text-center text-success">{{Session::get('msg')}}</h5>
                     <h3 class="text-center text-success"></h3>
@@ -52,7 +53,11 @@
                             @endforeach
                     </table>
                 </div>
-    </div>
+            </div>
+            </section>
 
+        <section class=" m-5 float-right">
+            {{$crops}}
+        </section>
 
 @endsection()

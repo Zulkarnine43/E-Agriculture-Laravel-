@@ -30,8 +30,7 @@ class homeController extends Controller
             }
         }
 
-
-        $crops= crop_import::where('Action',"Published")->where('status',1)->orderBy('created_at', 'desc')->get();
+        $crops= crop_import::where('Action',"Published")->where('status',1)->orderBy('created_at', 'desc')->paginate(11);
         return view('home.index',compact('crops'));
     }
 
@@ -44,14 +43,18 @@ class homeController extends Controller
         return view('home.services');
     }
 
-       public function contact(){
+public function contact(){
         return view('home.contact');
     }
 
-        public function gallery(){
+public function gallery(){
         return view('home.gallery');
     }
     
+ public function news_info(){
+        $newses=news_info::all();
+        return view('home.news_info',compact('newses'));
+    }
 
 
     public function Categories($crop_type){

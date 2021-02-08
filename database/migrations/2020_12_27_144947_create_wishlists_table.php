@@ -15,10 +15,14 @@ class CreateWishlistsTable extends Migration
     {
         Schema::create('wishlists', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('crop_id');
+            $table->integer('crop_id')->unsigned();
             $table->string('f_username');
             $table->string('c_username');
             $table->timestamps();
+
+            $table->foreign('crop_id')->references('id')->on('crop_imports')->onDelete('cascade');
+            $table->foreign('f_username')->references('username')->on('crop_imports')->onDelete('cascade');
+            $table->foreign('c_username')->references('username')->on('user_registers')->onDelete('cascade');
         });
     }
 

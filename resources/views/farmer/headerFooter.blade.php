@@ -50,7 +50,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="">Orders crops</a>
+                    <a class="nav-link" href="{{route('farm_order_messages')}}">Orders crops</a>
                 </li>
                
                  @if (session()->has('f_username'))

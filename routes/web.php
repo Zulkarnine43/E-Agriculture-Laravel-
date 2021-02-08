@@ -257,7 +257,12 @@ Route::get('/gallery',[
     'as' =>'gallery'
 ]);
 
-oute::get('/categories/{crop_type}',[
+Route::get('/news_info',[
+    'uses' =>'homeController@news_info',
+    'as' =>'news_info'
+]);
+
+Route::get('/categories/{crop_type}',[
     'uses' =>'homeController@Categories',
     'as' =>'Categories'
 ]);
@@ -374,17 +379,6 @@ Route::get('/wishlist/remove/{id}',[
 ]);
 
 
-// Download Invoice routing
-
-Route::get('/bid_details/download/invoices/{id}',[
-    'uses' =>'invoiceController@bids_download_invoice',
-    'as' =>'bids_download_invoice'
-]);
-
-Route::get('/Pay_Confirm/download/invoice/{id}',[
-    'uses' =>'invoiceController@pay_confirm_download_invoice',
-    'as' =>'pay_confirm_download_invoice'
-]);
 
 // End home page routing
 
@@ -396,7 +390,6 @@ Route::get('/farmer/home/page',[
     'uses' =>'farmerController@f_home',
     'as' =>'f_home'
 ]);
-
 
 
 // Start Farmer Crop add update routing
@@ -445,6 +438,7 @@ Route::get('/farmer/bid/messages',[
     'as' =>'farm_bid_messages'
 ]);
 
+
 Route::get('/farmer/profile/{f_username}',[
     'uses' =>'farmerController@fa_profile',
     'as' =>'fa_profile'
@@ -456,18 +450,16 @@ Route::get('/farmer/',[
 ]);
 
 
+});
 
 Route::get('/logout/{name}',[
     'uses' =>'farmerController@logout',
     'as' =>'logout'
 ]);
-
-
-
-});
 //End Group middleware
 
 // End farmer page routing
+
 
 
 // Start Bid Modal routing
@@ -499,8 +491,48 @@ Route::post('/pay/confirm/message',[
 // End Bid modal routing
 
 
-// SSLCOMMERZ Start
+//// Start Order Start
 
+Route::post('/pay/manually',[
+    'uses' =>'orderController@manually_payment',
+    'as' =>'manually_payment'
+]);
+
+Route::get('/farmer/order/messages',[
+    'uses' =>'orderController@farm_order_messages',
+    'as' =>'farm_order_messages'
+]);
+
+Route::get('/customer/order/messages',[
+    'uses' =>'orderController@cust_order_messages',
+    'as' =>'cust_order_messages'
+]);
+
+// End order routing
+
+
+// Download Invoice routing
+
+Route::get('/bid_details/download/invoices/{id}',[
+    'uses' =>'invoiceController@bids_download_invoice',
+    'as' =>'bids_download_invoice'
+]);
+
+Route::get('/Pay_Confirm/download/invoice/{id}',[
+    'uses' =>'invoiceController@pay_confirm_download_invoice',
+    'as' =>'pay_confirm_download_invoice'
+]);
+
+Route::get('/invoice/order/{id}',[
+    'uses' =>'invoiceController@order_download_invoice',
+    'as' =>'order_download_invoice'
+]);
+
+// End Invoice routing
+
+
+
+// SSLCOMMERZ Start
 
 Route::get('/example2/{id}/{crop_id}',[
     'uses' =>'SslCommerzPaymentController@exampleHostedCheckout',
