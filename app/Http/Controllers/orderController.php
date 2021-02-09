@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\order;
 use Illuminate\Support\Facades\Session;
+use DB;
 
 class orderController extends Controller
 {
@@ -19,7 +20,8 @@ class orderController extends Controller
                 'name' => $request['customer_name'],
                 'email' => $request['customer_email'],
                 'phone' => $request['customer_mobile'],
-                'amount' => $request['amount'],
+                'bid_price' => $request['bid_price'],
+                'amount' => $request['pay_amount'],
                 'status' => 'Processing',
                 'address' => $request['address'],
                 'division' => $request['division'],
@@ -39,6 +41,6 @@ class orderController extends Controller
 
  public function cust_order_messages(){
         $orders=order::where('c_username',Session::get('c_username'))->orderBy('created_at','desc')->get();
-        return view('home.orders_info',compact('orders'));
+        return view('buyer.orders_info',compact('orders'));
     }
 }

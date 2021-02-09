@@ -1,4 +1,4 @@
-@extends('home.headerFooter')
+@extends('buyer.headerFooter')
 
 @section('title')
 Bid form

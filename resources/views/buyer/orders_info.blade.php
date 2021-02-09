@@ -1,4 +1,4 @@
-@extends('home.headerFooter')
+@extends('buyer.headerFooter')
 @section('body')
 
     <div class="row flex-sm-row my-5">

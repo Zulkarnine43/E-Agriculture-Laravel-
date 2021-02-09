@@ -22,6 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('name',25);
             $table->string('email',30);
             $table->string('phone',15);
+            $table->double('bid_price',10);
             $table->double('amount',10);
             $table->string('address',80);
             $table->string('division',15);

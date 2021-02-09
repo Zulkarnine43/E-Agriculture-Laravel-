@@ -277,21 +277,25 @@ Route::get('/crop_details/{id}',[
     'as' =>'crop_details'
 ]);
 
+
+//buyerController start here
 Route::get('/customer/profile/{c_username}',[
-    'uses' =>'homeController@cust_profile',
+    'uses' =>'buyerController@cust_profile',
     'as' =>'cust_profile'
 ]);
 
 Route::get('/confirm/message',[
-    'uses' =>'homeController@c_message',
+    'uses' =>'buyerController@c_message',
     'as' =>'c_message'
 ]);
 
 
 Route::get('/customer',[
-    'uses' =>'homeController@c_settings',
+    'uses' =>'buyerController@c_settings',
     'as' =>'c_settings'
 ]);
+
+//buyerController start here
 
 Route::get('/search',[
     'uses' =>'homeController@search',

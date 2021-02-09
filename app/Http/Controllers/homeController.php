@@ -95,25 +95,7 @@ public function gallery(){
          return view('home.crop_details',['crop'=>$crop,'bids_msg'=>$bids_msg]);
     }
 
-    public function cust_profile($c_username){
-         $bids_crop=Bid_message::where('cust_username',$c_username)->distinct()->get(['crop_id']);
-         return view('home.customer_profile',compact('bids_crop'));
-     }
-
-    public function c_message(){
-        $pay_confirms=pay_confirm_message::where('cust_username',Session::get('c_username'))->get();
-        return view('home.c_message',compact('pay_confirms'));
-    }
-
-
-    public function c_settings(){
-
-        $user=user_register::where('username',Session::get('c_username'))->first();
-
-        return view('home.c_settings',compact('user'));
-    }
-
-
+    
     public function search(Request $request){
         $search_tx1= $request->search;
 

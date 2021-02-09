@@ -1,4 +1,4 @@
-    @extends('home.headerFooter')
+    @extends('buyer.headerFooter')
     @section('body')
 
     <div class="container my-5">

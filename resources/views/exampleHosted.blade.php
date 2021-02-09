@@ -69,7 +69,7 @@
                         <h6 class="my-0">Confirm Price</h6>
                         
                     </div>
-                    <span class="text-muted"> {{$bid->confirm_price}}</span>
+                    <span class="text-muted"> {{$confirm->confirm_price}}</span>
                 </li>
         
             </ul>
@@ -153,7 +153,12 @@
                 </div>
                
                <div>
-                  <input type="hidden" value="{{$bid->confirm_price}}" name="amount" id="total_amount" required/>
+
+
+                   @php( $price =App\Bid_message::where('crop_id', $crop->id)->where('f_username', $crop->username)->max('bid_price'))
+
+                  <input type="hidden" value="{{$price}}" name="bid_price" id="bid_price" required/>
+                  <input type="hidden" value="{{$confirm->confirm_price}}" name="pay_amount" id="total_amount" required/>
                   >
                     <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout (Hosted)</button>
               </div>

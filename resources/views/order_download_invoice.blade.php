@@ -4,7 +4,7 @@
 
 <div class="row flex-sm-row my-5">
         <div class="col-md-12 col-sm-12 ">
-                    <h3 class=""> Order Invoice Info</h3>
+                    <h3 class="text-center text-success"> Order Invoice Info</h3>
                     <table class="table table-bordered  text-center">
                         <tr>
                             <th>Farmer_Username:</th>
@@ -34,6 +34,11 @@
                           <tr>
                             <th>Customer Phone:</th>
                             <td>{{$order->phone}}</td>
+                        </tr>
+
+                         <tr>
+                            <th>Bid Amount:</th>
+                            <td>{{$order->bid_price}}</td>
                         </tr>
 
                         <tr>

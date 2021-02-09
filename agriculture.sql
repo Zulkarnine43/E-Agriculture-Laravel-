@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2021 at 12:23 PM
+-- Generation Time: Feb 09, 2021 at 10:55 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -258,6 +258,7 @@ CREATE TABLE `orders` (
   `name` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bid_price` double NOT NULL,
   `amount` double NOT NULL,
   `address` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
   `division` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -273,8 +274,8 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `f_username`, `c_username`, `crop_id`, `name`, `email`, `phone`, `amount`, `address`, `division`, `zip`, `status`, `transaction_id`, `currency`, `created_at`, `updated_at`) VALUES
-(1, 'zulkarnine', 'zulkarnine', 17, 'zulkar Nine', 'zns601@gmail.com', '01989419776', 1000, 'Kolabagan', 'Dhaka', '1226', 'Processing', 'jgsadua;ISFOAsjxc', 'BDT', NULL, NULL);
+INSERT INTO `orders` (`id`, `f_username`, `c_username`, `crop_id`, `name`, `email`, `phone`, `bid_price`, `amount`, `address`, `division`, `zip`, `status`, `transaction_id`, `currency`, `created_at`, `updated_at`) VALUES
+(5, 'zulkarnine', 'zulkarnine', 17, 'zulkar Nine', 'zns601@gmail.com', '01989419776', 1700, 1000, 'Kolabagan', 'Dhaka', '1226', 'Processing', 'jgsadua;ISFOAsjxc', 'BDT', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -503,7 +504,7 @@ ALTER TABLE `news_infos`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pay_confirm_messages`

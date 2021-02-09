@@ -16,11 +16,11 @@ class SslCommerzPaymentController extends Controller
     public function exampleHostedCheckout($id, $crop_id)
     {
 
-        $bidd=pay_confirm_message::find($id);
+        $confirm=pay_confirm_message::find($id);
         $crop=crop_import::where('id',$crop_id)->first();
-        $farmer=farmer_register::where('username',$crop->username)->first();
+       // $farmer=farmer_register::where('username',$crop->username)->first();
         
-        return view('exampleHosted',compact('crop'),compact('farmer'))->with('bid',$bidd);
+        return view('exampleHosted',compact('crop'),compact('confirm'));
     }
 
     public function index(Request $request)
@@ -31,7 +31,8 @@ class SslCommerzPaymentController extends Controller
 
 
         $post_data = array();
-        $post_data['total_amount'] =$request->amount; # You cant not pay less than 10
+        $post_data['bid_price'] =$request->bid_price; # You cant not pay less than 10
+        $post_data['total_amount'] =$request->pay_amount;
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
@@ -83,6 +84,7 @@ class SslCommerzPaymentController extends Controller
                 'name' => $post_data['cus_name'],
                 'email' => $post_data['cus_email'],
                 'phone' => $post_data['cus_phone'],
+                'bid_price' => $post_data['bid_price'],
                 'amount' => $post_data['total_amount'],
                 'status' => 'Pending',
                 'address' => $post_data['cus_add1'],

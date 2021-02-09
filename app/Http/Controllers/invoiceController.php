@@ -29,7 +29,7 @@ public function pay_confirm_download_invoice($id){
         $Bid=Bid_message::where('crop_id',$msg->crop_id)->first();
         $username=$Bid->f_username;
         $user=farmer_register::where('username',$username)->first();
-        $pdf = PDF::loadView('home.pay_confirm_invoice',['msg'=>$msg,'Bid'=>$Bid,'user'=>$user]);
+        $pdf = PDF::loadView('buyer.pay_confirm_invoice',['msg'=>$msg,'Bid'=>$Bid,'user'=>$user]);
         return $pdf->stream('invoice.pdf');
     }
 

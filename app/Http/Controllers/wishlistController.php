@@ -28,7 +28,7 @@ class wishlistController extends Controller
 
 	public function wishlist($c_username){
 		   $wishlists=wishlist::where('c_username',$c_username)->get();
-		   return view('home.wishlist',compact('wishlists'));
+		   return view('buyer.wishlist',compact('wishlists'));
     }
 
     public function wishlist_remove($id){

@@ -1,4 +1,4 @@
-@extends('home.headerFooter')
+@extends('buyer.headerFooter')
 
 @section('title')
 customer messages
@@ -113,9 +113,13 @@ customer messages
                             <input type="text" name="address" value="" class="form-control" placeholder="Enter address" required>
                         </div>
 
+                        @php( $price =App\Bid_message::where('crop_id', $confirms->crop_id)->where('f_username', $confirms->f_username)->max('bid_price'))
+
+                        <input type="hidden" name="bid_price" value="{{$price}}">
+
                         <div class="form-group">
                             <label>amount</label>
-                            <input type="text" name="amount" value="" class="form-control" placeholder="Enter amount" required>
+                            <input type="text" name="pay_amount" value="" class="form-control" placeholder="Enter amount" required>
                         </div>
 
                         <div class="form-group">

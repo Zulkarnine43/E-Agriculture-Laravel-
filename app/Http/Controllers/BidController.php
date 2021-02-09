@@ -18,7 +18,7 @@ class BidController extends Controller
     public function Bid_model($id){
         $crop=crop_import::find($id);
         $owners =Bid_message::where('crop_id', $crop->id)->max('bid_price');
-        return view('home.Bid_model',compact('crop'),compact('owners'));
+        return view('buyer.Bid_model',compact('crop'),compact('owners'));
     }
 
     public function bid_msg_save(Request $request)
