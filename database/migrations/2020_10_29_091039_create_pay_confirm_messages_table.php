@@ -15,10 +15,10 @@ class CreatePayConfirmMessagesTable extends Migration
     {
         Schema::create('pay_confirm_messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('crop_id')->unsigned();
-            $table->string('f_username',15);
+            $table->integer('crop_id',10)->unsigned();
+            $table->string('f_username',20);
             $table->string('crop_name',15);
-            $table->string('cust_username',15);
+            $table->string('cust_username',20);
             $table->string('account_type',10);
             $table->string('account_id',25);
             $table->string('confirm_price',15);

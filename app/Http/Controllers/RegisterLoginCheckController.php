@@ -121,6 +121,8 @@ public function login(){
             $regis->profile_pic ="null";
             $regis->action ="active";
             $regis->condition ="unverified";
+            $regis->NID_1 ="empty";
+            $regis->NID_2 ="empty";
             $regis->save();
 
         $data=$regis->toArray();
@@ -162,6 +164,8 @@ public function login(){
             $regis->profile_pic ="null";
             $regis->action ="active";
             $regis->condition ="unverified";
+            $regis->NID_1 ="empty";
+            $regis->NID_2 ="empty";
             $regis->save();
 
         $data=$regis->toArray();

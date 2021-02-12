@@ -54,6 +54,47 @@ class farmerController extends Controller
     //     return redirect('/farmer/home/page');
     // }
 
+
+  public function NID_verification(Request $request){
+
+    $NidImage = $request->file('nid_image');
+    $currentTimeinSeconds = time();
+
+        if ($NidImage) {
+            $imageName = $currentTimeinSeconds.'.'.$NidImage->getClientOriginalName();
+            $directory = 'public/nid_images/';
+            $imageUrl = $directory.$imageName;
+            $NidImage->move($directory, $imageName);
+        }
+
+          $NidImage2 = $request->file('nid_image2');
+          $currentTimeinSeconds = time();
+          
+        if ($NidImage2) {
+            $imageName = $currentTimeinSeconds.'.'.$NidImage2->getClientOriginalName();
+            $directory = 'public/nid_images/';
+            $imageUrl2 = $directory.$imageName;
+            $NidImage2->move($directory, $imageName);
+
+        }
+     
+     if(Session::has('f_username')){
+            $regis=farmer_register::where('username',Session::get('f_username'))->first();
+            $regis->NID_1 = $imageUrl;
+            $regis->NID_2 = $imageUrl2;
+            $regis->save();
+            return redirect('/farmer')->with('msg','NID upload Successfully');
+        }elseif(Session::has('c_username')){
+
+          $regis=user_register::where('username',Session::get('c_username'))->first();
+            $regis->NID_1 = $imageUrl;
+            $regis->NID_2 = $imageUrl2;
+            $regis->save();
+            return redirect('/customer')->with('msg','NID upload Successfully');
+        }
+    }
+
+
     public function logout($name){
 
         if($name=="c_username"){

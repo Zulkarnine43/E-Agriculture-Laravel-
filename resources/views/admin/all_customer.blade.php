@@ -32,7 +32,8 @@
                 
 
                         <a href="{{route('user_profile',['id'=>$user->id])}}" class="btn btn-success"><i class="fa fa-1x fa-user"></i></a>
-                        <a href="" class="btn btn-success"><i class="fas fa-info-circle"></i></a>
+                        
+                         <a href="{{route('user_details',['id'=>$user->id])}}" class="btn btn-success"><i class="fas fa-info-circle"></i></a>
 
                     @if($user->action=="active")
                         <a href="{{route('c_action',['id'=>$user->id])}}" onclick="return confirm('Are you sure you want to deactive?');" class="btn btn-success"><i class="fas fa-arrow-circle-down"></i></a>

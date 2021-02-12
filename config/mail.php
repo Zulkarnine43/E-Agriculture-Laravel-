@@ -85,7 +85,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'md.shaon4100@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'E-agriculture'),
+        'name' => env('MAIL_FROM_NAME', 'AGROBID'),
     ],
 
     /*

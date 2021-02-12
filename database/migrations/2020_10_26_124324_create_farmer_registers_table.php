@@ -28,6 +28,8 @@ class CreateFarmerRegistersTable extends Migration
             $table->string('profile_pic',50);
             $table->string('action',15);
             $table->string('condition',15);
+            $table->string('NID_1',100);
+            $table->string('NID_2',100);
             $table->timestamps();
         });
     }

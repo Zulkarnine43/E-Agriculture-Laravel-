@@ -202,7 +202,7 @@ Crop details
 
                         <div class="form-group">
                             <label>Account-Id</label>
-                            <input type="tel" name="account_id" value="" class="form-control" placeholder="account" required>
+                            <input type="tel" name="account_id" value="" class="form-control" placeholder="account ex:018********" required>
                             <span class="text-danger">{{$errors->has('account_id') ? $errors->first('account_id'): ' '}}
                         </div>
 

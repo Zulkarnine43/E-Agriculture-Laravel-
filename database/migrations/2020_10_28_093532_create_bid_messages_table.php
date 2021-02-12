@@ -15,13 +15,13 @@ class CreateBidMessagesTable extends Migration
     {
         Schema::create('bid_messages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('crop_id')->unsigned();
-            $table->string('crop_name');
+            $table->integer('crop_id',10)->unsigned();
+            $table->string('crop_name',15);
             $table->string('f_username');
             $table->string('cust_username');
-            $table->string('name');
-            $table->string('bid_price');
-            $table->string('message');
+            $table->string('name',15);
+            $table->string('bid_price',10);
+            $table->string('message',50);
             $table->timestamps();
 
             $table->foreign('crop_id')->references('id')->on('crop_imports')->onDelete('cascade');

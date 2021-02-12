@@ -16,10 +16,10 @@ class CreateNewsInfosTable extends Migration
         Schema::create('news_infos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username');
-            $table->string('news_name');
-            $table->string('news_description');
-            $table->string('long_description');
-            $table->string('news_image');
+            $table->string('news_name',20);
+            $table->string('news_description',50);
+            $table->string('long_description',255);
+            $table->string('news_image',50);
             $table->timestamps();
 
             $table->foreign('username')->references('username')->on('admin_registers')->onDelete('cascade');

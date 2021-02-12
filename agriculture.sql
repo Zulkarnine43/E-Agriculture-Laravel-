@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2021 at 10:55 AM
+-- Generation Time: Feb 12, 2021 at 06:49 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -59,12 +59,12 @@ INSERT INTO `admin_registers` (`id`, `username`, `email`, `mobile`, `dob`, `divi
 CREATE TABLE `bid_messages` (
   `id` int(10) UNSIGNED NOT NULL,
   `crop_id` int(10) UNSIGNED NOT NULL,
-  `crop_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crop_name` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `f_username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cust_username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `bid_price` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bid_price` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -153,8 +153,9 @@ INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_session`, `crop
 (23, 'Faruqe', 'Aakh', '3', 4, '1 bighas', 'Raipura, Norshingdi', '2500', 'for bangladesh', '2021-02-17', 'public/crop_images/1611739406.sugerkan.jpg', 'public/crop_images/1611739406.sugerkan.jpg', '1', 'New', 'Published', '2021-01-27 03:23:26', '2021-01-27 03:23:37'),
 (24, 'zulkarnine', 'peara', '1', 10, '50 pics', 'Chittagong', '500', 'bangladesh', '2021-02-05', 'public/crop_images/1611739728.4.jpg', 'public/crop_images/1611739728.4.jpg', '1', 'old', 'Published', '2021-01-27 03:28:48', '2021-02-04 19:52:52'),
 (25, 'zulkarnine', 'cotton', '1', 4, '30kg', 'Rajshahi', '3000', 'bangladesh', '2021-01-30', 'public/crop_images/1611740005.cotton.jpg', 'public/crop_images/1611740005.cotton2.jpg', '1', 'old', 'Published', '2021-01-27 03:33:25', '2021-02-04 10:27:20'),
-(26, 'zulkarnine', 'Sunflower', '1', 8, '1 bighas', 'Rajshahi', '3000', 'bangladesh', '2021-02-10', 'public/crop_images/1611740388.images (37).jpg', 'public/crop_images/1611740388.images (36).jpg', '1', 'New', 'Published', '2021-01-27 03:39:48', '2021-01-27 03:40:30'),
-(27, 'hossain', 'abc', '3', 11, '1 pics', 'dhaka', '800', 'bangladesh', '2021-02-05', 'public/crop_images/1611740742.images (26).jpg', 'public/crop_images/1611740742.images (26).jpg', '1', 'old', 'Published', '2021-01-27 03:45:42', '2021-02-04 19:52:52');
+(26, 'zulkarnine', 'Sunflower', '1', 8, '1 bighas', 'Rajshahi', '3000', 'bangladesh', '2021-02-10', 'public/crop_images/1611740388.images (37).jpg', 'public/crop_images/1611740388.images (36).jpg', '1', 'old', 'Published', '2021-01-27 03:39:48', '2021-02-09 22:03:00'),
+(27, 'hossain', 'abc', '3', 11, '1 pics', 'dhaka', '800', 'bangladesh', '2021-02-05', 'public/crop_images/1611740742.images (26).jpg', 'public/crop_images/1611740742.images (26).jpg', '1', 'old', 'Published', '2021-01-27 03:45:42', '2021-02-04 19:52:52'),
+(28, 'zulkarnine12', 'morich', '1', 2, '1 bigha', 'Raipura, Norshingdi', '4500', 'from bangladesh', '2021-04-01', 'public/crop_images/1613015962.morich.jpg', 'public/crop_images/1613015962.morich.jpg', '1', 'New', 'Unpublished', '2021-02-10 21:59:22', '2021-02-10 21:59:40');
 
 -- --------------------------------------------------------
 
@@ -177,6 +178,8 @@ CREATE TABLE `farmer_registers` (
   `profile_pic` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `action` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `condition` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `NID_1` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `NID_2` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -185,12 +188,13 @@ CREATE TABLE `farmer_registers` (
 -- Dumping data for table `farmer_registers`
 --
 
-INSERT INTO `farmer_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `zip_code`, `gender`, `password`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
-(1, 'farmer', 'zulkarnine', 'zns601@gmail.com', '01989419776', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$5EnTljBZoUBfb8.0zziQxev5RUYtA2pDfUtkvERTs3PPmd4WZoICG', 'null', 'active', 'verified', '2020-12-29 08:33:12', '2021-01-27 04:20:50'),
-(2, 'farmer', 'alomgir', 'alomgir@gmail.com', '01876543567', '1996-05-24', 'Khulna', 'noton bazar', '1211', 'male', '$2y$10$296c5wRUL5sUJNG8ZqX/FeE.C5rCEtf2/XDHU963AUVe/ua4UuhU6', 'null', 'active', 'verified', '2021-01-15 06:30:02', '2021-01-15 06:30:02'),
-(3, 'farmer', 'Faruqe', 'faruqe@gmail.com', '01969084620', '1997-07-12', 'Dhaka', 'raipura', '1615', 'male', '$2y$10$QrWtmO4w4LuSipeRLKFBVOKJOn/WtKvOjHbFjs/DPUSE/WewSo4SC', 'null', 'active', 'verified', '2021-01-15 06:32:00', '2021-01-15 06:32:00'),
-(4, 'farmer', 'sajedul', 'sajedul@gmail.com', '01888344856', '1995-09-26', 'Chittagong', '90/A road, hathazari', '1234', 'male', '$2y$10$oCKO0K1OG5wrJhjZNyIkO.Xv8RTg4tiaS4S5n/CRJwx6LN46h4fKK', 'null', 'active', 'verified', '2021-01-15 06:34:52', '2021-01-15 06:34:52'),
-(5, 'farmer', 'hossain', 'hossain@gmail.com', '01764578235', '1993-04-30', 'Barishal', 'kuakata', '1567', 'male', '$2y$10$M4NEU4pJ/G/tyOdP.QhOGuuLF7SSTR2YpEiUohCIkBn7R/j7ZldeW', 'null', 'disable', 'verified', '2021-01-15 06:37:32', '2021-01-27 04:10:24');
+INSERT INTO `farmer_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `zip_code`, `gender`, `password`, `profile_pic`, `action`, `condition`, `NID_1`, `NID_2`, `created_at`, `updated_at`) VALUES
+(1, 'farmer', 'zulkarnine', 'zns601@gmail.com', '01989419776', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$5EnTljBZoUBfb8.0zziQxev5RUYtA2pDfUtkvERTs3PPmd4WZoICG', 'null', 'active', 'verified', 'public/nid_images/1613107795.zulkar nine_1.png', 'public/nid_images/1613107795.zulkar nine_2.png', '2020-12-29 08:33:12', '2021-02-11 23:29:55'),
+(2, 'farmer', 'alomgir', 'alomgir@gmail.com', '01876543567', '1996-05-24', 'Khulna', 'noton bazar', '1211', 'male', '$2y$10$296c5wRUL5sUJNG8ZqX/FeE.C5rCEtf2/XDHU963AUVe/ua4UuhU6', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:30:02', '2021-01-15 06:30:02'),
+(3, 'farmer', 'Faruqe', 'faruqe@gmail.com', '01969084620', '1997-07-12', 'Dhaka', 'raipura', '1615', 'male', '$2y$10$QrWtmO4w4LuSipeRLKFBVOKJOn/WtKvOjHbFjs/DPUSE/WewSo4SC', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:32:00', '2021-01-15 06:32:00'),
+(4, 'farmer', 'sajedul', 'sajedul@gmail.com', '01888344856', '1995-09-26', 'Chittagong', '90/A road, hathazari', '1234', 'male', '$2y$10$oCKO0K1OG5wrJhjZNyIkO.Xv8RTg4tiaS4S5n/CRJwx6LN46h4fKK', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:34:52', '2021-01-15 06:34:52'),
+(5, 'farmer', 'hossain', 'hossain@gmail.com', '01764578235', '1993-04-30', 'Barishal', 'kuakata', '1567', 'male', '$2y$10$M4NEU4pJ/G/tyOdP.QhOGuuLF7SSTR2YpEiUohCIkBn7R/j7ZldeW', 'null', 'disable', 'verified', 'empty', 'empty', '2021-01-15 06:37:32', '2021-01-27 04:10:24'),
+(6, 'farmer', 'zulkarnine12', 'zulkarnine43@gmail.com', '01989419776', '1997-09-25', 'Dhaka', 'Kolabagan', '1234', 'male', '$2y$10$QXBZ2DB/dAx8bbmpoQTtcOGJzVlbCXAdz8Rrnm51vr/0d4J3MwJ6O', 'null', 'active', 'verified', 'empty', 'empty', '2021-02-10 21:54:37', '2021-02-10 21:56:34');
 
 -- --------------------------------------------------------
 
@@ -229,10 +233,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `news_infos` (
   `id` int(10) UNSIGNED NOT NULL,
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `news_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `news_description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `news_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `news_description` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `long_description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `news_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `news_image` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -286,9 +290,9 @@ INSERT INTO `orders` (`id`, `f_username`, `c_username`, `crop_id`, `name`, `emai
 CREATE TABLE `pay_confirm_messages` (
   `id` int(10) UNSIGNED NOT NULL,
   `crop_id` int(10) UNSIGNED NOT NULL,
-  `f_username` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `f_username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `crop_name` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cust_username` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cust_username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `account_type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `account_id` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
   `confirm_price` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -303,7 +307,8 @@ CREATE TABLE `pay_confirm_messages` (
 
 INSERT INTO `pay_confirm_messages` (`id`, `crop_id`, `f_username`, `crop_name`, `cust_username`, `account_type`, `account_id`, `confirm_price`, `message`, `created_at`, `updated_at`) VALUES
 (12, 17, 'zulkarnine', 'soyabean', 'zulkarnine', 'bkash', '01989419776', '600', 'null', '2021-02-04 11:57:01', '2021-02-04 11:57:01'),
-(13, 17, 'zulkarnine', 'soyabean', 'zulkarnine', 'bkash', '01989419776', '1000', 'null', '2021-02-08 00:38:53', '2021-02-08 00:38:53');
+(13, 17, 'zulkarnine', 'soyabean', 'zulkarnine', 'bkash', '01989419776', '1000', 'null', '2021-02-08 00:38:53', '2021-02-08 00:38:53'),
+(14, 17, 'zulkarnine', 'soyabean', 'zulkarnine', 'bkash', '01989419776', '500', 'null', '2021-02-10 22:05:21', '2021-02-10 22:05:21');
 
 -- --------------------------------------------------------
 
@@ -326,6 +331,8 @@ CREATE TABLE `user_registers` (
   `profile_pic` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `action` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `condition` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `NID_1` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `NID_2` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -334,11 +341,12 @@ CREATE TABLE `user_registers` (
 -- Dumping data for table `user_registers`
 --
 
-INSERT INTO `user_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `zip_code`, `gender`, `password`, `profile_pic`, `action`, `condition`, `created_at`, `updated_at`) VALUES
-(1, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$szL3ySjeYWF3Sb.Yg6x9W.zoSY5fvmnPuOZ7qG1e8pwXaoJ2PbfZO', 'null', 'active', 'verified', '2020-12-29 08:35:19', '2021-01-21 03:11:36'),
-(2, 'customer', 'alomgir', 'alomgir@gmail.com', '01876543567', '1995-09-26', 'Dhaka', 'noton bazar', '1211', 'male', '$2y$10$R6R8S2jH0unUaBNY3i76wuX.PERvwc4ePLWbAztSNai.Vji88.yuu', 'null', 'active', 'verified', '2021-01-15 06:39:57', '2021-01-15 06:39:57'),
-(3, 'customer', 'Faruqe', 'faruqe@gmail.com', '01969084620', '1996-04-02', 'Chittagong', 'hathhazari', '1506', 'male', '$2y$10$DcVBqY1SDCcJAiI7RQ/8qOu8jqbOedKXlj7m2SU1vQZQCaCspkboO', 'null', 'active', 'verified', '2021-01-15 06:41:15', '2021-01-15 06:41:15'),
-(5, 'customer', 'hossain', 'hossain@gmail.com', '01764578235', '1999-05-31', 'Comilla', '45 kollandi', '1703', 'male', '$2y$10$1dr1SbMaNufMXIi0r3G/dOhMVRzdVnqcCGWiueYWNfUVoqZMyD2AK', 'null', 'active', 'verified', '2021-01-15 06:47:37', '2021-01-15 06:47:37');
+INSERT INTO `user_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `zip_code`, `gender`, `password`, `profile_pic`, `action`, `condition`, `NID_1`, `NID_2`, `created_at`, `updated_at`) VALUES
+(1, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$szL3ySjeYWF3Sb.Yg6x9W.zoSY5fvmnPuOZ7qG1e8pwXaoJ2PbfZO', 'null', 'active', 'verified', 'public/nid_images/1613108867.zulkar nine_1.png', 'public/nid_images/1613108867.zulkar nine_2.png', '2020-12-29 08:35:19', '2021-02-11 23:47:47'),
+(2, 'customer', 'alomgir', 'alomgir@gmail.com', '01876543567', '1995-09-26', 'Dhaka', 'noton bazar', '1211', 'male', '$2y$10$R6R8S2jH0unUaBNY3i76wuX.PERvwc4ePLWbAztSNai.Vji88.yuu', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:39:57', '2021-01-15 06:39:57'),
+(3, 'customer', 'Faruqe', 'faruqe@gmail.com', '01969084620', '1996-04-02', 'Chittagong', 'hathhazari', '1506', 'male', '$2y$10$DcVBqY1SDCcJAiI7RQ/8qOu8jqbOedKXlj7m2SU1vQZQCaCspkboO', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:41:15', '2021-01-15 06:41:15'),
+(5, 'customer', 'hossain', 'hossain@gmail.com', '01764578235', '1999-05-31', 'Comilla', '45 kollandi', '1703', 'male', '$2y$10$1dr1SbMaNufMXIi0r3G/dOhMVRzdVnqcCGWiueYWNfUVoqZMyD2AK', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:47:37', '2021-01-15 06:47:37'),
+(6, 'customer', 'zulkarnine12', 'zulkarnine43@gmail.com', '01989419776', '1997-09-25', 'Dhaka', 'Kolabagan', '1234', 'male', '$2y$10$YE4478kJ8Ad6pdDxmATgt.MPkm.6GVlnz0dVrN6.lNJHDAXuAIuX2', 'null', 'active', 'verified', 'empty', 'empty', '2021-02-10 21:46:23', '2021-02-10 21:53:13');
 
 -- --------------------------------------------------------
 
@@ -354,13 +362,6 @@ CREATE TABLE `wishlists` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `wishlists`
---
-
-INSERT INTO `wishlists` (`id`, `crop_id`, `f_username`, `c_username`, `created_at`, `updated_at`) VALUES
-(3, 11, 'sajedul', 'zulkarnine', '2021-02-04 20:27:47', '2021-02-04 20:27:47');
 
 --
 -- Indexes for dumped tables
@@ -480,13 +481,13 @@ ALTER TABLE `categories_infos`
 -- AUTO_INCREMENT for table `crop_imports`
 --
 ALTER TABLE `crop_imports`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `farmer_registers`
 --
 ALTER TABLE `farmer_registers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -510,19 +511,19 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `pay_confirm_messages`
 --
 ALTER TABLE `pay_confirm_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `user_registers`
 --
 ALTER TABLE `user_registers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

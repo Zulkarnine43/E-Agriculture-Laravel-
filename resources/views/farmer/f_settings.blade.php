@@ -186,22 +186,24 @@
                 <div id="verification" class="tab-pane fade" >
                 
                         
-                      <div class="col-lg-6 mx-auto">
-                          <form class="form-group" action="" method="POST" enctype="multipart/form-data">
+                     <div class="col-lg-6 mx-auto">
+                          <form class="form-group" action="{{route('NID_verification')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div>
                                     <h1 class="text-center">Please verify with NID card</h1>
                                 </div>
 
+
                                 <div class="form-group">
                                     <label class="font-weight-bolder">NID forward side IMG</label><br>
-                                    <input type="file" name="nid_image" accept="image/*" required>
+                                    <input type="file" name="nid_image" accept="image/*" required=""><img height="150" width="300" src="{{asset($user->NID_1)}}"
+                                    alt="empty" >
                                     <span>{{$errors->has('nid_image') ? $errors->first('nid_image'): ' '}}</span>
                                 </div>
 
                                <div class="form-group">
                                     <label class="font-weight-bolder">NID backward side IMG</label><br>
-                                    <input type="file" name="nid_image2" accept="image/*" required>
+                                    <input type="file" name="nid_image2" accept="image/*" required=""><img height="150" width="300" src="{{asset($user->NID_2)}}" alt="empty">
                                     <span>{{$errors->has('nid_image2') ? $errors->first('nid_image2'): ' '}}</span>
                                 </div>
                                 <div class="control-group mt-2">

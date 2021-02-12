@@ -318,7 +318,7 @@ Route::post('login/check',[
 
 
 Route::get('/signup',[
-    'uses' =>'homeController@signup',
+    'uses' =>'RegisterLoginCheckController@signup',
     'as' =>'signup'
 ]);
 
@@ -454,7 +454,15 @@ Route::get('/farmer/',[
 ]);
 
 
+
+
 });
+
+Route::post('/NID_verification',[
+    'uses' =>'farmerController@NID_verification',
+    'as' =>'NID_verification'
+]);
+
 
 Route::get('/logout/{name}',[
     'uses' =>'farmerController@logout',
