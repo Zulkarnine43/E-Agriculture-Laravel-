@@ -10,7 +10,7 @@
                     <th>Sl No</th>
                     <th>Farmer_Username</th>
                     <th>Customer_Username</th>
-                    <th>Customer name</th>
+                    <!-- <th>Customer name</th> -->
                     <th>Crop id</th>
                     <th>email</th>
                     <th>phone</th>
@@ -26,7 +26,7 @@
                     <td>{{$i++}}</td>
                     <td>{{$order->f_username}}</td>
                     <td>{{$order->c_username}}</td>
-                    <td>{{$order->name}}</td>
+                    <!-- <td>{{$order->name}}</td> -->
                     <td>{{$order->crop_id}}</td>
                     <td>{{$order->email}}</td>
                     <td>{{$order->phone}}</td>

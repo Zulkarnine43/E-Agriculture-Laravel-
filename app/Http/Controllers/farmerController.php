@@ -94,6 +94,11 @@ class farmerController extends Controller
         }
     }
 
+public function customer_profile($username){
+        $crops=Bid_message::where('cust_username',$username)->distinct()->get(['crop_id']);
+         return view ('farmer.customer_profile',compact('crops'));
+    }
+
 
     public function logout($name){
 

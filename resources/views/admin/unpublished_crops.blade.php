@@ -23,7 +23,7 @@
                         <div class="text-center">
                             <a class="btn btn-success" target="_blank" href="{{route('crop_details',['id'=>$crop->id])}}"><i class="fas fa-info-circle"></i></a>
 
-                            <a class="btn btn-danger" href="{{route('crop_published_save',['id'=>$crop->id])}}"><i class="fas fa-arrow-circle-up"></i></a>
+                            <a class="btn btn-danger" href="{{route('crop_published_save',['id'=>$crop->id])}}" onclick="return confirm('Are you sure you want to published?');"><i class="fas fa-arrow-circle-up"></i></a>
 
                             <a class="btn btn-danger" onclick="return confirm('Are you sure want to delete?');" href="{{route('crop_delete',['id'=>$crop->id])}}"><i class="fas fa-trash-alt"></i></a>
                         </div>

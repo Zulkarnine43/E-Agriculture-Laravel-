@@ -101,6 +101,23 @@ class adminController extends Controller
            }
     }
 
+
+  public function edit_categories($id){
+        $categorie=categories_info::find($id);
+        return view('admin.edit_categories',compact('categorie'));
+    }
+
+  public function update_categories_db(Request $request){
+             
+        $categories= categories_info::where('id',$request->id)->first();
+        $categories->a_username = $request->a_username;
+        $categories->categories_name = $request->categories_name;
+        $categories->categories_description = $request->categories_description;
+        $categories->categories_status = 1;
+        $categories->save();
+        return redirect('/manage/categories')->with('msg','categorie update successfully');
+    }
+
       public function categories_delete($id){
             $categories=categories_info::find($id);
             $categories->delete();
@@ -261,5 +278,21 @@ class adminController extends Controller
          $user=farmer_register::find($id);
          return view ('admin.user_details',compact('user'));
     }
+
+        public function admin_search(Request $request){
+        $search_tx1= $request->search;
+
+        $search=crop_import::orderBy('id','desc')      
+            // ->where('crop_name','Like','%'.$search_tx1.'%')
+            // ->orwhere('crop_type','Like','%'.$search_tx1.'%')
+             
+            // ->orwhere('bid_rate','Like','%'.$search_tx1.'%')
+            ->where('crop_name','Like',"%$search_tx1%")->where('Action',"Published")->where('status',1)
+            ->orwhere('crop_type','Like',"%$search_tx1%")->where('Action',"Published")->where('status',1)
+            ->orwhere('crop_location','Like','%'.$search_tx1.'%')->where('Action',"Published")->where('status',1)
+            ->get();
+            return view('admin.search', ['s' => $search]);
+    }
+
 
 }

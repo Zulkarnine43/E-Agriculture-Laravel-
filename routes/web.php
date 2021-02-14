@@ -138,6 +138,16 @@ Route::get('/change/categories/status/{id}',[
     'as' =>'categories_status'
 ]);
 
+Route::get('/edit/categories/{id}',[
+    'uses' =>'adminController@edit_categories',
+    'as' =>'edit_categories'
+]);
+
+Route::post('/categories/update',[
+    'uses' =>'adminController@update_categories_db',
+    'as' =>'update_categories_db'
+]);
+
 Route::get('/categories/delete/{id}',[
     'uses' =>'adminController@categories_delete',
     'as' =>'categories_delete'
@@ -222,6 +232,11 @@ Route::get('user/profile/{id}',[
 Route::get('user/details/{id}',[
 'uses'=>'adminController@user_details',
 'as'=>'user_details'
+]);
+
+Route::get('/admin/search',[
+    'uses' =>'adminController@admin_search',
+    'as' =>'admin_search'
 ]);
 
 
@@ -453,7 +468,10 @@ Route::get('/farmer/',[
     'as' =>'f_settings'
 ]);
 
-
+Route::get('customer/details/{username}',[
+'uses'=>'farmerController@customer_profile',
+'as'=>'customer_profile'
+]);
 
 
 });
@@ -504,6 +522,11 @@ Route::post('/pay/confirm/message',[
 
 
 //// Start Order Start
+
+Route::get('/order/paymet/form/{id}',[
+    'uses' =>'orderController@payment_form',
+    'as' =>'payment_form'
+]);
 
 Route::post('/pay/manually',[
     'uses' =>'orderController@manually_payment',

@@ -56,18 +56,76 @@ Crop details
                             <p>Condition:--{{$crop->condition}}</p>
                             <p>Description:--{{$crop->crop_description}}</p>
                             <small>created_at:--{{$crop->created_at}}</small><br>
-                            <span>Farmer:---<a href="">{{$crop->username}}</a></span>
+                            <!-- <span>Farmer:---<a href="">{{$crop->username}}</a></span> -->
+                            <p class="mt-3">Farmer:---<button class="btn btn-outline-success" data-toggle="modal" data-target="#farm_details">{{$crop->username}}</button></p>
                 </div>
-                <div class="card-footer">
+                <div class="">
                     @if(Session::get('c_username'))
-                     <button class="btn btn-success btn-block" data-toggle="modal" data-target="#BidModal">Bid here</button>
 
-                     <!-- <a class="btn btn-success btn-block" href="{{route('Bid_model',['id'=>$crop->id])}}">Bid here</a> -->
+                     <button class="btn btn-success btn-block" data-toggle="modal" data-target="#BidModal">Bid here</button>
                     @else
+
                         <a class="btn btn-success btn-block" target="_blank" href="{{route('login')}}">Bid here</a>
+
                     @endif
                 </div>
             </div>
+
+    <!----Farmer Details Modal start----------->
+
+      <div class="modal" id="farm_details">
+        <div class="modal-dialog">
+            <div class="modal-content bg-light">
+                <div class="modal-header">
+                    <h3 class="text-center">Farmer Details</h3>
+                    <button class="close text-dark" data-dismiss="modal">&times;</button>
+                </div>
+                @php( $details =App\farmer_register::where('username', $crop->username)->first())
+                <div class="modal-body">
+                   <table class="table table-bordered  text-center table-hover table-responsive-lg">
+                    
+                    <tr>
+                      <th>USERNAME-</th>
+                      <td>{{$details->username}}</td>
+                    </tr>
+
+                    <tr>
+                       <th>EMAIL-</th>
+                        <td>{{$details->email}}</td>
+                    </tr>
+
+                    <tr>
+                      <th>MOBILE-</th>
+                      <td>{{$details->mobile}}</td>
+                    </tr>
+                       
+                    <tr>
+                       <th>DIVISION-</th>
+                       <td>{{$details->division}}</td>
+                    </tr>
+
+                    <tr>
+                      <th>ADDRESS-</th>
+                      <td>{{$details->address}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>ZIP-CODE-</th>
+                        <td>{{$details->zip_code}}</td>
+                    </tr>
+                        
+                       
+                    <tr>
+                       <th>GENDER-</th>
+                      <td>{{$details->gender}}</td>
+                    </tr>
+                   </table>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!----Farmer Details Modal end----------->
+
         </div>
 
     </div>
@@ -132,6 +190,8 @@ Crop details
     </div>
 
 
+
+    <!----bidding list Modal start----------->
 
       <div class="row justify-content-center">
           <div class="col-md-8">

@@ -5,10 +5,16 @@ customer messages
 @endsection
 
 @section('body')
+
+@if($pay_confirms->isEmpty())
+
+<h4> There was no search value</h4>
+
+@else
 <h1 class="text-success">{{Session::get('msg')}}</h1>
     <div class="row flex-sm-row mt-5">
         <div class="col-md-12 col-sm-12 ">
-            <h3 class="">Messages Info</h3>
+            <h3 class="">Payment For Confirm Info</h3>
             <h3 class="text-center text-success"></h3>
             <table class="table table-bordered  text-center table-hover table-responsive-lg">
                 <tr class="t1">
@@ -40,18 +46,21 @@ customer messages
                         
                          <a target="_blank" href="{{route('pay_confirm_download_invoice',['id'=>$confirms->id])}}" class="btn btn-success"><i class="fas fa-cloud-download-alt"></i></a>
 
-                        <a href="{{route('example2',['id'=>$confirms->id,'crop_id'=>$confirms->crop_id,])}}" class="btn btn-success"><i class="fab fa-amazon-pay"></i></a>
+                        <a target="_blank" href="{{route('example2',['id'=>$confirms->id,'crop_id'=>$confirms->crop_id,])}}" class="btn btn-success"><i class="fab fa-amazon-pay"></i></a>
 
-                        <button class="btn btn-success " data-toggle="modal" data-target="#payModal"><i class="fab fa-amazon-pay"></i></button>
+                        <!-- <button class="btn btn-success " data-toggle="modal" data-target="#payModal"><i class="fab fa-amazon-pay"></i></button> -->
+
+                        <a target="_blank" href="{{route('payment_form',['id'=>$confirms->id])}}" class="btn btn-success"><i class="fab fa-amazon-pay"></i></a>
                     </td>
                 </tr>
-                    @endforeach
+        @endforeach
             </table>
         </div>
     </div>
+    @endif
 
-        
-    <div class="modal" id="payModal">
+        @endsection
+  <!--   <div class="modal" id="payModal">
         <div class="modal-dialog">
             <div class="modal-content bg-light">
                 <div class="modal-header">
@@ -91,7 +100,7 @@ customer messages
                     <div class="form-group col-md-6 mb-3">
                         <label>Division</label>
                        <select class="form-control" name="division" required>
-                            <option value=""><-------Select Your Division------------></option>
+                            <option value="">-------Select Your Division------------</option>
                             <option value="Dhaka">Dhaka</option>
                             <option value="Rajshahi">Rajshahi</option>
                             <option value="Khulna">Khulna</option>
@@ -132,7 +141,6 @@ customer messages
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
-@endsection

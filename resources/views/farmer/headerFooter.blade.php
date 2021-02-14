@@ -102,7 +102,7 @@
         <div class="row nav text-light mx-auto">
             <div class="col-lg-3 text-center">
                 <h2>Our website</h2>
-              <p class=" text-justify">At e_agriculture,
+              <p class=" text-justify">At agrobid,
                 Innovation and simplicity makes us happy: our goal is to remove any technical or financial
                 barriers that can prevent crops sell and buy. We're excited to
                 help you on your journey!?</p>
@@ -149,7 +149,7 @@
             </div>
         </div>
 
-    <p class="m-0 text-center text-white">Copyright &copy; E-agriculture 2020</p>
+    <p class="m-0 text-center text-white">Copyright &copy; AGROBID 2020</p>
     <!-- Message -->
     <button class="fixed-bottom btn btn-success float-right " data-toggle="modal" data-target="#messageModal">Feedback here</button>
 
@@ -196,4 +196,21 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{{url('public/final_eagri/vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{url('public/final_eagri/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5fe5ddcba8a254155ab6467b/1eqcukpg0';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
+</body>
 </html>

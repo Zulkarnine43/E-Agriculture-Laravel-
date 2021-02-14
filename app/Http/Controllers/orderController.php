@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\order;
+use App\crop_import;
+use App\pay_confirm_message;
 use Illuminate\Support\Facades\Session;
 use DB;
 
 class orderController extends Controller
 {
     //
+
+    public function payment_form($id){
+        $confirms=pay_confirm_message::find($id);
+        return view('buyer.payment_form',compact('confirms'));
+    }
 
    public function manually_payment(Request $request){
                $update_product = DB::table('orders')
@@ -30,7 +37,11 @@ class orderController extends Controller
                 'currency' => 'BDT'
             ]);
 
-            return redirect()->back()->with('msg','payment_information send successfully');
+            $crop=crop_import::where('id',$request->crop_id)->first();
+            $crop->condition="sold";
+            $crop->save();
+
+            return redirect('/customer/order/messages')->with('msg','payment_information send successfully');
     }
 
   public function farm_order_messages(){

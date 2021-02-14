@@ -179,7 +179,7 @@
         <div class="row nav text-light text-center">
             <div class="col-lg-3">
                 <h2>Our website</h2>
-              <p class=" text-justify ml-4">At e_agriculture,
+              <p class=" text-justify ml-4">At agrobid,
                 Innovation and simplicity makes us happy: our goal is to remove any technical or financial
                 barriers that can prevent crops sell and buy. We're excited to
                 help you on your journey!?</p>
@@ -227,7 +227,7 @@
             </div>
         </div>
 
-    <p class="m-0 text-center text-white">Copyright &copy; E-agriculture 2020</p>
+    <p class="m-0 text-center text-white">Copyright &copy; AGROBID 2020</p>
     <!-- Message -->
     <button class="fixed-bottom btn btn-success float-right " data-toggle="modal" data-target="#messageModal">Feedback here</button>
 

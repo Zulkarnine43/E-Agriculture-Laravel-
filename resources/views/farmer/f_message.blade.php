@@ -21,14 +21,19 @@
                 <tr>
                     <td>{{$i++}}</td>
                     <td>{{$message->crop_name}}</td>
-                    <td>{{$message->cust_username}}</td>
+                    <!-- <td>{{$message->cust_username}}</td> -->
+                  <td><button data-toggle="modal" data-target="#cust_details">{{$message->cust_username}}</button></td>
+
                     <td>{{$message->bid_price}}</td>
                     <td>{{$message->message}}</td>
                     <td>{{$message->created_at}}</td>
                    <td>
-                        <a target="_blank" href="{{route('crop_details',['id'=>$message->crop_id])}}" class="btn btn-success mb-sm-2"><i class="fas fa-info-circle"></i></a>
 
-                         <a target="_blank" href="{{route('bids_download_invoice',['id'=>$message->id])}}" class="btn btn-success mb-sm-2"><i class="fas fa-cloud-download-alt"></i></a> 
+                  <a href="{{route('customer_profile',['username'=>$message->cust_username])}}" class="btn btn-success mb-sm-2"><i class="fa fa-1x fa-user"></i></a>
+
+                  <a target="_blank" href="{{route('crop_details',['id'=>$message->crop_id])}}" class="btn btn-success mb-sm-2"><i class="fas fa-info-circle"></i></a>
+
+                  <a target="_blank" href="{{route('bids_download_invoice',['id'=>$message->id])}}" class="btn btn-success mb-sm-2"><i class="fas fa-cloud-download-alt"></i></a> 
 
                        <!--   <a data-toggle="modal" href="#ReplyModal" class="btn btn-success mb-sm-2"><i class="fas fa-reply-all"></i>confirm</a>
                           </td> -->
@@ -42,6 +47,63 @@
 
 
 @endsection        
+
+
+ <!----customer Details Modal start----------->
+
+      <div class="modal" id="cust_details">
+        <div class="modal-dialog">
+            <div class="modal-content bg-light">
+                <div class="modal-header">
+                    <h3 class="text-center">Buyer Details</h3>
+                    <button class="close text-dark" data-dismiss="modal">&times;</button>
+                </div>
+                @php( $details =App\user_register::where('username', $message->cust_username)->first())
+                <div class="modal-body">
+                   <table class="table table-bordered  text-center table-hover table-responsive-lg">
+                    
+                    <tr>
+                      <th>USERNAME-</th>
+                      <td>{{$details->username}}</td>
+                    </tr>
+
+                    <tr>
+                       <th>EMAIL-</th>
+                        <td>{{$details->email}}</td>
+                    </tr>
+
+                    <tr>
+                      <th>MOBILE-</th>
+                      <td>{{$details->mobile}}</td>
+                    </tr>
+                       
+                    <tr>
+                       <th>DIVISION-</th>
+                       <td>{{$details->division}}</td>
+                    </tr>
+
+                    <tr>
+                      <th>ADDRESS-</th>
+                      <td>{{$details->address}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>ZIP-CODE-</th>
+                        <td>{{$details->zip_code}}</td>
+                    </tr>
+                        
+                       
+                    <tr>
+                       <th>GENDER-</th>
+                      <td>{{$details->gender}}</td>
+                    </tr>
+                   </table>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!----customer Details Modal end----------->
+
 
                           <!----Reply Modal start----------->
 

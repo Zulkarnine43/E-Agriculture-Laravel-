@@ -101,8 +101,9 @@
 
 
                 </ul>
-                <form class="form-inline my-2 my-lg-0 mr-4">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline my-2 my-lg-0 mr-4" action="{{route('admin_search')}}" method="get">
+                     @csrf
+                    <input class="form-control mr-sm-2" type="search" name="search"  placeholder="Search">
                     <button class="btn btn-success my-2 my-sm-0 text-dark" type="submit">
                         <i class="fa fa-search">search</i>
                     </button>
@@ -123,7 +124,7 @@
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
     © 2020 Copyright:
-    <a class="" href="">agrobid.com</a>
+    <a class="" href="">AGROBID</a>
   </div>
   <!-- Copyright -->
 </footer>
