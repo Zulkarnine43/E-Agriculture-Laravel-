@@ -1,7 +1,7 @@
-@extends('buyer.headerFooter')
+@extends('farmer.headerFooter')
 
 @section('title')
-customer messages
+confirm crops
 @endsection
 
 @section('body')
@@ -37,21 +37,16 @@ customer messages
                     <td>{{$confirms->account_type}}</td>
                     <td>{{$confirms->account_id}}</td>
                     <td>{{$confirms->confirm_price}}</td>
-
                     @if($confirms->message=="null")
                     <td>empty</td>
                     @endif
-                    <td>
-                        <a target="_blank" href="{{route('crop_details',['id'=>$confirms->crop_id])}}" class="btn btn-success"><i class="fas fa-info-circle"></i></a>
-                        
-                         <a target="_blank" href="{{route('pay_confirm_download_invoice',['id'=>$confirms->id])}}" class="btn btn-success"><i class="fas fa-cloud-download-alt"></i></a>
-
-                        <a target="_blank" href="{{route('example2',['id'=>$confirms->id,'crop_id'=>$confirms->crop_id,])}}" class="btn btn-success"><i class="fab fa-amazon-pay"></i></a>
-
-                        <!-- <button class="btn btn-success " data-toggle="modal" data-target="#payModal"><i class="fab fa-amazon-pay"></i></button> -->
-
-                        <a target="_blank" href="{{route('payment_form',['id'=>$confirms->id])}}" class="btn btn-success"><i class="fab fa-amazon-pay"></i></a>
-                    </td>
+                    
+                     @php( $result =App\order::where('crop_id', $confirms->crop_id)->where('c_username', $confirms->cust_username)->first())
+                     @if($result===null)
+                    <td><a href="{{route('delete_confirm',['id'=>$confirms->id])}}" onclick="return confirm('Are you sure you want to delete this confirm for payment?');" class="btn btn-danger "><i class="fas fa-trash-alt"></i></a></td>
+                     @else
+                     <td>can not delete</td>
+                     @endif
                 </tr>
         @endforeach
             </table>

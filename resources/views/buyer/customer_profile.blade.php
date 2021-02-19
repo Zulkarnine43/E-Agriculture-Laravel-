@@ -5,8 +5,15 @@
 customer profile
 @endsection
 
-    <div class="row">
 
+
+@if($bids_crop->isEmpty())
+
+<h4>Profile empty</h4>
+
+@else
+
+    <div class="row">
 @foreach($bids_crop as $crop)
 @php( $crop=App\crop_import::where('id',$crop->crop_id)->first())
 
@@ -31,4 +38,5 @@ customer profile
         @endforeach
     </div>
 
+    @endif
 @endsection

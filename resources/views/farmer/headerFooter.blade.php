@@ -50,6 +50,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="{{route('confirm_crops')}}">Confirm Crops</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="{{route('farm_order_messages')}}">Orders crops</a>
                 </li>
                

@@ -457,6 +457,15 @@ Route::get('/farmer/bid/messages',[
     'as' =>'farm_bid_messages'
 ]);
 
+Route::get('/confirm/crops',[
+    'uses' =>'farmerController@confirm_crops',
+    'as' =>'confirm_crops'
+]);
+
+Route::get('/confirm/delete/{id}',[
+    'uses' =>'farmerController@delete_confirm',
+    'as' =>'delete_confirm'
+]);
 
 Route::get('/farmer/profile/{f_username}',[
     'uses' =>'farmerController@fa_profile',
@@ -528,7 +537,7 @@ Route::get('/order/paymet/form/{id}',[
     'as' =>'payment_form'
 ]);
 
-Route::post('/pay/manually',[
+Route::post('/payment/manually',[
     'uses' =>'orderController@manually_payment',
     'as' =>'manually_payment'
 ]);

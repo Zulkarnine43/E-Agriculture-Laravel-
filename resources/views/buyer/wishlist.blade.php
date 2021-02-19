@@ -11,8 +11,8 @@
 
            
             <div class="col-lg-4 col-md-6 col-sm-12">
+
                 <div class="card">
-                     <a href="{{route('wishlist_remove',['id'=>$wishlist->id])}}">Remove</a>
                     <div class="card-body">
                         <img class="card-img-top" src="{{url($crop->crop_image)}}" alt="food1" height="200" width="350">
                         <div class="item-desc">
@@ -24,11 +24,14 @@
 
                             <a class="btn btn-success" target="" href="{{route('crop_details',['id'=>$crop->id])}}" class="card-link">Details</a>
 
-                            @if(Session::get('c_username'))
+                           <!--  @if(Session::get('c_username')) -->
                            <a class="btn btn-success" href="{{route('Bid_model',['id'=>$crop->id])}}">Bid here</a>
-                            @else
+
+                           <a class="btn btn-success" href="{{route('wishlist_remove',['id'=>$wishlist->id])}}">Remove</a>
+
+                           <!--  @else
                                 <a class="btn btn-success" href="{{route('login')}}">Bid here</a>
-                            @endif
+                            @endif -->
                         </div>
 
                     </div>

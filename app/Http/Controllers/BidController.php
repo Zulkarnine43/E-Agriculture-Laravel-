@@ -120,7 +120,7 @@ public function bid_msg_saved(Request $request)
         $pay_info->confirm_price = $request->confirm_price;
         $pay_info->message = $request->message;
         $pay_info->save();
-        return redirect('/farmer/bid/messages')->with('msg','your confirm message send successfully');
+        return redirect()->back()->with('msg','your confirm message send successfully');
 
     }
 }

@@ -6,6 +6,7 @@ use App\Bid_message;
 use App\crop_import;
 use App\farmer_register;
 use App\user_register;
+use App\pay_confirm_message;
 use App\order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -23,6 +24,17 @@ class farmerController extends Controller
        $messages=Bid_message::where('f_username',Session::get('f_username'))->orderBy('created_at','desc')->get();
        return view('farmer.f_message',compact('messages'));
     
+    }
+
+  public function confirm_crops(){
+        $pay_confirms=pay_confirm_message::where('f_username',Session::get('f_username'))->get();
+        return view('farmer.confirm_crops',compact('pay_confirms'));
+    }
+
+    public function delete_confirm($id){
+        $crop=pay_confirm_message::find($id);
+        $crop->delete();
+        return redirect('/confirm/crops')->with('msg','delete Confirm for payment successfully');
     }
 
    public function fa_profile($f_username){
