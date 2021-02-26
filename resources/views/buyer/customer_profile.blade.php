@@ -17,7 +17,7 @@ customer profile
 @foreach($bids_crop as $crop)
 @php( $crop=App\crop_import::where('id',$crop->crop_id)->first())
 
-    <div class="col-lg-4 col-md-6 my-5">
+    <div class="col-lg-4 col-md-6 my-3">
         <div class="card">
            <div class="card-body">
             <a href="#"><img class="card-img-top " width="400" height="200" src="{{asset($crop['crop_image'])}}" alt=""></a>

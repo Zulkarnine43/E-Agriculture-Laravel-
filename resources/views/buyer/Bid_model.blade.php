@@ -8,12 +8,7 @@ Bid form
 
 
               <style>
-			  .bid {
-				background: green;
-				color: white;
-				padding: 10px;
-				text-align:center;
-			    }
+		
 			  </style>
 
                    

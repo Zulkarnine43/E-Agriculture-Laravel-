@@ -12,7 +12,7 @@ payment form
 <div class="col-lg-7 jumbotron mx-auto mt-5">
 	 <form action="{{route('manually_payment')}}" method="post">
                       @csrf
-                    <h1 class="text-center">Payment Details</h1>
+                    <h1 class="text-center text-success">Payment Details</h1>
                     <h4 class="text-justify font-weight-bold"> Please pay {{$confirms->confirm_price}}TK To {{$confirms->account_type}} Account {{$confirms->account_id}} for order confirmation . Now Send pay account, Transition ID & all of details </h4>
 
                      <input type="hidden" name="crop_id" value="{{$confirms->crop_id}}">

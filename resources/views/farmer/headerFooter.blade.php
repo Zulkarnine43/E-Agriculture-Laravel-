@@ -155,7 +155,7 @@
 
     <p class="m-0 text-center text-white">Copyright &copy; AGROBID 2020</p>
     <!-- Message -->
-    <button class="fixed-bottom btn btn-success float-right " data-toggle="modal" data-target="#messageModal">Feedback here</button>
+    <!-- <button class="fixed-bottom btn btn-success float-right " data-toggle="modal" data-target="#messageModal">Feedback here</button> -->
 
 
     <!-- Message Modal -->

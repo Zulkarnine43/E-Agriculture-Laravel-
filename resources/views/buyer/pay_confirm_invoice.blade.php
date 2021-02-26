@@ -3,7 +3,7 @@
 
 <div class="row flex-sm-row my-5">
         <div class="col-md-12 col-sm-12 ">
-                    <h3 class="text-center text-success"> Bid details Invoice Info</h3>
+                    <h3 class="text-center text-success"> Confirm details Invoice Info</h3>
                     <table class="table table-bordered  text-center">
 
                           <tr>

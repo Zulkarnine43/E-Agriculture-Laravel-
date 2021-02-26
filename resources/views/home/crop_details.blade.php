@@ -61,8 +61,10 @@ Crop details
                 </div>
                 <div class="">
                     @if(Session::get('c_username'))
-
-                     <button class="btn btn-success btn-block" data-toggle="modal" data-target="#BidModal">Bid here</button>
+                       @if(!Carbon\Carbon::now()->greaterThan($crop->last_date_bidding))
+                     <button class="btn btn-success btn-block" data-toggle="modal" data-target="#BidModal">Bid here</button> 
+                         @else <h4 class="text-danger">Bidding Time Finished</h4>
+                       @endif
                     @else
 
                         <a class="btn btn-success btn-block" target="_blank" href="{{route('login')}}">Bid here</a>
@@ -149,14 +151,14 @@ Crop details
                         <input type="hidden" name="f_username" value="{{$crop->username}}" class="form-control">
                         <input type="hidden" name="cust_username" value="{{Session::get('c_username')}}" class="form-control">
 
-                        <div class="font-weight-bolder text-center display-5">
+                        <div class="bid">
                             Bid Rate::---<span class="ml-4">{{$crop->bid_rate}}TK</span>
                         </div>
 
                     @php( $price =App\Bid_message::where('crop_id', $crop->id)->max('bid_price'))
                           
                         
-                        <div class="font-weight-bolder text-center display-5">
+                        <div class="bid">
                             Best Bidder::---
                             @if($price==null)
                                <span>Not any bid</span>
@@ -213,15 +215,17 @@ Crop details
                           <h4 class="media-heading user_name">USER:---{{$bid->cust_username}}</h4>
                           BID:---{{$bid->bid_price}}TK
                           <p> 
-                                  
-                                   @if($bid->cust_username==Session::get('c_username') )
-                                   <a href="{{route('bid_delete',['id'=>$bid->id,'crop_id'=>$bid->crop_id])}}">delete</a>
-                                  @endif
+                                
+                                 @if($bid->cust_username==Session::get('c_username') )
+                                   @if(!Carbon\Carbon::now()->greaterThan($crop->last_date_bidding))
+                                 <a href="{{route('bid_delete',['id'=>$bid->id,'crop_id'=>$bid->crop_id])}}">delete</a>
+                                   @endif
+                                @endif
 
 
-                                  @if($crop->username==Session::get('f_username'))
-                                  -<a data-toggle="modal" href="#ReplyModal">Reply_confirm</a>
-                                  @endif          
+                                @if($crop->username==Session::get('f_username'))
+                                -<a data-toggle="modal" href="#ReplyModal">Reply_confirm</a>
+                                @endif          
                           </p>
                       </div>
                   </div>

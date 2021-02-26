@@ -53,7 +53,7 @@
 
                                           <tr>
                                             <th>profile_pic:</th>
-                                            <td><img src="{{url($user->profile_pic)}}" height="200" width="200"></td>
+                                            <td><img src="{{url($user->profile_pic)}}" height="200" width="200" alt="empty"></td>
                                         </tr>
 
                                           <tr>
