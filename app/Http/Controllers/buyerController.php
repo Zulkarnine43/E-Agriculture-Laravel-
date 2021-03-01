@@ -29,4 +29,11 @@ class buyerController extends Controller
 
         return view('buyer.c_settings',compact('user'));
     }
+
+    
+
+public function farm_profile($f_username){
+        $crops=Bid_message::where('f_username',$f_username)->distinct()->get(['crop_id']);
+         return view ('buyer.farm_profile',compact('crops'));
+    }
 }

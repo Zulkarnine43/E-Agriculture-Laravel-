@@ -17,18 +17,18 @@ password changes form
 
                 <div class="control-group">
                     <!-- Password-->
-                    <label>Password</label>
+                    <label>New Password</label>
                     <div>
-                        <input type="password" id="password" name="password" placeholder="Xyz123" class="form-control" value="">
+                        <input type="password" id="password" name="password" placeholder="Enter new password" class="form-control" value="">
                         <span class="text-danger">{{$errors->has('password') ? $errors->first('password'): ' '}}</span>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <!-- Password -->
-                    <label>Password (Confirm)</label>
+                    <label>New Password (Confirm)</label>
                     <div>
-                        <input type="password" id="password_confirm" name="password_confirm" placeholder="Xyz123" class="form-control">
+                        <input type="password" id="password_confirm" name="password_confirm" placeholder="Enter new password" class="form-control">
                         <span class="text-danger">{{$errors->has('password_confirm') ? $errors->first('password_confirm'): ' '}}</span>
                     </div>
                 </div>

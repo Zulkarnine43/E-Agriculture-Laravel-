@@ -310,6 +310,11 @@ Route::get('/customer',[
     'as' =>'c_settings'
 ]);
 
+Route::get('/farmer/profile/check/{f_username}',[
+    'uses' =>'buyerController@farm_profile',
+    'as' =>'farm_profile'
+]);
+
 //buyerController start here
 
 Route::get('/search',[

@@ -33,7 +33,7 @@ customer messages
                 <tr>
                     <td>{{$i++}}</td>
                     <td>{{$confirms->crop_name}}</td>
-                    <td>{{$confirms->f_username}}</td>
+                    <td><a href="{{route('farm_profile',['f_username'=>$confirms->f_username])}}">{{$confirms->f_username}}</a></td>
                     <td>{{$confirms->account_type}}</td>
                     <td>{{$confirms->account_id}}</td>
                     <td>{{$confirms->confirm_price}}</td>
