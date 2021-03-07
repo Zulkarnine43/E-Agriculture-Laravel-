@@ -55,7 +55,7 @@ Bid form
                             <input type="text" name="message" value="" class="form-control" placeholder="Enter message">
                         </div>
 
-                        <input  type="submit"  value="Bid" class="btn btn-success btn-block">
+                        <input  type="submit"  value="Bid Submit" class="btn btn-success btn-block">
                     </form>
                 </div>
 

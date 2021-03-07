@@ -233,7 +233,13 @@ class adminController extends Controller
                 $farm->action = "active";
                 $farm->save();
             }
-            return redirect('/farmers');
+
+        $data=$farm->toArray();
+        Mail::send('user_action_mail',['val'=>$data],function($message) use ($data){
+            $message->to($data['email']);
+            $message->subject('user_action_mail');
+        });
+        return redirect('/farmers');
         }
     }
 
