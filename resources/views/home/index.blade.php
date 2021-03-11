@@ -113,7 +113,15 @@ Home
 
                        @if(Session::get('c_username'))
                        <a class="btn btn-success" href="{{route('Bid_model',['id'=>$crop->id])}}">Bid here</a>
-                       <a class="btn btn-success" href="{{route('wishlist_db',['id'=>$crop->id])}}" data-toggle="tooltip" data-placement="bottom" title="add wishlist"> <i class="far fa-heart"></i> </a>
+
+                              @php( $wishlist=App\wishList::where('crop_id',$crop->id)->first())
+                                @if(!$wishlist)
+                                   <a class="btn btn-success" href="{{route('wishlist_db',['id'=>$crop->id])}}" data-toggle="tooltip" data-placement="bottom" title="add wishlist"> <i class="far fa-heart"></i> </a>
+                                @else
+                                    <a class="btn btn-success" href="{{route('wishlist_remove',['id'=>$wishlist->id])}}" data-toggle="tooltip" data-placement="bottom" title="remove wishlist"> <i class="far fa-heart text-danger"></i> </a>
+                                @endif     
+
+
                         @else
                        <a class="btn btn-success" target="_blank" href="{{route('login')}}">Bid here</a>
 

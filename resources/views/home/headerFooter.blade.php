@@ -70,7 +70,7 @@
 
           <li class="nav-item dropdown">
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Summer Products</a>
-                        <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-menu bg-dark nav-item" aria-labelledby="dropdownMenuLink">
                               @php($categories=App\categories_info::all()->where('categories_status',1))
                                 @foreach($categories as $categorie)
                                      <a class="nav-link" href="{{route('Session_Categories',['crop_type'=>$categorie->id,'crop_session'=>1])}}">{{$categorie->categories_name}}</a>
@@ -80,7 +80,7 @@
 
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Winter Products</a>
-                        <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-menu bg-dark nav-item" aria-labelledby="dropdownMenuLink">
                           @php($categories=App\categories_info::all()->where('categories_status',1))
                                 @foreach($categories as $categorie)
                                      <a class="nav-link" href="{{route('Session_Categories',['crop_type'=>$categorie->id,'crop_session'=>2])}}">{{$categorie->categories_name}}</a>
@@ -90,7 +90,7 @@
 
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Monsoon Products</a>
-                        <div class="dropdown-menu bg-danger nav-item" aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-menu bg-dark nav-item" aria-labelledby="dropdownMenuLink">
                            @php($categories=App\categories_info::all())
                                 @foreach($categories as $categorie)
                                      <a class="nav-link" href="{{route('Session_Categories',['crop_type'=>$categorie->id,'crop_session'=>3])}}">{{$categorie->categories_name}}</a>
@@ -157,7 +157,7 @@
             <div class="list-group text-lg-center">
                    @php($categories=App\categories_info::all()->where('categories_status',1))
                                 @foreach($categories as $categorie)
-                <a href="{{route('Categories',['crop_type'=>$categorie->id])}}" class="list-group-item btn btn-outline-primary">{{$categorie->categories_name}}</a>
+                <a href="{{route('Categories',['crop_type'=>$categorie->id])}}" class="list-group-item btn btn-outline-success">{{$categorie->categories_name}}</a>
                   @endforeach
             </div>
       
