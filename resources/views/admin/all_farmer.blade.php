@@ -3,7 +3,7 @@
 
     <div class="row flex-sm-row">
         <div class="col-md-12 col-sm-12 ">
-            <h3 class="">Manage user Info</h3>
+            <h3 class="text-center text-success">Manage user Info</h3>
             <h3 class="text-center text-success"></h3>
             <table class="table table-bordered  text-center table-hover table-responsive-lg">
                 <tr class="">

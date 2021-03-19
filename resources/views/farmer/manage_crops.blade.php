@@ -4,7 +4,7 @@
         <section>
             <div class="row flex-sm-row my-5">
             <div class="col-md-12 col-sm-12 ">
-                    <h3 class="">Manage Crops Info</h3>
+                    <h3 class="text-center text-success">Manage Crops Info</h3>
                     <h5 class="text-center text-success">{{Session::get('msg')}}</h5>
                     <h3 class="text-center text-success"></h3>
                     <table class="table table-bordered  text-center table-hover table-responsive-lg">

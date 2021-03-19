@@ -3,7 +3,7 @@
 
     <div class="row flex-sm-row my-5">
         <div class="col-md-12 col-sm-12 ">
-            <h3 class="">Bid List Info</h3>
+            <h3 class="text-center text-success">Bid List Info</h3>
             <h3 class="text-center text-success">{{Session::get('msg')}}</h3>
             <table class="table table-bordered  text-center table-hover table-responsive-lg">
                 <tr class="t1">

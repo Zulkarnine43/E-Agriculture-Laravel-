@@ -108,7 +108,7 @@
                 <form class="form-inline my-2 my-lg-0 mr-4" action="{{route('admin_search')}}" method="get">
                      @csrf
                     <input class="form-control mr-sm-2" type="search" name="search"  placeholder="Search">
-                    <button class="btn btn-success my-2 my-sm-0 text-dark" type="submit">
+                    <button class="btn btn-success my-1 my-sm-0 text-dark" type="submit">
                         <i class="fa fa-search">search</i>
                     </button>
                 </form>

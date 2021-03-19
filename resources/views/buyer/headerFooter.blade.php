@@ -157,7 +157,7 @@
             <div class="list-group text-lg-center">
                    @php($categories=App\categories_info::all()->where('categories_status',1))
                                 @foreach($categories as $categorie)
-                <a href="{{route('Categories',['crop_type'=>$categorie->id])}}" class="list-group-item btn btn-outline-primary">{{$categorie->categories_name}}</a>
+                <a href="{{route('Categories',['crop_type'=>$categorie->id])}}" class="list-group-item btn btn-outline-success">{{$categorie->categories_name}}</a>
                   @endforeach
             </div>
       

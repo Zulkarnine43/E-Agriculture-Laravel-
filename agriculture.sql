@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2021 at 07:56 AM
+-- Generation Time: Mar 19, 2021 at 06:15 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -74,13 +74,11 @@ CREATE TABLE `bid_messages` (
 --
 
 INSERT INTO `bid_messages` (`id`, `crop_id`, `crop_name`, `f_username`, `cust_username`, `name`, `bid_price`, `message`, `created_at`, `updated_at`) VALUES
-(14, 17, 'soyabean', 'zulkarnine', 'zulkarnine', 'Zulkar Nine', '1600', 'null', '2021-01-21 22:19:00', '2021-01-21 22:19:00'),
-(15, 17, 'soyabean', 'zulkarnine', 'zulkarnine', 'Zulkar Nine', '1700', 'null', '2021-01-23 04:39:14', '2021-01-23 04:39:14'),
-(18, 23, 'Aakh', 'Faruqe', 'alomgir', 'alomgir', '2500', 'null', '2021-02-19 04:19:28', '2021-02-19 04:19:28'),
-(19, 26, 'Sunflower', 'zulkarnine', 'zulkarnine', 'Zulkar Nine', '3200', 'null', '2021-02-19 11:45:45', '2021-02-19 11:45:45'),
 (20, 18, 'potato', 'sajedul', 'zulkarnine', 'Zulkar Nine', '5600', 'null', '2021-02-19 11:56:43', '2021-02-19 11:56:43'),
 (21, 23, 'Aakh', 'sajedul', 'zulkarnine', 'Zulkar Nine', '2600', 'null', '2021-02-24 22:58:47', '2021-02-24 22:58:47'),
-(22, 29, 'Watermilon', 'sajedul', 'Faruqe', 'faruqe', '2200', 'null', '2021-03-07 00:07:03', '2021-03-07 00:07:03');
+(22, 29, 'Watermilon', 'sajedul', 'Faruqe', 'faruqe', '2200', 'null', '2021-03-07 00:07:03', '2021-03-07 00:07:03'),
+(23, 16, 'butta', 'zulkarnine', 'alomgir', 'alomgir', '600', 'null', '2021-03-19 10:02:25', '2021-03-19 10:02:25'),
+(24, 6, 'komola', 'zulkarnine', 'Faruqe', 'faruqe', '12000', 'null', '2021-03-19 10:04:12', '2021-03-19 10:04:12');
 
 -- --------------------------------------------------------
 
@@ -286,8 +284,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `f_username`, `c_username`, `crop_id`, `name`, `email`, `phone`, `bid_price`, `amount`, `address`, `division`, `zip`, `status`, `transaction_id`, `currency`, `created_at`, `updated_at`) VALUES
-(12, 'zulkarnine', 'zulkarnine', 17, 'zulkar Nine', 'zns601@gmail.com', '01989419776', 1700, 1000, 'Dhaka', 'Dhaka', '1226', 'Processing', 'jgsadua;ISFOAsjxc', 'BDT', NULL, NULL),
-(13, 'sajedul', 'Faruqe', 29, 'Faruqe Hasan', 'faruqe@gmail.com', '08754567845', 2200, 1000, 'hathhazari', 'Chittagong', '1506', 'Processing', 'aznxbsadjjslklndjcx', 'BDT', NULL, NULL);
+(12, 'sajedul', 'zulkarnine', 23, 'zulkar Nine', 'zns601@gmail.com', '01989419776', 2600, 1000, 'Dhaka', 'Dhaka', '1226', 'Processing', 'jgsadua;ISFOAsjxc', 'BDT', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -314,11 +311,7 @@ CREATE TABLE `pay_confirm_messages` (
 --
 
 INSERT INTO `pay_confirm_messages` (`id`, `crop_id`, `f_username`, `crop_name`, `cust_username`, `account_type`, `account_id`, `confirm_price`, `message`, `created_at`, `updated_at`) VALUES
-(13, 17, 'zulkarnine', 'soyabean', 'zulkarnine', 'bkash', '01989419776', '1000', 'null', '2021-02-08 00:38:53', '2021-02-08 00:38:53'),
-(15, 23, 'Faruqe', 'Aakh', 'alomgir', 'bkash', '01989419776', '1000', 'null', '2021-02-19 04:25:38', '2021-02-19 04:25:38'),
-(16, 23, 'Faruqe', 'Aakh', 'alomgir', 'bkash', '01989419776', '1245', 'null', '2021-02-19 04:29:48', '2021-02-19 04:29:48'),
-(17, 23, 'sajedul', 'Aakh', 'zulkarnine', 'bkash', '01869084620', '1000', 'null', '2021-02-24 23:56:03', '2021-02-24 23:56:03'),
-(18, 29, 'sajedul', 'Watermilon', 'Faruqe', 'bkash', '01685478654', '1000', 'null', '2021-03-07 00:11:05', '2021-03-07 00:11:05');
+(20, 23, 'sajedul', 'Aakh', 'zulkarnine', 'bkash', '01657457563', '1000', 'null', '2021-03-19 10:33:24', '2021-03-19 10:33:24');
 
 -- --------------------------------------------------------
 
@@ -373,16 +366,6 @@ CREATE TABLE `wishlists` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `wishlists`
---
-
-INSERT INTO `wishlists` (`id`, `crop_id`, `f_username`, `c_username`, `created_at`, `updated_at`) VALUES
-(10, 17, 'zulkarnine', 'alomgir', '2021-02-19 04:21:59', '2021-02-19 04:21:59'),
-(14, 12, 'zulkarnine', 'zulkarnine', '2021-02-24 22:47:39', '2021-02-24 22:47:39'),
-(18, 21, 'Faruqe', 'zulkarnine', '2021-03-01 03:53:09', '2021-03-01 03:53:09'),
-(19, 31, 'sajedul', 'Faruqe', '2021-03-07 00:03:23', '2021-03-07 00:03:23');
 
 --
 -- Indexes for dumped tables
@@ -490,7 +473,7 @@ ALTER TABLE `admin_registers`
 -- AUTO_INCREMENT for table `bid_messages`
 --
 ALTER TABLE `bid_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `categories_infos`
@@ -532,7 +515,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `pay_confirm_messages`
 --
 ALTER TABLE `pay_confirm_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `user_registers`
@@ -544,7 +527,7 @@ ALTER TABLE `user_registers`
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables

@@ -14,7 +14,7 @@ confirm crops
 <h1 class="text-success">{{Session::get('msg')}}</h1>
     <div class="row flex-sm-row mt-5">
         <div class="col-md-12 col-sm-12 ">
-            <h3 class="">Payment For Confirm Info</h3>
+            <h3 class="text-center text-success">Payment For Confirm Info</h3>
             <h3 class="text-center text-success"></h3>
             <table class="table table-bordered  text-center table-hover table-responsive-lg">
                 <tr class="t1">
