@@ -29,7 +29,9 @@
                     <td>{{$message->created_at}}</td>
                    <td>
 
-                  <a href="{{route('customer_profile',['username'=>$message->cust_username])}}" class="btn btn-success mb-sm-2"><i class="fa fa-1x fa-user"></i></a>
+                  <!-- <a href="{{route('customer_profile',['username'=>$message->cust_username])}}" class="btn btn-success mb-sm-2"><i class="fa fa-1x fa-user"></i></a> -->
+
+                  <a href="{{route('confirm_form',['id'=>$message->id])}}" class="btn btn-success mb-sm-2"><i class="fa fa-1x fa-reply"></i></a>
 
                   <a target="_blank" href="{{route('crop_details',['id'=>$message->crop_id])}}" class="btn btn-success mb-sm-2"><i class="fas fa-info-circle"></i></a>
 

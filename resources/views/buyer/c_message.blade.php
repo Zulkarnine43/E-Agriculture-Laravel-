@@ -14,7 +14,7 @@ customer messages
 <h1 class="text-success">{{Session::get('msg')}}</h1>
     <div class="row flex-sm-row mt-5">
         <div class="col-md-12 col-sm-12 ">
-            <h3 class="">Payment For Confirm Info</h3>
+            <h3 class="text-center text-success">Payment For Confirm Info</h3>
             <h3 class="text-center text-success"></h3>
             <table class="table table-bordered  text-center table-hover table-responsive-lg">
                 <tr class="t1">
@@ -37,10 +37,8 @@ customer messages
                     <td>{{$confirms->account_type}}</td>
                     <td>{{$confirms->account_id}}</td>
                     <td>{{$confirms->confirm_price}}</td>
-
-                    @if($confirms->message=="null")
-                    <td>empty</td>
-                    @endif
+                    <td>{{$confirms->message}}</td>
+                   
                     <td>
                         <a target="_blank" href="{{route('crop_details',['id'=>$confirms->crop_id])}}" class="btn btn-success"><i class="fas fa-info-circle"></i></a>
                         

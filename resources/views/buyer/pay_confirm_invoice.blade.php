@@ -11,11 +11,6 @@
                             <td>{{$Bid->cust_username}}</td>
                           </tr>
 
-                          <tr>
-                            <th>Bid price:</th>
-                            <td>{{$Bid->bid_price}}</td>
-                        </tr>
-
                         <tr>
                             <th>Crop Name:</th>
                             <td>{{$Bid->crop_name}}</td>
@@ -62,7 +57,12 @@
                             <td>{{$msg->account_id}}</td>
                            </tr>
 
-                               <tr>
+                          <tr>
+                            <th>Bid price:</th>
+                            <td>{{$Bid->bid_price}}</td>
+                          </tr>
+
+                            <tr>
                             <th>Confirm price:</th>
                             <td>{{$msg->confirm_price}}</td>
                            </tr>

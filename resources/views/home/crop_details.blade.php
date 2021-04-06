@@ -8,11 +8,6 @@ Crop details
 
 
 
- <!--  <script src="{{url('public/final_eagri/vendor/bootstrap/js/jquery-1.8.3.min.js')}}"></script>
-  <script src="{{url('public/final_eagri/vendor/elevateZoom/jquery.elevatezoom.js')}}"></script> -->
-
-
-
    <h1 class="text-center text-success">{{Session::get('msg')}}</h1>
     <div class="row mt-5">                                                
         <!----Image Slider start----------->
@@ -216,16 +211,17 @@ Crop details
                           BID:---{{$bid->bid_price}}TK
                           <p> 
                                 
-                                 @if($bid->cust_username==Session::get('c_username') )
+                               @if($bid->cust_username==Session::get('c_username') )
                                    @if(!Carbon\Carbon::now()->greaterThan($crop->last_date_bidding))
-                                 <a href="{{route('bid_delete',['id'=>$bid->id,'crop_id'=>$bid->crop_id])}}">delete</a>
+                                 <a  class="btn btn-danger" href=" {{route('bid_delete',['id'=>$bid->id,'crop_id'=>$bid->crop_id])}}" onclick="return confirm('Are you sure you want to delete?');"><i class="fas fa-trash-alt"></i>delete</a>
                                    @endif
                                 @endif
 
 
-                                @if($crop->username==Session::get('f_username'))
-                                -<a data-toggle="modal" href="#ReplyModal">Reply_confirm</a>
-                                @endif          
+
+                            @if($crop->username==Session::get('f_username'))
+                            -<a target="_blank" href="{{route('confirm_form',['id'=>$bid->id])}}" class="btn btn-success mb-sm-2"><i class="fa fa-1x fa-reply">confirm</i></a>
+                            @endif          
                           </p>
                       </div>
                   </div>
@@ -235,58 +231,7 @@ Crop details
               </div>
 
 
-    <!----Reply Modal start----------->
-
-    <div class="modal" id="ReplyModal">
-        <div class="modal-dialog">
-            <div class="modal-content bg-light">
-                <div class="modal-header">
-                    <h3>Confirm Reply</h3>
-                    <button class="close text-dark" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{route('pay_confirm_message')}}" method="post">
-                 @csrf
-                        <input type="hidden" name="crop_id" value="{{$crop->id}}" class="form-control">
-                        <input type="hidden" name="f_username" value="{{$crop->username}}" class="form-control">
-                        <input type="hidden" name="crop_name" value="{{$crop->crop_name}}" class="form-control">
-                        @if(isset($bid->cust_username))
-                        <input type="hidden" name="cust_username" value="{{$bid->cust_username}}" class="form-control">
-                        @endif
-
-                       <div class="form-group">
-                        <label class="font-weight-bolder">Account Type</label>
-                        <select class="form-control" name="account_type" required>
-                             <option value="">---Select a type</option>
-                             <option value="bkash">bkash</option>
-                             <option value="rocket">rocket</option>
-                              <option value="nagad">nagad</option>
-                        </select>
-                       </div>
-
-                        <div class="form-group">
-                            <label>Account-Id</label>
-                            <input type="tel" name="account_id" value="" class="form-control" placeholder="account ex:018********" required>
-                            <span class="text-danger">{{$errors->has('account_id') ? $errors->first('account_id'): ' '}}
-                        </div>
-
-                        <div class="form-group">
-                            <label>Confirm price</label>
-                            <input type="number" name="confirm_price" value="" class="form-control" placeholder="Enter confirrm price" min="1" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Message(optional)</label>
-                            <input type="text" name="message" value="" class="form-control" placeholder="Enter message">
-                        </div>
-
-                        <input  type="submit"  value="Reply Confirm" class="btn btn-success btn-block">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
+ 
 
 
 @endsection

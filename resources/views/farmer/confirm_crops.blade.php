@@ -11,16 +11,17 @@ confirm crops
 <h4> Not found any confirm messages</h4>
 
 @else
-<h1 class="text-success">{{Session::get('msg')}}</h1>
+
     <div class="row flex-sm-row mt-5">
         <div class="col-md-12 col-sm-12 ">
             <h3 class="text-center text-success">Payment For Confirm Info</h3>
+            <h3 class="text-success">{{Session::get('msg')}}</h3>
             <h3 class="text-center text-success"></h3>
             <table class="table table-bordered  text-center table-hover table-responsive-lg">
                 <tr class="t1">
                     <th>Sl No</th>
                     <th>Crop name</th>
-                    <th>Farmer Name</th>
+                    <th>Buyer Name</th>
                     <th>Payment type </th>
                     <th>Account id </th>
                     <th>confirm price </th>
@@ -33,13 +34,11 @@ confirm crops
                 <tr>
                     <td>{{$i++}}</td>
                     <td>{{$confirms->crop_name}}</td>
-                    <td>{{$confirms->f_username}}</td>
+                    <td>{{$confirms->cust_username}}</td>
                     <td>{{$confirms->account_type}}</td>
                     <td>{{$confirms->account_id}}</td>
                     <td>{{$confirms->confirm_price}}</td>
-                    @if($confirms->message=="null")
-                    <td>empty</td>
-                    @endif
+                    <td>{{$confirms->message}}</td>
                     
                      @php( $result =App\order::where('crop_id', $confirms->crop_id)->where('c_username', $confirms->cust_username)->first())
                      @if($result===null)

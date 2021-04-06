@@ -23,7 +23,11 @@ class farmerController extends Controller
     public function farm_bid_messages(){
        $messages=Bid_message::where('f_username',Session::get('f_username'))->orderBy('created_at','desc')->get();
        return view('farmer.f_message',compact('messages'));
-    
+    }
+
+   public function confirm_form($id){
+        $bid=Bid_message::find($id);
+       return view('farmer.confirm_form',compact('bid'))->with('msg','payment Confirm successfully');;
     }
 
   public function confirm_crops(){

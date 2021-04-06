@@ -79,26 +79,25 @@ public function bid_msg_saved(Request $request)
 
          $data2=$farm->toArray();
 
-        Mail::send('farmer.Bid_notification',['val'=>$data],function($message) use ($data2){
-            $message->to($data2['email']);
-            $message->subject('Bid_notification');
-        });
+        // Mail::send('farmer.Bid_notification',['val'=>$data],function($message) use ($data2){
+        //     $message->to($data2['email']);
+        //     $message->subject('Bid_notification');
+        // });
          return redirect()->route('crop_details',['id'=>$request->crop_id])->with('msg','your bid send successfully');;
     }
 
 
     public function bid_delete($id ,$crop_id){
 
-         $bid_delete=Bid_message::find($id);
-         $bid_delete->delete();
+         $bid=Bid_message::find($id);
+         $bid->delete();
        
          $crop=crop_import::where('id',$crop_id)->first();
          $bids_msg=Bid_message::where('crop_id',$crop_id)->get();
 
-        // return view('home.crop_details',['crop'=>$crop,'bids_msg'=>$bids_msg])->with('msg','bid deleted successfully');
-        return redirect()->back()->with('msg','bid deleted successfully');
+        return view('home.crop_details',['crop'=>$crop,'bids_msg'=>$bids_msg])->with('msg','bid deleted successfully');
+       // return redirect()->back()->with('msg','bid deleted successfully');
     }
-
     
 
     public function pay_confirm_message(Request $request)

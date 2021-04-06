@@ -7,10 +7,6 @@ Bid form
 @section('body')
 
 
-              <style>
-		
-			  </style>
-
                    
 
                 <div class="jumbotron mx-auto col-lg-6 mt-5">
