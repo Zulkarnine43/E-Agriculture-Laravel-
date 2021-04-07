@@ -462,7 +462,7 @@ Route::get('/farmer/bid/messages',[
     'as' =>'farm_bid_messages'
 ]);
 
-Route::get('/farmer/confirm/form{id}',[
+Route::get('/farmer/confirm/form/{id}',[
     'uses' =>'farmerController@confirm_form',
     'as' =>'confirm_form'
 ]);

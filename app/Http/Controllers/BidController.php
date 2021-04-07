@@ -6,6 +6,7 @@ use DB;
 use App\Bid_message;
 use App\crop_import;
 use App\farmer_register;
+use App\user_register;
 use App\pay_confirm_message;
 use App\pay_info;
 use Illuminate\Http\Request;
@@ -119,6 +120,17 @@ public function bid_msg_saved(Request $request)
         $pay_info->confirm_price = $request->confirm_price;
         $pay_info->message = $request->message;
         $pay_info->save();
+
+        //   $data=$pay_info->toArray();
+
+        //   $buyer=user_register::where('username',$request->cust_username)->first();
+        //   $data2=$buyer->toArray();
+
+        // Mail::send('buyer.confirm_notification',['val'=>$data],function($message) use ($data2){
+        //     $message->to($data2['email']);
+        //     $message->subject('confirm_notification');
+        // });
+
         return redirect()->back()->with('msg','your confirm message send successfully');
 
     }
