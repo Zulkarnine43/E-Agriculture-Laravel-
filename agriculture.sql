@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2021 at 06:15 PM
+-- Generation Time: Apr 11, 2021 at 06:33 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -75,10 +75,29 @@ CREATE TABLE `bid_messages` (
 
 INSERT INTO `bid_messages` (`id`, `crop_id`, `crop_name`, `f_username`, `cust_username`, `name`, `bid_price`, `message`, `created_at`, `updated_at`) VALUES
 (20, 18, 'potato', 'sajedul', 'zulkarnine', 'Zulkar Nine', '5600', 'null', '2021-02-19 11:56:43', '2021-02-19 11:56:43'),
-(21, 23, 'Aakh', 'sajedul', 'zulkarnine', 'Zulkar Nine', '2600', 'null', '2021-02-24 22:58:47', '2021-02-24 22:58:47'),
 (22, 29, 'Watermilon', 'sajedul', 'Faruqe', 'faruqe', '2200', 'null', '2021-03-07 00:07:03', '2021-03-07 00:07:03'),
 (23, 16, 'butta', 'zulkarnine', 'alomgir', 'alomgir', '600', 'null', '2021-03-19 10:02:25', '2021-03-19 10:02:25'),
-(24, 6, 'komola', 'zulkarnine', 'Faruqe', 'faruqe', '12000', 'null', '2021-03-19 10:04:12', '2021-03-19 10:04:12');
+(24, 6, 'komola', 'zulkarnine', 'Faruqe', 'faruqe', '12000', 'null', '2021-03-19 10:04:12', '2021-03-19 10:04:12'),
+(25, 23, 'Aakh', 'sajedul', 'alomgir', 'alomgir', '2500', 'null', '2021-04-02 23:49:27', '2021-04-02 23:49:27'),
+(27, 30, 'Pine Apple', 'sajedul', 'alomgir', 'alomgir', '8100', 'null', '2021-04-04 09:32:38', '2021-04-04 09:32:38'),
+(43, 32, 'banana', 'sajedul', 'Faruqe', 'faruqe', '2500', 'null', '2021-04-05 13:30:34', '2021-04-05 13:30:34'),
+(44, 23, 'Aakh', 'sajedul', 'zulkarnine', 'zulkarnine', '2600', 'null', '2021-04-05 13:41:43', '2021-04-05 13:41:43'),
+(45, 23, 'Aakh', 'sajedul', 'Faruqe', 'faruqe', '2700', 'null', '2021-04-05 13:42:16', '2021-04-05 13:42:16'),
+(53, 31, 'Coconut', 'sajedul', 'zulkarnine', 'zulkarnine', '3000', 'null', '2021-04-06 00:15:51', '2021-04-06 00:15:51'),
+(54, 30, 'Pine Apple', 'sajedul', 'zulkarnine', 'zulkarnine', '8200', 'null', '2021-04-06 00:16:14', '2021-04-06 00:16:14'),
+(55, 29, 'Watermilon', 'sajedul', 'zulkarnine', 'zulkarnine', '2300', 'null', '2021-04-06 00:16:58', '2021-04-06 00:16:58'),
+(56, 10, 'grapes', 'alomgir', 'Faruqe', 'zulkarnine', '6100', 'null', '2021-04-03 00:24:38', '2021-04-04 00:24:38'),
+(57, 32, 'banana', 'sajedul', 'zulkarnine', 'zulkarnine', '2600', 'null', '2021-04-06 00:32:08', '2021-04-06 00:32:08'),
+(58, 32, 'banana', 'sajedul', 'Faruqe', 'faruqe', '2700', 'null', '2021-04-06 00:34:04', '2021-04-06 00:34:04'),
+(59, 31, 'Coconut', 'sajedul', 'Faruqe', 'faruqe', '3100', 'null', '2021-04-06 00:34:23', '2021-04-06 00:34:23'),
+(60, 30, 'Pine Apple', 'sajedul', 'Faruqe', 'faruqe', '8300', 'null', '2021-04-06 00:34:43', '2021-04-06 00:34:43'),
+(61, 22, 'badam', 'Faruqe', 'Faruqe', 'faruqe', '600', 'null', '2021-04-06 00:35:16', '2021-04-06 00:35:16'),
+(62, 32, 'banana', 'sajedul', 'hossain', 'hossain', '2800', 'null', '2021-04-06 00:43:29', '2021-04-06 00:43:29'),
+(63, 31, 'Coconut', 'sajedul', 'hossain', 'hossain', '3200', 'null', '2021-04-06 00:43:53', '2021-04-06 00:43:53'),
+(64, 30, 'Pine Apple', 'sajedul', 'hossain', 'hossain', '8400', 'null', '2021-04-06 00:44:12', '2021-04-06 00:44:12'),
+(65, 23, 'Aakh', 'sajedul', 'hossain', 'hossain', '2800', 'null', '2021-04-06 00:44:33', '2021-04-06 00:44:33'),
+(66, 23, 'Aakh', 'sajedul', 'zulkarnine', 'zulkarnine', '3000', 'null', '2021-04-07 00:35:32', '2021-04-07 00:35:32'),
+(67, 32, 'banana', 'sajedul', 'zulkarnine', 'zulkarnine', '2900', 'null', '2021-04-07 22:37:38', '2021-04-07 22:37:38');
 
 -- --------------------------------------------------------
 
@@ -106,8 +125,7 @@ INSERT INTO `categories_infos` (`id`, `a_username`, `categories_name`, `categori
 (3, 'zulkarnine', 'seeds', 'that,s for seeds', '1', '2021-01-04 10:40:23', '2021-02-14 11:10:46'),
 (4, 'zulkarnine', 'cash', 'that,s for cash', '1', '2021-01-04 10:40:53', '2021-01-04 10:40:53'),
 (8, 'zulkarnine', 'Flowers', 'that\'s for flowers', '1', '2021-01-26 23:03:47', '2021-01-26 23:03:47'),
-(10, 'zulkarnine', 'Sapling', 'that\'s for Sapling', '1', '2021-01-27 00:00:09', '2021-02-14 11:10:58'),
-(11, 'zulkarnine', 'Others', 'That\'s for all others', '1', '2021-01-27 00:18:59', '2021-02-14 11:15:52');
+(10, 'zulkarnine', 'Sapling', 'that\'s for Sapling', '1', '2021-01-27 00:00:09', '2021-02-14 11:10:58');
 
 -- --------------------------------------------------------
 
@@ -141,27 +159,26 @@ CREATE TABLE `crop_imports` (
 
 INSERT INTO `crop_imports` (`id`, `username`, `crop_name`, `crop_session`, `crop_type`, `crop_quantity`, `crop_location`, `bid_rate`, `crop_description`, `last_date_bidding`, `crop_image`, `crop_image2`, `status`, `condition`, `Action`, `created_at`, `updated_at`) VALUES
 (5, 'zulkarnine', 'sorisa', '2', 2, '1 bighas', 'rajshahi', '5000', 'made by bangladesh', '2021-01-21', 'public/crop_images/1610723217.mustard1.jpg', 'public/crop_images/1610723217.mustard2.jpg', '0', 'old', 'deleted', '2020-12-01 01:02:55', '2021-01-25 03:32:51'),
-(6, 'zulkarnine', 'komola', '2', 1, '10 tress', 'rajshahi', '11998', 'from bangladesh', '2021-04-08', 'public/crop_images/komola.jpg', 'public/crop_images/1610723961.orange2.jpg', '1', 'New', 'Published', '2020-12-10 23:35:51', '2021-02-24 22:35:49'),
+(6, 'zulkarnine', 'komola', '2', 1, '10 tress', 'rajshahi', '11998', 'from bangladesh', '2021-04-08', 'public/crop_images/komola.jpg', 'public/crop_images/1610723961.orange2.jpg', '1', 'old', 'Published', '2020-12-10 23:35:51', '2021-04-07 20:48:10'),
 (7, 'zulkarnine', 'Lichu', '2', 1, '10 tress', 'araihazar1450,dhaka,bangladesh', '4000', 'from bangladesh', '2021-04-15', 'public/crop_images/1610723841.9.jpg', 'public/crop_images/download.jpg', '1', 'New', 'Published', '2020-12-21 01:00:24', '2021-02-24 22:37:32'),
-(10, 'alomgir', 'grapes', '2', 1, '10 tress', 'khulna', '6000', 'for consumers', '2021-02-25', 'public/crop_images/1610715801.grapes.jpg', 'public/crop_images/1610715801.grapes2.jpg', '1', 'old', 'Published', '2021-01-15 07:03:21', '2021-02-24 21:36:04'),
-(11, 'sajedul', 'badacophy', '2', 2, '10 bighas', 'chittagong', '5000', 'for consumers', '2021-04-12', 'public/crop_images/1610716188.Cabbage.jpg', 'public/crop_images/1610716188.Cabbage2.jpg', '1', 'New', 'Published', '2021-01-15 07:09:48', '2021-02-24 22:38:04'),
+(10, 'alomgir', 'grapes', '2', 1, '10 tress', 'khulna', '6000', 'for consumers', '2021-04-05', 'public/crop_images/1610715801.grapes.jpg', 'public/crop_images/1610715801.grapes2.jpg', '1', 'old', 'Published', '2021-01-04 07:03:21', '2021-04-06 00:27:54'),
+(11, 'sajedul', 'badacophy', '2', 2, '10 bighas', 'chittagong', '5000', 'for consumers', '2021-04-04', 'public/crop_images/1610716188.Cabbage.jpg', 'public/crop_images/1610716188.Cabbage2.jpg', '1', 'old', 'Published', '2021-01-15 07:09:48', '2021-04-05 11:06:59'),
 (12, 'zulkarnine', 'Rice', '3', 3, '40 kg', 'chittagong', '3000', 'for consumers', '2021-04-14', 'public/crop_images/1610721658.rice.jpg', 'public/crop_images/1610721658.rice2.jpg', '1', 'New', 'Published', '2021-01-15 08:40:58', '2021-02-24 22:37:49'),
 (13, 'zulkarnine', 'tea', '2', 4, '1 bighas', 'Norshingdi', '9000', 'for consumers', '2021-04-13', 'public/crop_images/1610722084.tea.jpg', 'public/crop_images/1610722084.tea2.jpg', '1', 'New', 'Published', '2021-01-15 08:48:05', '2021-02-24 22:38:32'),
 (14, 'zulkarnine', 'peaj', '2', 2, '40 kg', 'rajshahi', '6000', 'for consumers', '2021-04-20', 'public/crop_images/1610722836.Onion2.jpg', 'public/crop_images/1610722836.Onion.jpg', '1', 'New', 'Published', '2021-01-15 09:00:36', '2021-02-24 22:37:41'),
 (16, 'zulkarnine', 'butta', '1', 3, '20kg', 'rajshahi', '500', 'for consumers', '2021-04-20', 'public/crop_images/1610723529.maize.jpg', 'public/crop_images/1610723529.maize2.jpg', '1', 'New', 'Published', '2021-01-15 09:12:09', '2021-02-24 22:37:53'),
-(17, 'zulkarnine', 'soyabean', '2', 4, '1 bighas', 'raipura,dhaka', '1500', 'for consumer', '2021-04-12', 'public/crop_images/1610723734.syebean2.jpg', 'public/crop_images/1610723734.soyebean.jpg', '1', 'New', 'Published', '2021-01-15 09:15:34', '2021-02-24 22:37:59'),
-(18, 'sajedul', 'potato', '1', 2, '1 bighas', 'Norshingdi', '5500', 'that,s for consumers', '2021-04-15', 'public/crop_images/1611146178.Potato.jpg', 'public/crop_images/1611146178.Potato2.jpg', '1', 'New', 'Published', '2021-01-20 06:36:18', '2021-02-24 22:38:08'),
+(17, 'zulkarnine', 'soyabean', '2', 4, '1 bighas', 'raipura,dhaka', '1500', 'for consumer', '2021-04-12', 'public/crop_images/1610723734.syebean2.jpg', 'public/crop_images/1610723734.soyebean.jpg', '1', 'New', 'Unpublished', '2021-01-15 09:15:34', '2021-04-06 22:45:25'),
+(18, 'sajedul', 'potato', '1', 2, '1 bighas', 'Norshingdi', '5500', 'that,s for consumers', '2021-04-15', 'public/crop_images/1611146178.Potato.jpg', 'public/crop_images/1611146178.Potato2.jpg', '1', 'sold', 'Published', '2021-01-20 06:36:18', '2021-04-06 00:30:49'),
 (21, 'Faruqe', 'Mango', '1', 1, '5 trees', 'khulna', '1500', 'bangladesh', '2021-04-28', 'public/crop_images/1611738764.mango.jpg', 'public/crop_images/1611738764.mango2.jpg', '1', 'New', 'Published', '2021-01-27 03:12:44', '2021-02-24 22:38:27'),
 (22, 'Faruqe', 'badam', '1', 3, '30kg', 'bondor, narayangonj', '600', 'bangladesh', '2021-04-15', 'public/crop_images/1611739154.groundnat.jpg', 'public/crop_images/1611739154.goundnat2.jpg', '1', 'New', 'Published', '2021-01-27 03:19:14', '2021-02-24 22:38:24'),
-(23, 'sajedul', 'Aakh', '3', 4, '1 bighas', 'Hathazari, Chittagong', '2500', 'for bangladesh', '2021-04-17', 'public/crop_images/1611739406.sugerkan.jpg', 'public/crop_images/1611739406.sugerkan.jpg', '1', 'New', 'Published', '2021-01-27 03:23:26', '2021-02-24 22:38:20'),
-(24, 'zulkarnine', 'peara', '1', 10, '50 pics', 'Chittagong', '500', 'bangladesh', '2021-04-08', 'public/crop_images/1611739728.4.jpg', 'public/crop_images/1611739728.4.jpg', '1', 'New', 'Unpublished', '2021-01-27 03:28:48', '2021-02-24 22:17:42'),
+(23, 'sajedul', 'Aakh', '3', 4, '1 bighas', 'Hathazari, Chittagong', '2500', 'for bangladesh', '2021-04-17', 'public/crop_images/1611739406.sugerkan.jpg', 'public/crop_images/1611739406.sugerkan.jpg', '1', 'New', 'Published', '2021-01-27 03:23:26', '2021-04-05 11:03:52'),
+(24, 'zulkarnine', 'guava tree', '1', 10, '50 pics', 'Chittagong', '500', 'bangladesh', '2021-04-08', 'public/crop_images/1611739728.4.jpg', 'public/crop_images/1611739728.4.jpg', '1', 'old', 'Published', '2021-01-27 03:28:48', '2021-04-07 20:48:10'),
 (25, 'zulkarnine', 'cotton', '1', 4, '30kg', 'Rajshahi', '3000', 'bangladesh', '2021-04-20', 'public/crop_images/1611740005.cotton.jpg', 'public/crop_images/1611740005.cotton2.jpg', '1', 'New', 'Unpublished', '2021-01-27 03:33:25', '2021-02-24 22:18:51'),
-(26, 'zulkarnine', 'Sunflower', '2', 8, '1 bighas', 'Rajshahi', '3000', 'bangladesh', '2021-04-10', 'public/crop_images/1611740388.images (37).jpg', 'public/crop_images/1611740388.images (36).jpg', '1', 'New', 'Unpublished', '2021-01-27 03:39:48', '2021-02-24 22:19:23'),
-(27, 'hossain', 'abc', '3', 11, '1 pics', 'dhaka', '800', 'bangladesh', '2021-02-05', 'public/crop_images/1611740742.images (26).jpg', 'public/crop_images/1611740742.images (26).jpg', '1', 'old', 'Published', '2021-01-27 03:45:42', '2021-02-04 19:52:52'),
-(29, 'sajedul', 'Watermilon', '1', 1, '50 pics', 'new bazar, rajshahi', '2000', 'from bangladesh', '2021-04-10', 'public/crop_images/1614835389.watermilon.jpg', 'public/crop_images/1614835389.watermilon2.jpg', '1', 'sold', 'Published', '2021-03-03 23:23:09', '2021-03-07 00:18:14'),
-(30, 'sajedul', 'Pine Apple', '2', 1, '1 bigha', 'Raipura, Norshingdi', '10', 'for consumers', '2021-04-14', 'public/crop_images/1614836593.pineapple2.jpg', 'public/crop_images/1614836593.pineapple.jpg', '1', 'New', 'Published', '2021-03-03 23:43:14', '2021-03-03 23:58:48'),
+(26, 'zulkarnine', 'Sunflower', '2', 8, '1 bighas', 'Rajshahi', '3000', 'bangladesh', '2021-04-10', 'public/crop_images/1611740388.images (37).jpg', 'public/crop_images/1611740388.images (36).jpg', '1', 'New', 'Unpublished', '2021-01-27 03:39:48', '2021-04-06 22:57:09'),
+(29, 'sajedul', 'Watermilon', '1', 1, '50 pics', 'new bazar, rajshahi', '2000', 'from bangladesh', '2021-04-10', 'public/crop_images/1614835389.watermilon.jpg', 'public/crop_images/1614835389.watermilon2.jpg', '1', 'New', 'Published', '2021-03-03 23:23:09', '2021-03-07 00:18:14'),
+(30, 'sajedul', 'Pine Apple', '2', 1, '1 bigha', 'Raipura, Norshingdi', '8000', 'for consumers', '2021-04-14', 'public/crop_images/1614836593.pineapple2.jpg', 'public/crop_images/1614836593.pineapple.jpg', '1', 'New', 'Published', '2021-03-03 23:43:14', '2021-03-03 23:58:48'),
 (31, 'sajedul', 'Coconut', '3', 1, '60 pics', 'Raipura, Norshingdi', '3000', 'for consumers', '2021-04-11', 'public/crop_images/1614837880.coconut.jpg', 'public/crop_images/1614837880.coconut.jpg', '1', 'New', 'Published', '2021-03-04 00:04:41', '2021-03-04 00:05:15'),
-(32, 'sajedul', 'banana', '1', 1, '5 trees', 'Raipura, Norshingdi', '2498', 'for consumers', '2021-04-10', 'public/crop_images/1614838494.banana.jpg', 'public/crop_images/1614838494.banana2.jpg', '1', 'New', 'Published', '2021-03-04 00:14:54', '2021-03-04 00:15:46');
+(32, 'sajedul', 'banana', '1', 1, '5 trees', 'Raipura, Norshingdi', '2498', 'for consumers', '2021-04-10', 'public/crop_images/1614838494.banana.jpg', 'public/crop_images/1614838494.banana2.jpg', '1', 'sold', 'Published', '2021-03-04 00:14:54', '2021-04-07 22:41:04');
 
 -- --------------------------------------------------------
 
@@ -198,8 +215,9 @@ INSERT INTO `farmer_registers` (`id`, `register_as`, `username`, `email`, `mobil
 (1, 'farmer', 'zulkarnine', 'zns601@gmail.com', '01989419776', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$QfjS8qAL3A.y1BRqr4AVwuUNri1R14erz9Tt8YHHK.D9WRDX8RVA2', 'null', 'active', 'verified', 'public/nid_images/1613107795.zulkar nine_1.png', 'public/nid_images/1613107795.zulkar nine_2.png', '2020-12-29 08:33:12', '2021-03-07 00:55:08'),
 (2, 'farmer', 'alomgir', 'alomgir@gmail.com', '01876543567', '1996-05-24', 'Khulna', 'noton bazar', '1211', 'male', '$2y$10$296c5wRUL5sUJNG8ZqX/FeE.C5rCEtf2/XDHU963AUVe/ua4UuhU6', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:30:02', '2021-01-15 06:30:02'),
 (3, 'farmer', 'Faruqe', 'faruqe@gmail.com', '01969084620', '1997-07-12', 'Dhaka', 'raipura', '1615', 'male', '$2y$10$QrWtmO4w4LuSipeRLKFBVOKJOn/WtKvOjHbFjs/DPUSE/WewSo4SC', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:32:00', '2021-01-15 06:32:00'),
-(4, 'farmer', 'sajedul', 'sajedul@gmail.com', '01888344856', '1995-09-26', 'Chittagong', '90/A road, hathazari', '1234', 'male', '$2y$10$oCKO0K1OG5wrJhjZNyIkO.Xv8RTg4tiaS4S5n/CRJwx6LN46h4fKK', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:34:52', '2021-01-15 06:34:52'),
-(5, 'farmer', 'hossain', 'hossain@gmail.com', '01764578235', '1993-04-30', 'Barishal', 'kuakata', '1567', 'male', '$2y$10$M4NEU4pJ/G/tyOdP.QhOGuuLF7SSTR2YpEiUohCIkBn7R/j7ZldeW', 'null', 'disable', 'verified', 'empty', 'empty', '2021-01-15 06:37:32', '2021-02-14 11:16:27');
+(4, 'farmer', 'sajedul', 'sajedul@gmail.com', '01888344856', '1995-09-26', 'dhaka', 'Raipura, Norshingdi', '1234', 'male', '$2y$10$oCKO0K1OG5wrJhjZNyIkO.Xv8RTg4tiaS4S5n/CRJwx6LN46h4fKK', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:34:52', '2021-01-15 06:34:52'),
+(5, 'farmer', 'hossain', 'hossain@gmail.com', '01764578235', '1993-04-30', 'Barishal', 'kuakata', '1567', 'male', '$2y$10$M4NEU4pJ/G/tyOdP.QhOGuuLF7SSTR2YpEiUohCIkBn7R/j7ZldeW', 'null', 'disable', 'verified', 'empty', 'empty', '2021-01-15 06:37:32', '2021-02-14 11:16:27'),
+(7, 'farmer', 'zulkarnine43', 'zulkarnine43@gmail.com', '01869084620', '1997-09-25', 'Dhaka', 'Kolabagan', '1206', 'male', '$2y$10$G5NEDZL3drEuiYu2njzYHunNQf0wQ1nW.5.Zx5vHVQMoFBWwmlyuC', 'null', 'active', 'unverified', 'empty', 'empty', '2021-03-31 21:59:04', '2021-03-31 21:59:04');
 
 -- --------------------------------------------------------
 
@@ -284,7 +302,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `f_username`, `c_username`, `crop_id`, `name`, `email`, `phone`, `bid_price`, `amount`, `address`, `division`, `zip`, `status`, `transaction_id`, `currency`, `created_at`, `updated_at`) VALUES
-(12, 'sajedul', 'zulkarnine', 23, 'zulkar Nine', 'zns601@gmail.com', '01989419776', 2600, 1000, 'Dhaka', 'Dhaka', '1226', 'Processing', 'jgsadua;ISFOAsjxc', 'BDT', NULL, NULL);
+(17, 'sajedul', 'zulkarnine', 18, 'Zulkar Nine', 'zns601@gmail.com', '01660144436', 5600, 1000, 'Kolabagan', 'Dhaka', '1206', 'Processing', 'aznxbsadjjslklndjcx', 'BDT', NULL, NULL),
+(18, 'sajedul', 'zulkarnine', 32, 'Zulkar Nine', 'zns601@gmail.com', '01660144436', 2900, 1000, 'Kolabagan', 'Dhaka', '1206', 'Processing', '606e8960b43ec', 'BDT', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -311,7 +330,9 @@ CREATE TABLE `pay_confirm_messages` (
 --
 
 INSERT INTO `pay_confirm_messages` (`id`, `crop_id`, `f_username`, `crop_name`, `cust_username`, `account_type`, `account_id`, `confirm_price`, `message`, `created_at`, `updated_at`) VALUES
-(20, 23, 'sajedul', 'Aakh', 'zulkarnine', 'bkash', '01657457563', '1000', 'null', '2021-03-19 10:33:24', '2021-03-19 10:33:24');
+(52, 18, 'sajedul', 'potato', 'zulkarnine', 'bkash', '01888344856', '1000', 'null', '2021-04-06 00:12:19', '2021-04-06 00:12:19'),
+(57, 23, 'sajedul', 'Aakh', 'zulkarnine', 'bkash', '01888344856', '1500', 'null', '2021-04-07 00:36:20', '2021-04-07 00:36:20'),
+(58, 32, 'sajedul', 'banana', 'zulkarnine', 'bkash', '01888344856', '1000', 'null', '2021-04-07 22:40:09', '2021-04-07 22:40:09');
 
 -- --------------------------------------------------------
 
@@ -345,12 +366,11 @@ CREATE TABLE `user_registers` (
 --
 
 INSERT INTO `user_registers` (`id`, `register_as`, `username`, `email`, `mobile`, `dob`, `division`, `address`, `zip_code`, `gender`, `password`, `profile_pic`, `action`, `condition`, `NID_1`, `NID_2`, `created_at`, `updated_at`) VALUES
-(1, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$szL3ySjeYWF3Sb.Yg6x9W.zoSY5fvmnPuOZ7qG1e8pwXaoJ2PbfZO', 'null', 'active', 'verified', 'public/nid_images/1613108867.zulkar nine_1.png', 'public/nid_images/1613108867.zulkar nine_2.png', '2020-12-29 08:35:19', '2021-02-11 23:47:47'),
+(1, 'customer', 'zulkarnine', 'zns601@gmail.com', '01660144436', '1997-09-25', 'Dhaka', 'Kolabagan,Dhaka', '1205', 'male', '$2y$10$ovupHXy/ZLON2Zqw2YobQe1apJCTmgXs9NNQvxcQxc9.CTHWk7OdO', 'null', 'active', 'verified', 'public/nid_images/1613108867.zulkar nine_1.png', 'public/nid_images/1613108867.zulkar nine_2.png', '2020-12-29 08:35:19', '2021-04-05 22:05:02'),
 (2, 'customer', 'alomgir', 'alomgir@gmail.com', '01876543567', '1995-09-26', 'Dhaka', 'noton bazar', '1211', 'male', '$2y$10$R6R8S2jH0unUaBNY3i76wuX.PERvwc4ePLWbAztSNai.Vji88.yuu', 'null', 'active', 'verified', 'public/nid_images/1613729878.technical-support.png', 'public/nid_images/1613729878.technical-support.png', '2021-01-15 06:39:57', '2021-02-19 04:17:58'),
 (3, 'customer', 'Faruqe', 'faruqe@gmail.com', '01969084620', '1996-04-02', 'Chittagong', 'hathhazari', '1506', 'male', '$2y$10$DcVBqY1SDCcJAiI7RQ/8qOu8jqbOedKXlj7m2SU1vQZQCaCspkboO', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:41:15', '2021-01-15 06:41:15'),
 (5, 'customer', 'hossain', 'hossain@gmail.com', '01764578235', '1999-05-31', 'Comilla', '45 kollandi', '1703', 'male', '$2y$10$1dr1SbMaNufMXIi0r3G/dOhMVRzdVnqcCGWiueYWNfUVoqZMyD2AK', 'null', 'active', 'verified', 'empty', 'empty', '2021-01-15 06:47:37', '2021-01-15 06:47:37'),
-(6, 'customer', 'zulkarnine12', 'zulkarnine43@gmail.com', '01989419776', '1997-09-25', 'Dhaka', 'Kolabagan', '1234', 'male', '$2y$10$YE4478kJ8Ad6pdDxmATgt.MPkm.6GVlnz0dVrN6.lNJHDAXuAIuX2', 'null', 'active', 'verified', 'empty', 'empty', '2021-02-10 21:46:23', '2021-02-10 21:53:13'),
-(8, 'customer', 'sajedul', 'sajedul@gmail.com', '01657457563', '1997-11-20', 'Comilla', 'kollanpur', '4532', 'male', '$2y$10$M.AaydRN3OGzJkO39ZBD0uNbAcoQdFQKeO.CbbJuUDZ.4qa5yjGbW', 'null', 'active', 'verified', 'empty', 'empty', '2021-03-01 00:14:32', '2021-03-01 00:14:32');
+(8, 'customer', 'sajedul', 'sajedul@gmail.com', '01657457563', '1997-11-20', 'Comilla', 'kollanpur', '4532', 'male', '$2y$10$M.AaydRN3OGzJkO39ZBD0uNbAcoQdFQKeO.CbbJuUDZ.4qa5yjGbW', 'null', 'active', 'verified', 'empty', 'empty', '2021-03-01 00:14:32', '2021-04-05 07:59:39');
 
 -- --------------------------------------------------------
 
@@ -366,6 +386,15 @@ CREATE TABLE `wishlists` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `wishlists`
+--
+
+INSERT INTO `wishlists` (`id`, `crop_id`, `f_username`, `c_username`, `created_at`, `updated_at`) VALUES
+(25, 21, 'Faruqe', 'zulkarnine', '2021-04-03 22:33:05', '2021-04-03 22:33:05'),
+(31, 32, 'sajedul', 'zulkarnine', '2021-04-06 23:16:36', '2021-04-06 23:16:36'),
+(32, 31, 'sajedul', 'zulkarnine', '2021-04-07 22:36:58', '2021-04-07 22:36:58');
 
 --
 -- Indexes for dumped tables
@@ -473,7 +502,7 @@ ALTER TABLE `admin_registers`
 -- AUTO_INCREMENT for table `bid_messages`
 --
 ALTER TABLE `bid_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `categories_infos`
@@ -491,7 +520,7 @@ ALTER TABLE `crop_imports`
 -- AUTO_INCREMENT for table `farmer_registers`
 --
 ALTER TABLE `farmer_registers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -509,13 +538,13 @@ ALTER TABLE `news_infos`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `pay_confirm_messages`
 --
 ALTER TABLE `pay_confirm_messages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `user_registers`
@@ -527,7 +556,7 @@ ALTER TABLE `user_registers`
 -- AUTO_INCREMENT for table `wishlists`
 --
 ALTER TABLE `wishlists`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Constraints for dumped tables
@@ -573,7 +602,7 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `pay_confirm_messages`
   ADD CONSTRAINT `pay_confirm_messages_ibfk_1` FOREIGN KEY (`crop_id`) REFERENCES `bid_messages` (`crop_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `pay_confirm_messages_ibfk_2` FOREIGN KEY (`cust_username`) REFERENCES `bid_messages` (`cust_username`) ON DELETE CASCADE,
+  ADD CONSTRAINT `pay_confirm_messages_ibfk_2` FOREIGN KEY (`cust_username`) REFERENCES `user_registers` (`username`) ON DELETE CASCADE,
   ADD CONSTRAINT `pay_confirm_messages_ibfk_3` FOREIGN KEY (`f_username`) REFERENCES `farmer_registers` (`username`) ON DELETE CASCADE;
 
 --
